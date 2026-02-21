@@ -24,20 +24,18 @@ const CartDrawer: React.FC<CartDrawerProps> = ({
     <>
       {/* Backdrop */}
       <div
-        className={`fixed inset-0 z-[60] bg-slate-900/50 backdrop-blur-sm transition-opacity duration-300 ${
-          isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
-        }`}
+        className={`fixed inset-0 z-[60] bg-slate-900/50 backdrop-blur-sm transition-opacity duration-300 ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
+          }`}
         onClick={onClose}
       />
 
       {/* Drawer */}
       <div
-        className={`fixed inset-y-0 right-0 z-[70] flex w-full max-w-md flex-col bg-white shadow-2xl transition-transform duration-300 ${
-          isOpen ? 'translate-x-0' : 'translate-x-full'
-        }`}
+        className={`fixed inset-y-0 right-0 z-[70] flex w-full max-w-md flex-col bg-white shadow-2xl transition-transform duration-300 ${isOpen ? 'translate-x-0' : 'translate-x-full'
+          }`}
       >
         <div className="flex items-center justify-between p-6 border-b">
-          <h2 className="text-xl font-bold text-slate-900">Your Cart</h2>
+          <h2 className="text-xl font-bold font-heading text-slate-900">Your Cart</h2>
           <button onClick={onClose} className="p-2 text-slate-400 hover:text-slate-900">
             <X size={24} />
           </button>
@@ -84,12 +82,12 @@ const CartDrawer: React.FC<CartDrawerProps> = ({
                         </button>
                       </div>
                       <div className="flex items-center gap-4">
-                        <span className="font-bold text-slate-900">${(item.price * item.quantity).toFixed(2)}</span>
+                        <span className="font-bold text-slate-900">₹{(item.price * item.quantity).toFixed(2)}</span>
                         <button
-                            onClick={() => onRemoveItem(item.id)}
-                            className="text-red-400 hover:text-red-600"
+                          onClick={() => onRemoveItem(item.id)}
+                          className="text-red-400 hover:text-red-600"
                         >
-                            <Trash2 size={18} />
+                          <Trash2 size={18} />
                         </button>
                       </div>
                     </div>
@@ -104,7 +102,7 @@ const CartDrawer: React.FC<CartDrawerProps> = ({
           <div className="border-t bg-slate-50 p-6">
             <div className="mb-4 flex items-center justify-between">
               <span className="text-base font-medium text-slate-500">Subtotal</span>
-              <span className="text-2xl font-bold text-slate-900">${total.toFixed(2)}</span>
+              <span className="text-2xl font-bold text-slate-900">₹{total.toFixed(2)}</span>
             </div>
             <p className="mb-6 text-xs text-slate-400 text-center">Shipping and taxes calculated at checkout.</p>
             <Button className="w-full" size="lg" icon={<ArrowRight size={20} />}>

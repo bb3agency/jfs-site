@@ -1,68 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>JFS Protein Store | Joy Fitness Solutions</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800;900&display=swap" rel="stylesheet">
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ['Inter', 'sans-serif'],
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JFS Protein Store | Joy Fitness Solutions</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800;900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="/fonts.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            heading: ['Universo', 'sans-serif'],
+            body: ['Satoshi', 'sans-serif'],
+            sans: ['Satoshi', 'sans-serif'], // Default
+          },
+          colors: {
+            yellow: {
+              400: '#FACC15',
+              500: '#EAB308',
+            }
+          },
+          animation: {
+            'float': 'float 6s ease-in-out infinite',
+            'shimmer': 'shimmer 8s infinite linear',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-20px)' },
             },
-            colors: {
-               yellow: {
-                 400: '#FACC15',
-                 500: '#EAB308',
-               }
-            },
-            animation: {
-              'float': 'float 6s ease-in-out infinite',
-              'shimmer': 'shimmer 8s infinite linear',
-            },
-            keyframes: {
-              float: {
-                '0%, 100%': { transform: 'translateY(0)' },
-                '50%': { transform: 'translateY(-20px)' },
-              },
-              shimmer: {
-                '0%': { transform: 'translateX(-150%) skewX(-12deg)' },
-                '100%': { transform: 'translateX(150%) skewX(-12deg)' },
-              }
+            shimmer: {
+              '0%': { transform: 'translateX(-150%) skewX(-12deg)' },
+              '100%': { transform: 'translateX(150%) skewX(-12deg)' },
             }
           }
         }
       }
-    </script>
-    <style>
-      body {
-        font-family: 'Inter', sans-serif;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        background-color: #f8fafc;
-      }
-      .scrollbar-hide::-webkit-scrollbar {
-          display: none;
-      }
-      .scrollbar-hide {
-          -ms-overflow-style: none;
-          scrollbar-width: none;
-      }
-      /* Liquid Glass Utility for complex backdrop */
-      .glass-liquid {
-        background: rgba(15, 23, 42, 0.4);
-        backdrop-filter: blur(24px) saturate(180%);
-        -webkit-backdrop-filter: blur(24px) saturate(180%);
-        box-shadow: 
-          0 8px 32px 0 rgba(0, 0, 0, 0.37),
-          inset 0 0 0 1px rgba(255, 255, 255, 0.1);
-      }
-    </style>
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      background-color: #f8fafc;
+    }
+
+    .scrollbar-hide::-webkit-scrollbar {
+      display: none;
+    }
+
+    .scrollbar-hide {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    /* Liquid Glass Utility for complex backdrop */
+    .glass-liquid {
+      background: rgba(15, 23, 42, 0.4);
+      backdrop-filter: blur(24px) saturate(180%);
+      -webkit-backdrop-filter: blur(24px) saturate(180%);
+      box-shadow:
+        0 8px 32px 0 rgba(0, 0, 0, 0.37),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+    }
+  </style>
   <script type="importmap">
 {
   "imports": {
@@ -80,10 +88,12 @@
   }
 }
 </script>
-<link rel="stylesheet" href="/index.css">
+  <link rel="stylesheet" href="/index.css">
 </head>
-  <body>
-    <div id="root"></div>
+
+<body>
+  <div id="root"></div>
   <script type="module" src="/index.tsx"></script>
 </body>
+
 </html>

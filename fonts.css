@@ -1,0 +1,113 @@
+@font-face {
+  font-family: 'Universo';
+  src: url('/assets/fonts/universo/universo-thin.otf') format('opentype');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Universo';
+  src: url('/assets/fonts/universo/universo-light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Universo';
+  src: url('/assets/fonts/universo/universo-regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Universo';
+  src: url('/assets/fonts/universo/universo-bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Universo';
+  src: url('/assets/fonts/universo/universo-black.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+/* Neue Plak Definitions */
+@font-face {
+  font-family: 'Neue Plak';
+  src: url('/assets/fonts/neue-plak/Neue Plak Thin.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Neue Plak';
+  src: url('/assets/fonts/neue-plak/Neue Plak Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Neue Plak';
+  src: url('/assets/fonts/neue-plak/Neue Plak Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Neue Plak';
+  src: url('/assets/fonts/neue-plak/Neue Plak SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Neue Plak';
+  src: url('/assets/fonts/neue-plak/Neue Plak Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Neue Plak';
+  src: url('/assets/fonts/neue-plak/Neue Plak Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+/* Satoshi Definitions */
+@font-face {
+  font-family: 'Satoshi';
+  src: url('/assets/fonts/satoshi/Satoshi-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('/assets/fonts/satoshi/Satoshi-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('/assets/fonts/satoshi/Satoshi-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('/assets/fonts/satoshi/Satoshi-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('/assets/fonts/satoshi/Satoshi-Black.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+}
