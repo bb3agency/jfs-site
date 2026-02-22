@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import Button from '../components/Button';
 import ProductCard from '../components/ProductCard';
 import Footer from '../components/Footer';
-import { PRODUCTS, BRANDS_LIST, FEATURES_LIST } from '../data';
+import { PRODUCTS, BRANDS_LIST, FEATURES_LIST, TRANSFORMATIONS, CATEGORIES_LIST } from '../data';
 import { Product, Category } from '../types';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
@@ -27,35 +27,35 @@ const Home: React.FC<HomeProps> = ({ onAddToCart }) => {
     const newArrivals = [...PRODUCTS].reverse().slice(0, 4);
     const wheyProducts = PRODUCTS.filter(p => p.category === Category.WHEY_PROTEIN || p.category === Category.WHEY_ISOLATE).slice(0, 4);
 
-    // Custom Category Images for the Circular View
-    const CATEGORIES_DISPLAY = [
-        { name: 'Proteins', image: 'https://images.unsplash.com/photo-1593095948071-474c5cc2989d?q=80&w=400&auto=format&fit=crop' },
-        { name: 'Gainer', image: 'https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?q=80&w=400&auto=format&fit=crop' },
-        { name: 'Creatine', image: 'https://images.unsplash.com/photo-1579722821273-0f6c7d44362f?q=80&w=400&auto=format&fit=crop' },
-        { name: 'Pre-workout', image: 'https://images.unsplash.com/photo-1623875604107-166299d6387a?q=80&w=400&auto=format&fit=crop' },
-        { name: 'Fat Burner', image: 'https://images.unsplash.com/photo-1593095948071-474c5cc2989d?q=80&w=400&auto=format&fit=crop' },
-        { name: 'Vitamins', image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=400&auto=format&fit=crop' },
-    ];
-
     useGSAP(() => {
         // Hero Animations
         const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
 
-        tl.from('.hero-content', { y: 30, opacity: 0, duration: 1, delay: 0.2 })
-            .from('.hero-image', { x: 50, opacity: 0, duration: 1.2 }, "-=0.8");
+        tl.fromTo('.hero-content',
+            { y: 30, opacity: 0 },
+            { y: 0, opacity: 1, duration: 1, delay: 0.2 }
+        )
+            .fromTo('.hero-image',
+                { x: 50, opacity: 0 },
+                { x: 0, opacity: 1, duration: 1.2 },
+                "-=0.8"
+            );
 
-        // General Section Stagger
+        // Scroll Animations for sections
         const sections = ['.categories-section', '.bestsellers-section', '.new-arrivals-section', '.brands-section', '.trending-section', '.authenticity-section'];
         sections.forEach(section => {
-            gsap.from(section, {
-                y: 50,
-                opacity: 0,
-                duration: 0.8,
-                scrollTrigger: {
-                    trigger: section,
-                    start: 'top 85%',
+            gsap.fromTo(section,
+                { y: 50, opacity: 0 },
+                {
+                    y: 0,
+                    opacity: 1,
+                    duration: 0.8,
+                    scrollTrigger: {
+                        trigger: section,
+                        start: 'top 85%',
+                    }
                 }
-            });
+            );
         });
 
     }, { scope: containerRef });
@@ -119,20 +119,20 @@ const Home: React.FC<HomeProps> = ({ onAddToCart }) => {
                 </div>
             </section>
 
-            {/* 2. Categories (Circular Style) (Unchanged) */}
-            <section className="categories-section py-16 bg-white">
+            {/* 2. Categories (Circular Style) */}
+            <section className="categories-section py-10 md:py-16 bg-white">
                 <div className="container mx-auto px-4 md:px-6">
-                    <h2 className="text-3xl font-black font-heading text-slate-900 text-center mb-12 uppercase tracking-tight">Shop By Category</h2>
-                    <div className="flex flex-wrap justify-center gap-4 md:gap-12">
-                        {CATEGORIES_DISPLAY.map((cat, idx) => (
-                            <div key={idx} className="flex flex-col items-center gap-4 group cursor-pointer" onClick={() => navigate('/products')}>
-                                <div className="w-24 h-24 md:w-32 md:h-32 rounded-full p-1 border-2 border-slate-100 group-hover:border-yellow-400 transition-colors duration-300">
-                                    <div className="w-full h-full rounded-full overflow-hidden relative">
+                    <h2 className="text-2xl md:text-3xl font-black font-heading text-slate-900 text-center mb-8 md:mb-12 uppercase tracking-tight">Shop By Category</h2>
+                    <div className="flex flex-wrap justify-center gap-3 md:gap-12">
+                        {CATEGORIES_LIST.map((cat, idx) => (
+                            <div key={idx} className="flex flex-col items-center gap-2 md:gap-4 group cursor-pointer w-[28%] md:w-auto" onClick={() => navigate('/products')}>
+                                <div className="w-20 h-20 md:w-32 md:h-32 rounded-full p-1 border-2 border-slate-100 group-hover:border-yellow-400 transition-colors duration-300">
+                                    <div className="w-full h-full rounded-full overflow-hidden relative bg-slate-100">
                                         <img src={cat.image} alt={cat.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
                                         <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
                                     </div>
                                 </div>
-                                <span className="text-sm md:text-base font-bold text-slate-900 uppercase tracking-wide group-hover:text-yellow-600 transition-colors">
+                                <span className="text-[10px] md:text-base font-bold text-slate-900 uppercase tracking-wide group-hover:text-yellow-600 transition-colors text-center leading-tight">
                                     {cat.name}
                                 </span>
                             </div>
@@ -142,19 +142,19 @@ const Home: React.FC<HomeProps> = ({ onAddToCart }) => {
             </section>
 
             {/* 3. Best Sellers Section (Unchanged) */}
-            <section className="bestsellers-section py-12 bg-slate-50">
+            <section className="bestsellers-section py-10 md:py-12 bg-slate-50">
                 <div className="container mx-auto px-4 md:px-6">
-                    <div className="flex justify-between items-end mb-10">
+                    <div className="flex justify-between items-end mb-6 md:mb-10">
                         <div>
-                            <h2 className="text-3xl font-black font-heading text-slate-900 tracking-tight mb-2">Best Sellers</h2>
-                            <p className="text-slate-500">Top rated products by our community.</p>
+                            <h2 className="text-2xl md:text-3xl font-black font-heading text-slate-900 tracking-tight mb-1 md:mb-2">Best Sellers</h2>
+                            <p className="text-sm md:text-base text-slate-500">Top rated products by our community.</p>
                         </div>
-                        <button onClick={() => navigate('/products')} className="hidden md:flex items-center gap-2 text-sm font-bold text-yellow-600 hover:underline">
-                            View All <ArrowUpRight size={16} />
+                        <button onClick={() => navigate('/products')} className="flex items-center gap-1 md:gap-2 text-[10px] md:text-sm font-bold text-yellow-600 hover:underline border border-yellow-200 bg-yellow-50 px-3 py-1.5 md:border-none md:bg-transparent md:px-0 md:py-0 rounded-full md:rounded-none">
+                            View All <ArrowUpRight size={14} className="md:w-4 md:h-4" />
                         </button>
                     </div>
 
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-8">
                         {bestSellers.map(product => (
                             <ProductCard key={product.id} product={product} onAddToCart={onAddToCart} />
                         ))}
@@ -163,28 +163,28 @@ const Home: React.FC<HomeProps> = ({ onAddToCart }) => {
             </section>
 
             {/* 4. Authenticity Banner (FIXED) */}
-            <section className="authenticity-section py-16 md:py-24 bg-slate-900 relative overflow-hidden my-6 md:my-8">
+            <section className="authenticity-section py-12 md:py-24 bg-slate-900 relative overflow-hidden my-4 md:my-8">
                 <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20"></div>
                 {/* Added a subtle radial gradient for spotlight effect */}
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-radial-gradient from-white/5 to-transparent opacity-50 pointer-events-none"></div>
 
                 <div className="container mx-auto px-4 md:px-6 relative z-10">
-                    <div className="max-w-4xl mx-auto text-center bg-slate-800/50 backdrop-blur-md rounded-[3rem] p-12 border border-white/5 shadow-2xl">
-                        <div className="inline-flex items-center justify-center p-5 bg-yellow-400 rounded-2xl mb-8 text-slate-900 shadow-lg shadow-yellow-400/20 transform hover:rotate-12 transition-transform duration-300">
-                            <ShieldCheck size={42} strokeWidth={2} />
+                    <div className="max-w-4xl mx-auto text-center bg-slate-800/50 backdrop-blur-md rounded-[2rem] md:rounded-[3rem] p-8 md:p-12 border border-white/5 shadow-2xl">
+                        <div className="inline-flex items-center justify-center p-4 md:p-5 bg-yellow-400 rounded-2xl mb-6 md:mb-8 text-slate-900 shadow-lg shadow-yellow-400/20 transform hover:rotate-12 transition-transform duration-300">
+                            <ShieldCheck size={32} className="md:w-[42px] md:h-[42px]" strokeWidth={2} />
                         </div>
-                        <h2 className="text-3xl md:text-6xl font-black font-heading text-white uppercase tracking-tight mb-6 leading-none">
-                            100% Authentic. <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-200">Guaranteed.</span>
+                        <h2 className="text-2xl md:text-6xl font-black font-heading text-white uppercase tracking-tight mb-4 md:mb-6 leading-none">
+                            100% Authentic. <br className="hidden md:block" /><span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-200">Guaranteed.</span>
                         </h2>
-                        <p className="text-slate-300 text-base md:text-xl max-w-2xl mx-auto mb-8 md:mb-10 leading-relaxed font-light">
+                        <p className="text-slate-300 text-sm md:text-xl max-w-2xl mx-auto mb-6 md:mb-10 leading-relaxed font-light">
                             We take purity seriously. Every product is sourced directly from the manufacturer and verified for authenticity. Scan, verify, and consume with confidence.
                         </p>
-                        <div className="flex justify-center">
+                        <div className="flex justify-center flex-col sm:flex-row gap-3">
                             <Button
                                 onClick={() => navigate('/products')}
-                                className="bg-yellow-400 text-slate-900 hover:bg-yellow-300 font-black uppercase px-10 py-5 text-lg rounded-xl shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all flex items-center gap-3"
+                                className="bg-yellow-400 text-slate-900 hover:bg-yellow-300 font-black uppercase px-6 py-4 md:px-10 md:py-5 text-sm md:text-lg rounded-xl shadow-xl flex items-center justify-center gap-2 hover:shadow-2xl hover:-translate-y-1 transition-all w-full md:w-auto"
                             >
-                                <CheckCircle2 size={24} />
+                                <CheckCircle2 size={20} className="md:w-6 md:h-6" />
                                 Shop Verified Products
                             </Button>
                         </div>
@@ -192,20 +192,82 @@ const Home: React.FC<HomeProps> = ({ onAddToCart }) => {
                 </div>
             </section>
 
-            {/* 5. New Arrivals Section (Unchanged) */}
-            <section className="new-arrivals-section py-12 bg-white">
+            {/* Real Results / Transformations Preview */}
+            <section className="py-12 md:py-24 bg-slate-50 relative z-30 overflow-hidden">
+                <div className="container mx-auto px-4 md:px-6 relative z-10">
+                    <div className="text-center mb-10 md:mb-16">
+                        <span className="text-yellow-500 font-bold tracking-widest uppercase text-xs md:text-sm mb-2 md:mb-4 block">Proven Success</span>
+                        <h2 className="text-3xl md:text-5xl lg:text-6xl font-black font-heading text-slate-900 mb-4 md:mb-6 uppercase tracking-tight">
+                            Real <span className="text-slate-400">Results</span>
+                        </h2>
+                        <p className="text-slate-500 max-w-2xl mx-auto text-sm md:text-lg leading-relaxed font-medium">
+                            Discipline and the right fuel create masterpieces. See what our clients have achieved with JFS Fitness.
+                        </p>
+                        <div className="w-16 md:w-24 h-1.5 bg-yellow-400 mx-auto rounded-full mt-4 md:mt-6"></div>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 overflow-hidden px-1 md:px-0">
+                        {TRANSFORMATIONS.slice(0, 3).map((item) => (
+                            <div key={item.id} className="bg-white border border-slate-200 rounded-[2rem] md:rounded-[2.5rem] overflow-hidden hover:border-yellow-400 hover:shadow-2xl transition-all duration-300 group hover:-translate-y-2 snap-center">
+                                <div className="flex h-48 md:h-72 relative bg-slate-100">
+                                    <div className="w-1/2 relative border-r border-slate-200">
+                                        <img src={item.imageBefore} alt="Before" className="w-full h-full object-cover filter grayscale opacity-90 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500 pointer-events-none" />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent pointer-events-none"></div>
+                                        <span className="absolute bottom-2 left-2 md:bottom-3 md:left-3 bg-white/90 text-slate-900 text-[8px] md:text-[10px] font-black tracking-widest px-2 py-1 rounded uppercase shadow-sm backdrop-blur pointer-events-none">BEFORE</span>
+                                    </div>
+                                    <div className="w-1/2 relative">
+                                        <img src={item.imageAfter} alt="After" className="w-full h-full object-cover pointer-events-none" />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent pointer-events-none"></div>
+                                        <span className="absolute bottom-2 right-2 md:bottom-3 md:right-3 bg-yellow-400 text-slate-900 text-[8px] md:text-[10px] font-black tracking-widest px-2 py-1 rounded uppercase shadow-sm pointer-events-none">AFTER</span>
+                                    </div>
+                                </div>
+                                <div className="p-6 md:p-8">
+                                    <div className="flex justify-between items-start mb-3 md:mb-4">
+                                        <h3 className="text-xl md:text-2xl font-black text-slate-900 font-heading uppercase tracking-tight">{item.name}</h3>
+                                        <span className="text-slate-500 text-[10px] md:text-xs font-bold border border-slate-200 px-2 py-1 md:px-3 rounded-lg uppercase tracking-widest bg-slate-50 whitespace-nowrap">{item.duration}</span>
+                                    </div>
+                                    <div className="bg-green-50/50 p-2 md:p-3 rounded-xl mb-3 md:mb-4 border border-green-100/50">
+                                        <p className="text-green-700 text-[10px] md:text-xs font-bold uppercase flex items-center gap-1 md:gap-2 leading-tight">
+                                            <CheckCircle2 size={12} className="md:w-3.5 md:h-3.5 flex-shrink-0" />
+                                            {item.result}
+                                        </p>
+                                    </div>
+                                    <p className="text-slate-600 font-medium italic mb-2 relative text-sm md:text-base">
+                                        <span className="text-2xl md:text-3xl text-slate-200 absolute -top-2 md:-top-3 -left-1 md:-left-2 font-serif pointer-events-none">"</span>
+                                        <span className="relative z-10 pl-2 md:pl-3 line-clamp-3 md:line-clamp-none">{item.testimonial}</span>
+                                    </p>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+
+                    <div className="text-center mt-10 md:mt-16">
+                        <Button
+                            onClick={() => navigate('/transformations')}
+                            size="lg"
+                            className="bg-slate-900 text-white font-bold px-8 md:px-10 text-sm md:text-base hover:bg-slate-800 w-full md:w-auto rounded-xl md:rounded-full"
+                            icon={<ArrowUpRight size={18} className="md:w-5 md:h-5" />}
+                        >
+                            See All Transformations
+                        </Button>
+                    </div>
+                </div>
+            </section>
+
+            {/* 5. New Arrivals Section */}
+            <section className="new-arrivals-section py-10 md:py-12 bg-white">
                 <div className="container mx-auto px-4 md:px-6">
-                    <div className="flex justify-between items-end mb-10">
+                    <div className="flex justify-between items-end mb-6 md:mb-10">
                         <div>
-                            <span className="text-yellow-500 font-bold uppercase tracking-widest text-xs">Just Dropped</span>
-                            <h2 className="text-3xl font-black font-heading text-slate-900 tracking-tight mt-1">New Arrivals</h2>
+                            <span className="text-yellow-500 font-bold uppercase tracking-widest text-[10px] md:text-xs">Just Dropped</span>
+                            <h2 className="text-2xl md:text-3xl font-black font-heading text-slate-900 tracking-tight mt-0.5 md:mt-1">New Arrivals</h2>
                         </div>
-                        <button onClick={() => navigate('/products')} className="hidden md:flex items-center gap-2 text-sm font-bold text-slate-900 hover:underline">
-                            See All Products <ChevronRight size={16} />
+                        <button onClick={() => navigate('/products')} className="flex items-center gap-1 md:gap-2 text-[10px] md:text-sm font-bold text-slate-900 hover:underline border border-slate-200 bg-slate-50 px-3 py-1.5 md:border-none md:bg-transparent md:px-0 md:py-0 rounded-full md:rounded-none">
+                            See All <ChevronRight size={14} className="md:w-4 md:h-4" />
                         </button>
                     </div>
 
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-8">
                         {newArrivals.map(product => (
                             <ProductCard key={product.id} product={product} onAddToCart={onAddToCart} />
                         ))}
@@ -214,47 +276,47 @@ const Home: React.FC<HomeProps> = ({ onAddToCart }) => {
             </section>
 
             {/* 6. Promotional Split Banners (Unchanged) */}
-            <section className="py-12 bg-white">
+            <section className="py-10 md:py-12 bg-white">
                 <div className="container mx-auto px-4 md:px-6">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                         {/* Banner 1 */}
-                        <div className="relative h-80 md:h-96 rounded-[2rem] overflow-hidden group cursor-pointer">
+                        <div className="relative h-64 md:h-96 rounded-[1.5rem] md:rounded-[2rem] overflow-hidden group cursor-pointer">
                             <img
                                 src="https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?q=80&w=1200&auto=format&fit=crop"
                                 alt="Gains"
                                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                             />
                             <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 to-transparent"></div>
-                            <div className="absolute inset-0 p-8 md:p-12 flex flex-col justify-center items-start">
-                                <span className="text-yellow-400 font-bold uppercase tracking-widest text-sm mb-2">Build Muscle</span>
-                                <h3 className="text-4xl md:text-5xl font-black font-heading text-white leading-tight mb-6">
+                            <div className="absolute inset-0 p-6 md:p-12 flex flex-col justify-center items-start">
+                                <span className="text-yellow-400 font-bold uppercase tracking-widest text-[10px] md:text-sm mb-1 md:mb-2">Build Muscle</span>
+                                <h3 className="text-2xl md:text-5xl font-black font-heading text-white leading-tight mb-4 md:mb-6">
                                     PACK ON <br /> SERIOUS GAINS
                                 </h3>
-                                <div className="flex flex-col gap-1 text-white/80 font-medium mb-8">
-                                    <span className="flex items-center gap-2"><CheckCircle2 size={16} className="text-yellow-400" /> Mass Gainers</span>
-                                    <span className="flex items-center gap-2"><CheckCircle2 size={16} className="text-yellow-400" /> Creatine Monohydrate</span>
+                                <div className="flex flex-col gap-1 text-white/80 font-medium mb-6 md:mb-8 text-xs md:text-base">
+                                    <span className="flex items-center gap-2"><CheckCircle2 size={14} className="md:w-4 md:h-4 text-yellow-400" /> Mass Gainers</span>
+                                    <span className="flex items-center gap-2"><CheckCircle2 size={14} className="md:w-4 md:h-4 text-yellow-400" /> Creatine</span>
                                 </div>
-                                <Button className="bg-white text-slate-900 hover:bg-slate-100 font-bold">
+                                <Button className="bg-white text-slate-900 hover:bg-slate-100 font-bold text-xs md:text-sm px-4 py-2 md:px-6 md:py-3">
                                     Shop Essentials
                                 </Button>
                             </div>
                         </div>
 
                         {/* Banner 2 */}
-                        <div className="relative h-80 md:h-96 rounded-[2rem] overflow-hidden group cursor-pointer">
+                        <div className="relative h-64 md:h-96 rounded-[1.5rem] md:rounded-[2rem] overflow-hidden group cursor-pointer">
                             <img
                                 src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1200&auto=format&fit=crop"
                                 alt="Performance"
                                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                             />
                             <div className="absolute inset-0 bg-gradient-to-l from-red-900/90 to-red-900/40"></div>
-                            <div className="absolute inset-0 p-8 md:p-12 flex flex-col justify-center items-end text-right">
-                                <span className="text-white/80 font-bold uppercase tracking-widest text-sm mb-2">Limited Time</span>
-                                <h3 className="text-4xl md:text-5xl font-black font-heading text-white leading-tight mb-4">
+                            <div className="absolute inset-0 p-6 md:p-12 flex flex-col justify-center items-end text-right">
+                                <span className="text-white/80 font-bold uppercase tracking-widest text-[10px] md:text-sm mb-1 md:mb-2">Limited Time</span>
+                                <h3 className="text-2xl md:text-5xl font-black font-heading text-white leading-tight mb-2 md:mb-4">
                                     BUY 2 GET <br /> <span className="text-yellow-400">EXTRA 15% OFF</span>
                                 </h3>
-                                <p className="text-white/90 mb-8 max-w-xs">Use code <strong>POWER15</strong> at checkout on all pre-workouts and BCAAs.</p>
-                                <Button className="bg-yellow-400 text-slate-900 hover:bg-yellow-300 font-bold">
+                                <p className="text-white/90 mb-6 md:mb-8 max-w-[200px] md:max-w-xs text-xs md:text-base">Use code <strong>POWER15</strong> at checkout.</p>
+                                <Button className="bg-yellow-400 text-slate-900 hover:bg-yellow-300 font-bold text-xs md:text-sm px-4 py-2 md:px-6 md:py-3">
                                     Grab The Deal
                                 </Button>
                             </div>

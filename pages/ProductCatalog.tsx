@@ -21,7 +21,8 @@ const ProductCatalog: React.FC<ProductCatalogProps> = ({ onAddToCart }) => {
   // Filter products based on Category AND Search Term
   const filteredProducts = PRODUCTS.filter(p => {
     const matchesCategory = selectedCategory === 'All' || p.category === selectedCategory;
-    const matchesSearch = p.name.toLowerCase().includes(searchTerm.toLowerCase());
+    const term = searchTerm.toLowerCase();
+    const matchesSearch = p.name.toLowerCase().includes(term) || p.brand.toLowerCase().includes(term);
     return matchesCategory && matchesSearch;
   });
 
@@ -97,19 +98,19 @@ const ProductCatalog: React.FC<ProductCatalogProps> = ({ onAddToCart }) => {
         </div>
 
         {/* Category Filter Section */}
-        <div className="mb-12">
-          <div className="category-label flex items-center gap-2 text-sm font-bold text-slate-400 uppercase tracking-widest mb-4">
-            <Filter size={14} />
+        <div className="mb-8 md:mb-12">
+          <div className="category-label flex items-center gap-2 text-xs md:text-sm font-bold text-slate-400 uppercase tracking-widest mb-3 md:mb-4">
+            <Filter size={14} className="md:w-4 md:h-4" />
             <span>Filter by Category</span>
           </div>
 
           {/* Scrollable on mobile, Wrapped on desktop. Added min-height to prevent collapse during loading */}
-          <div className="flex gap-3 overflow-x-auto pb-4 md:pb-0 scrollbar-hide -mx-4 px-4 md:mx-0 md:px-0 md:flex-wrap min-h-[50px] items-start">
+          <div className="flex gap-2 md:gap-3 overflow-x-auto pb-4 md:pb-0 scrollbar-hide -mx-4 px-4 md:mx-0 md:px-0 md:flex-wrap min-h-[50px] items-start">
             {categories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
-                className={`category-pill flex-shrink-0 whitespace-nowrap px-6 py-2.5 rounded-full text-sm font-bold transition-all duration-300 border select-none ${selectedCategory === cat
+                className={`category-pill flex-shrink-0 whitespace-nowrap px-4 py-2 md:px-6 md:py-2.5 rounded-full text-xs md:text-sm font-bold transition-all duration-300 border select-none ${selectedCategory === cat
                   ? 'bg-slate-900 text-white border-slate-900 shadow-xl shadow-slate-900/20 transform scale-105'
                   : 'bg-white text-slate-500 border-slate-200 hover:border-slate-300 hover:bg-slate-50 hover:text-slate-900'
                   }`}
@@ -121,7 +122,7 @@ const ProductCatalog: React.FC<ProductCatalogProps> = ({ onAddToCart }) => {
         </div>
 
         {/* Product Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-8">
           {filteredProducts.length > 0 ? (
             filteredProducts.map((product) => (
               <div key={product.id} className="product-item">
@@ -132,15 +133,15 @@ const ProductCatalog: React.FC<ProductCatalogProps> = ({ onAddToCart }) => {
               </div>
             ))
           ) : (
-            <div className="col-span-full py-32 text-center bg-white rounded-3xl border border-dashed border-slate-200 product-item">
-              <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-slate-50 text-slate-300 mb-6">
-                <Search size={32} />
+            <div className="col-span-full py-16 md:py-32 text-center bg-white rounded-3xl border border-dashed border-slate-200 product-item">
+              <div className="inline-flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-full bg-slate-50 text-slate-300 mb-4 md:mb-6">
+                <Search size={24} className="md:w-8 md:h-8" />
               </div>
-              <h3 className="text-2xl font-black text-slate-900 mb-2">No products found</h3>
-              <p className="text-slate-500 font-medium">We couldn't find any matches for "{searchTerm}" in {selectedCategory}.</p>
+              <h3 className="text-xl md:text-2xl font-black text-slate-900 mb-2">No products found</h3>
+              <p className="text-slate-500 font-medium text-sm md:text-base">We couldn't find any matches for "{searchTerm}" in {selectedCategory}.</p>
               <button
                 onClick={() => { setSearchTerm(''); setSelectedCategory('All'); }}
-                className="mt-6 text-yellow-600 font-bold hover:underline"
+                className="mt-4 md:mt-6 text-yellow-600 font-bold hover:underline text-sm md:text-base"
               >
                 Clear all filters
               </button>

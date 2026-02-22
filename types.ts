@@ -2,12 +2,21 @@ export interface Product {
   id: string;
   name: string;
   category: Category;
+  brand: string;
   price: number;
   image: string;
+  images?: string[];
   rating: number;
   description: string;
+  weight?: string;
   isTrending?: boolean;
   discount?: number;
+  flavours?: Flavour[];
+}
+
+export interface Flavour {
+  name: string;
+  image: string;
 }
 
 export enum Category {
@@ -37,4 +46,22 @@ export interface Testimonial {
 export interface FaqItem {
   question: string;
   answer: string;
+}
+
+export interface Transformation {
+  id: string;
+  name: string;
+  duration: string;
+  imageBefore: string;
+  imageAfter: string;
+  testimonial: string;
+  result: string;
+}
+
+export interface CoachingPackage {
+  id: string;
+  title: string;
+  duration: string;
+  price: number;
+  features: string[];
 }

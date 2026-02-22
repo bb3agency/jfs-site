@@ -6,6 +6,9 @@ import Home from './pages/Home';
 import ProductCatalog from './pages/ProductCatalog';
 import TestimonialsPage from './pages/TestimonialsPage';
 import ProductDetails from './pages/ProductDetails';
+import Transformations from './pages/Transformations';
+import Coaching from './pages/Coaching';
+import AboutContact from './pages/AboutContact';
 import { CartItem, Product } from './types';
 import Footer from './components/Footer';
 
@@ -82,6 +85,9 @@ const App: React.FC = () => {
               }
             />
             <Route path="/testimonials" element={<TestimonialsPage />} />
+            <Route path="/transformations" element={<Transformations />} />
+            <Route path="/coaching" element={<Coaching />} />
+            <Route path="/about-contact" element={<AboutContact />} />
           </Routes>
         </main>
 

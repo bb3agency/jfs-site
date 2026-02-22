@@ -1,6 +1,6 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { ArrowLeft, Plus, Minus, Check, Truck, ShieldCheck } from 'lucide-react';
+import { ArrowLeft, Plus, Minus, Check, Truck, ShieldCheck, Star } from 'lucide-react';
 import { PRODUCTS } from '../data';
 import { Product, CartItem } from '../types';
 import gsap from 'gsap';
@@ -17,6 +17,8 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ onAddToCart, cartItems,
   const navigate = useNavigate();
   const product = PRODUCTS.find((p) => p.id === id);
   const containerRef = useRef<HTMLDivElement>(null);
+  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
+  const [selectedFlavour, setSelectedFlavour] = useState<string | null>(null);
 
   if (!product) {
     return <div className="p-10 text-center">Product not found</div>;
@@ -25,12 +27,13 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ onAddToCart, cartItems,
   const cartItem = cartItems.find(item => item.id === product.id);
   const quantity = cartItem ? cartItem.quantity : 0;
 
-  const specs = [
-    { label: 'Servings', value: '30 Scoops' },
-    { label: 'Protein', value: '24g' },
-    { label: 'Sugar', value: '0g' },
-    { label: 'Flavor', value: 'Chocolate' },
-  ];
+  // Use the images array if available, else fall back to single image
+  const allImages = product.images && product.images.length > 0 ? product.images : [product.image];
+
+  // When a flavour is selected, update the main image
+  const currentImage = selectedFlavour
+    ? product.flavours?.find(f => f.name === selectedFlavour)?.image || allImages[selectedImageIndex]
+    : allImages[selectedImageIndex];
 
   const handleBuyClick = () => {
     onAddToCart(product);
@@ -53,59 +56,105 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ onAddToCart, cartItems,
   useGSAP(() => {
     const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
 
-    tl.from('.detail-img', { x: -50, opacity: 0, duration: 1 })
-      .from('.detail-content > *', {
-        y: 30,
-        opacity: 0,
-        duration: 0.8,
-        stagger: 0.1
-      }, "-=0.5");
+    tl.fromTo('.detail-img',
+      { x: -50, opacity: 0 },
+      { x: 0, opacity: 1, duration: 1 }
+    )
+      .fromTo('.detail-content > *',
+        { y: 30, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
+          stagger: 0.1
+        },
+        "-=0.5"
+      );
 
   }, { scope: containerRef });
 
   return (
-    <div ref={containerRef} className="min-h-screen bg-white pt-16 md:pt-24 pb-20">
-      <div className="container mx-auto px-6">
+    <div ref={containerRef} className="min-h-screen bg-white pt-24 md:pt-32 pb-20">
+      <div className="container mx-auto px-4 md:px-6">
         <button
           onClick={() => navigate(-1)}
-          className="flex items-center gap-2 text-slate-500 hover:text-slate-900 mb-8 transition-colors group"
+          className="flex items-center gap-2 text-sm md:text-base text-slate-500 hover:text-slate-900 mb-6 md:mb-8 transition-colors group"
         >
-          <ArrowLeft size={20} className="group-hover:-translate-x-1 transition-transform" />
+          <ArrowLeft size={18} className="md:w-5 md:h-5 group-hover:-translate-x-1 transition-transform" />
           Back to browsing
         </button>
 
-        <div className="flex flex-col md:flex-row gap-12 lg:gap-20">
-          {/* Product Image */}
-          <div className="detail-img flex-1 bg-slate-100 rounded-[2rem] overflow-hidden relative aspect-square md:aspect-auto md:h-[600px] group">
-            <img
-              src={product.image}
-              alt={product.name}
-              className="w-full h-full object-cover mix-blend-multiply transition-transform duration-700 group-hover:scale-105"
-            />
-            {product.discount && (
-              <div className="absolute top-6 left-6 bg-yellow-400 text-slate-900 font-bold px-3 py-1 rounded-full text-sm shadow-lg">
-                {product.discount}% OFF
+        <div className="flex flex-col md:flex-row gap-8 md:gap-12 lg:gap-20">
+          {/* Product Image Section */}
+          <div className="detail-img flex-1 w-full max-w-xl mx-auto md:max-w-none">
+            {/* Main Image */}
+            <div className="bg-slate-100 rounded-3xl md:rounded-[2rem] overflow-hidden relative aspect-square md:aspect-auto md:h-[550px] group mb-4">
+              <img
+                src={currentImage}
+                alt={product.name}
+                className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105 p-6 md:p-8"
+              />
+              {product.discount && (
+                <div className="absolute top-4 left-4 md:top-6 md:left-6 bg-yellow-400 text-slate-900 font-bold px-2 py-1 md:px-3 md:py-1 rounded-full text-xs md:text-sm shadow-lg">
+                  {product.discount}% OFF
+                </div>
+              )}
+            </div>
+
+            {/* Thumbnail Gallery */}
+            {allImages.length > 1 && (
+              <div className="flex gap-2 md:gap-3 overflow-x-auto pb-2 scrollbar-hide">
+                {allImages.map((imgSrc, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => { setSelectedImageIndex(idx); setSelectedFlavour(null); }}
+                    className={`flex-shrink-0 w-16 h-16 md:w-20 md:h-20 rounded-xl overflow-hidden border-2 transition-all duration-200 bg-slate-50 ${selectedImageIndex === idx && !selectedFlavour
+                      ? 'border-slate-900 shadow-md'
+                      : 'border-slate-200 hover:border-slate-400'
+                      }`}
+                  >
+                    <img src={imgSrc} alt={`View ${idx + 1}`} className="w-full h-full object-contain p-1 md:p-2" />
+                  </button>
+                ))}
               </div>
             )}
           </div>
 
           {/* Product Info */}
-          <div className="detail-content flex-1 flex flex-col justify-center">
-            <span className="text-yellow-500 font-bold uppercase tracking-widest text-sm mb-2">
+          <div className="detail-content flex-1 flex flex-col justify-start md:justify-center">
+            {/* Brand */}
+            <span className="text-slate-400 font-bold uppercase tracking-widest text-[10px] md:text-xs mb-1">
+              {product.brand}
+            </span>
+            {/* Category */}
+            <span className="text-yellow-500 font-bold uppercase tracking-widest text-xs md:text-sm mb-1 md:mb-2">
               {product.category}
             </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black font-heading text-slate-900 tracking-tight mb-4 leading-tight">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black font-heading text-slate-900 tracking-tight mb-2 md:mb-3 leading-tight">
               {product.name}
             </h1>
+            {product.weight && (
+              <span className="text-slate-500 font-bold text-xs md:text-sm mb-3 md:mb-4 block">{product.weight}</span>
+            )}
 
-            <div className="flex items-center gap-4 mb-6">
+            {/* Rating */}
+            <div className="flex items-center gap-1.5 md:gap-2 mb-4 md:mb-6">
+              <div className="flex text-yellow-400">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} size={14} className="md:w-4 md:h-4" fill={i < Math.floor(product.rating) ? "currentColor" : "none"} strokeWidth={2} />
+                ))}
+              </div>
+              <span className="text-xs md:text-sm text-slate-500 font-bold">{product.rating}</span>
+            </div>
+
+            <div className="flex items-center gap-3 md:gap-4 mb-4 md:mb-6">
               <div className="flex items-baseline gap-2">
-                <span className="text-3xl font-black text-slate-900">
-                  ₹{product.price.toFixed(2)}
+                <span className="text-2xl md:text-3xl font-black text-slate-900">
+                  ₹{product.price.toLocaleString()}
                 </span>
                 {product.discount && (
-                  <span className="text-lg text-slate-400 line-through font-medium">
-                    ₹{(product.price * (1 + product.discount / 100)).toFixed(2)}
+                  <span className="text-sm md:text-lg text-slate-400 line-through font-medium">
+                    ₹{Math.round(product.price * (1 + product.discount / 100)).toLocaleString()}
                   </span>
                 )}
               </div>
@@ -115,18 +164,31 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ onAddToCart, cartItems,
             </div>
 
             <p className="text-slate-500 text-lg leading-relaxed mb-8">
-              {product.description} This premium formulation is designed to support muscle recovery and growth, providing essential nutrients exactly when your body needs them most.
+              {product.description}
             </p>
 
-            {/* Specs Grid */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
-              {specs.map((spec, idx) => (
-                <div key={idx} className="bg-slate-50 p-4 rounded-2xl border border-slate-100">
-                  <div className="text-slate-400 text-xs font-bold uppercase tracking-wider mb-1">{spec.label}</div>
-                  <div className="text-slate-900 font-bold">{spec.value}</div>
+            {/* Flavour Selector */}
+            {product.flavours && product.flavours.length > 0 && (
+              <div className="mb-8">
+                <span className="text-slate-400 font-bold uppercase tracking-widest text-xs block mb-3">Available Flavours</span>
+                <div className="flex flex-wrap gap-3">
+                  {product.flavours.map((flav) => (
+                    <button
+                      key={flav.name}
+                      onClick={() => {
+                        setSelectedFlavour(flav.name === selectedFlavour ? null : flav.name);
+                      }}
+                      className={`px-5 py-2.5 rounded-full text-sm font-bold border-2 transition-all duration-200 ${selectedFlavour === flav.name
+                        ? 'bg-slate-900 text-white border-slate-900 shadow-lg'
+                        : 'bg-white text-slate-600 border-slate-200 hover:border-slate-400'
+                        }`}
+                    >
+                      {flav.name}
+                    </button>
+                  ))}
                 </div>
-              ))}
-            </div>
+              </div>
+            )}
 
             {/* Actions */}
             <div className="flex flex-col sm:flex-row gap-4 mb-10 border-t border-b border-slate-100 py-8">
@@ -148,7 +210,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ onAddToCart, cartItems,
                 </button>
               </div>
 
-              {/* Add to Cart / Buy Now (if needed) */}
+              {/* Add to Cart / Buy Now */}
               {quantity === 0 && (
                 <button
                   onClick={handleBuyClick}
@@ -159,7 +221,6 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ onAddToCart, cartItems,
               )}
               {quantity > 0 && (
                 <button
-                  onClick={() => { /* Open cart drawer logic if available via props or context, otherwise just a visual indicator */ }}
                   className="flex-1 bg-green-500 text-white font-bold px-8 py-4 rounded-full uppercase tracking-wider cursor-default"
                 >
                   Added to Cart
@@ -171,11 +232,11 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ onAddToCart, cartItems,
             <div className="flex flex-col gap-4 text-sm text-slate-500 font-medium">
               <div className="flex items-center gap-3">
                 <Truck size={20} className="text-slate-900" />
-                <span>Free shipping on orders over $50</span>
+                <span>Free shipping on orders over ₹999</span>
               </div>
               <div className="flex items-center gap-3">
                 <ShieldCheck size={20} className="text-slate-900" />
-                <span>30-day money-back guarantee</span>
+                <span>100% Authentic — Direct from manufacturer</span>
               </div>
             </div>
 

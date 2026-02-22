@@ -8,16 +8,25 @@ const TestimonialsPage: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
-    gsap.from('.page-title', { y: 50, opacity: 0, duration: 1, ease: 'power3.out' });
-    gsap.from('.page-desc', { y: 30, opacity: 0, duration: 0.8, delay: 0.2 });
-    gsap.from('.testimonial-item', {
-      y: 100,
-      opacity: 0,
-      duration: 0.8,
-      stagger: 0.15,
-      ease: 'power2.out',
-      delay: 0.4
-    });
+    gsap.fromTo('.page-title',
+      { y: 50, opacity: 0 },
+      { y: 0, opacity: 1, duration: 1, ease: 'power3.out' }
+    );
+    gsap.fromTo('.page-desc',
+      { y: 30, opacity: 0 },
+      { y: 0, opacity: 1, duration: 0.8, delay: 0.2 }
+    );
+    gsap.fromTo('.testimonial-item',
+      { y: 100, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.8,
+        stagger: 0.15,
+        ease: 'power2.out',
+        delay: 0.4
+      }
+    );
   }, { scope: containerRef });
 
   return (

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { ShoppingBag, Menu, X, Home as HomeIcon, LayoutGrid, Quote, LogOut, User } from 'lucide-react';
+import { ShoppingBag, Menu, X, Home as HomeIcon, LayoutGrid, Quote, LogOut, User, Trophy, Mail } from 'lucide-react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
@@ -47,9 +47,10 @@ const Navbar: React.FC<NavbarProps> = ({ cartCount, onCartClick }) => {
   }, { scope: navRef });
 
   const navLinks = [
-    { name: 'Home', path: '/', icon: <HomeIcon size={24} /> },
     { name: 'Products', path: '/products', icon: <LayoutGrid size={24} /> },
-    { name: 'Testimonials', path: '/testimonials', icon: <Quote size={24} /> },
+    { name: 'Coaching', path: '/coaching', icon: <User size={24} /> },
+    { name: 'Real Results', path: '/transformations', icon: <Trophy size={24} /> },
+    { name: 'Contact', path: '/about-contact', icon: <Mail size={24} /> },
   ];
 
   return (

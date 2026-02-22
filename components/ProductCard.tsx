@@ -24,13 +24,13 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onAddToCart }) => {
   return (
     <div
       onClick={handleCardClick}
-      className="group relative w-full aspect-[4/5] rounded-3xl overflow-hidden cursor-pointer bg-slate-200 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
+      className="group relative w-full aspect-[4/5] rounded-3xl overflow-hidden cursor-pointer bg-white border border-slate-100 transition-all duration-300 hover:shadow-2xl hover:border-yellow-400 hover:-translate-y-1"
     >
       {/* Background Image */}
       <img
         src={product.image}
         alt={product.name}
-        className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+        className="h-full w-full object-contain p-6 md:p-8 transition-transform duration-700 group-hover:scale-110"
       />
 
       {/* Discount Badge (Top Left) */}
