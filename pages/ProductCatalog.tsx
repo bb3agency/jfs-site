@@ -1,4 +1,5 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import ProductCard from '../components/ProductCard';
 import { PRODUCTS } from '../data';
 import { Product, Category } from '../types';
@@ -11,9 +12,19 @@ interface ProductCatalogProps {
 }
 
 const ProductCatalog: React.FC<ProductCatalogProps> = ({ onAddToCart }) => {
-  const [selectedCategory, setSelectedCategory] = useState<string>('All');
+  const [searchParams] = useSearchParams();
+  const initialCategory = searchParams.get('category') || 'All';
+
+  const [selectedCategory, setSelectedCategory] = useState<string>(initialCategory);
   const [searchTerm, setSearchTerm] = useState<string>('');
   const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const cat = searchParams.get('category');
+    if (cat) {
+      setSelectedCategory(cat);
+    }
+  }, [searchParams]);
 
   // Generate categories list including 'All'
   const categories = ['All', ...Object.values(Category)];

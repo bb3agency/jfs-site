@@ -457,9 +457,9 @@ export const PRODUCTS: Product[] = [
 
 export const CATEGORIES_LIST = [
   { name: 'Whey Protein', image: img('Whey Protein/V-Whey/vwhey.webp') },
-  { name: 'Whey Isolate', image: img('Whey Isolate/HM isolate/HM_Blueberrycheesecake/IsoZero2kgblueberrycheesecakefront.webp') },
-  { name: 'Mass Gainer', image: img('Mass Gainers/HM pro bulk 3kg/PRO-BULK-_1.webp') },
-  { name: 'Pre-Workout', image: img('Pre-workout/HM pump/beach_cocktail/beach_cocktail_PRO_PUMP_CAFFEINE_FREE_1.webp') },
+  { name: 'Whey Isolate', image: img('Whey Protein/Incredi Bull/whey-incredibull-2kg-Current-View.webp') },
+  { name: 'Mass Gainer', image: img('Mass Gainers/DNA Pharma Mass Gainer/dna-pharma-mass.webp') },
+  { name: 'Pre-Workout', image: img('Pre-workout/Kevin Levron Shaboom pre/levrone-shaaboom-pump_1.webp') },
   { name: 'BCAA & EAA', image: img('BCAA-EAA/HM EAA+ BCAA/BlackCurrent_splash/black-currant-EAA_BCAA-_1.webp') },
   { name: 'Fat Burner', image: img('Fat Burners/RFN Fat Strom Xtreme/RFN-Fat-Burner_1.webp') },
   { name: 'L-Carnitine', image: img('L-Carnitine/LabradaSuperchargeCranberry.webp') },

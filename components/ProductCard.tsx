@@ -57,19 +57,6 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onAddToCart }) => {
           <h3 className="text-sm font-bold text-slate-900 leading-tight line-clamp-2">
             {product.name}
           </h3>
-          {/* Rating */}
-          <div className="flex items-center gap-1">
-            <div className="flex text-yellow-500">
-              <Star size={10} fill="currentColor" />
-              <Star size={10} fill="currentColor" />
-              <Star size={10} fill="currentColor" />
-              <Star size={10} fill="currentColor" />
-              <Star size={10} fill="currentColor" />
-            </div>
-            <span className="text-[9px] md:text-[10px] text-slate-400 font-bold ml-1">
-              ({Math.floor(Math.random() * 50) + 10})
-            </span>
-          </div>
         </div>
         {/* Price */}
         <div className="flex-shrink-0 mb-[1px] flex flex-col items-end">
