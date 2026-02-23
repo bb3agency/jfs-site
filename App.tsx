@@ -9,6 +9,7 @@ import ProductDetails from './pages/ProductDetails';
 import Transformations from './pages/Transformations';
 import Coaching from './pages/Coaching';
 import AboutContact from './pages/AboutContact';
+import FAQ from './pages/FAQ';
 import { CartItem, Product } from './types';
 import Footer from './components/Footer';
 
@@ -88,6 +89,7 @@ const App: React.FC = () => {
             <Route path="/transformations" element={<Transformations />} />
             <Route path="/coaching" element={<Coaching />} />
             <Route path="/about-contact" element={<AboutContact />} />
+            <Route path="/faq" element={<FAQ />} />
           </Routes>
         </main>
 

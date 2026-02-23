@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { ArrowLeft, Plus, Minus, Check, Truck, ShieldCheck, Star } from 'lucide-react';
+import { ArrowLeft, Plus, Minus, Check, Truck, ShieldCheck } from 'lucide-react';
 import { PRODUCTS } from '../data';
 import { Product, CartItem } from '../types';
 import gsap from 'gsap';
@@ -92,7 +92,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ onAddToCart, cartItems,
               <img
                 src={currentImage}
                 alt={product.name}
-                className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105 p-6 md:p-8"
+                className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105 p-2 sm:p-4 md:p-8"
               />
               {product.discount && (
                 <div className="absolute top-4 left-4 md:top-6 md:left-6 bg-yellow-400 text-slate-900 font-bold px-2 py-1 md:px-3 md:py-1 rounded-full text-xs md:text-sm shadow-lg">
@@ -104,18 +104,27 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ onAddToCart, cartItems,
             {/* Thumbnail Gallery */}
             {allImages.length > 1 && (
               <div className="flex gap-2 md:gap-3 overflow-x-auto pb-2 scrollbar-hide">
-                {allImages.map((imgSrc, idx) => (
-                  <button
-                    key={idx}
-                    onClick={() => { setSelectedImageIndex(idx); setSelectedFlavour(null); }}
-                    className={`flex-shrink-0 w-16 h-16 md:w-20 md:h-20 rounded-xl overflow-hidden border-2 transition-all duration-200 bg-slate-50 ${selectedImageIndex === idx && !selectedFlavour
-                      ? 'border-slate-900 shadow-md'
-                      : 'border-slate-200 hover:border-slate-400'
-                      }`}
-                  >
-                    <img src={imgSrc} alt={`View ${idx + 1}`} className="w-full h-full object-contain p-1 md:p-2" />
-                  </button>
-                ))}
+                {allImages.map((imgSrc, idx) => {
+                  const mappedFlavour = product.flavours?.find(f => f.image === imgSrc);
+                  return (
+                    <div key={idx} className="flex flex-col items-center gap-1.5 flex-shrink-0">
+                      <button
+                        onClick={() => { setSelectedImageIndex(idx); setSelectedFlavour(null); }}
+                        className={`w-16 h-16 md:w-20 md:h-20 rounded-xl overflow-hidden border-2 transition-all duration-200 bg-slate-50 ${selectedImageIndex === idx && !selectedFlavour
+                          ? 'border-slate-900 shadow-md'
+                          : 'border-slate-200 hover:border-slate-400'
+                          }`}
+                      >
+                        <img src={imgSrc} alt={`View ${idx + 1}`} className="w-full h-full object-contain p-1 md:p-2" />
+                      </button>
+                      {mappedFlavour && (
+                        <span className="text-[10px] md:text-xs font-bold text-slate-500 text-center max-w-[64px] md:max-w-[80px] leading-tight px-1 break-words">
+                          {mappedFlavour.name}
+                        </span>
+                      )}
+                    </div>
+                  );
+                })}
               </div>
             )}
           </div>
@@ -123,11 +132,11 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ onAddToCart, cartItems,
           {/* Product Info */}
           <div className="detail-content flex-1 flex flex-col justify-start md:justify-center">
             {/* Brand */}
-            <span className="text-slate-400 font-bold uppercase tracking-widest text-[10px] md:text-xs mb-1">
+            <span className="text-slate-400 font-bold uppercase tracking-tight text-[10px] md:text-xs mb-1">
               {product.brand}
             </span>
             {/* Category */}
-            <span className="text-yellow-500 font-bold uppercase tracking-widest text-xs md:text-sm mb-1 md:mb-2">
+            <span className="text-yellow-500 font-bold uppercase tracking-tight text-xs md:text-sm mb-1 md:mb-2">
               {product.category}
             </span>
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black font-heading text-slate-900 tracking-tight mb-2 md:mb-3 leading-tight">
@@ -137,15 +146,6 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ onAddToCart, cartItems,
               <span className="text-slate-500 font-bold text-xs md:text-sm mb-3 md:mb-4 block">{product.weight}</span>
             )}
 
-            {/* Rating */}
-            <div className="flex items-center gap-1.5 md:gap-2 mb-4 md:mb-6">
-              <div className="flex text-yellow-400">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} size={14} className="md:w-4 md:h-4" fill={i < Math.floor(product.rating) ? "currentColor" : "none"} strokeWidth={2} />
-                ))}
-              </div>
-              <span className="text-xs md:text-sm text-slate-500 font-bold">{product.rating}</span>
-            </div>
 
             <div className="flex items-center gap-3 md:gap-4 mb-4 md:mb-6">
               <div className="flex items-baseline gap-2">
@@ -170,7 +170,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ onAddToCart, cartItems,
             {/* Flavour Selector */}
             {product.flavours && product.flavours.length > 0 && (
               <div className="mb-8">
-                <span className="text-slate-400 font-bold uppercase tracking-widest text-xs block mb-3">Available Flavours</span>
+                <span className="text-slate-400 font-bold uppercase tracking-tight text-xs block mb-3">Available Flavours</span>
                 <div className="flex flex-wrap gap-3">
                   {product.flavours.map((flav) => (
                     <button
@@ -191,7 +191,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ onAddToCart, cartItems,
             )}
 
             {/* Actions */}
-            <div className="flex flex-col sm:flex-row gap-4 mb-10 border-t border-b border-slate-100 py-8">
+            <div className="flex flex-col sm:flex-row gap-4 mb-6 md:mb-10 border-t border-b border-slate-100 py-6 md:py-8">
               {/* Quantity Control */}
               <div className="flex items-center gap-4 p-2 bg-slate-100 rounded-full w-max">
                 <button
@@ -229,11 +229,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ onAddToCart, cartItems,
             </div>
 
             {/* Footer Info */}
-            <div className="flex flex-col gap-4 text-sm text-slate-500 font-medium">
-              <div className="flex items-center gap-3">
-                <Truck size={20} className="text-slate-900" />
-                <span>Free shipping on orders over ₹999</span>
-              </div>
+            <div className="flex flex-col gap-4 text-sm text-slate-500 font-medium mt-2 md:mt-6">
               <div className="flex items-center gap-3">
                 <ShieldCheck size={20} className="text-slate-900" />
                 <span>100% Authentic — Direct from manufacturer</span>

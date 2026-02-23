@@ -6,7 +6,6 @@ export interface Product {
   price: number;
   image: string;
   images?: string[];
-  rating: number;
   description: string;
   weight?: string;
   isTrending?: boolean;

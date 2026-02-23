@@ -19,7 +19,7 @@ const Coaching = () => {
                 <div className="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/90 to-transparent"></div>
 
                 <div className="container mx-auto px-4 md:px-6 relative z-10">
-                    <h1 className="text-4xl md:text-6xl lg:text-7xl font-black font-heading tracking-tighter mb-6 uppercase max-w-3xl">
+                    <h1 className="text-4xl md:text-6xl lg:text-7xl font-black font-heading tracking-tight mb-6 uppercase max-w-3xl">
                         Expert Coaching for <br className="hidden md:block" />
                         <span className="text-yellow-400">Elite Results</span>
                     </h1>
@@ -51,7 +51,7 @@ const Coaching = () => {
                         {[
                             { title: "Customized Diet", desc: "Macros calculated specifically for your metabolic rate and goals.", icon: "🥗" },
                             { title: "Training Program", desc: "Scientific split routines focusing on progressive overload.", icon: "💪" },
-                            { title: "24/7 Support", desc: "Direct WhatsApp access to your coach for queries and motivation.", icon: "📱" },
+                            { title: <><span className="font-sans">24/7</span> Support</>, desc: "Direct WhatsApp access to your coach for queries and motivation.", icon: "📱" },
                         ].map((feature, i) => (
                             <div key={i} className="bg-white p-8 rounded-[2.5rem] border border-slate-100 text-center hover:border-yellow-400 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
                                 <div className="text-5xl mb-6">{feature.icon}</div>
@@ -79,7 +79,7 @@ const Coaching = () => {
 
                                 {/* Popular Badge Example (Logic can be added if specific packages are popular) */}
                                 {pkg.price > 15000 && (
-                                    <div className="absolute top-0 inset-x-0 bg-yellow-400 text-slate-900 text-xs font-bold uppercase tracking-widest text-center py-2">
+                                    <div className="absolute top-0 inset-x-0 bg-yellow-400 text-slate-900 text-xs font-bold uppercase tracking-tight text-center py-2">
                                         Most Popular
                                     </div>
                                 )}
@@ -90,7 +90,7 @@ const Coaching = () => {
                                         <span className="text-2xl font-bold text-slate-400">₹</span>
                                         <span className="text-5xl font-black text-slate-900">{pkg.price.toLocaleString()}</span>
                                     </div>
-                                    <span className="text-slate-500 font-bold uppercase tracking-widest text-sm">{pkg.duration}</span>
+                                    <span className="text-slate-500 font-bold uppercase tracking-tight text-sm">{pkg.duration}</span>
                                 </div>
 
                                 <div className="p-10 flex-grow bg-white">

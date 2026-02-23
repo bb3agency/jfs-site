@@ -3,6 +3,7 @@
   src: url('/assets/fonts/universo/universo-thin.otf') format('opentype');
   font-weight: 100;
   font-style: normal;
+  unicode-range: U+0020, U+0030-0039, U+0041-005A, U+0061-007A;
 }
 
 @font-face {
@@ -10,6 +11,7 @@
   src: url('/assets/fonts/universo/universo-light.otf') format('opentype');
   font-weight: 300;
   font-style: normal;
+  unicode-range: U+0020, U+0030-0039, U+0041-005A, U+0061-007A;
 }
 
 @font-face {
@@ -17,6 +19,7 @@
   src: url('/assets/fonts/universo/universo-regular.otf') format('opentype');
   font-weight: 400;
   font-style: normal;
+  unicode-range: U+0020, U+0030-0039, U+0041-005A, U+0061-007A;
 }
 
 @font-face {
@@ -24,6 +27,7 @@
   src: url('/assets/fonts/universo/universo-bold.otf') format('opentype');
   font-weight: 700;
   font-style: normal;
+  unicode-range: U+0020, U+0030-0039, U+0041-005A, U+0061-007A;
 }
 
 @font-face {
@@ -31,6 +35,7 @@
   src: url('/assets/fonts/universo/universo-black.otf') format('opentype');
   font-weight: 900;
   font-style: normal;
+  unicode-range: U+0020, U+0030-0039, U+0041-005A, U+0061-007A;
 }
 
 /* Neue Plak Definitions */

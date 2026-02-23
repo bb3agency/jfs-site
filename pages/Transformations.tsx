@@ -15,8 +15,8 @@ const Transformations = () => {
             <div className="container mx-auto px-4 md:px-6">
                 {/* Header content */}
                 <div className="text-center mb-16 md:mb-24 mt-8">
-                    <span className="text-yellow-500 font-bold tracking-widest uppercase text-sm mb-4 block">Proven Success</span>
-                    <h1 className="text-5xl md:text-7xl font-black font-heading text-slate-900 mb-6 uppercase tracking-tighter">
+                    <span className="text-yellow-500 font-bold tracking-tight uppercase text-sm mb-4 block">Proven Success</span>
+                    <h1 className="text-5xl md:text-7xl font-black font-heading text-slate-900 mb-6 uppercase tracking-tight">
                         Client <span className="text-slate-400">Transformations</span>
                     </h1>
                     <p className="text-slate-500 font-medium max-w-2xl mx-auto text-lg md:text-xl leading-relaxed">
@@ -35,13 +35,13 @@ const Transformations = () => {
                                 <div className="w-1/2 relative border-r border-slate-200">
                                     <img src={t.imageBefore} alt="Before" className="w-full h-full object-cover filter grayscale opacity-90 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 group-hover:scale-105" />
                                     <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
-                                    <span className="absolute bottom-4 left-4 bg-white/90 backdrop-blur text-slate-900 text-[10px] md:text-xs font-black uppercase tracking-widest px-3 py-1.5 rounded-lg shadow-sm">BEFORE</span>
+                                    <span className="absolute bottom-4 left-4 bg-white/90 backdrop-blur text-slate-900 text-[10px] md:text-xs font-black uppercase tracking-tight px-3 py-1.5 rounded-lg shadow-sm">BEFORE</span>
                                 </div>
                                 {/* After Image */}
                                 <div className="w-1/2 relative">
                                     <img src={t.imageAfter} alt="After" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                                     <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
-                                    <span className="absolute bottom-4 right-4 bg-yellow-400 text-slate-900 text-[10px] md:text-xs font-black uppercase tracking-widest px-3 py-1.5 rounded-lg shadow-sm">AFTER</span>
+                                    <span className="absolute bottom-4 right-4 bg-yellow-400 text-slate-900 text-[10px] md:text-xs font-black uppercase tracking-tight px-3 py-1.5 rounded-lg shadow-sm">AFTER</span>
                                 </div>
                             </div>
 
@@ -49,7 +49,7 @@ const Transformations = () => {
                             <div className="p-8 md:p-10">
                                 <div className="flex justify-between items-center mb-6">
                                     <h3 className="text-2xl font-black text-slate-900 font-heading uppercase tracking-tight">{t.name}</h3>
-                                    <span className="text-slate-500 font-bold border border-slate-200 px-3 py-1 rounded-lg text-xs uppercase tracking-widest bg-slate-50">{t.duration}</span>
+                                    <span className="text-slate-500 font-bold border border-slate-200 px-3 py-1 rounded-lg text-xs uppercase tracking-tight bg-slate-50">{t.duration}</span>
                                 </div>
                                 <div className="bg-green-50/50 p-4 rounded-xl mb-6 border border-green-100/50">
                                     <p className="text-green-700 font-bold text-sm uppercase flex items-center gap-2">
@@ -71,7 +71,7 @@ const Transformations = () => {
                     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-yellow-400/20 rounded-full blur-[100px] pointer-events-none group-hover:bg-yellow-400/30 transition-colors duration-1000"></div>
 
                     <div className="relative z-10">
-                        <span className="text-yellow-400 font-bold tracking-widest uppercase text-sm mb-6 block">Your Turn Next</span>
+                        <span className="text-yellow-400 font-bold tracking-tight uppercase text-sm mb-6 block">Your Turn Next</span>
                         <h2 className="text-4xl md:text-5xl lg:text-6xl font-black font-heading text-white mb-6 uppercase tracking-tight max-w-4xl mx-auto">
                             Ready to be the next <span className="text-slate-400">Success Story?</span>
                         </h2>

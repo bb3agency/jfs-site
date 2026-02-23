@@ -1,6 +1,6 @@
 import React from 'react';
 import { Product } from '../types';
-import { Heart, Star, Plus, ShoppingBag } from 'lucide-react';
+import { Heart, Plus, ShoppingBag } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 interface ProductCardProps {

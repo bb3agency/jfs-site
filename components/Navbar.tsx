@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { ShoppingBag, Menu, X, Home as HomeIcon, LayoutGrid, Quote, LogOut, User, Trophy, Mail } from 'lucide-react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import logo from '../assets/jfs-logo-no-text.svg';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 
@@ -30,21 +31,6 @@ const Navbar: React.FC<NavbarProps> = ({ cartCount, onCartClick }) => {
     setIsMobileMenuOpen(false);
   }, [location]);
 
-  useGSAP(() => {
-    // Use fromTo to ensure the element ends up in the correct visible state (opacity: 1, y: 0)
-    if (navRef.current) {
-      gsap.fromTo(navRef.current,
-        { y: -100, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 1.2,
-          ease: 'power4.out',
-          delay: 0.2
-        }
-      );
-    }
-  }, { scope: navRef });
 
   const navLinks = [
     { name: 'Products', path: '/products', icon: <LayoutGrid size={24} /> },
@@ -62,7 +48,7 @@ const Navbar: React.FC<NavbarProps> = ({ cartCount, onCartClick }) => {
       >
         <div className="flex flex-col h-full p-8">
           <div className="flex justify-between items-center mb-12">
-            <span className="text-3xl font-black font-heading text-slate-900 tracking-tighter">JFS.</span>
+            <img src={logo} alt="JFS Fitness" className="h-16 w-auto" />
             <button onClick={() => setIsMobileMenuOpen(false)} className="p-2 -mr-2 text-slate-900 hover:bg-slate-50 rounded-full">
               <X size={32} />
             </button>
@@ -79,11 +65,6 @@ const Navbar: React.FC<NavbarProps> = ({ cartCount, onCartClick }) => {
                 {link.name}
               </Link>
             ))}
-          </div>
-          <div className="pt-8 border-t border-slate-100">
-            <button className="flex items-center gap-4 text-slate-500 font-medium text-lg">
-              <LogOut size={24} /> Sign Out
-            </button>
           </div>
         </div>
       </div>
@@ -168,18 +149,12 @@ const Navbar: React.FC<NavbarProps> = ({ cartCount, onCartClick }) => {
           </div>
 
           {/* Logo */}
-          <Link to="/" className="relative z-10 flex items-center gap-3 group select-none">
-            <div className="relative h-10 w-10 overflow-hidden rounded-full bg-white/5 flex items-center justify-center text-white font-bold border border-white/20 group-hover:scale-110 transition-transform duration-500 shadow-lg backdrop-blur-sm">
-              <span className="text-[10px] tracking-tighter">JFS</span>
-              <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-            </div>
-            <span className="font-black font-heading text-xl tracking-tighter text-white drop-shadow-sm">
-              JFS<span className="text-yellow-400">.</span>
-            </span>
+          <Link to="/" className="relative z-10 flex items-center group select-none">
+            <img src={logo} alt="JFS Fitness" className="h-10 md:h-16 w-auto group-hover:scale-105 transition-transform duration-300 drop-shadow-sm" />
           </Link>
 
           {/* Desktop Navigation Links */}
-          <div className="relative z-10 hidden md:flex items-center p-1 bg-white/5 rounded-full border border-white/5 backdrop-blur-sm">
+          <div className="relative z-10 hidden md:flex items-center gap-12">
             {navLinks.map((link) => {
               const isActive = location.pathname === link.path;
               return (
@@ -187,10 +162,10 @@ const Navbar: React.FC<NavbarProps> = ({ cartCount, onCartClick }) => {
                   key={link.name}
                   to={link.path}
                   className={`
-                                relative px-6 py-2.5 rounded-full text-sm font-bold transition-all duration-300 select-none
+                                relative text-lg tracking-tight uppercase font-bold transition-all duration-300 select-none
                                 ${isActive
-                      ? 'text-slate-900 bg-white shadow-[0_2px_10px_rgba(255,255,255,0.2)]'
-                      : 'text-slate-300 hover:text-white hover:bg-white/10'
+                      ? 'text-yellow-400'
+                      : 'text-white hover:text-yellow-400'
                     }
                             `}
                 >

@@ -23,48 +23,16 @@ const Home: React.FC<HomeProps> = ({ onAddToCart }) => {
     const containerRef = useRef<HTMLDivElement>(null);
 
     // Filter Data for Sections
-    const bestSellers = PRODUCTS.filter((p) => p.rating >= 4.7).slice(0, 4);
+    const bestSellers = PRODUCTS.slice(0, 4);
     const newArrivals = [...PRODUCTS].reverse().slice(0, 4);
     const wheyProducts = PRODUCTS.filter(p => p.category === Category.WHEY_PROTEIN || p.category === Category.WHEY_ISOLATE).slice(0, 4);
 
-    useGSAP(() => {
-        // Hero Animations
-        const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
-
-        tl.fromTo('.hero-content',
-            { y: 30, opacity: 0 },
-            { y: 0, opacity: 1, duration: 1, delay: 0.2 }
-        )
-            .fromTo('.hero-image',
-                { x: 50, opacity: 0 },
-                { x: 0, opacity: 1, duration: 1.2 },
-                "-=0.8"
-            );
-
-        // Scroll Animations for sections
-        const sections = ['.categories-section', '.bestsellers-section', '.new-arrivals-section', '.brands-section', '.trending-section', '.authenticity-section'];
-        sections.forEach(section => {
-            gsap.fromTo(section,
-                { y: 50, opacity: 0 },
-                {
-                    y: 0,
-                    opacity: 1,
-                    duration: 0.8,
-                    scrollTrigger: {
-                        trigger: section,
-                        start: 'top 85%',
-                    }
-                }
-            );
-        });
-
-    }, { scope: containerRef });
 
     return (
-        <div ref={containerRef} className="flex flex-col w-full overflow-hidden bg-white">
+        <div ref={containerRef} className="flex flex-col w-full overflow-hidden">
 
             {/* 1. Hero Section (Mobile Optimized) */}
-            <section className="relative min-h-screen md:min-h-[90vh] bg-slate-950 flex flex-col justify-end md:justify-center items-center overflow-hidden">
+            <section className="relative min-h-screen md:min-h-screen bg-slate-950 flex flex-col justify-end md:justify-center items-center overflow-hidden">
                 {/* Desktop Hero Image */}
                 <div className="absolute inset-0 hidden md:block">
                     <img
@@ -86,10 +54,10 @@ const Home: React.FC<HomeProps> = ({ onAddToCart }) => {
 
 
 
-                {/* Added pb-32 to clear the mobile floating nav */}
-                <div className="container mx-auto px-4 md:px-6 relative z-10 flex flex-col md:flex-row items-center gap-12 pt-20 pb-32 md:pb-0 h-full justify-end md:justify-center">
+                {/* Added pb-32 to clear the mobile floating nav and pt-32 on desktop to lower the hero component offset */}
+                <div className="container mx-auto px-4 md:px-6 relative z-10 flex flex-col md:flex-row items-center gap-12 pt-20 pb-32 md:pt-32 md:pb-0 h-full justify-end md:justify-center">
                     <div className="hero-content flex-1 text-center md:text-left w-full px-4 md:px-0">
-                        <div className="inline-block px-4 py-1.5 rounded-full border border-yellow-500/30 bg-yellow-500/10 text-yellow-400 font-bold font-heading text-[10px] md:text-xs uppercase tracking-widest mb-4 md:mb-6 backdrop-blur-sm">
+                        <div className="inline-block px-4 py-1.5 rounded-full border border-yellow-500/30 bg-yellow-500/10 text-yellow-400 font-bold font-heading text-[10px] md:text-xs uppercase tracking-tight mb-4 md:mb-6 backdrop-blur-sm">
                             #1 Trusted Supplement Store
                         </div>
                         <h1 className="text-4xl md:text-7xl font-black font-heading text-white leading-[0.9] tracking-tight mb-4 md:mb-6">
@@ -104,7 +72,7 @@ const Home: React.FC<HomeProps> = ({ onAddToCart }) => {
                             <Button onClick={() => navigate('/products')} className="bg-yellow-400 text-slate-950 hover:bg-yellow-300 border-none px-8 py-4 text-base font-black uppercase tracking-wider w-full md:w-auto rounded-xl shadow-lg shadow-yellow-400/20 transform transition-transform active:scale-95">
                                 Shop Now
                             </Button>
-                            <Button variant="outline" className="text-white border-white/20 bg-white/5 hover:bg-white/10 px-8 py-4 text-base font-bold w-full md:w-auto rounded-xl backdrop-blur-md transition-colors">
+                            <Button onClick={() => document.getElementById('brands-section')?.scrollIntoView({ behavior: 'smooth' })} variant="outline" className="text-white border-white/20 bg-white/5 hover:bg-white/10 px-8 py-4 text-base font-bold w-full md:w-auto rounded-xl backdrop-blur-md transition-colors">
                                 View Brands
                             </Button>
                         </div>
@@ -162,11 +130,11 @@ const Home: React.FC<HomeProps> = ({ onAddToCart }) => {
             </section>
 
             {/* Brands Carousel (Moved to below Best Sellers) */}
-            <section className="brands-section py-24 bg-white border-t border-slate-100">
+            <section id="brands-section" className="brands-section py-24 bg-white border-t border-slate-100">
                 <div className="container mx-auto px-4 md:px-6">
                     <div className="text-center mb-16">
                         <h3 className="text-2xl font-black font-heading text-slate-900 uppercase tracking-tight mb-4">
-                            Secure Our Top-Tier Brands
+                            Secure Our Top<span className="font-sans">-</span>Tier Brands
                         </h3>
                         <div className="h-1 w-20 bg-yellow-400 mx-auto rounded-full"></div>
                     </div>
@@ -185,42 +153,11 @@ const Home: React.FC<HomeProps> = ({ onAddToCart }) => {
                     </div>
                 </div>
             </section>
-
-            {/* 4. Authenticity Banner (FIXED) */}
-            <section className="authenticity-section py-12 md:py-24 bg-slate-900 relative overflow-hidden my-4 md:my-8">
-                <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20"></div>
-                {/* Added a subtle radial gradient for spotlight effect */}
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-radial-gradient from-white/5 to-transparent opacity-50 pointer-events-none"></div>
-
-                <div className="container mx-auto px-4 md:px-6 relative z-10">
-                    <div className="max-w-4xl mx-auto text-center bg-slate-800/50 backdrop-blur-md rounded-[2rem] md:rounded-[3rem] p-8 md:p-12 border border-white/5 shadow-2xl">
-                        <div className="inline-flex items-center justify-center p-4 md:p-5 bg-yellow-400 rounded-2xl mb-6 md:mb-8 text-slate-900 shadow-lg shadow-yellow-400/20 transform hover:rotate-12 transition-transform duration-300">
-                            <ShieldCheck size={32} className="md:w-[42px] md:h-[42px]" strokeWidth={2} />
-                        </div>
-                        <h2 className="text-2xl md:text-6xl font-black font-heading text-white uppercase tracking-tight mb-4 md:mb-6 leading-none">
-                            100% Authentic. <br className="hidden md:block" /><span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-200">Guaranteed.</span>
-                        </h2>
-                        <p className="text-slate-300 text-sm md:text-xl max-w-2xl mx-auto mb-6 md:mb-10 leading-relaxed font-light">
-                            We take purity seriously. Every product is sourced directly from the manufacturer and verified for authenticity. Scan, verify, and consume with confidence.
-                        </p>
-                        <div className="flex justify-center flex-col sm:flex-row gap-3">
-                            <Button
-                                onClick={() => navigate('/products')}
-                                className="bg-yellow-400 text-slate-900 hover:bg-yellow-300 font-black uppercase px-6 py-4 md:px-10 md:py-5 text-sm md:text-lg rounded-xl shadow-xl flex items-center justify-center gap-2 hover:shadow-2xl hover:-translate-y-1 transition-all w-full md:w-auto"
-                            >
-                                <CheckCircle2 size={20} className="md:w-6 md:h-6" />
-                                Shop Verified Products
-                            </Button>
-                        </div>
-                    </div>
-                </div>
-            </section >
-
             {/* Real Results / Transformations Preview */}
             < section className="py-12 md:py-24 bg-slate-50 relative z-30 overflow-hidden" >
                 <div className="container mx-auto px-4 md:px-6 relative z-10">
                     <div className="text-center mb-10 md:mb-16">
-                        <span className="text-yellow-500 font-bold tracking-widest uppercase text-xs md:text-sm mb-2 md:mb-4 block">Proven Success</span>
+                        <span className="text-yellow-500 font-bold tracking-tight uppercase text-xs md:text-sm mb-2 md:mb-4 block">Proven Success</span>
                         <h2 className="text-3xl md:text-5xl lg:text-6xl font-black font-heading text-slate-900 mb-4 md:mb-6 uppercase tracking-tight">
                             Real <span className="text-slate-400">Results</span>
                         </h2>
@@ -237,18 +174,18 @@ const Home: React.FC<HomeProps> = ({ onAddToCart }) => {
                                     <div className="w-1/2 relative border-r border-slate-200">
                                         <img src={item.imageBefore} alt="Before" className="w-full h-full object-cover filter grayscale opacity-90 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500 pointer-events-none" />
                                         <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent pointer-events-none"></div>
-                                        <span className="absolute bottom-2 left-2 md:bottom-3 md:left-3 bg-white/90 text-slate-900 text-[8px] md:text-[10px] font-black tracking-widest px-2 py-1 rounded uppercase shadow-sm backdrop-blur pointer-events-none">BEFORE</span>
+                                        <span className="absolute bottom-2 left-2 md:bottom-3 md:left-3 bg-white/90 text-slate-900 text-[8px] md:text-[10px] font-black tracking-tight px-2 py-1 rounded uppercase shadow-sm backdrop-blur pointer-events-none">BEFORE</span>
                                     </div>
                                     <div className="w-1/2 relative">
                                         <img src={item.imageAfter} alt="After" className="w-full h-full object-cover pointer-events-none" />
                                         <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent pointer-events-none"></div>
-                                        <span className="absolute bottom-2 right-2 md:bottom-3 md:right-3 bg-yellow-400 text-slate-900 text-[8px] md:text-[10px] font-black tracking-widest px-2 py-1 rounded uppercase shadow-sm pointer-events-none">AFTER</span>
+                                        <span className="absolute bottom-2 right-2 md:bottom-3 md:right-3 bg-yellow-400 text-slate-900 text-[8px] md:text-[10px] font-black tracking-tight px-2 py-1 rounded uppercase shadow-sm pointer-events-none">AFTER</span>
                                     </div>
                                 </div>
                                 <div className="p-6 md:p-8">
                                     <div className="flex justify-between items-start mb-3 md:mb-4">
                                         <h3 className="text-xl md:text-2xl font-black text-slate-900 font-heading uppercase tracking-tight">{item.name}</h3>
-                                        <span className="text-slate-500 text-[10px] md:text-xs font-bold border border-slate-200 px-2 py-1 md:px-3 rounded-lg uppercase tracking-widest bg-slate-50 whitespace-nowrap">{item.duration}</span>
+                                        <span className="text-slate-500 text-[10px] md:text-xs font-bold border border-slate-200 px-2 py-1 md:px-3 rounded-lg uppercase tracking-tight bg-slate-50 whitespace-nowrap">{item.duration}</span>
                                     </div>
                                     <div className="bg-green-50/50 p-2 md:p-3 rounded-xl mb-3 md:mb-4 border border-green-100/50">
                                         <p className="text-green-700 text-[10px] md:text-xs font-bold uppercase flex items-center gap-1 md:gap-2 leading-tight">
@@ -283,7 +220,7 @@ const Home: React.FC<HomeProps> = ({ onAddToCart }) => {
                 <div className="container mx-auto px-4 md:px-6">
                     <div className="flex justify-between items-end mb-6 md:mb-10">
                         <div>
-                            <span className="text-yellow-500 font-bold uppercase tracking-widest text-[10px] md:text-xs">Just Dropped</span>
+                            <span className="text-yellow-500 font-bold uppercase tracking-tight text-[10px] md:text-xs">Just Dropped</span>
                             <h2 className="text-2xl md:text-3xl font-black font-heading text-slate-900 tracking-tight mt-0.5 md:mt-1">New Arrivals</h2>
                         </div>
                         <button onClick={() => navigate('/products')} className="flex items-center gap-1 md:gap-2 text-[10px] md:text-sm font-bold text-slate-900 hover:underline border border-slate-200 bg-slate-50 px-3 py-1.5 md:border-none md:bg-transparent md:px-0 md:py-0 rounded-full md:rounded-none">
@@ -312,7 +249,7 @@ const Home: React.FC<HomeProps> = ({ onAddToCart }) => {
                             />
                             <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 to-transparent"></div>
                             <div className="absolute inset-0 p-6 md:p-12 flex flex-col justify-center items-start">
-                                <span className="text-yellow-400 font-bold uppercase tracking-widest text-[10px] md:text-sm mb-1 md:mb-2">Build Muscle</span>
+                                <span className="text-yellow-400 font-bold uppercase tracking-tight text-[10px] md:text-sm mb-1 md:mb-2">Build Muscle</span>
                                 <h3 className="text-2xl md:text-5xl font-black font-heading text-white leading-tight mb-4 md:mb-6">
                                     PACK ON <br /> SERIOUS GAINS
                                 </h3>
@@ -320,7 +257,7 @@ const Home: React.FC<HomeProps> = ({ onAddToCart }) => {
                                     <span className="flex items-center gap-2"><CheckCircle2 size={14} className="md:w-4 md:h-4 text-yellow-400" /> Mass Gainers</span>
                                     <span className="flex items-center gap-2"><CheckCircle2 size={14} className="md:w-4 md:h-4 text-yellow-400" /> Creatine</span>
                                 </div>
-                                <Button className="bg-white text-slate-900 hover:bg-slate-100 font-bold text-xs md:text-sm px-4 py-2 md:px-6 md:py-3">
+                                <Button className="bg-white !text-black hover:bg-slate-100 font-bold text-xs md:text-sm px-4 py-2 md:px-6 md:py-3 border-none">
                                     Shop Essentials
                                 </Button>
                             </div>
@@ -335,12 +272,12 @@ const Home: React.FC<HomeProps> = ({ onAddToCart }) => {
                             />
                             <div className="absolute inset-0 bg-gradient-to-l from-red-900/90 to-red-900/40"></div>
                             <div className="absolute inset-0 p-6 md:p-12 flex flex-col justify-center items-end text-right">
-                                <span className="text-white/80 font-bold uppercase tracking-widest text-[10px] md:text-sm mb-1 md:mb-2">Limited Time</span>
+                                <span className="text-white/80 font-bold uppercase tracking-tight text-[10px] md:text-sm mb-1 md:mb-2">Limited Time</span>
                                 <h3 className="text-2xl md:text-5xl font-black font-heading text-white leading-tight mb-2 md:mb-4">
                                     BUY 2 GET <br /> <span className="text-yellow-400">EXTRA 15% OFF</span>
                                 </h3>
                                 <p className="text-white/90 mb-6 md:mb-8 max-w-[200px] md:max-w-xs text-xs md:text-base">Use code <strong>POWER15</strong> at checkout.</p>
-                                <Button className="bg-yellow-400 text-slate-900 hover:bg-yellow-300 font-bold text-xs md:text-sm px-4 py-2 md:px-6 md:py-3">
+                                <Button className="bg-yellow-400 !text-black hover:bg-yellow-300 font-bold text-xs md:text-sm px-4 py-2 md:px-6 md:py-3 border-none">
                                     Grab The Deal
                                 </Button>
                             </div>
@@ -354,7 +291,7 @@ const Home: React.FC<HomeProps> = ({ onAddToCart }) => {
                 <div className="container mx-auto px-4 md:px-6 relative z-10">
                     <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
                         <div className="relative">
-                            <div className="flex items-center gap-2 text-yellow-600 font-bold uppercase tracking-widest text-xs mb-3">
+                            <div className="flex items-center gap-2 text-yellow-600 font-bold uppercase tracking-tight text-xs mb-3">
                                 <TrendingUp size={16} />
                                 <span>Hot Right Now</span>
                             </div>
@@ -388,37 +325,6 @@ const Home: React.FC<HomeProps> = ({ onAddToCart }) => {
 
 
 
-            {/* 9. Why Choose Us (Unchanged) */}
-            < section className="py-12 md:py-20 bg-white" >
-                <div className="container mx-auto px-4 md:px-6">
-                    <div className="text-center mb-16">
-                        <h2 className="text-3xl font-black font-heading text-slate-900">Why Choose Supplemart?</h2>
-                    </div>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-                        <div className="flex flex-col items-center text-center">
-                            <div className="w-16 h-16 rounded-2xl bg-slate-100 flex items-center justify-center text-slate-900 mb-6">
-                                <Truck size={32} />
-                            </div>
-                            <h4 className="text-xl font-bold text-slate-900 mb-3">Free Fast Shipping</h4>
-                            <p className="text-slate-500 leading-relaxed">Get free delivery on all prepaid orders above $50. We ship within 24 hours.</p>
-                        </div>
-                        <div className="flex flex-col items-center text-center">
-                            <div className="w-16 h-16 rounded-2xl bg-slate-100 flex items-center justify-center text-slate-900 mb-6">
-                                <Award size={32} />
-                            </div>
-                            <h4 className="text-xl font-bold text-slate-900 mb-3">100% Authentic</h4>
-                            <p className="text-slate-500 leading-relaxed">Products sourced directly from the brands with verification tags.</p>
-                        </div>
-                        <div className="flex flex-col items-center text-center">
-                            <div className="w-16 h-16 rounded-2xl bg-slate-100 flex items-center justify-center text-slate-900 mb-6">
-                                <Lock size={32} />
-                            </div>
-                            <h4 className="text-xl font-bold text-slate-900 mb-3">Secure Payments</h4>
-                            <p className="text-slate-500 leading-relaxed">Pay with any credit card, UPI, or wallet securely via our encrypted gateway.</p>
-                        </div>
-                    </div>
-                </div>
-            </section >
 
 
             <Footer />

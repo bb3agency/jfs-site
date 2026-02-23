@@ -6,13 +6,13 @@ const Footer: React.FC = () => {
     const currentYear = new Date().getFullYear();
 
     return (
-        <footer className="w-full bg-slate-950 pt-20 pb-8 px-4 md:px-6 relative overflow-hidden">
+        <footer className="w-full px-4 md:px-6 pb-4 md:pb-6 mt-12 md:mt-20 relative overflow-hidden">
             {/* Main Rounded Card */}
             <div className="bg-slate-900 rounded-[2.5rem] p-8 md:p-16 relative overflow-hidden shadow-2xl border border-slate-800/50">
 
                 {/* Background Watermark */}
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full pointer-events-none select-none flex items-center justify-center opacity-[0.03]">
-                    <span className="text-[20vw] md:text-[18vw] font-black font-heading text-white leading-none tracking-tighter whitespace-nowrap">
+                    <span className="text-[15vw] md:text-[11vw] font-black font-heading text-white leading-none tracking-tight whitespace-nowrap">
                         JFS FITNESS
                     </span>
                 </div>
@@ -22,7 +22,7 @@ const Footer: React.FC = () => {
 
                     {/* Column 1: GENERAL */}
                     <div className="flex flex-col">
-                        <h4 className="font-heading font-black text-xs text-slate-500 uppercase tracking-widest mb-6 md:mb-8">
+                        <h4 className="font-heading font-black text-xs text-slate-500 uppercase tracking-tight mb-6 md:mb-8">
                             General
                         </h4>
                         <ul className="space-y-3 md:space-y-4">
@@ -35,7 +35,7 @@ const Footer: React.FC = () => {
 
                     {/* Column 2: PRODUCTS */}
                     <div className="flex flex-col">
-                        <h4 className="font-heading font-black text-xs text-slate-500 uppercase tracking-widest mb-6 md:mb-8">
+                        <h4 className="font-heading font-black text-xs text-slate-500 uppercase tracking-tight mb-6 md:mb-8">
                             Products
                         </h4>
                         <ul className="space-y-3 md:space-y-4">
@@ -48,27 +48,22 @@ const Footer: React.FC = () => {
 
                     {/* Column 3: CUSTOMER SERVICE */}
                     <div className="flex flex-col">
-                        <h4 className="font-heading font-black text-xs text-slate-500 uppercase tracking-widest mb-6 md:mb-8">
+                        <h4 className="font-heading font-black text-xs text-slate-500 uppercase tracking-tight mb-6 md:mb-8">
                             Customer Service
                         </h4>
                         <ul className="space-y-3 md:space-y-4">
                             <li><Link to="/faq" className="font-body text-slate-300 hover:text-yellow-400 transition-colors text-sm md:text-base font-medium block">FAQ</Link></li>
-                            <li><Link to="/support" className="font-body text-slate-300 hover:text-yellow-400 transition-colors text-sm md:text-base font-medium block">Help & Support</Link></li>
-                            <li><Link to="/shipping" className="font-body text-slate-300 hover:text-yellow-400 transition-colors text-sm md:text-base font-medium block">Shipping & Returns</Link></li>
-                            <li><Link to="/privacy" className="font-body text-slate-300 hover:text-yellow-400 transition-colors text-sm md:text-base font-medium block">Privacy Policy</Link></li>
                         </ul>
                     </div>
 
                     {/* Column 4: SOCIAL MEDIA & NEWSLETTER (Combined conceptually as 'Connect') */}
                     <div className="flex flex-col">
-                        <h4 className="font-heading font-black text-xs text-slate-500 uppercase tracking-widest mb-6 md:mb-8">
+                        <h4 className="font-heading font-black text-xs text-slate-500 uppercase tracking-tight mb-6 md:mb-8">
                             Social Media
                         </h4>
                         <ul className="space-y-3 md:space-y-4 mb-4">
-                            <li><a href="#" className="font-body text-slate-300 hover:text-yellow-400 transition-colors text-sm md:text-base font-medium block">Instagram</a></li>
-
-                            <li><a href="#" className="font-body text-slate-300 hover:text-yellow-400 transition-colors text-sm md:text-base font-medium block">Facebook</a></li>
-                            <li><a href="#" className="font-body text-slate-300 hover:text-yellow-400 transition-colors text-sm md:text-base font-medium block">YouTube</a></li>
+                            <li><a href="https://www.instagram.com/jfs.protein.store/" target="_blank" rel="noopener noreferrer" className="font-body text-slate-300 hover:text-yellow-400 transition-colors text-sm md:text-base font-medium block">Instagram</a></li>
+                            <li><a href="https://www.youtube.com/@Masterjoy09" target="_blank" rel="noopener noreferrer" className="font-body text-slate-300 hover:text-yellow-400 transition-colors text-sm md:text-base font-medium block">YouTube</a></li>
                         </ul>
                     </div>
                 </div>

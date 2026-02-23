@@ -4,8 +4,6 @@ import ProductCard from '../components/ProductCard';
 import { PRODUCTS } from '../data';
 import { Product, Category } from '../types';
 import { Search, SlidersHorizontal, Filter } from 'lucide-react';
-import gsap from 'gsap';
-import { useGSAP } from '@gsap/react';
 
 interface ProductCatalogProps {
   onAddToCart: (product: Product) => void;
@@ -37,51 +35,14 @@ const ProductCatalog: React.FC<ProductCatalogProps> = ({ onAddToCart }) => {
     return matchesCategory && matchesSearch;
   });
 
-  useGSAP(() => {
-    const tl = gsap.timeline();
-
-    // Use fromTo for all animations to ensure start/end states are deterministic
-    // This prevents elements from getting stuck at opacity: 0 during re-renders
-    tl.fromTo('.catalog-header',
-      { y: 30, opacity: 0 },
-      { y: 0, opacity: 1, duration: 0.8, ease: 'power3.out' }
-    )
-      .fromTo('.catalog-search',
-        { y: 20, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.6 },
-        "-=0.4"
-      )
-      .fromTo('.category-label',
-        { x: -10, opacity: 0 },
-        { x: 0, opacity: 1, duration: 0.4 },
-        "-=0.3"
-      )
-      .fromTo('.category-pill',
-        { y: 15, opacity: 0, scale: 0.95 },
-        {
-          y: 0,
-          opacity: 1,
-          scale: 1,
-          duration: 0.5,
-          stagger: 0.05,
-          ease: 'back.out(1.2)'
-        },
-        "-=0.2"
-      )
-      .fromTo('.product-item',
-        { y: 40, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.6, stagger: 0.05, ease: 'power2.out' },
-        "-=0.3"
-      );
-  }, { scope: containerRef });
 
   return (
-    <div ref={containerRef} className="min-h-screen bg-slate-50 pt-24 pb-32 md:pt-40 md:pb-24 px-4 md:px-6">
+    <div ref={containerRef} className="min-h-screen bg-slate-50 pt-6 pb-32 md:pt-40 md:pb-24 px-4 md:px-6">
       <div className="container mx-auto max-w-7xl">
 
         {/* Header Section */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-10">
-          <div className="catalog-header"> {/* Initial opacity 0 to prevent flash before animation */}
+          <div className="catalog-header">
             <h1 className="text-4xl md:text-6xl font-black font-heading text-slate-900 tracking-tight mb-4">
               The Collection
             </h1>
@@ -110,13 +71,13 @@ const ProductCatalog: React.FC<ProductCatalogProps> = ({ onAddToCart }) => {
 
         {/* Category Filter Section */}
         <div className="mb-8 md:mb-12">
-          <div className="category-label flex items-center gap-2 text-xs md:text-sm font-bold text-slate-400 uppercase tracking-widest mb-3 md:mb-4">
+          <div className="category-label flex items-center gap-2 text-xs md:text-sm font-bold text-slate-400 uppercase tracking-tight mb-3 md:mb-4">
             <Filter size={14} className="md:w-4 md:h-4" />
             <span>Filter by Category</span>
           </div>
 
-          {/* Scrollable on mobile, Wrapped on desktop. Added min-height to prevent collapse during loading */}
-          <div className="flex gap-2 md:gap-3 overflow-x-auto pb-4 md:pb-0 scrollbar-hide -mx-4 px-4 md:mx-0 md:px-0 md:flex-wrap min-h-[50px] items-start">
+          {/* Scrollable on mobile, Wrapped on desktop. Added vertical padding to prevent shadow clipping */}
+          <div className="flex gap-2 md:gap-3 overflow-x-auto pb-8 pt-4 -mb-4 -mt-4 scrollbar-hide -mx-4 px-4 md:mx-0 md:px-2 md:flex-wrap items-start">
             {categories.map((cat) => (
               <button
                 key={cat}

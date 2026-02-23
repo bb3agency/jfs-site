@@ -21,7 +21,6 @@ export const PRODUCTS: Product[] = [
     brand: 'DNA Pharma',
     category: Category.BCAA_EAA,
     price: 1299,
-    rating: 4.7,
     image: img('BCAA-EAA/DNA pharma BCAA/DNA greenApple/dna-pharma-bcaa-green-apple.webp'),
     images: [
       img('BCAA-EAA/DNA pharma BCAA/DNA greenApple/dna-pharma-bcaa-green-apple.webp'),
@@ -40,11 +39,10 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'bcaa-2',
-    name: 'HM EAA+ BCAA',
+    name: 'HM EAA & BCAA',
     brand: 'Healthmania',
     category: Category.BCAA_EAA,
     price: 1499,
-    rating: 4.8,
     image: img('BCAA-EAA/HM EAA+ BCAA/BlackCurrent_splash/black-currant-EAA_BCAA-_1.webp'),
     images: [
       img('BCAA-EAA/HM EAA+ BCAA/BlackCurrent_splash/black-currant-EAA_BCAA-_1.webp'),
@@ -67,7 +65,6 @@ export const PRODUCTS: Product[] = [
     brand: 'Incredi Bull',
     category: Category.BCAA_EAA,
     price: 999,
-    rating: 4.5,
     image: img('BCAA-EAA/Incredi Bull BCAA/incredi_bull_BCAA.webp'),
     images: [
       img('BCAA-EAA/Incredi Bull BCAA/incredi_bull_BCAA.webp'),
@@ -82,7 +79,6 @@ export const PRODUCTS: Product[] = [
     brand: 'Blade',
     category: Category.FAT_BURNER,
     price: 1599,
-    rating: 4.4,
     image: img('Fat Burners/Blade Fat Burner/BLDE_FAT.webp'),
     images: [
       img('Fat Burners/Blade Fat Burner/BLDE_FAT.webp'),
@@ -95,7 +91,6 @@ export const PRODUCTS: Product[] = [
     brand: 'RFN',
     category: Category.FAT_BURNER,
     price: 1899,
-    rating: 4.6,
     image: img('Fat Burners/RFN Fat Strom Xtreme/RFN-Fat-Burner_1.webp'),
     images: [
       img('Fat Burners/RFN Fat Strom Xtreme/RFN-Fat-Burner_1.webp'),
@@ -111,7 +106,6 @@ export const PRODUCTS: Product[] = [
     brand: 'Swiss Life',
     category: Category.FAT_BURNER,
     price: 1399,
-    rating: 4.3,
     image: img('Fat Burners/Swiss Life Fat cutter/swissFatCutter60_1.webp'),
     images: [
       img('Fat Burners/Swiss Life Fat cutter/swissFatCutter60_1.webp'),
@@ -128,7 +122,6 @@ export const PRODUCTS: Product[] = [
     brand: 'Labrada',
     category: Category.L_CARNITINE,
     price: 1799,
-    rating: 4.7,
     image: img('L-Carnitine/LabradaSuperchargeCranberry.webp'),
     images: [
       img('L-Carnitine/LabradaSuperchargeCranberry.webp'),
@@ -144,7 +137,6 @@ export const PRODUCTS: Product[] = [
     brand: 'DNA Pharma',
     category: Category.MASS_GAINER,
     price: 2499,
-    rating: 4.5,
     image: img('Mass Gainers/DNA Pharma Mass Gainer/dna-pharma-mass.webp'),
     images: [
       img('Mass Gainers/DNA Pharma Mass Gainer/dna-pharma-mass.webp'),
@@ -157,7 +149,6 @@ export const PRODUCTS: Product[] = [
     brand: 'Healthmania',
     category: Category.MASS_GAINER,
     price: 2799,
-    rating: 4.6,
     weight: '3kg',
     image: img('Mass Gainers/HM pro bulk 3kg/PRO-BULK-_1.webp'),
     images: [
@@ -174,7 +165,6 @@ export const PRODUCTS: Product[] = [
     brand: 'Healthmania',
     category: Category.MASS_GAINER,
     price: 3999,
-    rating: 4.7,
     weight: '5kg',
     image: img('Mass Gainers/HM pro bulk 5kg/probulk_5kg_1.webp'),
     images: [
@@ -191,7 +181,6 @@ export const PRODUCTS: Product[] = [
     brand: 'Incredi Bull',
     category: Category.MASS_GAINER,
     price: 2299,
-    rating: 4.4,
     weight: '3kg',
     image: img('Mass Gainers/Incredi Bull Premium Mass Gianer 3kg/Mass-Gainer-incredibull-3kg-Current-View.webp'),
     images: [
@@ -205,7 +194,6 @@ export const PRODUCTS: Product[] = [
     brand: 'Incredi Bull',
     category: Category.MASS_GAINER,
     price: 3499,
-    rating: 4.5,
     weight: '5kg',
     image: img('Mass Gainers/Incredi Bull Premium Mass Gianer 5kg/incredB_5kg_massG.webp'),
     images: [
@@ -221,7 +209,6 @@ export const PRODUCTS: Product[] = [
     brand: 'DNA Pharma',
     category: Category.PRE_WORKOUT,
     price: 1499,
-    rating: 4.6,
     image: img('Pre-workout/DNA BRO code pre/pre_greenApple/dna-pharma-preworkout-green-apple_1.webp'),
     images: [
       img('Pre-workout/DNA BRO code pre/pre_greenApple/dna-pharma-preworkout-green-apple_1.webp'),
@@ -242,7 +229,6 @@ export const PRODUCTS: Product[] = [
     brand: 'Healthmania',
     category: Category.PRE_WORKOUT,
     price: 1699,
-    rating: 4.8,
     image: img('Pre-workout/HM pump/beach_cocktail/beach_cocktail_PRO_PUMP_CAFFEINE_FREE_1.webp'),
     images: [
       img('Pre-workout/HM pump/beach_cocktail/beach_cocktail_PRO_PUMP_CAFFEINE_FREE_1.webp'),
@@ -263,7 +249,6 @@ export const PRODUCTS: Product[] = [
     brand: 'Incredi Bull',
     category: Category.PRE_WORKOUT,
     price: 999,
-    rating: 4.3,
     weight: '180g',
     image: img('Pre-workout/Incredi Bull pre/incredibull-pre-workout-180-g-Current-View.webp'),
     images: [
@@ -277,7 +262,6 @@ export const PRODUCTS: Product[] = [
     brand: 'Kevin Levrone',
     category: Category.PRE_WORKOUT,
     price: 2999,
-    rating: 4.9,
     image: img('Pre-workout/Kevin Levron Shaboom pre/levrone-shaaboom-pump_1.webp'),
     images: [
       img('Pre-workout/Kevin Levron Shaboom pre/levrone-shaaboom-pump_1.webp'),
@@ -293,7 +277,6 @@ export const PRODUCTS: Product[] = [
     brand: 'MuscleBlaze',
     category: Category.PRE_WORKOUT,
     price: 1999,
-    rating: 4.7,
     image: img('Pre-workout/MB The Wolf pre/MB_GreenApple/MB_GA_1.webp'),
     images: [
       img('Pre-workout/MB The Wolf pre/MB_GreenApple/MB_GA_1.webp'),
@@ -317,7 +300,6 @@ export const PRODUCTS: Product[] = [
     brand: 'DNA Pharma',
     category: Category.WHEY_ISOLATE,
     price: 3499,
-    rating: 4.6,
     image: img('Whey Isolate/DNA isolate/dna-pharma-isolate-whey-chocolate-browni.webp'),
     images: [
       img('Whey Isolate/DNA isolate/dna-pharma-isolate-whey-chocolate-browni.webp'),
@@ -333,7 +315,6 @@ export const PRODUCTS: Product[] = [
     brand: 'Healthmania',
     category: Category.WHEY_ISOLATE,
     price: 4299,
-    rating: 4.9,
     weight: '2kg',
     image: img('Whey Isolate/HM isolate/HM_Blueberrycheesecake/IsoZero2kgblueberrycheesecakefront.webp'),
     images: [
@@ -356,7 +337,6 @@ export const PRODUCTS: Product[] = [
     brand: 'Incredi Bull',
     category: Category.WHEY_ISOLATE,
     price: 2999,
-    rating: 4.5,
     weight: '2kg',
     image: img('Whey Isolate/Incredi Bull isolate/Isolate-incredibull-2kg-Current-View.webp'),
     images: [
@@ -372,7 +352,6 @@ export const PRODUCTS: Product[] = [
     brand: 'Bullion',
     category: Category.WHEY_PROTEIN,
     price: 2999,
-    rating: 4.6,
     image: img('Whey Protein/Bullion Whey/Bullionwhey.webp'),
     images: [
       img('Whey Protein/Bullion Whey/Bullionwhey.webp'),
@@ -388,7 +367,6 @@ export const PRODUCTS: Product[] = [
     brand: 'Healthmania',
     category: Category.WHEY_PROTEIN,
     price: 3199,
-    rating: 4.7,
     image: img('Whey Protein/HM whey/SALTED-CARAMEL-_1.webp'),
     images: [
       img('Whey Protein/HM whey/SALTED-CARAMEL-_1.webp'),
@@ -407,7 +385,6 @@ export const PRODUCTS: Product[] = [
     brand: 'Incredi Bull',
     category: Category.WHEY_PROTEIN,
     price: 2499,
-    rating: 4.5,
     image: img('Whey Protein/Incredi Bull/whey-incredibull-2kg-Current-View.webp'),
     images: [
       img('Whey Protein/Incredi Bull/whey-incredibull-2kg-Current-View.webp'),
@@ -421,13 +398,12 @@ export const PRODUCTS: Product[] = [
     brand: 'V-Whey',
     category: Category.WHEY_PROTEIN,
     price: 2799,
-    rating: 4.8,
-    image: img('Whey Protein/V-Whey/vwhey.webp'),
+    image: img('Whey Protein/V-Whey/chocolate_a74ca11a-3233-4b62-b511-fdd40e815fe3.webp'),
     images: [
-      img('Whey Protein/V-Whey/vwhey.webp'),
+      img('Whey Protein/V-Whey/chocolate_a74ca11a-3233-4b62-b511-fdd40e815fe3.webp'),
       img('Whey Protein/V-Whey/Vwhey2.webp'),
       img('Whey Protein/V-Whey/Vwhey3.webp'),
-      img('Whey Protein/V-Whey/chocolate_a74ca11a-3233-4b62-b511-fdd40e815fe3.webp'),
+      img('Whey Protein/V-Whey/vwhey.webp'),
     ],
     description: 'Ultra-smooth whey protein with rich chocolate flavour. Mixes instantly with no clumps.',
     isTrending: true,
@@ -441,7 +417,6 @@ export const PRODUCTS: Product[] = [
     brand: 'DNA Pharma',
     category: Category.WHEY_PROTEIN,
     price: 2699,
-    rating: 4.6,
     image: img('Whey Protein/dna pharma/dna-pharma-whey.webp'),
     images: [
       img('Whey Protein/dna pharma/dna-pharma-whey.webp'),
@@ -456,7 +431,7 @@ export const PRODUCTS: Product[] = [
 // ============================================================
 
 export const CATEGORIES_LIST = [
-  { name: 'Whey Protein', image: img('Whey Protein/V-Whey/vwhey.webp') },
+  { name: 'Whey Protein', image: img('Whey Protein/V-Whey/chocolate_a74ca11a-3233-4b62-b511-fdd40e815fe3.webp') },
   { name: 'Whey Isolate', image: img('Whey Protein/Incredi Bull/whey-incredibull-2kg-Current-View.webp') },
   { name: 'Mass Gainer', image: img('Mass Gainers/DNA Pharma Mass Gainer/dna-pharma-mass.webp') },
   { name: 'Pre-Workout', image: img('Pre-workout/Kevin Levron Shaboom pre/levrone-shaaboom-pump_1.webp') },
