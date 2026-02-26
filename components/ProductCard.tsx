@@ -24,7 +24,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onAddToCart }) => {
   return (
     <div
       onClick={handleCardClick}
-      className="group relative w-full aspect-[4/5] rounded-3xl overflow-hidden cursor-pointer bg-white border border-slate-100 transition-all duration-300 hover:shadow-2xl hover:border-yellow-400 hover:-translate-y-1"
+      className="group relative w-full aspect-[4/5] rounded-[2rem] overflow-hidden cursor-pointer bg-white border border-slate-100 transition-all duration-300 hover:shadow-xl hover:border-slate-300 hover:-translate-y-1.5 ring-1 ring-transparent hover:ring-slate-200"
     >
       {/* Background Image */}
       <img
