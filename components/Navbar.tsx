@@ -121,7 +121,7 @@ const Navbar: React.FC<NavbarProps> = ({ cartCount, onCartClick }) => {
       {/* --- Global Top Header (Liquid Glass Style) --- */}
       <div
         className={`
-          fixed top-0 left-0 right-0 z-50 flex justify-center pointer-events-none
+          fixed top-0 left-0 right-0 z-50 hidden md:flex justify-center pointer-events-none
           transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]
           ${isScrolled ? 'pt-2 md:pt-4' : 'pt-4 md:pt-8'}
         `}

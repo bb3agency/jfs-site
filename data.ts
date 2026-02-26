@@ -480,8 +480,8 @@ export const CATEGORIES_LIST = [
 // ============================================================
 
 export const BRANDS_LIST = [
-  'Healthmania', 'DNA Pharma', 'Incredi Bull', 'Bullion', 'V-Whey',
-  'MuscleBlaze', 'Kevin Levrone', 'Labrada', 'RFN', 'Swiss Life', 'Blade',
+  'Dynamite', 'Wellcore', 'DNA Pharma', 'Incredi Bull', 'Bullion', 'V-Whey',
+  'MuscleBlaze', 'Kevin Levrone', 'Labrada',
 ];
 
 // ============================================================
@@ -572,13 +572,13 @@ export const TRANSFORMATIONS: Transformation[] = [
     result: "Complete Body Recomposition"
   },
   {
-    id: "ct3",
-    name: "Transformation 3",
-    duration: "12 Weeks",
-    image: imgTrans("WhatsApp Image 2026-02-26 at 9.33.20 PM (1) 4-3.jpeg"),
-    aspectRatio: "4-3",
-    testimonial: "The training program pushed me beyond my limits.",
-    result: "Lean Muscle Gain"
+    id: "ct5",
+    name: "Transformation 5",
+    duration: "16 Weeks",
+    image: imgTrans("WhatsApp Image 2026-02-26 at 9.33.20 PM 1-1.jpeg"),
+    aspectRatio: "1-1",
+    testimonial: "Diet and training synergy delivered incredible results.",
+    result: "Shredded Physique"
   },
   {
     id: "ct4",
@@ -590,13 +590,13 @@ export const TRANSFORMATIONS: Transformation[] = [
     result: "20kg Weight Loss"
   },
   {
-    id: "ct5",
-    name: "Transformation 5",
-    duration: "16 Weeks",
-    image: imgTrans("WhatsApp Image 2026-02-26 at 9.33.20 PM 1-1.jpeg"),
-    aspectRatio: "1-1",
-    testimonial: "Diet and training synergy delivered incredible results.",
-    result: "Shredded Physique"
+    id: "ct3",
+    name: "Transformation 3",
+    duration: "12 Weeks",
+    image: imgTrans("WhatsApp Image 2026-02-26 at 9.33.20 PM (1) 4-3.jpeg"),
+    aspectRatio: "4-3",
+    testimonial: "The training program pushed me beyond my limits.",
+    result: "Lean Muscle Gain"
   },
   {
     id: "ct6",

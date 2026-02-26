@@ -68,13 +68,69 @@ const Home: React.FC<HomeProps> = ({ onAddToCart }) => {
                             Authentic supplements sourced directly from brands. No middlemen, no fake products. Just pure performance.
                         </p>
 
-                        <div className="flex flex-col gap-3 justify-center md:justify-start w-full md:w-auto">
-                            <Button onClick={() => navigate('/products')} className="bg-yellow-400 text-slate-950 hover:bg-yellow-300 border-none px-8 py-4 text-base font-black uppercase tracking-wider w-full md:w-auto rounded-xl shadow-lg shadow-yellow-400/20 transform transition-transform active:scale-95">
+                        <div className="flex flex-col md:flex-row gap-3 md:gap-4 justify-center md:justify-start w-full md:w-auto">
+                            <Button onClick={() => navigate('/products')} className="bg-yellow-400 text-slate-950 hover:bg-yellow-300 border-none px-8 py-3.5 md:py-4 text-sm md:text-base font-black uppercase tracking-wider w-full md:w-auto rounded-xl shadow-lg shadow-yellow-400/20 transform transition-transform active:scale-95">
                                 Shop Now
                             </Button>
-                            <Button onClick={() => document.getElementById('brands-section')?.scrollIntoView({ behavior: 'smooth' })} variant="outline" className="text-white border-white/20 bg-white/5 hover:bg-white/10 px-8 py-4 text-base font-bold w-full md:w-auto rounded-xl backdrop-blur-md transition-colors">
+                            <Button onClick={() => document.getElementById('brands-section')?.scrollIntoView({ behavior: 'smooth' })} variant="outline" className="text-white border-white/20 bg-white/5 hover:bg-white/10 px-8 py-3.5 md:py-4 text-sm md:text-base font-bold w-full md:w-auto rounded-xl backdrop-blur-md transition-colors">
                                 View Brands
                             </Button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* 1.5 Features Section (New Custom) */}
+            <section className="py-8 md:py-12 bg-white border-b border-slate-100">
+                <div className="container mx-auto px-4 md:px-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+                        {/* Box 1 */}
+                        <div className="bg-slate-50 border border-slate-100 rounded-2xl p-5 md:p-6 flex flex-col gap-3 hover:bg-slate-100 hover:shadow-sm transition-all">
+                            <div className="flex items-center gap-3">
+                                <ShieldCheck size={36} strokeWidth={1.5} className="text-slate-800 shrink-0" />
+                                <h3 className="text-sm font-black text-slate-900 leading-tight uppercase font-heading">
+                                    100% Authenticity<br />Guaranteed
+                                </h3>
+                            </div>
+                            <p className="text-slate-600 text-[13px] leading-relaxed font-medium">
+                                Rest easy knowing every product is sourced directly from the authorized brand. Your peace of mind is our priority.
+                            </p>
+                        </div>
+                        {/* Box 2 */}
+                        <div className="bg-slate-50 border border-slate-100 rounded-2xl p-5 md:p-6 flex flex-col gap-3 hover:bg-slate-100 hover:shadow-sm transition-all">
+                            <div className="flex items-center gap-3">
+                                <Beaker size={36} strokeWidth={1.5} className="text-slate-800 shrink-0" />
+                                <h3 className="text-sm font-black text-slate-900 leading-tight uppercase font-heading">
+                                    Expertly Curated<br />Selection
+                                </h3>
+                            </div>
+                            <p className="text-slate-600 text-[13px] leading-relaxed font-medium">
+                                We filter through hundreds of options to bring you a verified and diverse selection of top-performing supplements.
+                            </p>
+                        </div>
+                        {/* Box 3 */}
+                        <div className="bg-slate-50 border border-slate-100 rounded-2xl p-5 md:p-6 flex flex-col gap-3 hover:bg-slate-100 hover:shadow-sm transition-all">
+                            <div className="flex items-center gap-3">
+                                <Star size={36} strokeWidth={1.5} className="text-slate-800 shrink-0" />
+                                <h3 className="text-sm font-black text-slate-900 leading-tight uppercase font-heading">
+                                    Community &<br />Expert Rated
+                                </h3>
+                            </div>
+                            <p className="text-slate-600 text-[13px] leading-relaxed font-medium">
+                                Benefit from real customer reviews and fitness expert insights. We only host products that meet JFS high-quality standards.
+                            </p>
+                        </div>
+                        {/* Box 4 */}
+                        <div className="bg-slate-50 border border-slate-100 rounded-2xl p-5 md:p-6 flex flex-col gap-3 hover:bg-slate-100 hover:shadow-sm transition-all">
+                            <div className="flex items-center gap-3">
+                                <Truck size={36} strokeWidth={1.5} className="text-slate-800 shrink-0" />
+                                <h3 className="text-sm font-black text-slate-900 leading-tight uppercase font-heading">
+                                    Seamless Shopping<br />& Fast Delivery
+                                </h3>
+                            </div>
+                            <p className="text-slate-600 text-[13px] leading-relaxed font-medium">
+                                Secure WhatsApp checkout and ultra-fast shipping ensure your products arrive fresh and when you need them.
+                            </p>
                         </div>
                     </div>
                 </div>

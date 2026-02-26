@@ -1,6 +1,6 @@
 import React from 'react';
 import { Product } from '../types';
-import { Heart, Plus, ShoppingBag } from 'lucide-react';
+import { Plus, ShoppingBag } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 interface ProductCardProps {
@@ -39,16 +39,6 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onAddToCart }) => {
           -{product.discount}%
         </div>
       )}
-
-      {/* Heart Icon (Top Right) */}
-      <button
-        className="absolute top-4 right-4 h-9 w-9 bg-white/60 backdrop-blur-md rounded-full flex items-center justify-center text-slate-900 hover:bg-white hover:text-red-500 transition-colors shadow-sm z-10"
-        onClick={(e) => {
-          e.stopPropagation();
-        }}
-      >
-        <Heart size={18} strokeWidth={2.5} />
-      </button>
 
       {/* Bottom Info Pill - Glassmorphic Effect */}
       <div className="absolute bottom-2 left-2 right-2 md:bottom-3 md:left-3 md:right-3 bg-white/90 backdrop-blur-xl border border-white/50 rounded-2xl p-2 md:p-3 shadow-lg flex items-end justify-between gap-2 transition-colors group-hover:bg-white">
