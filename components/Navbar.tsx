@@ -138,8 +138,8 @@ const Navbar: React.FC<NavbarProps> = ({ cartCount, onCartClick }) => {
                 overflow-hidden
                 
                 ${isScrolled
-              ? 'w-[75%] max-w-4xl py-3 px-6 rounded-full'
-              : 'w-[90%] max-w-7xl py-5 px-10 rounded-[2.5rem]'
+              ? 'w-[75%] max-w-3xl py-2.5 px-6 rounded-full'
+              : 'w-[85%] max-w-6xl py-3.5 px-8 rounded-full'
             }
             `}
         >
@@ -149,8 +149,9 @@ const Navbar: React.FC<NavbarProps> = ({ cartCount, onCartClick }) => {
           </div>
 
           {/* Logo */}
-          <Link to="/" className="relative z-10 flex items-center group select-none">
-            <img src={logo} alt="JFS Fitness" className="h-10 md:h-16 w-auto group-hover:scale-105 transition-transform duration-300 drop-shadow-sm" />
+          <Link to="/" className="relative z-10 flex items-center gap-2 group select-none">
+            <img src={logo} alt="JFS Fitness" className="h-8 md:h-12 w-auto group-hover:scale-105 transition-transform duration-300 drop-shadow-sm" />
+            <span className="text-white font-black text-lg md:text-xl tracking-tight font-heading">JFS</span>
           </Link>
 
           {/* Desktop Navigation Links */}
@@ -162,7 +163,7 @@ const Navbar: React.FC<NavbarProps> = ({ cartCount, onCartClick }) => {
                   key={link.name}
                   to={link.path}
                   className={`
-                                relative text-lg tracking-tight uppercase font-bold transition-all duration-300 select-none
+                                relative text-sm tracking-tight uppercase font-bold transition-all duration-300 select-none
                                 ${isActive
                       ? 'text-yellow-400'
                       : 'text-white hover:text-yellow-400'

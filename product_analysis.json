@@ -1,0 +1,437 @@
+[
+  {
+    "name": "Bullion EAA+ BCA",
+    "category": "BCAA-EAA",
+    "folderName": "Bullion EAA+ BCA-3k_2.2k",
+    "mrp": 3000,
+    "selling": 2200,
+    "discount": 27,
+    "images": [],
+    "flavours": []
+  },
+  {
+    "name": "DNA pharma BCAA",
+    "category": "BCAA-EAA",
+    "folderName": "DNA pharma BCAA-4k_2.2k",
+    "mrp": 4000,
+    "selling": 2200,
+    "discount": 45,
+    "images": [
+      "BCAA-EAA/DNA pharma BCAA-4k_2.2k/DNA greenApple/dna-pharma-bcaa-green-apple.webp",
+      "BCAA-EAA/DNA pharma BCAA-4k_2.2k/DNA litchi/dna-pharma-bcaa-litchi.webp",
+      "BCAA-EAA/DNA pharma BCAA-4k_2.2k/DNA orange/dna-pharma-bcaa-orange.webp",
+      "BCAA-EAA/DNA pharma BCAA-4k_2.2k/DNA watermelon/dna-pharma-bcaa-watermelon.webp"
+    ],
+    "flavours": [
+      {
+        "name": "DNA greenApple",
+        "image": "BCAA-EAA/DNA pharma BCAA-4k_2.2k/DNA greenApple/dna-pharma-bcaa-green-apple.webp"
+      },
+      {
+        "name": "DNA litchi",
+        "image": "BCAA-EAA/DNA pharma BCAA-4k_2.2k/DNA litchi/dna-pharma-bcaa-litchi.webp"
+      },
+      {
+        "name": "DNA orange",
+        "image": "BCAA-EAA/DNA pharma BCAA-4k_2.2k/DNA orange/dna-pharma-bcaa-orange.webp"
+      },
+      {
+        "name": "DNA watermelon",
+        "image": "BCAA-EAA/DNA pharma BCAA-4k_2.2k/DNA watermelon/dna-pharma-bcaa-watermelon.webp"
+      }
+    ]
+  },
+  {
+    "name": "HM EAA+ BCAA",
+    "category": "BCAA-EAA",
+    "folderName": "HM EAA+ BCAA-2.4k_1.6k",
+    "mrp": 2400,
+    "selling": 1600,
+    "discount": 33,
+    "images": [
+      "BCAA-EAA/HM EAA+ BCAA-2.4k_1.6k/BlackCurrent_splash/black-currant-EAA_BCAA-_1.webp",
+      "BCAA-EAA/HM EAA+ BCAA-2.4k_1.6k/BlackCurrent_splash/black-currant-EAA_BCAA-_2.webp",
+      "BCAA-EAA/HM EAA+ BCAA-2.4k_1.6k/BlackCurrent_splash/black-currant-EAA_BCAA-_3.webp",
+      "BCAA-EAA/HM EAA+ BCAA-2.4k_1.6k/Orange_splash/BCAAOrganeLeft_2.webp",
+      "BCAA-EAA/HM EAA+ BCAA-2.4k_1.6k/Orange_splash/BCAAOrgangeRight.webp",
+      "BCAA-EAA/HM EAA+ BCAA-2.4k_1.6k/Orange_splash/HM_EAA_BCAA_1.webp",
+      "BCAA-EAA/HM EAA+ BCAA-2.4k_1.6k/Watermelon_splash/BCAAWatermelonleaft_2.webp",
+      "BCAA-EAA/HM EAA+ BCAA-2.4k_1.6k/Watermelon_splash/BCAAWatermelonRight.webp",
+      "BCAA-EAA/HM EAA+ BCAA-2.4k_1.6k/Watermelon_splash/BCAAWatermelon_1.webp"
+    ],
+    "flavours": [
+      {
+        "name": "BlackCurrent splash",
+        "image": "BCAA-EAA/HM EAA+ BCAA-2.4k_1.6k/BlackCurrent_splash/black-currant-EAA_BCAA-_1.webp"
+      },
+      {
+        "name": "Orange splash",
+        "image": "BCAA-EAA/HM EAA+ BCAA-2.4k_1.6k/Orange_splash/BCAAOrganeLeft_2.webp"
+      },
+      {
+        "name": "Watermelon splash",
+        "image": "BCAA-EAA/HM EAA+ BCAA-2.4k_1.6k/Watermelon_splash/BCAAWatermelonleaft_2.webp"
+      }
+    ]
+  },
+  {
+    "name": "Incredi Bull BCAA",
+    "category": "BCAA-EAA",
+    "folderName": "Incredi Bull BCAA-2k_1.2k",
+    "mrp": 2000,
+    "selling": 1200,
+    "discount": 40,
+    "images": [
+      "BCAA-EAA/Incredi Bull BCAA-2k_1.2k/incredi_bull_BCAA.webp"
+    ],
+    "flavours": []
+  },
+  {
+    "name": "Blade Fat Burner",
+    "category": "Fat Burners",
+    "folderName": "Blade Fat Burner-3.5k",
+    "mrp": 3500,
+    "selling": 3500,
+    "discount": 0,
+    "images": [
+      "Fat Burners/Blade Fat Burner-3.5k/BLDE_FAT.webp"
+    ],
+    "flavours": []
+  },
+  {
+    "name": "RFN Fat Strom Xtreme",
+    "category": "Fat Burners",
+    "folderName": "RFN Fat Strom Xtreme-2.5k",
+    "mrp": 2500,
+    "selling": 2500,
+    "discount": 0,
+    "images": [
+      "Fat Burners/RFN Fat Strom Xtreme-2.5k/RFN fat burner_left_2.webp",
+      "Fat Burners/RFN Fat Strom Xtreme-2.5k/RFN fat burner_right_3.webp",
+      "Fat Burners/RFN Fat Strom Xtreme-2.5k/RFN-Fat-Burner_1.webp"
+    ],
+    "flavours": []
+  },
+  {
+    "name": "Swiss Life Fat cutter",
+    "category": "Fat Burners",
+    "folderName": "Swiss Life Fat cutter-7k",
+    "mrp": 7000,
+    "selling": 7000,
+    "discount": 0,
+    "images": [
+      "Fat Burners/Swiss Life Fat cutter-7k/swissFatCutter60_1.webp",
+      "Fat Burners/Swiss Life Fat cutter-7k/swissleft_2.webp",
+      "Fat Burners/Swiss Life Fat cutter-7k/swisslyf_right_3.webp"
+    ],
+    "flavours": []
+  },
+  {
+    "name": "DNA Pharma Mass Gainer",
+    "category": "Mass Gainers",
+    "folderName": "DNA Pharma Mass Gainer-5k_3.5k",
+    "mrp": 5000,
+    "selling": 3500,
+    "discount": 30,
+    "images": [
+      "Mass Gainers/DNA Pharma Mass Gainer-5k_3.5k/dna-pharma-mass.webp"
+    ],
+    "flavours": []
+  },
+  {
+    "name": "HM pro bulk 3kg",
+    "category": "Mass Gainers",
+    "folderName": "HM pro bulk 3kg-4.1k_2.8k",
+    "mrp": 4100,
+    "selling": 2800,
+    "discount": 32,
+    "images": [
+      "Mass Gainers/HM pro bulk 3kg-4.1k_2.8k/PRO-BULK-_1.webp",
+      "Mass Gainers/HM pro bulk 3kg-4.1k_2.8k/PRO-BULK-_2.webp",
+      "Mass Gainers/HM pro bulk 3kg-4.1k_2.8k/PRO-BULK-_3.webp"
+    ],
+    "flavours": []
+  },
+  {
+    "name": "HM pro bulk 5kg",
+    "category": "Mass Gainers",
+    "folderName": "HM pro bulk 5kg-7.4k_5k",
+    "mrp": 7400,
+    "selling": 5000,
+    "discount": 32,
+    "images": [
+      "Mass Gainers/HM pro bulk 5kg-7.4k_5k/probulk_5kgl_2.webp",
+      "Mass Gainers/HM pro bulk 5kg-7.4k_5k/probulk_5kg_1.webp",
+      "Mass Gainers/HM pro bulk 5kg-7.4k_5k/probulk_5kg_3.webp",
+      "Mass Gainers/HM pro bulk 5kg-7.4k_5k/prob_last_4.webp"
+    ],
+    "flavours": []
+  },
+  {
+    "name": "Incredi Bull Premium Mass Gianer 3kg",
+    "category": "Mass Gainers",
+    "folderName": "Incredi Bull Premium Mass Gianer 3kg-3.5k_2.3k",
+    "mrp": 3500,
+    "selling": 2300,
+    "discount": 34,
+    "images": [
+      "Mass Gainers/Incredi Bull Premium Mass Gianer 3kg-3.5k_2.3k/Mass-Gainer-incredibull-3kg-Current-View.webp"
+    ],
+    "flavours": []
+  },
+  {
+    "name": "Incredi Bull Premium Mass Gianer 5kg",
+    "category": "Mass Gainers",
+    "folderName": "Incredi Bull Premium Mass Gianer 5kg-5.2k_4k",
+    "mrp": 5200,
+    "selling": 4000,
+    "discount": 23,
+    "images": [
+      "Mass Gainers/Incredi Bull Premium Mass Gianer 5kg-5.2k_4k/incredB_5kg_massG.webp"
+    ],
+    "flavours": []
+  },
+  {
+    "name": "DNA BRO code pre",
+    "category": "Pre-workout",
+    "folderName": "DNA BRO code pre-4.5k_2.2k",
+    "mrp": 4500,
+    "selling": 2200,
+    "discount": 51,
+    "images": [
+      "Pre-workout/DNA BRO code pre-4.5k_2.2k/pre_greenApple/dna-pharma-preworkout-green-apple_1.webp",
+      "Pre-workout/DNA BRO code pre-4.5k_2.2k/pre_greenApple/dna-preworkout-supplement-facts_2.webp",
+      "Pre-workout/DNA BRO code pre-4.5k_2.2k/pre_orange/dna-pharma-preworkout-orange_1.webp",
+      "Pre-workout/DNA BRO code pre-4.5k_2.2k/pre_orange/dna-preworkout-supplement-facts.webp",
+      "Pre-workout/DNA BRO code pre-4.5k_2.2k/pre_watermelon/dna-pharma-preworkout-watermelo_1.webp",
+      "Pre-workout/DNA BRO code pre-4.5k_2.2k/pre_watermelon/dna-preworkout-supplement-facts.webp"
+    ],
+    "flavours": [
+      {
+        "name": "pre greenApple",
+        "image": "Pre-workout/DNA BRO code pre-4.5k_2.2k/pre_greenApple/dna-pharma-preworkout-green-apple_1.webp"
+      },
+      {
+        "name": "pre orange",
+        "image": "Pre-workout/DNA BRO code pre-4.5k_2.2k/pre_orange/dna-pharma-preworkout-orange_1.webp"
+      },
+      {
+        "name": "pre watermelon",
+        "image": "Pre-workout/DNA BRO code pre-4.5k_2.2k/pre_watermelon/dna-pharma-preworkout-watermelo_1.webp"
+      }
+    ]
+  },
+  {
+    "name": "HM pump",
+    "category": "Pre-workout",
+    "folderName": "HM pump-3.2k_1.7k",
+    "mrp": 3200,
+    "selling": 1700,
+    "discount": 47,
+    "images": [
+      "Pre-workout/HM pump-3.2k_1.7k/beach_cocktail/beach_cocktail_PRO_PUMP_CAFFEINE_FREE_1.webp",
+      "Pre-workout/HM pump-3.2k_1.7k/beach_cocktail/pro.pump.2.webp",
+      "Pre-workout/HM pump-3.2k_1.7k/beach_cocktail/pro.pump.3.webp",
+      "Pre-workout/HM pump-3.2k_1.7k/hm_wildGrape/pro.pump.2.webp",
+      "Pre-workout/HM pump-3.2k_1.7k/hm_wildGrape/pro.pump.3.webp",
+      "Pre-workout/HM pump-3.2k_1.7k/hm_wildGrape/wild_grapes_PRO_PUMP_CAFFEINE_FREE_1.webp"
+    ],
+    "flavours": [
+      {
+        "name": "beach cocktail",
+        "image": "Pre-workout/HM pump-3.2k_1.7k/beach_cocktail/beach_cocktail_PRO_PUMP_CAFFEINE_FREE_1.webp"
+      },
+      {
+        "name": "hm wildGrape",
+        "image": "Pre-workout/HM pump-3.2k_1.7k/hm_wildGrape/pro.pump.2.webp"
+      }
+    ]
+  },
+  {
+    "name": "Incredi Bull pre",
+    "category": "Pre-workout",
+    "folderName": "Incredi Bull pre-1.7k_1.2k",
+    "mrp": 1700,
+    "selling": 1200,
+    "discount": 29,
+    "images": [
+      "Pre-workout/Incredi Bull pre-1.7k_1.2k/incredibull-pre-workout-180-g-Current-View.webp"
+    ],
+    "flavours": []
+  },
+  {
+    "name": "Kevin Levron Shaboom pre",
+    "category": "Pre-workout",
+    "folderName": "Kevin Levron Shaboom pre-3.96k_2.2k",
+    "mrp": 3960,
+    "selling": 2200,
+    "discount": 44,
+    "images": [
+      "Pre-workout/Kevin Levron Shaboom pre-3.96k_2.2k/facts_2.webp",
+      "Pre-workout/Kevin Levron Shaboom pre-3.96k_2.2k/levrone-shaaboom-pump_1.webp"
+    ],
+    "flavours": []
+  },
+  {
+    "name": "Labrada pre",
+    "category": "Pre-workout",
+    "folderName": "Labrada pre-3k_1.6k",
+    "mrp": 3000,
+    "selling": 1600,
+    "discount": 47,
+    "images": [],
+    "flavours": []
+  },
+  {
+    "name": "MB The Wolf pre",
+    "category": "Pre-workout",
+    "folderName": "MB The Wolf pre-3k_1.7k",
+    "mrp": 3000,
+    "selling": 1700,
+    "discount": 43,
+    "images": [
+      "Pre-workout/MB The Wolf pre-3k_1.7k/MB_cola/m-b-muscle-builder_1.webp",
+      "Pre-workout/MB The Wolf pre-3k_1.7k/MB_cola/muscle-builderwolfpreworkout_2.webp",
+      "Pre-workout/MB The Wolf pre-3k_1.7k/MB_GreenApple/MB_GA_1.webp",
+      "Pre-workout/MB The Wolf pre-3k_1.7k/MB_GreenApple/MB_GA_2.webp",
+      "Pre-workout/MB The Wolf pre-3k_1.7k/MB_GreenApple/MB_GA_3.webp",
+      "Pre-workout/MB The Wolf pre-3k_1.7k/MB_GreenApple/MB_GA_4.webp",
+      "Pre-workout/MB The Wolf pre-3k_1.7k/MB_pinecolada/MB_wolf_1.webp",
+      "Pre-workout/MB The Wolf pre-3k_1.7k/MB_pinecolada/MB_wolf_2.webp",
+      "Pre-workout/MB The Wolf pre-3k_1.7k/MB_pinecolada/MB_wolf_3.webp",
+      "Pre-workout/MB The Wolf pre-3k_1.7k/MB_pinecolada/MB_wolf_4.webp"
+    ],
+    "flavours": [
+      {
+        "name": "MB cola",
+        "image": "Pre-workout/MB The Wolf pre-3k_1.7k/MB_cola/m-b-muscle-builder_1.webp"
+      },
+      {
+        "name": "MB GreenApple",
+        "image": "Pre-workout/MB The Wolf pre-3k_1.7k/MB_GreenApple/MB_GA_1.webp"
+      },
+      {
+        "name": "MB pinecolada",
+        "image": "Pre-workout/MB The Wolf pre-3k_1.7k/MB_pinecolada/MB_wolf_1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Bullion Isolate",
+    "category": "Whey Isolate",
+    "folderName": "Bullion Isolate-11k_7k",
+    "mrp": 11000,
+    "selling": 7000,
+    "discount": 36,
+    "images": [],
+    "flavours": []
+  },
+  {
+    "name": "DNA isolate-12k",
+    "category": "Whey Isolate",
+    "folderName": "DNA isolate-12k-6.5k",
+    "mrp": 6500,
+    "selling": 6500,
+    "discount": 0,
+    "images": [
+      "Whey Isolate/DNA isolate-12k-6.5k/dna-pharma-isolate-whey-chocolate-browni.webp"
+    ],
+    "flavours": []
+  },
+  {
+    "name": "HM isolate",
+    "category": "Whey Isolate",
+    "folderName": "HM isolate-11k_6.5k",
+    "mrp": 11000,
+    "selling": 6500,
+    "discount": 41,
+    "images": [
+      "Whey Isolate/HM isolate-11k_6.5k/HM_Blueberrycheesecake/IsoZero2kgblueberrycheesecakefront.webp",
+      "Whey Isolate/HM isolate-11k_6.5k/HM_Blueberrycheesecake/IsoZero2kgblueberrycheesecakeleft.webp",
+      "Whey Isolate/HM isolate-11k_6.5k/HM_Blueberrycheesecake/IsoZero2kgblueberrycheesecakeright.webp",
+      "Whey Isolate/HM isolate-11k_6.5k/HM_ChocolateIcecream/IsoZero2kgchocolateice-creamfront.webp",
+      "Whey Isolate/HM isolate-11k_6.5k/HM_ChocolateIcecream/IsoZero2kgchocolateice-cream_left.webp",
+      "Whey Isolate/HM isolate-11k_6.5k/HM_ChocolateIcecream/IsoZero2kgchocolateice-cream_right.webp"
+    ],
+    "flavours": [
+      {
+        "name": "HM Blueberrycheesecake",
+        "image": "Whey Isolate/HM isolate-11k_6.5k/HM_Blueberrycheesecake/IsoZero2kgblueberrycheesecakefront.webp"
+      },
+      {
+        "name": "HM ChocolateIcecream",
+        "image": "Whey Isolate/HM isolate-11k_6.5k/HM_ChocolateIcecream/IsoZero2kgchocolateice-creamfront.webp"
+      }
+    ]
+  },
+  {
+    "name": "Incredi Bull isolate",
+    "category": "Whey Isolate",
+    "folderName": "Incredi Bull isolate-8.5k_5.5k",
+    "mrp": 8500,
+    "selling": 5500,
+    "discount": 35,
+    "images": [
+      "Whey Isolate/Incredi Bull isolate-8.5k_5.5k/Isolate-incredibull-2kg-Current-View.webp"
+    ],
+    "flavours": []
+  },
+  {
+    "name": "Bullion Whey",
+    "category": "Whey Protein",
+    "folderName": "Bullion Whey-9k_6k",
+    "mrp": 9000,
+    "selling": 6000,
+    "discount": 33,
+    "images": [
+      "Whey Protein/Bullion Whey-9k_6k/Bullion2.webp",
+      "Whey Protein/Bullion Whey-9k_6k/Bullion3.webp",
+      "Whey Protein/Bullion Whey-9k_6k/bullion4.webp",
+      "Whey Protein/Bullion Whey-9k_6k/Bullionwhey.webp"
+    ],
+    "flavours": []
+  },
+  {
+    "name": "dna pharma",
+    "category": "Whey Protein",
+    "folderName": "dna pharma-10k_5.5k",
+    "mrp": 10000,
+    "selling": 5500,
+    "discount": 45,
+    "images": [
+      "Whey Protein/dna pharma-10k_5.5k/dna-pharma-whey.webp",
+      "Whey Protein/dna pharma-10k_5.5k/dnapharma2.webp",
+      "Whey Protein/dna pharma-10k_5.5k/WhatsApp Image 2026-02-16 at 21.52.41.webp"
+    ],
+    "flavours": []
+  },
+  {
+    "name": "HM whey",
+    "category": "Whey Protein",
+    "folderName": "HM whey-8k_4.9k",
+    "mrp": 8000,
+    "selling": 4900,
+    "discount": 39,
+    "images": [
+      "Whey Protein/HM whey-8k_4.9k/SALTED-CARAMEL-_1.webp",
+      "Whey Protein/HM whey-8k_4.9k/SALTED-CARAMEL-_2.webp",
+      "Whey Protein/HM whey-8k_4.9k/SALTED-CARAMEL-_3.webp",
+      "Whey Protein/HM whey-8k_4.9k/WhatsApp Image 2026-02-16 at 21.52.41 (2).webp"
+    ],
+    "flavours": []
+  },
+  {
+    "name": "Incredi Bull",
+    "category": "Whey Protein",
+    "folderName": "Incredi Bull-7.2k_4.9k",
+    "mrp": 7200,
+    "selling": 4900,
+    "discount": 32,
+    "images": [
+      "Whey Protein/Incredi Bull-7.2k_4.9k/WhatsApp Image 2026-02-16 at 21.52.42.webp",
+      "Whey Protein/Incredi Bull-7.2k_4.9k/whey-incredibull-2kg-Current-View.webp",
+      "Whey Protein/Incredi Bull-7.2k_4.9k/whey-protein-premium-whey-protein-high-quality-fast-absorbing-original-imagn45eh3r4wm2q.webp"
+    ],
+    "flavours": []
+  }
+]

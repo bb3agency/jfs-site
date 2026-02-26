@@ -152,9 +152,9 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ onAddToCart, cartItems,
                 <span className="text-2xl md:text-3xl font-black text-slate-900">
                   ₹{product.price.toLocaleString()}
                 </span>
-                {product.discount && (
+                {product.mrp && product.mrp > product.price && (
                   <span className="text-sm md:text-lg text-slate-400 line-through font-medium">
-                    ₹{Math.round(product.price * (1 + product.discount / 100)).toLocaleString()}
+                    ₹{product.mrp.toLocaleString()}
                   </span>
                 )}
               </div>

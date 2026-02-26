@@ -20,46 +20,23 @@ const Transformations = () => {
                         Client <span className="text-slate-400">Transformations</span>
                     </h1>
                     <p className="text-slate-500 font-medium max-w-2xl mx-auto text-lg md:text-xl leading-relaxed">
-                        Real people. Real hard work. Real results. Browse through our client success stories and see what's possible.
+                        Real people. Real hard work. Real results. Browse through our client success stories, all personally trained by Prabha Joy, and see what's possible.
                     </p>
                     <div className="w-24 h-1.5 bg-yellow-400 mx-auto rounded-full mt-10"></div>
                 </div>
 
-                {/* Transformation Cards Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+                {/* Transformation Grid (Masonry / Bento Style) */}
+                <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 md:gap-6 space-y-4 md:space-y-6">
                     {TRANSFORMATIONS.map((t) => (
-                        <div key={t.id} className="bg-white border border-slate-200 rounded-[2.5rem] overflow-hidden shadow-sm hover:shadow-2xl hover:border-slate-300 transition-all duration-500 group">
-                            {/* Image Wrapper */}
-                            <div className="flex h-64 md:h-80 relative overflow-hidden bg-slate-100">
-                                {/* Before Image */}
-                                <div className="w-1/2 relative border-r border-slate-200">
-                                    <img src={t.imageBefore} alt="Before" className="w-full h-full object-cover filter grayscale opacity-90 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 group-hover:scale-105" />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
-                                    <span className="absolute bottom-4 left-4 bg-white/90 backdrop-blur text-slate-900 text-[10px] md:text-xs font-black uppercase tracking-tight px-3 py-1.5 rounded-lg shadow-sm">BEFORE</span>
-                                </div>
-                                {/* After Image */}
-                                <div className="w-1/2 relative">
-                                    <img src={t.imageAfter} alt="After" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
-                                    <span className="absolute bottom-4 right-4 bg-yellow-400 text-slate-900 text-[10px] md:text-xs font-black uppercase tracking-tight px-3 py-1.5 rounded-lg shadow-sm">AFTER</span>
-                                </div>
-                            </div>
-
-                            {/* Details */}
-                            <div className="p-8 md:p-10">
-                                <div className="flex justify-between items-center mb-6">
-                                    <h3 className="text-2xl font-black text-slate-900 font-heading uppercase tracking-tight">{t.name}</h3>
-                                    <span className="text-slate-500 font-bold border border-slate-200 px-3 py-1 rounded-lg text-xs uppercase tracking-tight bg-slate-50">{t.duration}</span>
-                                </div>
-                                <div className="bg-green-50/50 p-4 rounded-xl mb-6 border border-green-100/50">
-                                    <p className="text-green-700 font-bold text-sm uppercase flex items-center gap-2">
-                                        Result: <span className="text-slate-800 normal-case font-medium">{t.result}</span>
-                                    </p>
-                                </div>
-                                <p className="text-slate-600 font-medium italic leading-relaxed relative">
-                                    <span className="text-4xl text-slate-200 absolute -top-4 -left-2 font-serif">"</span>
-                                    <span className="relative z-10 pl-4 block">{t.testimonial}</span>
-                                </p>
+                        <div key={t.id} className="break-inside-avoid bg-white shadow-sm hover:shadow-2xl transition-all duration-500 group rounded-[2rem] overflow-hidden border border-slate-100 hover:border-slate-300">
+                            <div className="relative overflow-hidden bg-slate-100 w-full h-auto">
+                                <img
+                                    src={t.image}
+                                    alt="Client Transformation"
+                                    className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
+                                    loading="lazy"
+                                />
+                                <div className="absolute inset-0 bg-slate-900/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
                             </div>
                         </div>
                     ))}

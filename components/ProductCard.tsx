@@ -60,9 +60,9 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onAddToCart }) => {
         </div>
         {/* Price */}
         <div className="flex-shrink-0 mb-[1px] flex flex-col items-end">
-          {product.discount && (
+          {product.mrp && product.mrp > product.price && (
             <span className="text-[10px] text-slate-400 line-through font-bold">
-              ₹{(product.price * (1 + product.discount / 100)).toFixed(0)}
+              ₹{product.mrp.toLocaleString()}
             </span>
           )}
           <span className="text-sm font-black text-slate-900">

@@ -4,6 +4,7 @@ export interface Product {
   category: Category;
   brand: string;
   price: number;
+  mrp?: number;
   image: string;
   images?: string[];
   description: string;
@@ -25,7 +26,6 @@ export enum Category {
   PRE_WORKOUT = 'Pre-Workout',
   BCAA_EAA = 'BCAA & EAA',
   FAT_BURNER = 'Fat Burner',
-  L_CARNITINE = 'L-Carnitine',
 }
 
 export interface CartItem extends Product {
@@ -51,8 +51,10 @@ export interface Transformation {
   id: string;
   name: string;
   duration: string;
-  imageBefore: string;
-  imageAfter: string;
+  imageBefore?: string;
+  imageAfter?: string;
+  image?: string;
+  aspectRatio?: '1-1' | '4-3';
   testimonial: string;
   result: string;
 }

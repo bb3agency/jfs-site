@@ -2,6 +2,7 @@ import React from 'react';
 import { X, Minus, Plus, Trash2, ArrowRight, ShoppingBag } from 'lucide-react';
 import { CartItem } from '../types';
 import Button from './Button';
+import { WHATSAPP_NUMBER } from '../data';
 
 interface CartDrawerProps {
   isOpen: boolean;
@@ -19,6 +20,27 @@ const CartDrawer: React.FC<CartDrawerProps> = ({
   onRemoveItem,
 }) => {
   const total = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
+
+  const handleCheckout = () => {
+    if (cartItems.length === 0) return;
+
+    let message = `🛒 *New Order*\n`;
+    message += `━━━━━━━━━━━━━━━━━━━━\n\n`;
+
+    cartItems.forEach((item, index) => {
+      message += `*${index + 1}. ${item.name}*\n`;
+      message += `   Category: ${item.category}\n`;
+      if (item.weight) message += `   Weight: ${item.weight}\n`;
+      message += `   Qty: ${item.quantity}\n`;
+      message += `   Price: ₹${item.price.toLocaleString()} × ${item.quantity} = ₹${(item.price * item.quantity).toLocaleString()}\n\n`;
+    });
+
+    message += `━━━━━━━━━━━━━━━━━━━━\n`;
+    message += `*Total: ₹${total.toLocaleString()}*`;
+
+    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+    window.open(url, '_blank');
+  };
 
   return (
     <>
@@ -104,9 +126,9 @@ const CartDrawer: React.FC<CartDrawerProps> = ({
               <span className="text-base font-medium text-slate-500">Subtotal</span>
               <span className="text-2xl font-bold text-slate-900">₹{total.toFixed(2)}</span>
             </div>
-            <p className="mb-6 text-xs text-slate-400 text-center">Shipping and taxes calculated at checkout.</p>
-            <Button className="w-full" size="lg" icon={<ArrowRight size={20} />}>
-              Checkout
+            <p className="mb-6 text-xs text-slate-400 text-center">Your order will be sent via WhatsApp for confirmation.</p>
+            <Button className="w-full" size="lg" icon={<ArrowRight size={20} />} onClick={handleCheckout}>
+              Order via WhatsApp
             </Button>
           </div>
         )}

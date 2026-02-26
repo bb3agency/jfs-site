@@ -77,13 +77,6 @@ const Home: React.FC<HomeProps> = ({ onAddToCart }) => {
                             </Button>
                         </div>
                     </div>
-                    <div className="hero-image flex-1 relative hidden md:block">
-                        <img
-                            src="https://pngimg.com/d/protein_supplement_PNG10.png"
-                            alt="Protein Jar"
-                            className="w-[80%] mx-auto drop-shadow-2xl hover:scale-105 transition-transform duration-500"
-                        />
-                    </div>
                 </div>
             </section>
 
@@ -162,41 +155,22 @@ const Home: React.FC<HomeProps> = ({ onAddToCart }) => {
                             Real <span className="text-slate-400">Results</span>
                         </h2>
                         <p className="text-slate-500 max-w-2xl mx-auto text-sm md:text-lg leading-relaxed font-medium">
-                            Discipline and the right fuel create masterpieces. See what our clients have achieved with JFS Fitness.
+                            Discipline and the right fuel create masterpieces. See what our clients have achieved under the expert training of Prabha Joy.
                         </p>
                         <div className="w-16 md:w-24 h-1.5 bg-yellow-400 mx-auto rounded-full mt-4 md:mt-6"></div>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 overflow-hidden px-1 md:px-0">
-                        {TRANSFORMATIONS.slice(0, 3).map((item) => (
-                            <div key={item.id} className="bg-white border border-slate-200 rounded-[2rem] md:rounded-[2.5rem] overflow-hidden hover:border-yellow-400 hover:shadow-2xl transition-all duration-300 group hover:-translate-y-2 snap-center">
-                                <div className="flex h-48 md:h-72 relative bg-slate-100">
-                                    <div className="w-1/2 relative border-r border-slate-200">
-                                        <img src={item.imageBefore} alt="Before" className="w-full h-full object-cover filter grayscale opacity-90 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500 pointer-events-none" />
-                                        <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent pointer-events-none"></div>
-                                        <span className="absolute bottom-2 left-2 md:bottom-3 md:left-3 bg-white/90 text-slate-900 text-[8px] md:text-[10px] font-black tracking-tight px-2 py-1 rounded uppercase shadow-sm backdrop-blur pointer-events-none">BEFORE</span>
-                                    </div>
-                                    <div className="w-1/2 relative">
-                                        <img src={item.imageAfter} alt="After" className="w-full h-full object-cover pointer-events-none" />
-                                        <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent pointer-events-none"></div>
-                                        <span className="absolute bottom-2 right-2 md:bottom-3 md:right-3 bg-yellow-400 text-slate-900 text-[8px] md:text-[10px] font-black tracking-tight px-2 py-1 rounded uppercase shadow-sm pointer-events-none">AFTER</span>
-                                    </div>
-                                </div>
-                                <div className="p-6 md:p-8">
-                                    <div className="flex justify-between items-start mb-3 md:mb-4">
-                                        <h3 className="text-xl md:text-2xl font-black text-slate-900 font-heading uppercase tracking-tight">{item.name}</h3>
-                                        <span className="text-slate-500 text-[10px] md:text-xs font-bold border border-slate-200 px-2 py-1 md:px-3 rounded-lg uppercase tracking-tight bg-slate-50 whitespace-nowrap">{item.duration}</span>
-                                    </div>
-                                    <div className="bg-green-50/50 p-2 md:p-3 rounded-xl mb-3 md:mb-4 border border-green-100/50">
-                                        <p className="text-green-700 text-[10px] md:text-xs font-bold uppercase flex items-center gap-1 md:gap-2 leading-tight">
-                                            <CheckCircle2 size={12} className="md:w-3.5 md:h-3.5 flex-shrink-0" />
-                                            {item.result}
-                                        </p>
-                                    </div>
-                                    <p className="text-slate-600 font-medium italic mb-2 relative text-sm md:text-base">
-                                        <span className="text-2xl md:text-3xl text-slate-200 absolute -top-2 md:-top-3 -left-1 md:-left-2 font-serif pointer-events-none">"</span>
-                                        <span className="relative z-10 pl-2 md:pl-3 line-clamp-3 md:line-clamp-none">{item.testimonial}</span>
-                                    </p>
+                    <div className="columns-2 md:columns-4 gap-3 md:gap-6 space-y-3 md:space-y-6 overflow-hidden px-2 md:px-0">
+                        {TRANSFORMATIONS.slice(0, 4).map((item) => (
+                            <div key={item.id} className="break-inside-avoid shadow-sm rounded-[1.5rem] md:rounded-[2.5rem] overflow-hidden hover:shadow-xl hover:border-slate-300 border border-slate-100 transition-all duration-300 group hover:-translate-y-1">
+                                <div className="relative bg-slate-100 w-full h-auto">
+                                    <img
+                                        src={item.image}
+                                        alt="Client Transformation"
+                                        className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700 block"
+                                        loading="lazy"
+                                    />
+                                    <div className="absolute inset-0 bg-slate-900/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
                                 </div>
                             </div>
                         ))}
