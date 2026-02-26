@@ -48,7 +48,10 @@ const Navbar: React.FC<NavbarProps> = ({ cartCount, onCartClick }) => {
       >
         <div className="flex flex-col h-full p-8">
           <div className="flex justify-between items-center mb-12">
-            <img src={logo} alt="JFS Fitness" className="h-16 w-auto" />
+            <div className="flex items-center gap-2 select-none">
+              <img src={logo} alt="JFS Fitness" className="h-12 w-auto" />
+              <span className="text-slate-900 font-black text-2xl tracking-tight font-heading">JFS</span>
+            </div>
             <button onClick={() => setIsMobileMenuOpen(false)} className="p-2 -mr-2 text-slate-900 hover:bg-slate-50 rounded-full">
               <X size={32} />
             </button>
@@ -115,20 +118,19 @@ const Navbar: React.FC<NavbarProps> = ({ cartCount, onCartClick }) => {
         </div>
       </div>
 
-      {/* --- Desktop & Global Top Header (Liquid Glass Style) --- */}
+      {/* --- Global Top Header (Liquid Glass Style) --- */}
       <div
         className={`
-          fixed top-0 left-0 right-0 z-50 justify-center pointer-events-none
+          fixed top-0 left-0 right-0 z-50 flex justify-center pointer-events-none
           transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]
-          hidden md:flex
-          ${isScrolled ? 'pt-4' : 'pt-8'}
+          ${isScrolled ? 'pt-2 md:pt-4' : 'pt-4 md:pt-8'}
         `}
       >
         <nav
           ref={navRef}
           className={`
                 pointer-events-auto
-                relative flex items-center justify-between
+                relative flex items-center justify-center md:justify-between
                 
                 /* Liquid Glass Aesthetics */
                 glass-liquid
@@ -138,8 +140,8 @@ const Navbar: React.FC<NavbarProps> = ({ cartCount, onCartClick }) => {
                 overflow-hidden
                 
                 ${isScrolled
-              ? 'w-[75%] max-w-3xl py-2.5 px-6 rounded-full'
-              : 'w-[85%] max-w-6xl py-3.5 px-8 rounded-full'
+              ? 'w-[92%] md:w-[75%] max-w-3xl py-2 px-4 md:py-2.5 md:px-6 rounded-full'
+              : 'w-[95%] md:w-[85%] max-w-6xl py-3 px-5 md:py-3.5 md:px-8 rounded-2xl md:rounded-full'
             }
             `}
         >
@@ -176,8 +178,8 @@ const Navbar: React.FC<NavbarProps> = ({ cartCount, onCartClick }) => {
             })}
           </div>
 
-          {/* Actions */}
-          <div className="relative z-10 flex items-center gap-2 md:gap-4">
+          {/* Actions (Hidden on mobile as they are in bottom nav) */}
+          <div className="relative z-10 hidden md:flex items-center gap-2 md:gap-4">
             <button
               onClick={onCartClick}
               className="relative group p-3 rounded-full hover:bg-white/10 transition-all border border-transparent hover:border-white/10 active:scale-95"
