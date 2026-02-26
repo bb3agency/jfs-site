@@ -30,6 +30,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onAddToCart }) => {
       <img
         src={product.image}
         alt={product.name}
+        loading="lazy"
         className="h-full w-full object-contain p-6 md:p-8 transition-transform duration-700 group-hover:scale-110"
       />
 

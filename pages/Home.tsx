@@ -38,6 +38,7 @@ const Home: React.FC<HomeProps> = ({ onAddToCart }) => {
                     <img
                         src={heroBackgroundImage}
                         alt="Hero Background"
+                        loading="eager"
                         className="w-full h-full object-cover"
                     />
                 </div>
@@ -46,6 +47,7 @@ const Home: React.FC<HomeProps> = ({ onAddToCart }) => {
                     <img
                         src={mobileHeroImage}
                         alt="Hero"
+                        loading="eager"
                         className="w-full h-full object-contain object-top"
                     />
                     {/* Gradient Overlay for buttons visibility - Stronger at bottom */}
@@ -145,7 +147,7 @@ const Home: React.FC<HomeProps> = ({ onAddToCart }) => {
                             <div key={idx} className="flex flex-col items-center gap-2 md:gap-4 group cursor-pointer w-[28%] md:w-auto" onClick={() => navigate(`/products?category=${encodeURIComponent(cat.name)}`)}>
                                 <div className="w-20 h-20 md:w-32 md:h-32 rounded-full p-1 border-2 border-slate-100 group-hover:border-yellow-400 transition-colors duration-300">
                                     <div className="w-full h-full rounded-full overflow-hidden relative bg-slate-100">
-                                        <img src={cat.image} alt={cat.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                                        <img src={cat.image} alt={cat.name} loading="lazy" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
                                         <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
                                     </div>
                                 </div>
@@ -275,6 +277,7 @@ const Home: React.FC<HomeProps> = ({ onAddToCart }) => {
                             <img
                                 src="https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?q=80&w=1200&auto=format&fit=crop"
                                 alt="Gains"
+                                loading="lazy"
                                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                             />
                             <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 to-transparent"></div>
@@ -298,6 +301,7 @@ const Home: React.FC<HomeProps> = ({ onAddToCart }) => {
                             <img
                                 src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1200&auto=format&fit=crop"
                                 alt="Performance"
+                                loading="lazy"
                                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                             />
                             <div className="absolute inset-0 bg-gradient-to-l from-red-900/90 to-red-900/40"></div>

@@ -92,6 +92,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ onAddToCart, cartItems,
               <img
                 src={currentImage}
                 alt={product.name}
+                loading="lazy"
                 className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105 p-2 sm:p-4 md:p-8"
               />
               {product.discount && (
@@ -115,7 +116,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ onAddToCart, cartItems,
                           : 'border-slate-200 hover:border-slate-400'
                           }`}
                       >
-                        <img src={imgSrc} alt={`View ${idx + 1}`} className="w-full h-full object-contain p-1 md:p-2" />
+                        <img src={imgSrc} alt={`View ${idx + 1}`} loading="lazy" className="w-full h-full object-contain p-1 md:p-2" />
                       </button>
                       {mappedFlavour && (
                         <span className="text-[10px] md:text-xs font-bold text-slate-500 text-center max-w-[64px] md:max-w-[80px] leading-tight px-1 break-words">

@@ -67,6 +67,7 @@ const AboutContact = () => {
                                 <img
                                     src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1000&auto=format&fit=crop"
                                     alt="JFS Fitness Athlete"
+                                    loading="lazy"
                                     className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/40 to-transparent"></div>
@@ -113,7 +114,7 @@ const AboutContact = () => {
 
                         {/* Contact Action */}
                         <div className="lg:col-span-3 bg-slate-50 p-8 md:p-12 rounded-[2.5rem] border border-slate-200 flex flex-col justify-center items-center text-center">
-                            <img src={whatsappLogo} alt="WhatsApp" className="w-24 h-24 mb-8 drop-shadow-md hover:scale-110 transition-transform duration-300" />
+                            <img src={whatsappLogo} alt="WhatsApp" loading="lazy" className="w-24 h-24 mb-8 drop-shadow-md hover:scale-110 transition-transform duration-300" />
                             <h3 className="font-black font-heading text-3xl md:text-4xl text-slate-900 uppercase tracking-tight mb-4">Connect on WhatsApp</h3>
                             <p className="text-slate-500 font-medium mb-10 max-w-md">
                                 Skip the forms. Message us directly on WhatsApp for the fastest support, product recommendations, and coaching inquiries.
