@@ -17,6 +17,14 @@ function imgTrans(filename: string): string {
   return transImageModules[key] || '';
 }
 
+// --- Vite Glob Import for brand logos ---
+const logoImageModules = import.meta.glob('./assets/Logos/*.(jpg|jpeg|png|webp|svg|avif)', { eager: true, import: 'default' }) as Record<string, string>;
+
+function imgLogo(filename: string): string {
+  const key = `./assets/Logos/${filename}`;
+  return logoImageModules[key] || '';
+}
+
 // ============================================================
 // PRODUCTS
 // ============================================================
@@ -479,9 +487,20 @@ export const CATEGORIES_LIST = [
 // BRANDS
 // ============================================================
 
-export const BRANDS_LIST = [
-  'Dynamite', 'Wellcore', 'DNA Pharma', 'Incredi Bull', 'Bullion', 'V-Whey',
-  'MuscleBlaze', 'Kevin Levrone', 'Labrada',
+export interface BrandInfo {
+  name: string;
+  logo: string;
+}
+
+export const BRANDS_LIST: BrandInfo[] = [
+  { name: 'Wellcore', logo: imgLogo('wellversed-logo_618-75px.svg') },
+  { name: 'DNA Pharma', logo: imgLogo('DNA_Pharma_1-1.jpg') },
+  { name: 'Incredi Bull', logo: imgLogo('IncrediBull_1-1.webp') },
+  { name: 'Bullion', logo: imgLogo('Bullion_1080_445px.jpg') },
+  { name: 'V-Whey', logo: imgLogo('V_SHAPE_90x.avif') },
+  { name: 'MuscleBlaze', logo: imgLogo('muscleblaze_1-1.png') },
+  { name: 'Kevin Levrone', logo: imgLogo('kevinlevrone_1-1.png') },
+  { name: 'Labrada', logo: imgLogo('labrada_3840-2160px.webp') },
 ];
 
 // ============================================================
@@ -693,28 +712,28 @@ export const TRANSFORMATIONS: Transformation[] = [
 export const COACHING_PACKAGES: CoachingPackage[] = [
   {
     id: "c1",
-    title: "12 Week Transformation",
-    duration: "12 Weeks",
-    price: 12000,
+    title: "1-on-1 Personal Training",
+    duration: "Customized Duration",
     features: [
-      "Customized Diet Plan",
-      "Workout Split Routine",
+      "In-Person Custom Training",
+      "Macro-Calculated Diet Plan",
+      "Scientific Split Routine",
       "Supplement Guidance",
-      "Weekly Check-ins via WhatsApp",
-      "Form Correction"
+      "Form Correction & Spotting",
+      "Weekly Progress Tracking"
     ]
   },
   {
     id: "c2",
-    title: "24 Week Pro Athlete",
-    duration: "24 Weeks",
-    price: 20000,
+    title: "Online Coaching",
+    duration: "Remote Training",
     features: [
-      "Advanced Carb Cycling Diet",
       "Periodized Workout Program",
-      "Advanced Supplement Stack",
+      "Advanced Diet Protocols",
+      "Supplement Stacks",
       "24/7 WhatsApp Support",
-      "Video Call Consultations (Bi-weekly)"
+      "Video Form Analysis",
+      "Bi-weekly Video Call Consultations"
     ]
   }
 ];

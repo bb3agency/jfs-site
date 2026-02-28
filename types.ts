@@ -63,6 +63,5 @@ export interface CoachingPackage {
   id: string;
   title: string;
   duration: string;
-  price: number;
   features: string[];
 }

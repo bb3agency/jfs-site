@@ -61,11 +61,8 @@ const ProductCatalog: React.FC<ProductCatalogProps> = ({ onAddToCart }) => {
               placeholder="Search products..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-14 pr-12 py-4 rounded-full bg-white border border-slate-200 text-slate-900 font-bold shadow-sm focus:outline-none focus:ring-2 focus:ring-slate-900 focus:border-transparent transition-all placeholder:text-slate-400 placeholder:font-normal"
+              className="w-full pl-14 pr-6 py-4 rounded-full bg-white border border-slate-200 text-slate-900 font-bold shadow-sm focus:outline-none focus:ring-2 focus:ring-slate-900 focus:border-transparent transition-all placeholder:text-slate-400 placeholder:font-normal"
             />
-            <div className="absolute right-5 top-1/2 -translate-y-1/2 text-slate-300">
-              <SlidersHorizontal size={18} />
-            </div>
           </div>
         </div>
 

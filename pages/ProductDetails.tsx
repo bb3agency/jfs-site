@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { ArrowLeft, Plus, Minus, Check, Truck, ShieldCheck } from 'lucide-react';
 import { PRODUCTS } from '../data';
@@ -19,6 +19,8 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ onAddToCart, cartItems,
   const containerRef = useRef<HTMLDivElement>(null);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [selectedFlavour, setSelectedFlavour] = useState<string | null>(null);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
 
   if (!product) {
     return <div className="p-10 text-center">Product not found</div>;
@@ -53,6 +55,37 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ onAddToCart, cartItems,
     }
   };
 
+  const minSwipeDistance = 50;
+
+  const onTouchStart = (e: React.TouchEvent) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+    if (isLeftSwipe && selectedImageIndex < allImages.length - 1) {
+      setSelectedImageIndex(prev => prev + 1);
+      setSelectedFlavour(null);
+    }
+    if (isRightSwipe && selectedImageIndex > 0) {
+      setSelectedImageIndex(prev => prev - 1);
+      setSelectedFlavour(null);
+    }
+  };
+
+  // Scroll to top when product changes
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [id]);
+
   useGSAP(() => {
     const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
 
@@ -74,7 +107,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ onAddToCart, cartItems,
   }, { scope: containerRef });
 
   return (
-    <div ref={containerRef} className="min-h-screen bg-white pt-24 md:pt-32 pb-20">
+    <div ref={containerRef} className="min-h-screen bg-white pt-16 pb-20">
       <div className="container mx-auto px-4 md:px-6">
         <button
           onClick={() => navigate(-1)}
@@ -88,7 +121,12 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ onAddToCart, cartItems,
           {/* Product Image Section */}
           <div className="detail-img flex-1 w-full max-w-xl mx-auto md:max-w-none">
             {/* Main Image */}
-            <div className="bg-slate-100 rounded-3xl md:rounded-[2rem] overflow-hidden relative aspect-square md:aspect-auto md:h-[550px] group mb-4">
+            <div
+              className="bg-slate-100 rounded-3xl md:rounded-[2rem] overflow-hidden relative aspect-square md:aspect-auto md:h-[550px] group mb-4 touch-pan-y"
+              onTouchStart={onTouchStart}
+              onTouchMove={onTouchMove}
+              onTouchEnd={onTouchEnd}
+            >
               <img
                 src={currentImage}
                 alt={product.name}

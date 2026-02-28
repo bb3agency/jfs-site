@@ -60,7 +60,7 @@ const Home: React.FC<HomeProps> = ({ onAddToCart }) => {
                 <div className="container mx-auto px-4 md:px-6 relative z-10 flex flex-col md:flex-row items-center gap-12 pt-20 pb-32 md:pt-32 md:pb-0 h-full justify-end md:justify-center">
                     <div className="hero-content flex-1 text-center md:text-left w-full px-4 md:px-0">
                         <div className="inline-block px-4 py-1.5 rounded-full border border-yellow-500/30 bg-yellow-500/10 text-yellow-400 font-bold font-heading text-[10px] md:text-xs uppercase tracking-tight mb-4 md:mb-6 backdrop-blur-sm">
-                            #1 Trusted Supplement Store
+                            100% Authentic Supplements
                         </div>
                         <h1 className="text-4xl md:text-7xl font-black font-heading text-white leading-[0.9] tracking-tight mb-4 md:mb-6">
                             FUEL YOUR <br />
@@ -71,7 +71,7 @@ const Home: React.FC<HomeProps> = ({ onAddToCart }) => {
                         </p>
 
                         <div className="flex flex-col md:flex-row gap-3 md:gap-4 justify-center md:justify-start w-full md:w-auto mt-2">
-                            <Button onClick={() => navigate('/products')} className="bg-yellow-400 text-slate-950 hover:bg-yellow-300 border-none px-8 py-3.5 md:py-4 text-sm md:text-base font-black uppercase tracking-wider w-full md:w-auto rounded-xl shadow-lg ring-2 ring-yellow-400/50 ring-offset-2 ring-offset-slate-950 transform transition-all hover:ring-yellow-400 active:scale-95">
+                            <Button onClick={() => navigate('/products')} className="bg-yellow-400 !text-slate-950 hover:bg-yellow-300 border-none px-8 py-3.5 md:py-4 text-sm md:text-base font-black uppercase tracking-wider w-full md:w-auto rounded-xl shadow-lg ring-2 ring-yellow-400/50 ring-offset-2 ring-offset-slate-950 transform transition-all hover:ring-yellow-400 active:scale-95">
                                 Shop Now
                             </Button>
                             <Button onClick={() => document.getElementById('brands-section')?.scrollIntoView({ behavior: 'smooth' })} variant="outline" className="text-white border-white/20 bg-white/5 hover:bg-white/10 px-8 py-3.5 md:py-4 text-sm md:text-base font-bold w-full md:w-auto rounded-xl backdrop-blur-md transition-colors">
@@ -200,14 +200,15 @@ const Home: React.FC<HomeProps> = ({ onAddToCart }) => {
                         <div className="h-1 w-20 bg-yellow-400 mx-auto rounded-full"></div>
                     </div>
 
-                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6">
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-y-12 gap-x-8 lg:gap-x-12 items-center justify-items-center max-w-5xl mx-auto px-4">
                         {BRANDS_LIST.map((brand, idx) => (
-                            <div key={idx} className="group relative h-16 md:h-20 bg-slate-50 rounded-full border border-slate-200 flex items-center justify-center px-6 hover:shadow-md hover:border-yellow-400 hover:bg-white transition-all duration-300 cursor-pointer overflow-hidden">
-                                <span className="relative z-10 text-center font-bold text-slate-500 text-sm md:text-base group-hover:text-slate-900 uppercase tracking-tight transition-colors">
-                                    {brand}
-                                </span>
-                                {/* Hover effect background */}
-                                <div className="absolute inset-0 bg-yellow-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <div key={idx} className="flex items-center justify-center w-full h-16 md:h-20">
+                                <img
+                                    src={brand.logo}
+                                    alt={`${brand.name} logo`}
+                                    loading="lazy"
+                                    className="object-contain w-full max-w-[120px] max-h-[50px] md:max-w-[160px] md:max-h-[70px] mix-blend-multiply"
+                                />
                             </div>
                         ))}
                     </div>
