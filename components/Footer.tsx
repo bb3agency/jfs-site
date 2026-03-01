@@ -1,9 +1,15 @@
 import React from 'react';
 import { ArrowRight, Twitter, Instagram, Facebook, Youtube } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Footer: React.FC = () => {
     const currentYear = new Date().getFullYear();
+    const navigate = useNavigate();
+
+    const goHome = () => {
+        navigate('/');
+        setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 50);
+    };
 
     return (
         <footer className="w-full px-4 md:px-6 pb-4 md:pb-6 mt-12 md:mt-20 relative overflow-hidden">
@@ -26,10 +32,8 @@ const Footer: React.FC = () => {
                             General
                         </h4>
                         <ul className="space-y-3 md:space-y-4">
-                            <li><Link to="/" className="font-body text-slate-300 hover:text-yellow-400 transition-colors text-sm md:text-base font-medium block">Home</Link></li>
-                            <li><Link to="/about" className="font-body text-slate-300 hover:text-yellow-400 transition-colors text-sm md:text-base font-medium block">About Us</Link></li>
-                            <li><Link to="/career" className="font-body text-slate-300 hover:text-yellow-400 transition-colors text-sm md:text-base font-medium block">Careers</Link></li>
-                            <li><Link to="/contact" className="font-body text-slate-300 hover:text-yellow-400 transition-colors text-sm md:text-base font-medium block">Contact Us</Link></li>
+                            <li><button onClick={goHome} className="font-body text-slate-300 hover:text-yellow-400 transition-colors text-sm md:text-base font-medium block text-left">Home</button></li>
+                            <li><Link to="/about-contact" className="font-body text-slate-300 hover:text-yellow-400 transition-colors text-sm md:text-base font-medium block">About Us</Link></li>
                         </ul>
                     </div>
 
@@ -40,9 +44,8 @@ const Footer: React.FC = () => {
                         </h4>
                         <ul className="space-y-3 md:space-y-4">
                             <li><Link to="/products" className="font-body text-slate-300 hover:text-yellow-400 transition-colors text-sm md:text-base font-medium block">All Products</Link></li>
-                            <li><Link to="/category/whey" className="font-body text-slate-300 hover:text-yellow-400 transition-colors text-sm md:text-base font-medium block">Whey Protein</Link></li>
-                            <li><Link to="/category/pre-workout" className="font-body text-slate-300 hover:text-yellow-400 transition-colors text-sm md:text-base font-medium block">Pre-Workout</Link></li>
-                            <li><Link to="/category/accessories" className="font-body text-slate-300 hover:text-yellow-400 transition-colors text-sm md:text-base font-medium block">Accessories</Link></li>
+                            <li><Link to="/products?category=Whey%20Protein" className="font-body text-slate-300 hover:text-yellow-400 transition-colors text-sm md:text-base font-medium block">Whey Protein</Link></li>
+                            <li><Link to="/products?category=Pre-Workout" className="font-body text-slate-300 hover:text-yellow-400 transition-colors text-sm md:text-base font-medium block">Pre-Workout</Link></li>
                         </ul>
                     </div>
 

@@ -11,6 +11,9 @@ import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import mobileHeroImage from '../assets/jfs-canva-hero-image.jpg';
 import heroBackgroundImage from '../assets/jfs-hero-image-with-background.JPEG';
+import promoBannerImage from '../assets/promo-banner-bodybuilder.png';
+import lightningRing from '../assets/lightning-ring.png';
+import lightningRingWhite from '../assets/lightning-ring-white.png';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -74,77 +77,14 @@ const Home: React.FC<HomeProps> = ({ onAddToCart }) => {
                             <Button onClick={() => navigate('/products')} className="bg-yellow-400 !text-slate-950 hover:bg-yellow-300 border-none px-8 py-3.5 md:py-4 text-sm md:text-base font-black uppercase tracking-wider w-full md:w-auto rounded-xl shadow-lg ring-2 ring-yellow-400/50 ring-offset-2 ring-offset-slate-950 transform transition-all hover:ring-yellow-400 active:scale-95">
                                 Shop Now
                             </Button>
-                            <Button onClick={() => document.getElementById('brands-section')?.scrollIntoView({ behavior: 'smooth' })} variant="outline" className="text-white border-white/20 bg-white/5 hover:bg-white/10 px-8 py-3.5 md:py-4 text-sm md:text-base font-bold w-full md:w-auto rounded-xl backdrop-blur-md transition-colors">
-                                View Brands
+                            <Button onClick={() => navigate('/coaching')} variant="outline" className="text-white border-white/20 bg-white/5 hover:bg-white/10 px-8 py-3.5 md:py-4 text-sm md:text-base font-bold w-full md:w-auto rounded-xl backdrop-blur-md transition-colors">
+                                COACHING
                             </Button>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* 1.5 Features Section (New Custom) */}
-            <section className="py-8 md:py-12 bg-white border-b border-slate-100">
-                <div className="container mx-auto px-4 md:px-6">
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-                        {/* Box 1 */}
-                        <div className="bg-white border border-slate-100 rounded-2xl p-6 md:p-8 flex flex-col gap-4 hover:-translate-y-1 hover:shadow-xl hover:border-slate-200 transition-all duration-300 group">
-                            <div className="bg-slate-50 border border-slate-100 p-3 rounded-xl inline-flex w-fit group-hover:bg-yellow-50 group-hover:border-yellow-200 transition-colors">
-                                <ShieldCheck size={28} strokeWidth={2} className="text-slate-700 group-hover:text-yellow-600 transition-colors" />
-                            </div>
-                            <div>
-                                <h3 className="text-base font-black text-slate-900 leading-tight uppercase font-heading mb-2">
-                                    100% Authenticity Guaranteed
-                                </h3>
-                                <p className="text-slate-500 text-sm leading-relaxed font-medium">
-                                    Rest easy knowing every product is sourced directly from the authorized brand. Your peace of mind is our priority.
-                                </p>
-                            </div>
-                        </div>
-                        {/* Box 2 */}
-                        <div className="bg-white border border-slate-100 rounded-2xl p-6 md:p-8 flex flex-col gap-4 hover:-translate-y-1 hover:shadow-xl hover:border-slate-200 transition-all duration-300 group">
-                            <div className="bg-slate-50 border border-slate-100 p-3 rounded-xl inline-flex w-fit group-hover:bg-yellow-50 group-hover:border-yellow-200 transition-colors">
-                                <Beaker size={28} strokeWidth={2} className="text-slate-700 group-hover:text-yellow-600 transition-colors" />
-                            </div>
-                            <div>
-                                <h3 className="text-base font-black text-slate-900 leading-tight uppercase font-heading mb-2">
-                                    Expertly Curated Selection
-                                </h3>
-                                <p className="text-slate-500 text-sm leading-relaxed font-medium">
-                                    We filter through hundreds of options to bring you a verified and diverse selection of top-performing supplements.
-                                </p>
-                            </div>
-                        </div>
-                        {/* Box 3 */}
-                        <div className="bg-white border border-slate-100 rounded-2xl p-6 md:p-8 flex flex-col gap-4 hover:-translate-y-1 hover:shadow-xl hover:border-slate-200 transition-all duration-300 group">
-                            <div className="bg-slate-50 border border-slate-100 p-3 rounded-xl inline-flex w-fit group-hover:bg-yellow-50 group-hover:border-yellow-200 transition-colors">
-                                <Star size={28} strokeWidth={2} className="text-slate-700 group-hover:text-yellow-600 transition-colors" />
-                            </div>
-                            <div>
-                                <h3 className="text-base font-black text-slate-900 leading-tight uppercase font-heading mb-2">
-                                    Community & Expert Rated
-                                </h3>
-                                <p className="text-slate-500 text-sm leading-relaxed font-medium">
-                                    Benefit from real customer reviews and fitness expert insights. We only host products that meet JFS high-quality standards.
-                                </p>
-                            </div>
-                        </div>
-                        {/* Box 4 */}
-                        <div className="bg-white border border-slate-100 rounded-2xl p-6 md:p-8 flex flex-col gap-4 hover:-translate-y-1 hover:shadow-xl hover:border-slate-200 transition-all duration-300 group">
-                            <div className="bg-slate-50 border border-slate-100 p-3 rounded-xl inline-flex w-fit group-hover:bg-yellow-50 group-hover:border-yellow-200 transition-colors">
-                                <Truck size={28} strokeWidth={2} className="text-slate-700 group-hover:text-yellow-600 transition-colors" />
-                            </div>
-                            <div>
-                                <h3 className="text-base font-black text-slate-900 leading-tight uppercase font-heading mb-2">
-                                    Seamless Shopping & Fast Delivery
-                                </h3>
-                                <p className="text-slate-500 text-sm leading-relaxed font-medium">
-                                    Secure WhatsApp checkout and ultra-fast shipping ensure your products arrive fresh and when you need them.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
 
             {/* 2. Categories (Circular Style) */}
             <section className="categories-section py-10 md:py-16 bg-white">
@@ -200,15 +140,17 @@ const Home: React.FC<HomeProps> = ({ onAddToCart }) => {
                         <div className="h-1 w-20 bg-yellow-400 mx-auto rounded-full"></div>
                     </div>
 
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-y-12 gap-x-8 lg:gap-x-12 items-center justify-items-center max-w-5xl mx-auto px-4">
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-y-8 gap-x-8 lg:gap-x-12 items-center justify-items-center max-w-5xl mx-auto px-4">
                         {BRANDS_LIST.map((brand, idx) => (
-                            <div key={idx} className="flex items-center justify-center w-full h-16 md:h-20">
-                                <img
-                                    src={brand.logo}
-                                    alt={`${brand.name} logo`}
-                                    loading="lazy"
-                                    className="object-contain w-full max-w-[120px] max-h-[50px] md:max-w-[160px] md:max-h-[70px] mix-blend-multiply"
-                                />
+                            <div key={idx} className="flex items-center justify-center w-full">
+                                <div className="bg-slate-200 rounded-xl flex items-center justify-center w-full px-6 py-5">
+                                    <img
+                                        src={brand.logo}
+                                        alt={`${brand.name} logo`}
+                                        loading="lazy"
+                                        className="object-contain w-full max-w-[120px] max-h-[50px] md:max-w-[160px] md:max-h-[70px]"
+                                    />
+                                </div>
                             </div>
                         ))}
                     </div>
@@ -283,24 +225,34 @@ const Home: React.FC<HomeProps> = ({ onAddToCart }) => {
                 <div className="container mx-auto px-4 md:px-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                         {/* Banner 1 */}
-                        <div className="relative h-64 md:h-96 rounded-[1.5rem] md:rounded-[2rem] overflow-hidden group cursor-pointer">
+                        <div className="relative h-64 md:h-96 rounded-[1.5rem] md:rounded-[2rem] overflow-hidden group cursor-pointer" style={{ background: 'linear-gradient(135deg, #0d1b3e 0%, #0a1628 60%, #111827 100%)' }}>
+                            {/* Strong spotlight on figure */}
+                            <div className="absolute right-[5%] bottom-0 w-[55%] h-[120%] bg-[radial-gradient(ellipse_at_bottom_center,rgba(255,220,100,0.22)_0%,rgba(234,179,8,0.10)_40%,transparent_70%)] pointer-events-none"></div>
+                            {/* Top accent glow */}
+                            <div className="absolute top-0 right-1/3 w-64 h-64 bg-yellow-400/15 rounded-full blur-3xl pointer-events-none"></div>
+                            {/* White lightning ring decorative - behind text */}
                             <img
-                                src="https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?q=80&w=1200&auto=format&fit=crop"
+                                src={lightningRingWhite}
+                                alt=""
+                                aria-hidden="true"
+                                className="absolute left-[-5%] top-1/2 -translate-y-1/2 w-[65%] opacity-100 pointer-events-none select-none z-0"
+                            />
+                            <div className="absolute bottom-0 inset-x-0 h-1/2 bg-gradient-to-t from-slate-950/70 to-transparent pointer-events-none"></div>
+
+                            <img
+                                src={promoBannerImage}
                                 alt="Gains"
                                 loading="lazy"
-                                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                className="absolute right-[-2%] bottom-[-8%] h-[130%] w-auto object-contain transition-transform duration-700 group-hover:scale-105 drop-shadow-[0_0_40px_rgba(234,179,8,0.3)]"
                             />
-                            <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 to-transparent"></div>
-                            <div className="absolute inset-0 p-6 md:p-12 flex flex-col justify-center items-start">
+                            {/* Left text gradient */}
+                            <div className="absolute inset-0 bg-gradient-to-r from-[#0d1b3e] via-[#0a1628]/90 to-transparent"></div>
+                            <div className="absolute inset-0 p-6 md:p-12 flex flex-col justify-center items-start max-w-[50%]">
                                 <span className="text-yellow-400 font-bold uppercase tracking-tight text-[10px] md:text-sm mb-1 md:mb-2">Build Muscle</span>
-                                <h3 className="text-2xl md:text-5xl font-black font-heading text-white leading-tight mb-4 md:mb-6">
+                                <h3 className="text-2xl md:text-5xl font-black font-heading text-white leading-tight mb-6 md:mb-8">
                                     PACK ON <br /> SERIOUS GAINS
                                 </h3>
-                                <div className="flex flex-col gap-1 text-white/80 font-medium mb-6 md:mb-8 text-xs md:text-base">
-                                    <span className="flex items-center gap-2"><CheckCircle2 size={14} className="md:w-4 md:h-4 text-yellow-400" /> Mass Gainers</span>
-                                    <span className="flex items-center gap-2"><CheckCircle2 size={14} className="md:w-4 md:h-4 text-yellow-400" /> Creatine</span>
-                                </div>
-                                <Button className="bg-white !text-black hover:bg-slate-100 font-bold text-xs md:text-sm px-4 py-2 md:px-6 md:py-3 border-none">
+                                <Button className="bg-yellow-400 !text-slate-950 hover:bg-yellow-300 font-bold text-xs md:text-sm px-4 py-2 md:px-6 md:py-3 border-none shadow-lg shadow-yellow-400/20">
                                     Shop Essentials
                                 </Button>
                             </div>
@@ -374,8 +326,69 @@ const Home: React.FC<HomeProps> = ({ onAddToCart }) => {
             </section >
 
 
-
-
+            {/* Features Section */}
+            <section className="py-8 md:py-12 bg-white border-t border-slate-100">
+                <div className="container mx-auto px-4 md:px-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+                        {/* Box 1 */}
+                        <div className="bg-white border border-slate-100 rounded-2xl p-6 md:p-8 flex flex-col gap-4 hover:-translate-y-1 hover:shadow-xl hover:border-slate-200 transition-all duration-300 group">
+                            <div className="bg-slate-50 border border-slate-100 p-3 rounded-xl inline-flex w-fit group-hover:bg-yellow-50 group-hover:border-yellow-200 transition-colors">
+                                <ShieldCheck size={28} strokeWidth={2} className="text-slate-700 group-hover:text-yellow-600 transition-colors" />
+                            </div>
+                            <div>
+                                <h3 className="text-base font-black text-slate-900 leading-tight uppercase font-heading mb-2">
+                                    100% Authenticity Guaranteed
+                                </h3>
+                                <p className="text-slate-500 text-sm leading-relaxed font-medium">
+                                    Rest easy knowing every product is sourced directly from the authorized brand. Your peace of mind is our priority.
+                                </p>
+                            </div>
+                        </div>
+                        {/* Box 2 */}
+                        <div className="bg-white border border-slate-100 rounded-2xl p-6 md:p-8 flex flex-col gap-4 hover:-translate-y-1 hover:shadow-xl hover:border-slate-200 transition-all duration-300 group">
+                            <div className="bg-slate-50 border border-slate-100 p-3 rounded-xl inline-flex w-fit group-hover:bg-yellow-50 group-hover:border-yellow-200 transition-colors">
+                                <Beaker size={28} strokeWidth={2} className="text-slate-700 group-hover:text-yellow-600 transition-colors" />
+                            </div>
+                            <div>
+                                <h3 className="text-base font-black text-slate-900 leading-tight uppercase font-heading mb-2">
+                                    Expertly Curated Selection
+                                </h3>
+                                <p className="text-slate-500 text-sm leading-relaxed font-medium">
+                                    We filter through hundreds of options to bring you a verified and diverse selection of top-performing supplements.
+                                </p>
+                            </div>
+                        </div>
+                        {/* Box 3 */}
+                        <div className="bg-white border border-slate-100 rounded-2xl p-6 md:p-8 flex flex-col gap-4 hover:-translate-y-1 hover:shadow-xl hover:border-slate-200 transition-all duration-300 group">
+                            <div className="bg-slate-50 border border-slate-100 p-3 rounded-xl inline-flex w-fit group-hover:bg-yellow-50 group-hover:border-yellow-200 transition-colors">
+                                <Star size={28} strokeWidth={2} className="text-slate-700 group-hover:text-yellow-600 transition-colors" />
+                            </div>
+                            <div>
+                                <h3 className="text-base font-black text-slate-900 leading-tight uppercase font-heading mb-2">
+                                    Community &amp; Expert Rated
+                                </h3>
+                                <p className="text-slate-500 text-sm leading-relaxed font-medium">
+                                    Benefit from real customer reviews and fitness expert insights. We only host products that meet JFS high-quality standards.
+                                </p>
+                            </div>
+                        </div>
+                        {/* Box 4 */}
+                        <div className="bg-white border border-slate-100 rounded-2xl p-6 md:p-8 flex flex-col gap-4 hover:-translate-y-1 hover:shadow-xl hover:border-slate-200 transition-all duration-300 group">
+                            <div className="bg-slate-50 border border-slate-100 p-3 rounded-xl inline-flex w-fit group-hover:bg-yellow-50 group-hover:border-yellow-200 transition-colors">
+                                <Truck size={28} strokeWidth={2} className="text-slate-700 group-hover:text-yellow-600 transition-colors" />
+                            </div>
+                            <div>
+                                <h3 className="text-base font-black text-slate-900 leading-tight uppercase font-heading mb-2">
+                                    Seamless Shopping &amp; Fast Delivery
+                                </h3>
+                                <p className="text-slate-500 text-sm leading-relaxed font-medium">
+                                    Secure WhatsApp checkout and ultra-fast shipping ensure your products arrive fresh and when you need them.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
             <Footer />
         </div >

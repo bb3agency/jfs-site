@@ -495,9 +495,9 @@ export interface BrandInfo {
 export const BRANDS_LIST: BrandInfo[] = [
   { name: 'Wellcore', logo: imgLogo('wellversed-logo_618-75px.svg') },
   { name: 'DNA Pharma', logo: imgLogo('DNA_Pharma_1-1.jpg') },
-  { name: 'Incredi Bull', logo: imgLogo('IncrediBull_1-1.webp') },
-  { name: 'Bullion', logo: imgLogo('Bullion_1080_445px.jpg') },
   { name: 'V-Whey', logo: imgLogo('V_SHAPE_90x.avif') },
+  { name: 'Bullion', logo: imgLogo('Bullion_1080_445px.jpg') },
+  { name: 'Incredi Bull', logo: imgLogo('IncrediBull_1-1.webp') },
   { name: 'MuscleBlaze', logo: imgLogo('muscleblaze_1-1.png') },
   { name: 'Kevin Levrone', logo: imgLogo('kevinlevrone_1-1.png') },
   { name: 'Labrada', logo: imgLogo('labrada_3840-2160px.webp') },
