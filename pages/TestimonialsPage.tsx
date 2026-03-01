@@ -64,7 +64,6 @@ const TestimonialsPage: React.FC = () => {
                 <img
                   src={testimonial.image}
                   alt={testimonial.name}
-                  loading="lazy"
                   className="w-12 h-12 rounded-full object-cover ring-2 ring-yellow-500 ring-offset-2 ring-offset-transparent"
                 />
                 <div>

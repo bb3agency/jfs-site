@@ -67,7 +67,6 @@ const AboutContact = () => {
                                 <img
                                     src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1000&auto=format&fit=crop"
                                     alt="JFS Fitness Athlete"
-                                    loading="lazy"
                                     className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/40 to-transparent"></div>

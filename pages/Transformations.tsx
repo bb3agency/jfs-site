@@ -27,13 +27,13 @@ const Transformations = () => {
 
                 {/* Transformation Grid (Masonry / Bento Style) */}
                 <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 md:gap-6 space-y-4 md:space-y-6">
-                    {TRANSFORMATIONS.map((t) => (
+                    {TRANSFORMATIONS.map((t, idx) => (
                         <div key={t.id} className="break-inside-avoid bg-white shadow-sm hover:shadow-2xl transition-all duration-500 group rounded-[2rem] overflow-hidden border border-slate-100 hover:border-slate-300">
                             <div className="relative overflow-hidden bg-slate-100 w-full h-auto">
                                 <img
                                     src={t.image}
                                     alt="Client Transformation"
-                                    loading="lazy"
+                                    loading={idx < 3 ? "eager" : "lazy"}
                                     className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
                                 />
                                 <div className="absolute inset-0 bg-slate-900/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>

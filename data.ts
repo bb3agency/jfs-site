@@ -475,10 +475,10 @@ export const PRODUCTS: Product[] = [
 // ============================================================
 
 export const CATEGORIES_LIST = [
-  { name: 'Whey Protein', image: img('Whey Protein/V-Whey_10k_6k/chocolate_a74ca11a-3233-4b62-b511-fdd40e815fe3.webp') },
-  { name: 'Whey Isolate', image: img('Whey Isolate/HM isolate-11k_6.5k/HM_Blueberrycheesecake/IsoZero2kgblueberrycheesecakefront.webp') },
+  { name: 'Whey Protein', image: img('Whey Protein/Bullion Whey-9k_6k/Bullionwhey.webp') },
+  { name: 'Whey Isolate', image: img('Whey Isolate/DNA isolate-12k-6.5k/dna-pharma-isolate-whey-chocolate-browni.webp') },
   { name: 'Mass Gainer', image: img('Mass Gainers/Incredi Bull Premium Mass Gianer 3kg-3.5k_2.3k/Mass-Gainer-incredibull-3kg-Current-View.webp') },
-  { name: 'Pre-Workout', image: img('Pre-workout/Incredi Bull pre-1.7k_1.2k/incredibull-pre-workout-180-g-Current-View.webp') },
+  { name: 'Pre-Workout', image: img('Pre-workout/Kevin Levron Shaboom pre-3.96k_2.2k/levrone-shaaboom-pump_1.webp') },
   { name: 'BCAA & EAA', image: img('BCAA-EAA/HM EAA+ BCAA-2.4k_1.6k/BlackCurrent_splash/black-currant-EAA_BCAA-_1.webp') },
   { name: 'Fat Burner', image: img('Fat Burners/RFN Fat Strom Xtreme-2.5k/RFN-Fat-Burner_1.webp') },
 ];
