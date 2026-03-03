@@ -11,13 +11,13 @@ const Transformations = () => {
     };
 
     return (
-        <div className="bg-slate-50 min-h-screen pt-32 pb-32 md:pb-24">
+        <div className="bg-slate-50 min-h-screen pt-12 md:pt-32 pb-32 md:pb-24">
             <div className="container mx-auto px-4 md:px-6">
                 {/* Header content */}
-                <div className="text-center mb-16 md:mb-24 mt-8">
+                <div className="text-center mb-10 md:mb-24 mt-4 md:mt-8">
                     <span className="text-yellow-500 font-bold tracking-tight uppercase text-sm mb-4 block">Proven Success</span>
-                    <h1 className="text-5xl md:text-7xl font-black font-heading text-slate-900 mb-6 uppercase tracking-tight">
-                        Client <span className="text-slate-400">Transformations</span>
+                    <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black font-heading text-slate-900 mb-6 uppercase tracking-tight leading-none break-words">
+                        Client <br className="sm:hidden" /><span className="text-slate-400">Transformations</span>
                     </h1>
                     <p className="text-slate-500 font-medium max-w-2xl mx-auto text-lg md:text-xl leading-relaxed">
                         Real people. Real hard work. Real results. Browse through our client success stories, all personally trained by Prabha Joy, and see what's possible.
@@ -43,7 +43,7 @@ const Transformations = () => {
                 </div>
 
                 {/* CTA Section */}
-                <div className="mt-24 md:mt-32 bg-slate-900 rounded-[3rem] p-10 md:p-20 text-center shadow-2xl relative overflow-hidden hover:shadow-yellow-400/10 transition-shadow duration-500 group">
+                <div className="mt-24 md:mt-32 bg-slate-900 rounded-[3rem] p-6 sm:p-10 md:p-20 text-center shadow-2xl relative overflow-hidden hover:shadow-yellow-400/10 transition-shadow duration-500 group">
                     {/* Abstract glow */}
                     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-yellow-400/20 rounded-full blur-[100px] pointer-events-none group-hover:bg-yellow-400/30 transition-colors duration-1000"></div>
 

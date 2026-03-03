@@ -3,6 +3,7 @@ import { MapPin, Instagram, Youtube } from 'lucide-react';
 import { WHATSAPP_NUMBER } from '../data';
 import Button from '../components/Button';
 import whatsappLogo from '../assets/whatsapp_logo.png';
+import contactPageImage from '../assets/contact_page_image.jpeg';
 
 const AboutContact = () => {
     const [formData, setFormData] = useState({
@@ -63,9 +64,9 @@ const AboutContact = () => {
 
                         {/* Image Content */}
                         <div className="lg:w-1/2 relative w-full">
-                            <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl aspect-[4/5] object-cover border-8 border-white group">
+                            <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl aspect-[9/16] object-cover border-8 border-white group">
                                 <img
-                                    src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1000&auto=format&fit=crop"
+                                    src={contactPageImage}
                                     alt="JFS Fitness Athlete"
                                     className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
                                 />

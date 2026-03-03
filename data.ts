@@ -2,7 +2,7 @@ import { Category, Product, Testimonial, FaqItem, Transformation, CoachingPackag
 
 // --- Vite Glob Import for all product images ---
 // This automatically resolves all .webp files in the products_images directory at build time.
-const imageModules = import.meta.glob('./assets/products_images/**/*.webp', { eager: true, import: 'default' }) as Record<string, string>;
+const imageModules = import.meta.glob('./assets/products_images/**/*.{webp,png}', { eager: true, import: 'default' }) as Record<string, string>;
 
 function img(path: string): string {
   const key = `./assets/products_images/${path}`;
@@ -92,6 +92,22 @@ export const PRODUCTS: Product[] = [
       img('BCAA-EAA/Incredi Bull BCAA-2k_1.2k/incredi_bull_BCAA.webp'),
     ],
     description: 'Budget-friendly BCAA supplement for intra-workout recovery and endurance.',
+  },
+  {
+    id: 'bcaa-4',
+    name: 'Bullion EAA & BCAA',
+    brand: 'Bullion',
+    category: Category.BCAA_EAA,
+    price: 2200,
+    mrp: 3000,
+    discount: 27,
+    image: img('BCAA-EAA/Bullion EAA+ BCA-3k_2.2k/bullion_EAA_1.png'),
+    images: [
+      img('BCAA-EAA/Bullion EAA+ BCA-3k_2.2k/bullion_EAA_1.png'),
+      img('BCAA-EAA/Bullion EAA+ BCA-3k_2.2k/bullion_EAA_2.png'),
+      img('BCAA-EAA/Bullion EAA+ BCA-3k_2.2k/bullion_EAA_3.png'),
+    ],
+    description: 'Complete EAA + BCAA complex by Bullion for enhanced recovery, muscle endurance, and hydration.',
   },
 
   // ── Fat Burners ─────────────────────────────────────────────
@@ -321,6 +337,22 @@ export const PRODUCTS: Product[] = [
       { name: 'Pina Colada', image: img('Pre-workout/MB The Wolf pre-3k_1.7k/MB_pinecolada/MB_wolf_1.webp') },
     ],
   },
+  {
+    id: 'pre-7',
+    name: 'Bullion Pre-Workout',
+    brand: 'Bullion',
+    category: Category.PRE_WORKOUT,
+    price: 2200,
+    mrp: 3200,
+    discount: 31,
+    image: img('Pre-workout/bullion pre-workout-3.2k_2.2k/bullion_pre_1.png'),
+    images: [
+      img('Pre-workout/bullion pre-workout-3.2k_2.2k/bullion_pre_1.png'),
+      img('Pre-workout/bullion pre-workout-3.2k_2.2k/bullion_pre_2.png'),
+      img('Pre-workout/bullion pre-workout-3.2k_2.2k/bullion_pre_3.png'),
+    ],
+    description: 'Powerful pre-workout formula by Bullion for explosive energy, focus, and endurance during intense training.',
+  },
 
   // ── Whey Isolate ────────────────────────────────────────────
   {
@@ -377,6 +409,22 @@ export const PRODUCTS: Product[] = [
       img('Whey Isolate/Incredi Bull isolate-8.5k_5.5k/Isolate-incredibull-2kg-Current-View.webp'),
     ],
     description: 'Affordable whey isolate with rapid absorption and minimal lactose for sensitive stomachs.',
+  },
+  {
+    id: 'iso-4',
+    name: 'Bullion Whey Isolate',
+    brand: 'Bullion',
+    category: Category.WHEY_ISOLATE,
+    price: 7000,
+    mrp: 11000,
+    discount: 36,
+    image: img('Whey Isolate/Bullion Isolate-11k_7k/bullion_iso_1.png'),
+    images: [
+      img('Whey Isolate/Bullion Isolate-11k_7k/bullion_iso_1.png'),
+      img('Whey Isolate/Bullion Isolate-11k_7k/bullion_iso_2.png'),
+      img('Whey Isolate/Bullion Isolate-11k_7k/bullion_iso_3.png'),
+    ],
+    description: 'Premium whey isolate by Bullion with ultra-clean filtering for fast absorption and lean muscle building.',
   },
 
   // ── Whey Protein ────────────────────────────────────────────
