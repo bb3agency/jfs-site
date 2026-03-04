@@ -72,10 +72,17 @@ const Footer: React.FC = () => {
                 </div>
 
                 {/* Bottom Bar: Copyright & Large Brand Text at absolute bottom if desired, or here */}
-                <div className="relative z-10 flex flex-col md:flex-row justify-between items-end border-t border-slate-800/50 pt-8">
-                    <p className="text-slate-500 text-sm font-medium">
-                        &copy; {currentYear} Joy Fitness Solutions.
-                    </p>
+                <div className="relative z-10 flex flex-col md:flex-row justify-between items-start md:items-end border-t border-slate-800/50 pt-8 gap-4">
+                    <div className="flex flex-col gap-2 relative z-20">
+                        <p className="text-slate-500 text-sm font-medium">
+                            &copy; {currentYear} Joy Fitness Solutions.
+                        </p>
+                    </div>
+                    <div className="relative z-20 mt-4 md:mt-0">
+                        <p className="text-slate-500 text-sm font-medium">
+                            A <a href="https://www.builtbythree.com/" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-yellow-400 transition-colors font-bold">BuiltByThree</a> Project
+                        </p>
+                    </div>
                 </div>
 
                 {/* Large Bottom Text 'JFS' aligned to bottom center - Optional alternate style if watermark isn't enough */}

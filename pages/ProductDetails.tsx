@@ -107,14 +107,14 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ onAddToCart, cartItems,
   }, { scope: containerRef });
 
   return (
-    <div ref={containerRef} className="min-h-screen bg-white pt-16 pb-20">
+    <div ref={containerRef} className="min-h-screen bg-white pt-28 md:pt-32 pb-20">
       <div className="container mx-auto px-4 md:px-6">
         <button
           onClick={() => navigate(-1)}
           className="flex items-center gap-2 text-sm md:text-base text-slate-500 hover:text-slate-900 mb-6 md:mb-8 transition-colors group"
         >
           <ArrowLeft size={18} className="md:w-5 md:h-5 group-hover:-translate-x-1 transition-transform" />
-          Back to browsing
+          Back
         </button>
 
         <div className="flex flex-col md:flex-row gap-8 md:gap-12 lg:gap-20">

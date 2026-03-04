@@ -63,8 +63,8 @@ const AboutContact = () => {
                         </div>
 
                         {/* Image Content */}
-                        <div className="lg:w-1/2 relative w-full">
-                            <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl aspect-[9/16] object-cover border-8 border-white group">
+                        <div className="lg:w-[45%] xl:w-5/12 relative w-full max-w-md lg:max-w-none mx-auto mt-10 lg:mt-0">
+                            <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl aspect-[4/5] object-cover border-8 border-white group">
                                 <img
                                     src={contactPageImage}
                                     alt="JFS Fitness Athlete"
@@ -84,48 +84,62 @@ const AboutContact = () => {
                 </section>
 
                 {/* SECTION 2: CONTACT */}
-                <section id="contact" className="bg-white rounded-[3rem] p-8 md:p-16 lg:p-20 shadow-sm border border-slate-100">
-                    <div className="text-center mb-16">
-                        <span className="text-yellow-500 font-bold tracking-tight uppercase text-sm mb-4 block">Get In Touch</span>
-                        <h2 className="text-4xl md:text-5xl font-black font-heading text-slate-900 uppercase tracking-tight mb-6">
-                            Contact <span className="text-slate-400">Us</span>
-                        </h2>
-                        <div className="w-24 h-1.5 bg-yellow-400 mx-auto rounded-full mb-8"></div>
-                        <p className="text-lg text-slate-500 font-medium max-w-2xl mx-auto leading-relaxed">
-                            Have questions about our products or need coaching advice? We're here to help you achieve your goals. Reach out to our dedicated support team today.
-                        </p>
-                    </div>
+                <section id="contact" className="mt-12 lg:mt-24 mb-16 relative">
+                    <div className="bg-slate-900 rounded-[3rem] p-8 md:p-16 lg:p-20 shadow-2xl relative overflow-hidden">
+                        {/* Background Decorations */}
+                        <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-yellow-400 rounded-full blur-[120px] opacity-20 -translate-y-1/2 translate-x-1/3"></div>
+                        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#25D366] rounded-full blur-[120px] opacity-10 translate-y-1/2 -translate-x-1/3"></div>
 
-                    <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-20">
-                        {/* Contact Info */}
-                        <div className="lg:col-span-2 space-y-12 flex flex-col justify-center">
-                            <div className="pt-8 md:pt-0">
-                                <p className="font-bold text-slate-400 text-sm uppercase tracking-wider mb-6">Follow Our Journey</p>
-                                <div className="flex gap-4">
-                                    <a href="https://www.instagram.com/jfs.protein.store/" target="_blank" rel="noopener noreferrer" className="bg-slate-50 hover:bg-slate-900 hover:text-white p-4 rounded-2xl text-slate-600 transition-all duration-300">
-                                        <Instagram size={24} />
-                                    </a>
-                                    <a href="https://www.youtube.com/@Masterjoy09" target="_blank" rel="noopener noreferrer" className="bg-slate-50 hover:bg-slate-900 hover:text-white p-4 rounded-2xl text-slate-600 transition-all duration-300">
-                                        <Youtube size={24} />
-                                    </a>
+                        <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+                            {/* Text Content */}
+                            <div className="lg:col-span-7">
+                                <div className="flex items-center gap-3 mb-6">
+                                    <div className="w-10 h-0.5 bg-yellow-400"></div>
+                                    <span className="text-yellow-400 font-bold tracking-widest uppercase text-sm">Get In Touch</span>
+                                </div>
+                                <h2 className="text-4xl md:text-5xl lg:text-6xl font-black font-heading text-white uppercase tracking-tight mb-8 leading-[1.1]">
+                                    Let's Start Your <br /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-100">Transformation.</span>
+                                </h2>
+                                <p className="text-lg text-slate-400 font-medium mb-12 leading-relaxed max-w-lg">
+                                    Skip the long forms and delayed emails. Connect with our dedicated support team directly on WhatsApp for real-time coaching advice and product recommendations.
+                                </p>
+
+                                <div>
+                                    <p className="font-bold text-slate-500 text-sm uppercase tracking-wider mb-5">Connect With Us</p>
+                                    <div className="flex gap-4">
+                                        <a href="https://www.instagram.com/jfs.protein.store/" target="_blank" rel="noopener noreferrer" className="bg-slate-800/50 border border-slate-700 hover:border-yellow-400 hover:bg-slate-800 hover:text-yellow-400 p-4 rounded-2xl text-white transition-all duration-300 group shadow-lg">
+                                            <Instagram size={28} className="group-hover:scale-110 transition-transform" />
+                                        </a>
+                                        <a href="https://www.youtube.com/@Masterjoy09" target="_blank" rel="noopener noreferrer" className="bg-slate-800/50 border border-slate-700 hover:border-yellow-400 hover:bg-slate-800 hover:text-yellow-400 p-4 rounded-2xl text-white transition-all duration-300 group shadow-lg">
+                                            <Youtube size={28} className="group-hover:scale-110 transition-transform" />
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                        {/* Contact Action */}
-                        <div className="lg:col-span-3 bg-slate-50 p-8 md:p-12 rounded-[2.5rem] border border-slate-200 flex flex-col justify-center items-center text-center">
-                            <img src={whatsappLogo} alt="WhatsApp" loading="lazy" className="w-24 h-24 mb-8 drop-shadow-md hover:scale-110 transition-transform duration-300" />
-                            <h3 className="font-black font-heading text-3xl md:text-4xl text-slate-900 uppercase tracking-tight mb-4">Connect on WhatsApp</h3>
-                            <p className="text-slate-500 font-medium mb-10 max-w-md">
-                                Skip the forms. Message us directly on WhatsApp for the fastest support, product recommendations, and coaching inquiries.
-                            </p>
-                            <Button
-                                onClick={() => window.open(`https://wa.me/${WHATSAPP_NUMBER}`, '_blank')}
-                                size="lg"
-                                className="w-full md:w-auto bg-[#25D366] text-white hover:bg-[#20bd5a] font-bold text-lg px-12 py-5 rounded-2xl shadow-lg shadow-[#25D366]/30"
-                            >
-                                Chat With Us Now
-                            </Button>
+                            {/* CTA Card */}
+                            <div className="flex justify-center lg:justify-end lg:col-span-5 w-full mt-8 lg:mt-0 xl:pr-12">
+                                <div className="bg-white/5 backdrop-blur-2xl border border-white/10 p-8 md:p-12 rounded-[2.5rem] w-full max-w-[380px] text-center transform hover:-translate-y-2 transition-transform duration-500 shadow-[0_20px_50px_rgba(0,0,0,0.5)] relative overflow-hidden group">
+                                    {/* Hover gradient effect inside card */}
+                                    <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                                    <div className="relative z-10 flex flex-col items-center">
+                                        <div className="bg-white p-5 rounded-[2rem] shadow-[0_0_40px_rgba(37,211,102,0.3)] mb-8 group-hover:shadow-[0_0_60px_rgba(37,211,102,0.5)] transition-shadow duration-500">
+                                            <img src={whatsappLogo} alt="WhatsApp" loading="lazy" className="w-16 h-16 drop-shadow-md group-hover:scale-110 transition-transform duration-500" />
+                                        </div>
+                                        <h3 className="font-black font-heading text-2xl md:text-3xl text-white uppercase tracking-tight mb-8">
+                                            Direct Support
+                                        </h3>
+                                        <Button
+                                            onClick={() => window.open(`https://wa.me/${WHATSAPP_NUMBER}`, '_blank')}
+                                            size="lg"
+                                            className="w-full bg-[#25D366] text-white hover:bg-[#20bd5a] font-bold text-lg py-4 rounded-xl shadow-[0_10px_30px_rgba(37,211,102,0.2)] group-hover:shadow-[0_15px_40px_rgba(37,211,102,0.4)] transition-all duration-300 transform group-hover:scale-[1.02]"
+                                        >
+                                            Chat on WhatsApp
+                                        </Button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </section>

@@ -31,12 +31,13 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onAddToCart }) => {
         src={product.image}
         alt={product.name}
         loading="lazy"
-        className="h-full w-full object-contain p-6 md:p-8 transition-transform duration-700 group-hover:scale-110"
+        className={`h-full w-full object-contain p-6 md:p-8 transition-transform duration-700 ${product.brand === 'DNA Pharma' ? 'scale-[0.85] group-hover:scale-[0.95]' : 'group-hover:scale-110'
+          }`}
       />
 
       {/* Discount Badge (Top Left) */}
       {product.discount && (
-        <div className="absolute top-4 left-4 bg-black text-white text-[10px] font-black px-2 py-1.5 rounded-md shadow-lg z-10">
+        <div className="absolute top-4 left-4 bg-black text-white text-[10px] md:text-xs font-black px-2.5 py-1.5 rounded-md shadow-lg z-10">
           -{product.discount}%
         </div>
       )}

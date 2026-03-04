@@ -26,7 +26,8 @@ const Home: React.FC<HomeProps> = ({ onAddToCart }) => {
     const containerRef = useRef<HTMLDivElement>(null);
 
     // Filter Data for Sections
-    const bestSellers = PRODUCTS.slice(0, 4);
+    const bestSellerIds = ['pre-6', 'iso-2', 'whey-4', 'bcaa-4'];
+    const bestSellers = bestSellerIds.map(id => PRODUCTS.find(p => p.id === id)).filter((p): p is Product => p !== undefined);
     const newArrivals = [...PRODUCTS].reverse().slice(0, 4);
     const wheyProducts = PRODUCTS.filter(p => p.category === Category.WHEY_PROTEIN || p.category === Category.WHEY_ISOLATE).slice(0, 4);
 
@@ -94,9 +95,17 @@ const Home: React.FC<HomeProps> = ({ onAddToCart }) => {
                         {CATEGORIES_LIST.map((cat, idx) => (
                             <div key={idx} className="flex flex-col items-center gap-2 md:gap-4 group cursor-pointer w-[28%] md:w-auto" onClick={() => navigate(`/products?category=${encodeURIComponent(cat.name)}`)}>
                                 <div className="w-20 h-20 md:w-32 md:h-32 rounded-full p-1 border-2 border-slate-100 group-hover:border-yellow-400 transition-colors duration-300">
-                                    <div className="w-full h-full rounded-full overflow-hidden relative bg-slate-100">
-                                        <img src={cat.image} alt={cat.name} loading="lazy" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
-                                        <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
+                                    <div className="w-full h-full rounded-full overflow-hidden relative bg-white flex items-center justify-center">
+                                        <img
+                                            src={cat.image}
+                                            alt={cat.name}
+                                            loading="lazy"
+                                            className={`w-full h-full transition-transform duration-500 group-hover:scale-110 ${(cat.name === 'Whey Protein' || cat.name === 'Whey Isolate' || cat.name === 'Pre-Workout')
+                                                ? 'object-contain mix-blend-multiply p-2 md:p-4'
+                                                : 'object-cover'
+                                                }`}
+                                        />
+                                        <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors pointer-events-none"></div>
                                     </div>
                                 </div>
                                 <span className="text-[10px] md:text-base font-bold text-slate-900 uppercase tracking-wide group-hover:text-yellow-600 transition-colors text-center leading-tight">
@@ -109,7 +118,7 @@ const Home: React.FC<HomeProps> = ({ onAddToCart }) => {
             </section>
 
             {/* 3. Best Sellers Section (SaaS Grid Background) */}
-            <section className="bestsellers-section py-10 md:py-12 bg-slate-50 relative">
+            <section className="bestsellers-section py-10 md:py-12 bg-slate-100 relative">
                 {/* SaaS background grid */}
                 <div className="absolute inset-0 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] [background-size:24px_24px] opacity-60 pointer-events-none"></div>
                 <div className="container mx-auto px-4 md:px-6 relative z-10">
@@ -118,14 +127,22 @@ const Home: React.FC<HomeProps> = ({ onAddToCart }) => {
                             <h2 className="text-2xl md:text-3xl font-black font-heading text-slate-900 tracking-tight mb-1 md:mb-2">Best Sellers</h2>
                             <p className="text-sm md:text-base text-slate-500">Top rated products by our community.</p>
                         </div>
-                        <button onClick={() => navigate('/products')} className="flex items-center gap-1 md:gap-2 text-[10px] md:text-sm font-bold text-yellow-600 hover:underline border border-yellow-200 bg-yellow-50 px-3 py-1.5 md:border-none md:bg-transparent md:px-0 md:py-0 rounded-full md:rounded-none">
-                            View All <ArrowUpRight size={14} className="md:w-4 md:h-4" />
-                        </button>
                     </div>
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-8">
                         {bestSellers.map(product => (
                             <ProductCard key={product.id} product={product} onAddToCart={onAddToCart} />
                         ))}
+                    </div>
+
+                    <div className="text-center mt-10 md:mt-12">
+                        <Button
+                            onClick={() => navigate('/products')}
+                            size="lg"
+                            className="bg-slate-900 text-white font-bold px-8 md:px-10 text-sm md:text-base hover:bg-slate-800 w-full md:w-auto rounded-xl md:rounded-full"
+                            icon={<ArrowUpRight size={18} className="md:w-5 md:h-5" />}
+                        >
+                            View All Best Sellers
+                        </Button>
                     </div>
                 </div>
             </section>
@@ -157,7 +174,7 @@ const Home: React.FC<HomeProps> = ({ onAddToCart }) => {
                 </div>
             </section>
             {/* Real Results / Transformations Preview */}
-            < section className="py-12 md:py-24 bg-slate-50 relative z-30 overflow-hidden" >
+            < section className="py-12 md:py-24 bg-slate-100 relative z-30 overflow-hidden" >
                 <div className="container mx-auto px-4 md:px-6 relative z-10">
                     <div className="text-center mb-10 md:mb-16">
                         <span className="text-yellow-500 font-bold tracking-tight uppercase text-xs md:text-sm mb-2 md:mb-4 block">Proven Success</span>
@@ -207,15 +224,23 @@ const Home: React.FC<HomeProps> = ({ onAddToCart }) => {
                             <span className="text-yellow-500 font-bold uppercase tracking-tight text-[10px] md:text-xs">Just Dropped</span>
                             <h2 className="text-2xl md:text-3xl font-black font-heading text-slate-900 tracking-tight mt-0.5 md:mt-1">New Arrivals</h2>
                         </div>
-                        <button onClick={() => navigate('/products')} className="flex items-center gap-1 md:gap-2 text-[10px] md:text-sm font-bold text-slate-900 hover:underline border border-slate-200 bg-slate-50 px-3 py-1.5 md:border-none md:bg-transparent md:px-0 md:py-0 rounded-full md:rounded-none">
-                            See All <ChevronRight size={14} className="md:w-4 md:h-4" />
-                        </button>
                     </div>
 
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-8">
                         {newArrivals.map(product => (
                             <ProductCard key={product.id} product={product} onAddToCart={onAddToCart} />
                         ))}
+                    </div>
+
+                    <div className="text-center mt-10 md:mt-12">
+                        <Button
+                            onClick={() => navigate('/products')}
+                            size="lg"
+                            className="bg-slate-900 text-white font-bold px-8 md:px-10 text-sm md:text-base hover:bg-slate-800 w-full md:w-auto rounded-xl md:rounded-full"
+                            icon={<ChevronRight size={18} className="md:w-5 md:h-5" />}
+                        >
+                            View All New Arrivals
+                        </Button>
                     </div>
                 </div>
             </section >
@@ -225,7 +250,7 @@ const Home: React.FC<HomeProps> = ({ onAddToCart }) => {
                 <div className="container mx-auto px-4 md:px-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                         {/* Banner 1 */}
-                        <div className="relative h-64 md:h-96 rounded-[1.5rem] md:rounded-[2rem] overflow-hidden group cursor-pointer" style={{ background: 'linear-gradient(135deg, #0d1b3e 0%, #0a1628 60%, #111827 100%)' }}>
+                        <div className="relative h-64 md:h-96 rounded-[1.5rem] md:rounded-[2rem] overflow-hidden group cursor-pointer" style={{ background: 'linear-gradient(135deg, #1e3a8a 0%, #0f172a 60%, #020617 100%)' }}>
                             {/* Strong spotlight on figure */}
                             <div className="absolute right-[5%] bottom-0 w-[55%] h-[120%] bg-[radial-gradient(ellipse_at_bottom_center,rgba(255,220,100,0.22)_0%,rgba(234,179,8,0.10)_40%,transparent_70%)] pointer-events-none"></div>
                             {/* Top accent glow */}
@@ -239,20 +264,24 @@ const Home: React.FC<HomeProps> = ({ onAddToCart }) => {
                             />
                             <div className="absolute bottom-0 inset-x-0 h-1/2 bg-gradient-to-t from-slate-950/70 to-transparent pointer-events-none"></div>
 
+                            {/* Left text gradient (moved BEFORE the image so it doesn't darken the subject) */}
+                            <div className="absolute inset-0 bg-gradient-to-r from-[#1e3a8a]/90 via-[#0f172a]/80 to-transparent pointer-events-none"></div>
+
                             <img
                                 src={promoBannerImage}
                                 alt="Gains"
                                 loading="lazy"
-                                className="absolute right-[-2%] bottom-[-8%] h-[130%] w-auto object-contain transition-transform duration-700 group-hover:scale-105 drop-shadow-[0_0_40px_rgba(234,179,8,0.3)]"
+                                className="absolute right-[-2%] bottom-[-8%] h-[130%] w-auto object-contain transition-transform duration-700 group-hover:scale-105 drop-shadow-[0_0_40px_rgba(234,179,8,0.3)] z-10"
                             />
-                            {/* Left text gradient */}
-                            <div className="absolute inset-0 bg-gradient-to-r from-[#0d1b3e] via-[#0a1628]/90 to-transparent"></div>
                             <div className="absolute inset-0 p-6 md:p-12 flex flex-col justify-center items-start max-w-[50%]">
                                 <span className="text-yellow-400 font-bold uppercase tracking-tight text-[10px] md:text-sm mb-1 md:mb-2">Build Muscle</span>
                                 <h3 className="text-2xl md:text-5xl font-black font-heading text-white leading-tight mb-6 md:mb-8">
                                     PACK ON <br /> SERIOUS GAINS
                                 </h3>
-                                <Button className="bg-yellow-400 !text-slate-950 hover:bg-yellow-300 font-bold text-xs md:text-sm px-4 py-2 md:px-6 md:py-3 border-none shadow-lg shadow-yellow-400/20">
+                                <Button
+                                    onClick={() => navigate('/products')}
+                                    className="bg-yellow-400 !text-slate-950 hover:bg-yellow-300 font-bold text-xs md:text-sm px-4 py-2 md:px-6 md:py-3 border-none shadow-lg shadow-yellow-400/20"
+                                >
                                     Shop Essentials
                                 </Button>
                             </div>
@@ -267,14 +296,19 @@ const Home: React.FC<HomeProps> = ({ onAddToCart }) => {
                                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                             />
                             <div className="absolute inset-0 bg-gradient-to-l from-red-900/90 to-red-900/40"></div>
-                            <div className="absolute inset-0 p-6 md:p-12 flex flex-col justify-center items-end text-right">
-                                <span className="text-white/80 font-bold uppercase tracking-tight text-[10px] md:text-sm mb-1 md:mb-2">Limited Time</span>
+                            <div className="absolute inset-0 p-6 md:p-12 flex flex-col justify-center items-start text-left">
+                                <span className="text-white/80 font-bold uppercase tracking-tight text-[10px] md:text-sm mb-1 md:mb-2">Transform Your Life</span>
                                 <h3 className="text-2xl md:text-5xl font-black font-heading text-white leading-tight mb-2 md:mb-4">
-                                    BUY 2 GET <br /> <span className="text-yellow-400">EXTRA 15% OFF</span>
+                                    BUILD STRENGTH <br />
+                                    BUILD DISCIPLINE <br />
+                                    <span className="text-yellow-400">BUILD RESULTS</span>
                                 </h3>
-                                <p className="text-white/90 mb-6 md:mb-8 max-w-[200px] md:max-w-xs text-xs md:text-base">Use code <strong>POWER15</strong> at checkout.</p>
-                                <Button className="bg-yellow-400 !text-black hover:bg-yellow-300 font-bold text-xs md:text-sm px-4 py-2 md:px-6 md:py-3 border-none">
-                                    Grab The Deal
+                                <p className="text-white/90 mb-6 md:mb-8 max-w-[200px] md:max-w-xs text-xs md:text-base font-medium">Under the expert guidance of Prabha Joy.</p>
+                                <Button
+                                    onClick={() => navigate('/coaching')}
+                                    className="bg-yellow-400 !text-black hover:bg-yellow-300 font-bold text-xs md:text-sm px-4 py-2 md:px-6 md:py-3 border-none shadow-lg shadow-yellow-400/20"
+                                >
+                                    Explore Coaching
                                 </Button>
                             </div>
                         </div>
@@ -283,7 +317,7 @@ const Home: React.FC<HomeProps> = ({ onAddToCart }) => {
             </section >
 
             {/* 7. Trending in Whey */}
-            <section className="trending-section py-12 md:py-20 bg-slate-50 relative overflow-hidden">
+            <section className="trending-section py-12 md:py-20 bg-slate-100 relative overflow-hidden">
                 {/* SaaS background grid */}
                 <div className="absolute inset-0 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] [background-size:24px_24px] opacity-60 pointer-events-none"></div>
 
