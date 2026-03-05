@@ -43,7 +43,7 @@ const ProductCatalog: React.FC<ProductCatalogProps> = ({ onAddToCart }) => {
         {/* Header Section */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-10">
           <div className="catalog-header">
-            <h1 className="text-4xl md:text-6xl font-black font-heading text-slate-900 tracking-tight mb-4">
+            <h1 className="text-4xl md:text-6xl font-heading font-normal text-slate-900 tracking-tight mb-4">
               The Collection
             </h1>
             <p className="text-lg md:text-xl text-slate-500 font-medium max-w-xl leading-relaxed">

@@ -33,7 +33,7 @@ const TestimonialsPage: React.FC = () => {
     <div ref={containerRef} className="min-h-screen bg-slate-50 pt-24 pb-32 md:pt-40">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto text-center mb-24">
-          <h1 className="page-title text-6xl md:text-8xl font-black font-heading text-slate-900 mb-8 tracking-tight">
+          <h1 className="page-title text-6xl md:text-8xl font-heading font-normal text-slate-900 mb-8 tracking-tight">
             Real Impact.
           </h1>
           <p className="page-desc text-xl md:text-2xl text-slate-500 leading-relaxed font-light">

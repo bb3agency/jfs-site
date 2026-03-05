@@ -38,7 +38,7 @@ const Coaching = () => {
                             <span className="text-xs md:text-sm font-bold text-slate-800 tracking-[0.2em] uppercase">JFS Elite Performance</span>
                         </div>
 
-                        <h1 className="text-6xl md:text-7xl lg:text-8xl font-black font-heading tracking-tighter mb-6 text-slate-950 leading-[0.9]">
+                        <h1 className="text-6xl md:text-7xl lg:text-8xl font-heading font-normal tracking-tighter mb-6 text-slate-950 leading-[0.9]">
                             BUILD YOUR <br />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-yellow-600">LEGACY.</span>
                         </h1>
@@ -80,7 +80,7 @@ const Coaching = () => {
 
                             <div className="text-left relative z-10 flex flex-col h-full">
                                 <div>
-                                    <h3 className="text-slate-950 font-black font-heading text-4xl mb-2">PROVEN</h3>
+                                    <h3 className="text-slate-950 font-heading font-normal text-4xl mb-2">PROVEN</h3>
                                     <div className="w-16 h-1 bg-yellow-500 mb-6"></div>
                                 </div>
 
@@ -97,7 +97,7 @@ const Coaching = () => {
 
                             <div className="grid grid-cols-2 gap-4 mt-8 relative z-10">
                                 <div className="bg-white p-4 border border-slate-200 shadow-sm">
-                                    <h4 className="text-3xl font-black text-yellow-600 font-heading">100%</h4>
+                                    <h4 className="text-3xl  text-yellow-600 font-heading font-normal">100%</h4>
                                     <span className="text-xs font-bold text-slate-500 tracking-widest uppercase">Custom Built</span>
                                 </div>
                                 <div className="bg-white p-4 border border-slate-200 shadow-sm flex flex-col justify-center">
@@ -130,7 +130,7 @@ const Coaching = () => {
                     <div className="flex flex-col md:flex-row gap-4 items-end justify-between mb-16 max-w-6xl mx-auto border-b border-slate-700/50 pb-8">
                         <div>
                             <span className="text-yellow-500 font-bold tracking-widest uppercase text-sm mb-2 block">The Protocol</span>
-                            <h2 className="text-4xl md:text-5xl font-black font-heading text-white tracking-tight uppercase">NO EXCUSES <br /><span className="text-slate-400">METHODOLOGY</span></h2>
+                            <h2 className="text-4xl md:text-5xl font-heading font-normal text-white tracking-tight uppercase">NO EXCUSES <br /><span className="text-slate-400">METHODOLOGY</span></h2>
                         </div>
                         <p className="text-lg text-slate-300 font-medium max-w-md text-left md:text-right shadow-sm">
                             Everything you need to succeed, engineered into one seamless, unrelenting program.
@@ -145,7 +145,7 @@ const Coaching = () => {
                         ].map((feature, i) => (
                             <div key={i} className="bg-white p-8 md:p-10 border border-slate-200 shadow-sm relative group transition-all duration-300 hover:border-slate-400 hover:shadow-xl hover:-translate-y-2">
                                 {/* Large background step number */}
-                                <div className="absolute top-4 right-4 text-slate-100 font-black font-heading text-7xl select-none group-hover:text-slate-200 transition-colors duration-300">
+                                <div className="absolute top-4 right-4 text-slate-100 font-heading font-normal text-7xl select-none group-hover:text-slate-200 transition-colors duration-300">
                                     {feature.step}
                                 </div>
 
@@ -153,7 +153,7 @@ const Coaching = () => {
                                     <div className="h-16 w-16 bg-slate-50 flex items-center justify-center mb-8 border border-slate-200 group-hover:border-slate-950 transition-colors duration-300 origin-left group-hover:scale-110">
                                         {feature.icon}
                                     </div>
-                                    <h3 className="text-2xl font-black font-heading text-slate-950 uppercase tracking-wide mb-4 flex items-center gap-3">
+                                    <h3 className="text-2xl font-heading font-normal text-slate-950 uppercase tracking-wide mb-4 flex items-center gap-3">
                                         {feature.title}
                                     </h3>
                                     <p className="text-slate-600 font-medium leading-relaxed">
@@ -176,7 +176,7 @@ const Coaching = () => {
                 <div className="container mx-auto px-4 md:px-6 relative z-10">
                     <div className="text-center mb-16 max-w-3xl mx-auto">
                         <span className="text-yellow-600 font-bold tracking-widest uppercase text-sm mb-4 block">Select Your Path</span>
-                        <h2 className="text-4xl md:text-5xl lg:text-6xl font-black font-heading text-slate-950 tracking-tight uppercase mb-6">
+                        <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-normal text-slate-950 tracking-tight uppercase mb-6">
                             TRAINING <span className="text-slate-400">PROTOCOLS</span>
                         </h2>
                         <div className="w-24 h-1 bg-slate-950 mx-auto mb-6"></div>
@@ -197,7 +197,7 @@ const Coaching = () => {
                                     {/* Removed VIP Badge */}
 
                                     <div className="p-10 border-b border-slate-200 bg-slate-100 group-hover:border-slate-800 group-hover:bg-slate-900/50 relative z-10 transition-colors duration-500">
-                                        <h3 className="text-3xl font-black font-heading tracking-tight mb-2 uppercase text-slate-950 group-hover:text-white transition-colors duration-500">{pkg.title}</h3>
+                                        <h3 className="text-3xl font-heading font-normal tracking-tight mb-2 uppercase text-slate-950 group-hover:text-white transition-colors duration-500">{pkg.title}</h3>
                                         <p className="font-bold tracking-widest text-sm uppercase text-slate-500 group-hover:text-yellow-500 transition-colors duration-500">{pkg.duration}</p>
                                     </div>
 

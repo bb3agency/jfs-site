@@ -16,7 +16,7 @@ const Transformations = () => {
                 {/* Header content */}
                 <div className="text-center mb-10 md:mb-24 mt-4 md:mt-8">
                     <span className="text-yellow-500 font-bold tracking-tight uppercase text-sm mb-4 block">Proven Success</span>
-                    <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black font-heading text-slate-900 mb-6 uppercase tracking-tight leading-none break-words">
+                    <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-normal text-slate-900 mb-6 uppercase tracking-tight leading-none break-words">
                         Client <br className="sm:hidden" /><span className="text-slate-400">Transformations</span>
                     </h1>
                     <p className="text-slate-500 font-medium max-w-2xl mx-auto text-lg md:text-xl leading-relaxed">
@@ -49,7 +49,7 @@ const Transformations = () => {
 
                     <div className="relative z-10">
                         <span className="text-yellow-400 font-bold tracking-tight uppercase text-sm mb-6 block">Your Turn Next</span>
-                        <h2 className="text-4xl md:text-5xl lg:text-6xl font-black font-heading text-white mb-6 uppercase tracking-tight max-w-4xl mx-auto">
+                        <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-normal text-white mb-6 uppercase tracking-tight max-w-4xl mx-auto">
                             Ready to be the next <span className="text-slate-400">Success Story?</span>
                         </h2>
                         <p className="text-slate-400 font-medium mb-12 max-w-2xl mx-auto text-lg md:text-xl leading-relaxed">

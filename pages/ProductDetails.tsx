@@ -178,7 +178,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ onAddToCart, cartItems,
             <span className="text-yellow-500 font-bold uppercase tracking-tight text-xs md:text-sm mb-1 md:mb-2">
               {product.category}
             </span>
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black font-heading text-slate-900 tracking-tight mb-2 md:mb-3 leading-tight">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-heading font-normal text-slate-900 tracking-tight mb-2 md:mb-3 leading-tight">
               {product.name}
             </h1>
             {product.weight && (

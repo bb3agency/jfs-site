@@ -29,7 +29,7 @@ const AboutContact = () => {
                         {/* Text Content */}
                         <div className="lg:w-1/2">
                             <span className="text-yellow-500 font-bold tracking-tight uppercase text-sm mb-4 block">Our Story</span>
-                            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black font-heading text-slate-900 uppercase mb-6 tracking-tight leading-[1.1]">
+                            <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-normal text-slate-900 uppercase mb-6 tracking-tight leading-[1.1]">
                                 Fueling Your <br /><span className="text-slate-400">Ambition.</span>
                             </h1>
                             <div className="w-20 h-1.5 bg-yellow-400 rounded-full mb-8"></div>
@@ -48,15 +48,15 @@ const AboutContact = () => {
 
                             <div className="mt-12 grid grid-cols-3 gap-6 text-center border-t border-slate-200 pt-10">
                                 <div>
-                                    <h3 className="text-3xl md:text-4xl font-black font-heading text-slate-900">100%</h3>
+                                    <h3 className="text-3xl md:text-4xl font-heading font-normal text-slate-900">100%</h3>
                                     <p className="text-xs md:text-sm font-bold uppercase tracking-wider text-slate-500 mt-2">Authentic</p>
                                 </div>
                                 <div>
-                                    <h3 className="text-3xl md:text-4xl font-black font-heading text-slate-900">5K+</h3>
+                                    <h3 className="text-3xl md:text-4xl font-heading font-normal text-slate-900">5K+</h3>
                                     <p className="text-xs md:text-sm font-bold uppercase tracking-wider text-slate-500 mt-2">Happy Clients</p>
                                 </div>
                                 <div>
-                                    <h3 className="text-3xl md:text-4xl font-black font-heading text-slate-900"><span className="font-sans">24/7</span></h3>
+                                    <h3 className="text-3xl md:text-4xl font-heading font-normal text-slate-900"><span className="font-sans">24/7</span></h3>
                                     <p className="text-xs md:text-sm font-bold uppercase tracking-wider text-slate-500 mt-2">Expert Support</p>
                                 </div>
                             </div>
@@ -72,7 +72,7 @@ const AboutContact = () => {
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/40 to-transparent"></div>
                                 <div className="absolute bottom-8 left-8 text-white">
-                                    <p className="font-black font-heading text-3xl uppercase tracking-tight mb-1">Push Limits</p>
+                                    <p className="font-heading font-normal text-3xl uppercase tracking-tight mb-1">Push Limits</p>
                                     <p className="font-medium text-slate-300">Join the JFS Movement</p>
                                 </div>
                             </div>
@@ -97,7 +97,7 @@ const AboutContact = () => {
                                     <div className="w-10 h-0.5 bg-yellow-400"></div>
                                     <span className="text-yellow-400 font-bold tracking-widest uppercase text-sm">Get In Touch</span>
                                 </div>
-                                <h2 className="text-4xl md:text-5xl lg:text-6xl font-black font-heading text-white uppercase tracking-tight mb-8 leading-[1.1]">
+                                <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-normal text-white uppercase tracking-tight mb-8 leading-[1.1]">
                                     Let's Start Your <br /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-100">Transformation.</span>
                                 </h2>
                                 <p className="text-lg text-slate-400 font-medium mb-12 leading-relaxed max-w-lg">
@@ -127,7 +127,7 @@ const AboutContact = () => {
                                         <div className="bg-white p-5 rounded-[2rem] shadow-[0_0_40px_rgba(37,211,102,0.3)] mb-8 group-hover:shadow-[0_0_60px_rgba(37,211,102,0.5)] transition-shadow duration-500">
                                             <img src={whatsappLogo} alt="WhatsApp" loading="lazy" className="w-16 h-16 drop-shadow-md group-hover:scale-110 transition-transform duration-500" />
                                         </div>
-                                        <h3 className="font-black font-heading text-2xl md:text-3xl text-white uppercase tracking-tight mb-8">
+                                        <h3 className="font-heading font-normal text-2xl md:text-3xl text-white uppercase tracking-tight mb-8">
                                             Direct Support
                                         </h3>
                                         <Button

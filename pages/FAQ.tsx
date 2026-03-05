@@ -38,7 +38,7 @@ const FAQ = () => {
                     <div className="inline-flex items-center justify-center p-3 md:p-4 bg-slate-800/50 rounded-2xl md:rounded-3xl border border-slate-700 backdrop-blur-md mb-6 md:mb-8 text-yellow-400">
                         <MessageCircle size={32} strokeWidth={2} className="md:w-10 md:h-10" />
                     </div>
-                    <h1 className="text-4xl md:text-6xl lg:text-7xl font-black font-heading tracking-tight mb-4 md:mb-6 uppercase text-white max-w-4xl mx-auto leading-tight">
+                    <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-normal tracking-tight mb-4 md:mb-6 uppercase text-white max-w-4xl mx-auto leading-tight">
                         Frequently Asked <span className="text-yellow-400">Questions</span>
                     </h1>
                     <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto font-medium">
@@ -53,7 +53,7 @@ const FAQ = () => {
                     <div className="bg-white rounded-[2rem] md:rounded-[3rem] shadow-xl border border-slate-100 p-6 md:p-12">
                         {faqs.map((group, groupIdx) => (
                             <div key={groupIdx} className="mb-12 last:mb-0">
-                                <h2 className="text-2xl md:text-3xl font-black font-heading text-slate-900 uppercase tracking-tight mb-6 md:mb-8">
+                                <h2 className="text-2xl md:text-3xl font-heading font-normal text-slate-900 uppercase tracking-tight mb-6 md:mb-8">
                                     {group.category}
                                 </h2>
 

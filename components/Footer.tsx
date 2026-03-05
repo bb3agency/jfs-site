@@ -18,7 +18,7 @@ const Footer: React.FC = () => {
 
                 {/* Background Watermark */}
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full pointer-events-none select-none flex items-center justify-center opacity-[0.03]">
-                    <span className="text-[15vw] md:text-[11vw] font-black font-heading text-white leading-none tracking-tight whitespace-nowrap">
+                    <span className="text-[15vw] md:text-[11vw] font-heading font-normal text-white leading-none tracking-tight whitespace-nowrap">
                         JFS FITNESS
                     </span>
                 </div>
@@ -28,7 +28,7 @@ const Footer: React.FC = () => {
 
                     {/* Column 1: GENERAL */}
                     <div className="flex flex-col">
-                        <h4 className="font-heading font-black text-xs text-slate-500 uppercase tracking-tight mb-6 md:mb-8">
+                        <h4 className="font-heading font-normal text-xs text-slate-500 uppercase tracking-tight mb-6 md:mb-8">
                             General
                         </h4>
                         <ul className="space-y-3 md:space-y-4">
@@ -39,7 +39,7 @@ const Footer: React.FC = () => {
 
                     {/* Column 2: PRODUCTS */}
                     <div className="flex flex-col">
-                        <h4 className="font-heading font-black text-xs text-slate-500 uppercase tracking-tight mb-6 md:mb-8">
+                        <h4 className="font-heading font-normal text-xs text-slate-500 uppercase tracking-tight mb-6 md:mb-8">
                             Products
                         </h4>
                         <ul className="space-y-3 md:space-y-4">
@@ -51,7 +51,7 @@ const Footer: React.FC = () => {
 
                     {/* Column 3: CUSTOMER SERVICE */}
                     <div className="flex flex-col">
-                        <h4 className="font-heading font-black text-xs text-slate-500 uppercase tracking-tight mb-6 md:mb-8">
+                        <h4 className="font-heading font-normal text-xs text-slate-500 uppercase tracking-tight mb-6 md:mb-8">
                             Customer Service
                         </h4>
                         <ul className="space-y-3 md:space-y-4">
@@ -61,7 +61,7 @@ const Footer: React.FC = () => {
 
                     {/* Column 4: SOCIAL MEDIA & NEWSLETTER (Combined conceptually as 'Connect') */}
                     <div className="flex flex-col">
-                        <h4 className="font-heading font-black text-xs text-slate-500 uppercase tracking-tight mb-6 md:mb-8">
+                        <h4 className="font-heading font-normal text-xs text-slate-500 uppercase tracking-tight mb-6 md:mb-8">
                             Social Media
                         </h4>
                         <ul className="space-y-3 md:space-y-4 mb-4">
@@ -86,7 +86,7 @@ const Footer: React.FC = () => {
                 </div>
 
                 {/* Large Bottom Text 'JFS' aligned to bottom center - Optional alternate style if watermark isn't enough */}
-                {/* <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 text-[15rem] font-bold font-heading text-slate-800/20 leading-none select-none pointer-events-none">
+                {/* <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 text-[15rem] font-heading font-normal text-slate-800/20 leading-none select-none pointer-events-none">
                     JFS
                  </div> */}
 

@@ -50,7 +50,10 @@ const Navbar: React.FC<NavbarProps> = ({ cartCount, onCartClick }) => {
           <div className="flex justify-between items-center mb-12">
             <div className="flex items-center gap-2 select-none">
               <img src={logo} alt="JFS Fitness" className="h-12 w-auto" />
-              <span className="text-slate-900 font-black text-2xl tracking-tight font-heading">JFS</span>
+              <div className="flex flex-col uppercase font-heading text-slate-900 leading-none">
+                <span className="text-2xl tracking-tighter">Joy</span>
+                <span className="text-xl tracking-tight text-yellow-500">Fitness</span>
+              </div>
             </div>
             <button onClick={() => setIsMobileMenuOpen(false)} className="p-2 -mr-2 text-slate-900 hover:bg-slate-50 rounded-full">
               <X size={32} />
@@ -61,7 +64,7 @@ const Navbar: React.FC<NavbarProps> = ({ cartCount, onCartClick }) => {
               <Link
                 key={link.name}
                 to={link.path}
-                className={`flex items-center gap-6 text-3xl font-bold font-heading uppercase tracking-tight transition-colors ${location.pathname === link.path ? 'text-yellow-500' : 'text-slate-900'
+                className={`flex items-center gap-6 text-3xl font-heading font-normal uppercase tracking-tight transition-colors ${location.pathname === link.path ? 'text-yellow-500' : 'text-slate-900'
                   }`}
               >
                 {link.icon}
@@ -74,7 +77,7 @@ const Navbar: React.FC<NavbarProps> = ({ cartCount, onCartClick }) => {
 
       {/* --- Mobile Floating Bottom Nav (Capsule Style) --- */}
       {/* Visible on ALL mobile pages (persistent) */}
-      <div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-[55] md:hidden pointer-events-none">
+      <div className="fixed bottom-4 left-1/2 -translate-x-1/2 z-[55] md:hidden pointer-events-none">
         <div className="pointer-events-auto flex items-center gap-2 bg-slate-950/80 backdrop-blur-xl p-2 rounded-full shadow-2xl shadow-slate-900/50 border border-white/10 ring-1 ring-black/50">
 
           {/* Home Item */}
@@ -153,7 +156,10 @@ const Navbar: React.FC<NavbarProps> = ({ cartCount, onCartClick }) => {
           {/* Logo */}
           <Link to="/" className="relative z-10 flex items-center gap-2 group select-none">
             <img src={logo} alt="JFS Fitness" className="h-8 md:h-12 w-auto group-hover:scale-105 transition-transform duration-300 drop-shadow-sm" />
-            <span className="text-white font-black text-lg md:text-xl tracking-tight font-heading">JFS</span>
+            <div className="flex flex-col uppercase font-heading text-white leading-none">
+              <span className="text-xl md:text-2xl tracking-tighter">Joy</span>
+              <span className="text-sm md:text-lg tracking-tight text-yellow-400">Fitness</span>
+            </div>
           </Link>
 
           {/* Desktop Navigation Links */}

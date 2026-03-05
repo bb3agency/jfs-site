@@ -63,10 +63,10 @@ const Home: React.FC<HomeProps> = ({ onAddToCart }) => {
                 {/* Added pb-32 to clear the mobile floating nav and pt-32 on desktop to lower the hero component offset */}
                 <div className="container mx-auto px-4 md:px-6 relative z-10 flex flex-col md:flex-row items-center gap-12 pt-20 pb-32 md:pt-32 md:pb-0 h-full justify-end md:justify-center">
                     <div className="hero-content flex-1 text-center md:text-left w-full px-4 md:px-0">
-                        <div className="inline-block px-4 py-1.5 rounded-full border border-yellow-500/30 bg-yellow-500/10 text-yellow-400 font-bold font-heading text-[10px] md:text-xs uppercase tracking-tight mb-4 md:mb-6 backdrop-blur-sm">
+                        <div className="inline-block px-4 py-1.5 rounded-full border border-yellow-500/30 bg-yellow-500/10 text-yellow-400 font-heading font-normal text-[10px] md:text-xs uppercase tracking-tight mb-4 md:mb-6 backdrop-blur-sm">
                             100% Authentic Supplements
                         </div>
-                        <h1 className="text-4xl md:text-7xl font-black font-heading text-white leading-[0.9] tracking-tight mb-4 md:mb-6">
+                        <h1 className="text-4xl md:text-7xl font-heading font-normal text-white leading-[0.9] tracking-tight mb-4 md:mb-6">
                             FUEL YOUR <br />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-200">AMBITION.</span>
                         </h1>
@@ -90,7 +90,7 @@ const Home: React.FC<HomeProps> = ({ onAddToCart }) => {
             {/* 2. Categories (Circular Style) */}
             <section className="categories-section py-10 md:py-16 bg-white">
                 <div className="container mx-auto px-4 md:px-6">
-                    <h2 className="text-2xl md:text-3xl font-black font-heading text-slate-900 text-center mb-8 md:mb-12 uppercase tracking-tight">Shop By Category</h2>
+                    <h2 className="text-2xl md:text-3xl font-heading font-normal text-slate-900 text-center mb-8 md:mb-12 uppercase tracking-tight">Shop By Category</h2>
                     <div className="flex flex-wrap justify-center gap-3 md:gap-12">
                         {CATEGORIES_LIST.map((cat, idx) => (
                             <div key={idx} className="flex flex-col items-center gap-2 md:gap-4 group cursor-pointer w-[28%] md:w-auto" onClick={() => navigate(`/products?category=${encodeURIComponent(cat.name)}`)}>
@@ -124,7 +124,7 @@ const Home: React.FC<HomeProps> = ({ onAddToCart }) => {
                 <div className="container mx-auto px-4 md:px-6 relative z-10">
                     <div className="flex justify-between items-end mb-6 md:mb-10">
                         <div>
-                            <h2 className="text-2xl md:text-3xl font-black font-heading text-slate-900 tracking-tight mb-1 md:mb-2">Best Sellers</h2>
+                            <h2 className="text-2xl md:text-3xl font-heading font-normal text-slate-900 tracking-tight mb-1 md:mb-2">Best Sellers</h2>
                             <p className="text-sm md:text-base text-slate-500">Top rated products by our community.</p>
                         </div>
                     </div>
@@ -151,7 +151,7 @@ const Home: React.FC<HomeProps> = ({ onAddToCart }) => {
             <section id="brands-section" className="brands-section py-24 bg-white border-t border-slate-100">
                 <div className="container mx-auto px-4 md:px-6">
                     <div className="text-center mb-16">
-                        <h3 className="text-2xl font-black font-heading text-slate-900 uppercase tracking-tight mb-4">
+                        <h3 className="text-2xl font-heading font-normal text-slate-900 uppercase tracking-tight mb-4">
                             Secure Our Top<span className="font-sans">-</span>Tier Brands
                         </h3>
                         <div className="h-1 w-20 bg-yellow-400 mx-auto rounded-full"></div>
@@ -178,7 +178,7 @@ const Home: React.FC<HomeProps> = ({ onAddToCart }) => {
                 <div className="container mx-auto px-4 md:px-6 relative z-10">
                     <div className="text-center mb-10 md:mb-16">
                         <span className="text-yellow-500 font-bold tracking-tight uppercase text-xs md:text-sm mb-2 md:mb-4 block">Proven Success</span>
-                        <h2 className="text-3xl md:text-5xl lg:text-6xl font-black font-heading text-slate-900 mb-4 md:mb-6 uppercase tracking-tight">
+                        <h2 className="text-3xl md:text-5xl lg:text-6xl font-heading font-normal text-slate-900 mb-4 md:mb-6 uppercase tracking-tight">
                             Real <span className="text-slate-400">Results</span>
                         </h2>
                         <p className="text-slate-500 max-w-2xl mx-auto text-sm md:text-lg leading-relaxed font-medium">
@@ -222,7 +222,7 @@ const Home: React.FC<HomeProps> = ({ onAddToCart }) => {
                     <div className="flex justify-between items-end mb-6 md:mb-10">
                         <div>
                             <span className="text-yellow-500 font-bold uppercase tracking-tight text-[10px] md:text-xs">Just Dropped</span>
-                            <h2 className="text-2xl md:text-3xl font-black font-heading text-slate-900 tracking-tight mt-0.5 md:mt-1">New Arrivals</h2>
+                            <h2 className="text-2xl md:text-3xl font-heading font-normal text-slate-900 tracking-tight mt-0.5 md:mt-1">New Arrivals</h2>
                         </div>
                     </div>
 
@@ -275,7 +275,7 @@ const Home: React.FC<HomeProps> = ({ onAddToCart }) => {
                             />
                             <div className="absolute inset-0 p-6 md:p-12 flex flex-col justify-center items-start max-w-[50%]">
                                 <span className="text-yellow-400 font-bold uppercase tracking-tight text-[10px] md:text-sm mb-1 md:mb-2">Build Muscle</span>
-                                <h3 className="text-2xl md:text-5xl font-black font-heading text-white leading-tight mb-6 md:mb-8">
+                                <h3 className="text-2xl md:text-5xl font-heading font-normal text-white leading-tight mb-6 md:mb-8">
                                     PACK ON <br /> SERIOUS GAINS
                                 </h3>
                                 <Button
@@ -298,7 +298,7 @@ const Home: React.FC<HomeProps> = ({ onAddToCart }) => {
                             <div className="absolute inset-0 bg-gradient-to-l from-red-900/90 to-red-900/40"></div>
                             <div className="absolute inset-0 p-6 md:p-12 flex flex-col justify-center items-start text-left">
                                 <span className="text-white/80 font-bold uppercase tracking-tight text-[10px] md:text-sm mb-1 md:mb-2">Transform Your Life</span>
-                                <h3 className="text-2xl md:text-5xl font-black font-heading text-white leading-tight mb-2 md:mb-4">
+                                <h3 className="text-2xl md:text-5xl font-heading font-normal text-white leading-tight mb-2 md:mb-4">
                                     BUILD STRENGTH <br />
                                     BUILD DISCIPLINE <br />
                                     <span className="text-yellow-400">BUILD RESULTS</span>
@@ -331,7 +331,7 @@ const Home: React.FC<HomeProps> = ({ onAddToCart }) => {
                                 <TrendingUp size={16} />
                                 <span>Hot Right Now</span>
                             </div>
-                            <h2 className="text-4xl md:text-5xl font-black font-heading text-slate-900 tracking-tight">
+                            <h2 className="text-4xl md:text-5xl font-heading font-normal text-slate-900 tracking-tight">
                                 Trending in Whey
                             </h2>
                             <div className="absolute -left-6 top-0 h-full w-1 bg-yellow-400 hidden md:block rounded-full"></div>
@@ -370,7 +370,7 @@ const Home: React.FC<HomeProps> = ({ onAddToCart }) => {
                                 <ShieldCheck size={28} strokeWidth={2} className="text-slate-700 group-hover:text-yellow-600 transition-colors" />
                             </div>
                             <div>
-                                <h3 className="text-base font-black text-slate-900 leading-tight uppercase font-heading mb-2">
+                                <h3 className="text-base  text-slate-900 leading-tight uppercase font-heading font-normal mb-2">
                                     100% Authenticity Guaranteed
                                 </h3>
                                 <p className="text-slate-500 text-sm leading-relaxed font-medium">
@@ -384,7 +384,7 @@ const Home: React.FC<HomeProps> = ({ onAddToCart }) => {
                                 <Beaker size={28} strokeWidth={2} className="text-slate-700 group-hover:text-yellow-600 transition-colors" />
                             </div>
                             <div>
-                                <h3 className="text-base font-black text-slate-900 leading-tight uppercase font-heading mb-2">
+                                <h3 className="text-base  text-slate-900 leading-tight uppercase font-heading font-normal mb-2">
                                     Expertly Curated Selection
                                 </h3>
                                 <p className="text-slate-500 text-sm leading-relaxed font-medium">
@@ -398,7 +398,7 @@ const Home: React.FC<HomeProps> = ({ onAddToCart }) => {
                                 <Star size={28} strokeWidth={2} className="text-slate-700 group-hover:text-yellow-600 transition-colors" />
                             </div>
                             <div>
-                                <h3 className="text-base font-black text-slate-900 leading-tight uppercase font-heading mb-2">
+                                <h3 className="text-base  text-slate-900 leading-tight uppercase font-heading font-normal mb-2">
                                     Community &amp; Expert Rated
                                 </h3>
                                 <p className="text-slate-500 text-sm leading-relaxed font-medium">
@@ -412,7 +412,7 @@ const Home: React.FC<HomeProps> = ({ onAddToCart }) => {
                                 <Truck size={28} strokeWidth={2} className="text-slate-700 group-hover:text-yellow-600 transition-colors" />
                             </div>
                             <div>
-                                <h3 className="text-base font-black text-slate-900 leading-tight uppercase font-heading mb-2">
+                                <h3 className="text-base  text-slate-900 leading-tight uppercase font-heading font-normal mb-2">
                                     Seamless Shopping &amp; Fast Delivery
                                 </h3>
                                 <p className="text-slate-500 text-sm leading-relaxed font-medium">

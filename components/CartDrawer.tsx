@@ -57,7 +57,7 @@ const CartDrawer: React.FC<CartDrawerProps> = ({
           }`}
       >
         <div className="flex items-center justify-between p-6 border-b">
-          <h2 className="text-xl font-bold font-heading text-slate-900">Your Cart</h2>
+          <h2 className="text-xl font-heading font-normal text-slate-900">Your Cart</h2>
           <button onClick={onClose} className="p-2 text-slate-400 hover:text-slate-900">
             <X size={24} />
           </button>
