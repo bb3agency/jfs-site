@@ -19,7 +19,7 @@ const Coaching = () => {
 
 
             {/* Intense Athletic Hero Section */}
-            <section className="pt-32 pb-20 md:pt-40 md:pb-28 bg-white relative overflow-hidden">
+            <section className="pt-24 pb-16 md:pt-32 md:pb-20 bg-white relative overflow-hidden">
                 {/* Dynamic Background Elements */}
                 <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-[0.03] invert"></div>
                 <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-yellow-400/20 rounded-full blur-[120px] pointer-events-none translate-x-1/3 -translate-y-1/3"></div>
@@ -38,7 +38,7 @@ const Coaching = () => {
                             <span className="text-xs md:text-sm font-bold text-slate-800 tracking-[0.2em] uppercase">JFS Elite Performance</span>
                         </div>
 
-                        <h1 className="text-6xl md:text-7xl lg:text-8xl font-heading font-normal tracking-tighter mb-6 text-slate-950 leading-[0.9]">
+                        <h1 className="text-[40px] md:text-[64px] font-heading font-normal tracking-tight mb-6 text-slate-950 leading-none uppercase">
                             BUILD YOUR <br />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-yellow-600">LEGACY.</span>
                         </h1>
@@ -50,7 +50,7 @@ const Coaching = () => {
                         <div className="flex flex-col sm:flex-row items-center gap-6">
                             <Button
                                 onClick={() => document.getElementById('packages')?.scrollIntoView({ behavior: 'smooth' })}
-                                className="bg-yellow-400 text-slate-950 hover:bg-yellow-500 w-full sm:w-auto font-black uppercase tracking-wider text-sm py-3 px-8 rounded-none transform transition-transform hover:scale-105 shadow-[6px_6px_0_rgba(15,23,42,1)] hover:shadow-[8px_8px_0_rgba(15,23,42,1)] active:shadow-none active:translate-x-1 active:translate-y-1 relative group overflow-hidden border-2 border-slate-950"
+                                className="bg-yellow-400 text-slate-950 hover:bg-yellow-500 w-full sm:w-auto font-subheading font-bold uppercase tracking-wider text-sm py-3 px-8 rounded-none transform transition-transform hover:scale-105 shadow-[6px_6px_0_rgba(15,23,42,1)] hover:shadow-[8px_8px_0_rgba(15,23,42,1)] active:shadow-none active:translate-x-1 active:translate-y-1 relative group overflow-hidden border-2 border-slate-950"
                             >
                                 <span className="relative z-10 flex items-center justify-center gap-2">
                                     View Protocols <ArrowRight size={18} className="group-hover:translate-x-2 transition-transform" />
@@ -61,7 +61,7 @@ const Coaching = () => {
                                 href={`https://wa.me/${WHATSAPP_NUMBER}`}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="w-full sm:w-auto flex items-center justify-center gap-3 text-slate-900 hover:text-yellow-600 font-bold tracking-wide transition-colors py-4 px-6 group"
+                                className="w-full sm:w-auto flex items-center justify-center gap-3 text-slate-900 hover:text-yellow-600 font-subheading font-bold tracking-wide transition-colors py-4 px-6 group"
                             >
                                 <MessageCircle size={22} className="group-hover:scale-110 transition-transform" />
                                 Consult Head Coach
@@ -80,7 +80,7 @@ const Coaching = () => {
 
                             <div className="text-left relative z-10 flex flex-col h-full">
                                 <div>
-                                    <h3 className="text-slate-950 font-heading font-normal text-4xl mb-2">PROVEN</h3>
+                                    <h3 className="text-slate-950 font-heading font-normal text-[32px] md:text-[40px] leading-none mb-2 tracking-tight">PROVEN</h3>
                                     <div className="w-16 h-1 bg-yellow-500 mb-6"></div>
                                 </div>
 
@@ -89,7 +89,7 @@ const Coaching = () => {
                                 </p>
 
                                 <div className="mt-auto mb-4 flex justify-center w-full">
-                                    <Link to="/transformations" className="bg-slate-950 text-white hover:bg-yellow-500 hover:text-slate-950 transition-colors text-[10px] md:text-xs font-bold uppercase tracking-widest py-2 px-6 shadow-[3px_3px_0_rgba(203,213,225,1)] hover:shadow-[5px_5px_0_rgba(203,213,225,1)] active:translate-x-1 active:translate-y-1 active:shadow-none flex items-center justify-center gap-2 border border-slate-950 w-auto">
+                                    <Link to="/transformations" className="bg-slate-950 text-white hover:bg-yellow-500 hover:text-slate-950 transition-colors text-[10px] md:text-sm font-subheading font-bold tracking-widest py-3 px-6 shadow-[3px_3px_0_rgba(203,213,225,1)] hover:shadow-[5px_5px_0_rgba(203,213,225,1)] active:translate-x-1 active:translate-y-1 active:shadow-none flex items-center justify-center gap-2 border border-slate-950 w-auto uppercase">
                                         View Real Results <ChevronRight size={14} />
                                     </Link>
                                 </div>
@@ -97,7 +97,7 @@ const Coaching = () => {
 
                             <div className="grid grid-cols-2 gap-4 mt-8 relative z-10">
                                 <div className="bg-white p-4 border border-slate-200 shadow-sm">
-                                    <h4 className="text-3xl  text-yellow-600 font-heading font-normal">100%</h4>
+                                    <h4 className="text-[24px] md:text-[32px] text-yellow-600 font-heading font-normal leading-none mb-1">100%</h4>
                                     <span className="text-xs font-bold text-slate-500 tracking-widest uppercase">Custom Built</span>
                                 </div>
                                 <div className="bg-white p-4 border border-slate-200 shadow-sm flex flex-col justify-center">
@@ -117,7 +117,7 @@ const Coaching = () => {
 
             {/* Intense Methodology Section - Dark Theme with Background Asset */}
             <section
-                className="py-24 border-t border-slate-800 relative z-10 bg-slate-950"
+                className="py-16 md:py-20 border-t border-slate-800 relative z-10 bg-slate-950"
                 style={{
                     backgroundImage: `linear-gradient(rgba(15, 23, 42, 0.4), rgba(15, 23, 42, 0.4)), url(${methodologyBg})`,
                     backgroundSize: 'cover',
@@ -129,8 +129,8 @@ const Coaching = () => {
                 <div className="container mx-auto px-4 md:px-6 relative z-10">
                     <div className="flex flex-col md:flex-row gap-4 items-end justify-between mb-16 max-w-6xl mx-auto border-b border-slate-700/50 pb-8">
                         <div>
-                            <span className="text-yellow-500 font-bold tracking-widest uppercase text-sm mb-2 block">The Protocol</span>
-                            <h2 className="text-4xl md:text-5xl font-heading font-normal text-white tracking-tight uppercase">NO EXCUSES <br /><span className="text-slate-400">METHODOLOGY</span></h2>
+                            <span className="text-yellow-500 font-bold tracking-widest uppercase text-sm mb-2 block font-body">The Protocol</span>
+                            <h2 className="text-[32px] md:text-[48px] font-heading font-normal text-white tracking-tight uppercase leading-none">NO EXCUSES <br /><span className="text-slate-400">METHODOLOGY</span></h2>
                         </div>
                         <p className="text-lg text-slate-300 font-medium max-w-md text-left md:text-right shadow-sm">
                             Everything you need to succeed, engineered into one seamless, unrelenting program.
@@ -153,10 +153,10 @@ const Coaching = () => {
                                     <div className="h-16 w-16 bg-slate-50 flex items-center justify-center mb-8 border border-slate-200 group-hover:border-slate-950 transition-colors duration-300 origin-left group-hover:scale-110">
                                         {feature.icon}
                                     </div>
-                                    <h3 className="text-2xl font-heading font-normal text-slate-950 uppercase tracking-wide mb-4 flex items-center gap-3">
+                                    <h3 className="text-[20px] md:text-[24px] font-subheading font-bold text-slate-950 uppercase tracking-tight mb-4 flex items-center gap-3">
                                         {feature.title}
                                     </h3>
-                                    <p className="text-slate-600 font-medium leading-relaxed">
+                                    <p className="text-slate-600 font-medium leading-relaxed font-body">
                                         {feature.desc}
                                     </p>
                                 </div>
@@ -169,14 +169,14 @@ const Coaching = () => {
             </section>
 
             {/* Elite Training Packages */}
-            <section id="packages" className="py-24 bg-white relative border-t border-slate-200">
+            <section id="packages" className="py-16 md:py-20 bg-white relative border-t border-slate-200">
                 {/* Background lighting */}
                 <div className="absolute inset-0 bg-gradient-to-b from-slate-50 to-white pointer-events-none"></div>
 
                 <div className="container mx-auto px-4 md:px-6 relative z-10">
                     <div className="text-center mb-16 max-w-3xl mx-auto">
-                        <span className="text-yellow-600 font-bold tracking-widest uppercase text-sm mb-4 block">Select Your Path</span>
-                        <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-normal text-slate-950 tracking-tight uppercase mb-6">
+                        <span className="text-yellow-600 font-bold tracking-widest uppercase text-sm mb-4 block font-body">Select Your Path</span>
+                        <h2 className="text-[32px] md:text-[48px] font-heading font-normal text-slate-950 tracking-tight uppercase mb-6 leading-none">
                             TRAINING <span className="text-slate-400">PROTOCOLS</span>
                         </h2>
                         <div className="w-24 h-1 bg-slate-950 mx-auto mb-6"></div>
@@ -196,26 +196,26 @@ const Coaching = () => {
 
                                     {/* Removed VIP Badge */}
 
-                                    <div className="p-10 border-b border-slate-200 bg-slate-100 group-hover:border-slate-800 group-hover:bg-slate-900/50 relative z-10 transition-colors duration-500">
-                                        <h3 className="text-3xl font-heading font-normal tracking-tight mb-2 uppercase text-slate-950 group-hover:text-white transition-colors duration-500">{pkg.title}</h3>
-                                        <p className="font-bold tracking-widest text-sm uppercase text-slate-500 group-hover:text-yellow-500 transition-colors duration-500">{pkg.duration}</p>
+                                    <div className="p-8 md:p-10 border-b border-slate-200 bg-slate-100 group-hover:border-slate-800 group-hover:bg-slate-900/50 relative z-10 transition-colors duration-500">
+                                        <h3 className="text-[24px] md:text-[32px] font-subheading font-bold tracking-tight mb-2 uppercase text-slate-950 group-hover:text-white transition-colors duration-500">{pkg.title}</h3>
+                                        <p className="font-bold tracking-widest text-sm uppercase text-slate-500 group-hover:text-yellow-500 transition-colors duration-500 font-body">{pkg.duration}</p>
                                     </div>
 
-                                    <div className="p-10 flex-grow relative z-10 transition-colors duration-500 bg-white group-hover:bg-slate-950">
+                                    <div className="p-8 md:p-10 flex-grow relative z-10 transition-colors duration-500 bg-white group-hover:bg-slate-950">
                                         <ul className="space-y-6">
                                             {pkg.features.map((feature, fIdx) => (
                                                 <li key={fIdx} className="flex items-start group/item">
                                                     <Target className={`h-6 w-6 mr-4 shrink-0 transition-colors duration-500 text-yellow-500`} />
-                                                    <span className={`font-medium leading-relaxed text-lg transition-colors duration-500 text-slate-700 group-hover:text-slate-300`}>{feature}</span>
+                                                    <span className={`font-medium leading-relaxed text-base md:text-lg transition-colors duration-500 text-slate-700 group-hover:text-slate-300 font-body`}>{feature}</span>
                                                 </li>
                                             ))}
                                         </ul>
                                     </div>
 
-                                    <div className="p-10 pt-0 mt-auto relative z-10 transition-colors duration-500 bg-white group-hover:bg-slate-950 flex justify-center">
+                                    <div className="p-8 md:p-10 pt-0 mt-auto relative z-10 transition-colors duration-500 bg-white group-hover:bg-slate-950 flex justify-center">
                                         <Button
                                             onClick={() => handleEnroll(pkg.title)}
-                                            className={`w-full justify-center py-4 font-bold uppercase tracking-widest text-sm rounded-none transition-all duration-300 border border-slate-900
+                                            className={`w-full justify-center py-4 font-subheading font-bold uppercase tracking-widest text-sm rounded-none transition-all duration-300 border border-slate-900
                                                 bg-slate-900 !text-white shadow-[4px_4px_0_rgba(203,213,225,1)]
                                                 group-hover:bg-yellow-500 group-hover:!text-slate-950 group-hover:border-yellow-500 group-hover:shadow-[4px_4px_0_rgba(255,255,255,0.1)]
                                                 active:translate-x-1 active:translate-y-1 active:!shadow-none`}

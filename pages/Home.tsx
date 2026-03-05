@@ -60,13 +60,12 @@ const Home: React.FC<HomeProps> = ({ onAddToCart }) => {
 
 
 
-                {/* Added pb-32 to clear the mobile floating nav and pt-32 on desktop to lower the hero component offset */}
-                <div className="container mx-auto px-4 md:px-6 relative z-10 flex flex-col md:flex-row items-center gap-12 pt-20 pb-32 md:pt-32 md:pb-0 h-full justify-end md:justify-center">
+                <div className="container mx-auto px-4 md:px-6 relative z-10 flex flex-col md:flex-row items-center gap-12 pt-20 pb-16 md:pt-32 md:pb-20 h-full justify-end md:justify-center">
                     <div className="hero-content flex-1 text-center md:text-left w-full px-4 md:px-0">
-                        <div className="inline-block px-4 py-1.5 rounded-full border border-yellow-500/30 bg-yellow-500/10 text-yellow-400 font-heading font-normal text-[10px] md:text-xs uppercase tracking-tight mb-4 md:mb-6 backdrop-blur-sm">
+                        <div className="inline-block px-4 py-1.5 rounded-full border border-yellow-500/30 bg-yellow-500/10 text-yellow-400 font-subheading font-normal text-[10px] md:text-xs uppercase tracking-tight mb-4 md:mb-6 backdrop-blur-sm">
                             100% Authentic Supplements
                         </div>
-                        <h1 className="text-4xl md:text-7xl font-heading font-normal text-white leading-[0.9] tracking-tight mb-4 md:mb-6">
+                        <h1 className="text-[40px] md:text-[64px] font-heading font-normal text-white leading-none tracking-tight mb-4 md:mb-6 uppercase">
                             FUEL YOUR <br />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-200">AMBITION.</span>
                         </h1>
@@ -74,11 +73,11 @@ const Home: React.FC<HomeProps> = ({ onAddToCart }) => {
                             Authentic supplements sourced directly from brands. No middlemen, no fake products. Just pure performance.
                         </p>
 
-                        <div className="flex flex-col md:flex-row gap-3 md:gap-4 justify-center md:justify-start w-full md:w-auto mt-2">
-                            <Button onClick={() => navigate('/products')} className="bg-yellow-400 !text-slate-950 hover:bg-yellow-300 border-none px-8 py-3.5 md:py-4 text-sm md:text-base font-black uppercase tracking-wider w-full md:w-auto rounded-xl shadow-lg ring-2 ring-yellow-400/50 ring-offset-2 ring-offset-slate-950 transform transition-all hover:ring-yellow-400 active:scale-95">
+                        <div className="flex flex-col md:flex-row gap-4 justify-center md:justify-start w-full md:w-auto mt-2">
+                            <Button onClick={() => navigate('/products')} className="bg-yellow-400 !text-slate-950 hover:bg-yellow-300 border-none px-8 py-4 text-sm md:text-base font-subheading font-semibold uppercase tracking-wider w-full md:w-auto rounded-xl shadow-lg ring-2 ring-yellow-400/50 ring-offset-2 ring-offset-slate-950 transform transition-all hover:ring-yellow-400 active:scale-95">
                                 Shop Now
                             </Button>
-                            <Button onClick={() => navigate('/coaching')} variant="outline" className="text-white border-white/20 bg-white/5 hover:bg-white/10 px-8 py-3.5 md:py-4 text-sm md:text-base font-bold w-full md:w-auto rounded-xl backdrop-blur-md transition-colors">
+                            <Button onClick={() => navigate('/coaching')} variant="outline" className="text-white border-white/20 bg-white/5 hover:bg-white/10 px-8 py-4 text-sm md:text-base font-subheading font-semibold uppercase tracking-wider w-full md:w-auto rounded-xl backdrop-blur-md transition-colors">
                                 COACHING
                             </Button>
                         </div>
@@ -88,9 +87,9 @@ const Home: React.FC<HomeProps> = ({ onAddToCart }) => {
 
 
             {/* 2. Categories (Circular Style) */}
-            <section className="categories-section py-10 md:py-16 bg-white">
+            <section className="categories-section py-16 md:py-20 bg-white">
                 <div className="container mx-auto px-4 md:px-6">
-                    <h2 className="text-2xl md:text-3xl font-heading font-normal text-slate-900 text-center mb-8 md:mb-12 uppercase tracking-tight">Shop By Category</h2>
+                    <h2 className="text-[24px] md:text-[36px] font-subheading text-slate-900 text-center mb-8 md:mb-12 uppercase tracking-tight">Shop By Category</h2>
                     <div className="flex flex-wrap justify-center gap-3 md:gap-12">
                         {CATEGORIES_LIST.map((cat, idx) => (
                             <div key={idx} className="flex flex-col items-center gap-2 md:gap-4 group cursor-pointer w-[28%] md:w-auto" onClick={() => navigate(`/products?category=${encodeURIComponent(cat.name)}`)}>
@@ -108,7 +107,7 @@ const Home: React.FC<HomeProps> = ({ onAddToCart }) => {
                                         <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors pointer-events-none"></div>
                                     </div>
                                 </div>
-                                <span className="text-[10px] md:text-base font-bold text-slate-900 uppercase tracking-wide group-hover:text-yellow-600 transition-colors text-center leading-tight">
+                                <span className="text-[10px] md:text-sm font-subheading text-slate-900 uppercase tracking-wide group-hover:text-yellow-600 transition-colors text-center leading-tight">
                                     {cat.name}
                                 </span>
                             </div>
@@ -118,27 +117,27 @@ const Home: React.FC<HomeProps> = ({ onAddToCart }) => {
             </section>
 
             {/* 3. Best Sellers Section (SaaS Grid Background) */}
-            <section className="bestsellers-section py-10 md:py-12 bg-slate-100 relative">
+            <section className="bestsellers-section py-16 md:py-20 bg-slate-100 relative">
                 {/* SaaS background grid */}
                 <div className="absolute inset-0 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] [background-size:24px_24px] opacity-60 pointer-events-none"></div>
                 <div className="container mx-auto px-4 md:px-6 relative z-10">
-                    <div className="flex justify-between items-end mb-6 md:mb-10">
+                    <div className="flex justify-between items-end mb-8 md:mb-12">
                         <div>
-                            <h2 className="text-2xl md:text-3xl font-heading font-normal text-slate-900 tracking-tight mb-1 md:mb-2">Best Sellers</h2>
-                            <p className="text-sm md:text-base text-slate-500">Top rated products by our community.</p>
+                            <h2 className="text-[24px] md:text-[36px] font-subheading text-slate-900 uppercase tracking-tight mb-2">Best Sellers</h2>
+                            <p className="text-base text-slate-500 font-body">Top rated products by our community.</p>
                         </div>
                     </div>
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-8">
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
                         {bestSellers.map(product => (
                             <ProductCard key={product.id} product={product} onAddToCart={onAddToCart} />
                         ))}
                     </div>
 
-                    <div className="text-center mt-10 md:mt-12">
+                    <div className="text-center mt-12 md:mt-16">
                         <Button
                             onClick={() => navigate('/products')}
                             size="lg"
-                            className="bg-slate-900 text-white font-bold px-8 md:px-10 text-sm md:text-base hover:bg-slate-800 w-full md:w-auto rounded-xl md:rounded-full"
+                            className="bg-slate-900 text-white font-subheading font-semibold px-8 md:px-10 text-sm md:text-base hover:bg-slate-800 w-full md:w-auto rounded-xl"
                             icon={<ArrowUpRight size={18} className="md:w-5 md:h-5" />}
                         >
                             View All Best Sellers
@@ -148,13 +147,13 @@ const Home: React.FC<HomeProps> = ({ onAddToCart }) => {
             </section>
 
             {/* Brands Carousel (Moved to below Best Sellers) */}
-            <section id="brands-section" className="brands-section py-24 bg-white border-t border-slate-100">
+            <section id="brands-section" className="brands-section py-16 md:py-20 bg-white border-t border-slate-100">
                 <div className="container mx-auto px-4 md:px-6">
-                    <div className="text-center mb-16">
-                        <h3 className="text-2xl font-heading font-normal text-slate-900 uppercase tracking-tight mb-4">
+                    <div className="text-center mb-12 md:mb-16">
+                        <h3 className="text-[24px] md:text-[36px] font-subheading text-slate-900 uppercase tracking-tight mb-4">
                             Secure Our Top<span className="font-sans">-</span>Tier Brands
                         </h3>
-                        <div className="h-1 w-20 bg-yellow-400 mx-auto rounded-full"></div>
+                        <div className="h-1 w-16 bg-yellow-400 mx-auto rounded-full"></div>
                     </div>
 
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-y-8 gap-x-8 lg:gap-x-12 items-center justify-items-center max-w-5xl mx-auto px-4">
@@ -174,11 +173,11 @@ const Home: React.FC<HomeProps> = ({ onAddToCart }) => {
                 </div>
             </section>
             {/* Real Results / Transformations Preview */}
-            < section className="py-12 md:py-24 bg-slate-100 relative z-30 overflow-hidden" >
+            < section className="py-16 md:py-20 bg-slate-100 relative z-30 overflow-hidden" >
                 <div className="container mx-auto px-4 md:px-6 relative z-10">
                     <div className="text-center mb-10 md:mb-16">
-                        <span className="text-yellow-500 font-bold tracking-tight uppercase text-xs md:text-sm mb-2 md:mb-4 block">Proven Success</span>
-                        <h2 className="text-3xl md:text-5xl lg:text-6xl font-heading font-normal text-slate-900 mb-4 md:mb-6 uppercase tracking-tight">
+                        <span className="text-yellow-500 font-bold tracking-tight uppercase text-xs md:text-sm mb-2 md:mb-4 block font-body">Proven Success</span>
+                        <h2 className="text-[32px] md:text-[48px] font-heading font-normal text-slate-900 mb-4 md:mb-6 uppercase tracking-tight leading-none">
                             Real <span className="text-slate-400">Results</span>
                         </h2>
                         <p className="text-slate-500 max-w-2xl mx-auto text-sm md:text-lg leading-relaxed font-medium">
@@ -189,7 +188,7 @@ const Home: React.FC<HomeProps> = ({ onAddToCart }) => {
 
                     <div className="columns-2 md:columns-4 gap-3 md:gap-6 space-y-3 md:space-y-6 overflow-hidden px-2 md:px-0">
                         {TRANSFORMATIONS.slice(0, 4).map((item) => (
-                            <div key={item.id} className="break-inside-avoid shadow-sm rounded-[1.5rem] md:rounded-[2.5rem] overflow-hidden hover:shadow-xl hover:border-slate-300 border border-slate-100 transition-all duration-300 group hover:-translate-y-1">
+                            <div key={item.id} className="break-inside-avoid shadow-sm rounded-2xl overflow-hidden hover:shadow-xl hover:border-slate-300 border border-slate-100 transition-all duration-300 group hover:-translate-y-1">
                                 <div className="relative bg-slate-100 w-full h-auto">
                                     <img
                                         src={item.image}
@@ -203,11 +202,11 @@ const Home: React.FC<HomeProps> = ({ onAddToCart }) => {
                         ))}
                     </div>
 
-                    <div className="text-center mt-10 md:mt-16">
+                    <div className="text-center mt-12 md:mt-16">
                         <Button
                             onClick={() => navigate('/transformations')}
                             size="lg"
-                            className="bg-slate-900 text-white font-bold px-8 md:px-10 text-sm md:text-base hover:bg-slate-800 w-full md:w-auto rounded-xl md:rounded-full"
+                            className="bg-slate-900 text-white font-subheading font-semibold px-8 md:px-10 text-sm md:text-base hover:bg-slate-800 w-full md:w-auto rounded-xl"
                             icon={<ArrowUpRight size={18} className="md:w-5 md:h-5" />}
                         >
                             See All Transformations
@@ -217,26 +216,26 @@ const Home: React.FC<HomeProps> = ({ onAddToCart }) => {
             </section >
 
             {/* 5. New Arrivals Section */}
-            < section className="new-arrivals-section py-10 md:py-12 bg-white" >
+            < section className="new-arrivals-section py-16 md:py-20 bg-white" >
                 <div className="container mx-auto px-4 md:px-6">
-                    <div className="flex justify-between items-end mb-6 md:mb-10">
+                    <div className="flex justify-between items-end mb-8 md:mb-12">
                         <div>
                             <span className="text-yellow-500 font-bold uppercase tracking-tight text-[10px] md:text-xs">Just Dropped</span>
-                            <h2 className="text-2xl md:text-3xl font-heading font-normal text-slate-900 tracking-tight mt-0.5 md:mt-1">New Arrivals</h2>
+                            <h2 className="text-[24px] md:text-[36px] font-subheading text-slate-900 tracking-tight mt-0.5 md:mt-1 uppercase">New Arrivals</h2>
                         </div>
                     </div>
 
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-8">
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
                         {newArrivals.map(product => (
                             <ProductCard key={product.id} product={product} onAddToCart={onAddToCart} />
                         ))}
                     </div>
 
-                    <div className="text-center mt-10 md:mt-12">
+                    <div className="text-center mt-12 md:mt-16">
                         <Button
                             onClick={() => navigate('/products')}
                             size="lg"
-                            className="bg-slate-900 text-white font-bold px-8 md:px-10 text-sm md:text-base hover:bg-slate-800 w-full md:w-auto rounded-xl md:rounded-full"
+                            className="bg-slate-900 text-white font-subheading font-semibold px-8 md:px-10 text-sm md:text-base hover:bg-slate-800 w-full md:w-auto rounded-xl"
                             icon={<ChevronRight size={18} className="md:w-5 md:h-5" />}
                         >
                             View All New Arrivals
@@ -246,11 +245,11 @@ const Home: React.FC<HomeProps> = ({ onAddToCart }) => {
             </section >
 
             {/* 6. Promotional Split Banners (Unchanged) */}
-            < section className="py-10 md:py-12 bg-white" >
+            < section className="py-16 md:py-20 bg-white" >
                 <div className="container mx-auto px-4 md:px-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                         {/* Banner 1 */}
-                        <div className="relative h-64 md:h-96 rounded-[1.5rem] md:rounded-[2rem] overflow-hidden group cursor-pointer" style={{ background: 'linear-gradient(135deg, #1e3a8a 0%, #0f172a 60%, #020617 100%)' }}>
+                        <div className="relative h-64 md:h-96 rounded-2xl overflow-hidden group cursor-pointer" style={{ background: 'linear-gradient(135deg, #1e3a8a 0%, #0f172a 60%, #020617 100%)' }}>
                             {/* Strong spotlight on figure */}
                             <div className="absolute right-[5%] bottom-0 w-[55%] h-[120%] bg-[radial-gradient(ellipse_at_bottom_center,rgba(255,220,100,0.22)_0%,rgba(234,179,8,0.10)_40%,transparent_70%)] pointer-events-none"></div>
                             {/* Top accent glow */}
@@ -275,12 +274,12 @@ const Home: React.FC<HomeProps> = ({ onAddToCart }) => {
                             />
                             <div className="absolute inset-0 p-6 md:p-12 flex flex-col justify-center items-start max-w-[50%]">
                                 <span className="text-yellow-400 font-bold uppercase tracking-tight text-[10px] md:text-sm mb-1 md:mb-2">Build Muscle</span>
-                                <h3 className="text-2xl md:text-5xl font-heading font-normal text-white leading-tight mb-6 md:mb-8">
+                                <h3 className="text-[32px] md:text-[48px] font-heading font-normal text-white leading-none mb-6 md:mb-8 tracking-tight">
                                     PACK ON <br /> SERIOUS GAINS
                                 </h3>
                                 <Button
                                     onClick={() => navigate('/products')}
-                                    className="bg-yellow-400 !text-slate-950 hover:bg-yellow-300 font-bold text-xs md:text-sm px-4 py-2 md:px-6 md:py-3 border-none shadow-lg shadow-yellow-400/20"
+                                    className="bg-yellow-400 !text-slate-950 hover:bg-yellow-300 font-subheading font-semibold text-xs md:text-sm px-4 py-3 md:px-6 rounded-xl border-none shadow-lg shadow-yellow-400/20"
                                 >
                                     Shop Essentials
                                 </Button>
@@ -288,7 +287,7 @@ const Home: React.FC<HomeProps> = ({ onAddToCart }) => {
                         </div>
 
                         {/* Banner 2 */}
-                        <div className="relative h-64 md:h-96 rounded-[1.5rem] md:rounded-[2rem] overflow-hidden group cursor-pointer">
+                        <div className="relative h-64 md:h-96 rounded-2xl overflow-hidden group cursor-pointer">
                             <img
                                 src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1200&auto=format&fit=crop"
                                 alt="Performance"
@@ -297,16 +296,16 @@ const Home: React.FC<HomeProps> = ({ onAddToCart }) => {
                             />
                             <div className="absolute inset-0 bg-gradient-to-l from-red-900/90 to-red-900/40"></div>
                             <div className="absolute inset-0 p-6 md:p-12 flex flex-col justify-center items-start text-left">
-                                <span className="text-white/80 font-bold uppercase tracking-tight text-[10px] md:text-sm mb-1 md:mb-2">Transform Your Life</span>
-                                <h3 className="text-2xl md:text-5xl font-heading font-normal text-white leading-tight mb-2 md:mb-4">
+                                <span className="text-white/80 font-bold uppercase tracking-tight text-[10px] md:text-sm mb-1 md:mb-2 font-body">Transform Your Life</span>
+                                <h3 className="text-[32px] md:text-[48px] font-heading font-normal text-white leading-none mb-2 md:mb-4 tracking-tight">
                                     BUILD STRENGTH <br />
                                     BUILD DISCIPLINE <br />
-                                    <span className="text-yellow-400">BUILD RESULTS</span>
+                                    <span className="text-yellow-400 font-heading">BUILD RESULTS</span>
                                 </h3>
-                                <p className="text-white/90 mb-6 md:mb-8 max-w-[200px] md:max-w-xs text-xs md:text-base font-medium">Under the expert guidance of Prabha Joy.</p>
+                                <p className="text-white/90 mb-6 md:mb-8 max-w-[200px] md:max-w-xs text-xs md:text-base font-medium font-body leading-snug">Under the expert guidance of Prabha Joy.</p>
                                 <Button
                                     onClick={() => navigate('/coaching')}
-                                    className="bg-yellow-400 !text-black hover:bg-yellow-300 font-bold text-xs md:text-sm px-4 py-2 md:px-6 md:py-3 border-none shadow-lg shadow-yellow-400/20"
+                                    className="bg-yellow-400 !text-black hover:bg-yellow-300 font-subheading font-semibold text-xs md:text-sm px-4 py-3 md:px-6 rounded-xl border-none shadow-lg shadow-yellow-400/20"
                                 >
                                     Explore Coaching
                                 </Button>
@@ -317,7 +316,7 @@ const Home: React.FC<HomeProps> = ({ onAddToCart }) => {
             </section >
 
             {/* 7. Trending in Whey */}
-            <section className="trending-section py-12 md:py-20 bg-slate-100 relative overflow-hidden">
+            <section className="trending-section py-16 md:py-20 bg-slate-100 relative overflow-hidden">
                 {/* SaaS background grid */}
                 <div className="absolute inset-0 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] [background-size:24px_24px] opacity-60 pointer-events-none"></div>
 
@@ -325,18 +324,18 @@ const Home: React.FC<HomeProps> = ({ onAddToCart }) => {
                 <div className="absolute top-0 right-0 w-96 h-96 bg-yellow-400/5 rounded-full blur-[100px] pointer-events-none"></div>
 
                 <div className="container mx-auto px-4 md:px-6 relative z-10">
-                    <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+                    <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 md:mb-16 gap-4">
                         <div className="relative">
-                            <div className="flex items-center gap-2 text-yellow-600 font-bold uppercase tracking-tight text-xs mb-3">
+                            <div className="flex items-center gap-2 text-yellow-600 font-bold uppercase tracking-tight text-xs mb-3 font-subheading">
                                 <TrendingUp size={16} />
                                 <span>Hot Right Now</span>
                             </div>
-                            <h2 className="text-4xl md:text-5xl font-heading font-normal text-slate-900 tracking-tight">
+                            <h2 className="text-[32px] md:text-[48px] font-heading font-normal text-slate-900 tracking-tight leading-none uppercase">
                                 Trending in Whey
                             </h2>
-                            <div className="absolute -left-6 top-0 h-full w-1 bg-yellow-400 hidden md:block rounded-full"></div>
+                            <div className="absolute -left-6 top-1 h-[80%] w-1 bg-yellow-400 hidden md:block rounded-full"></div>
                         </div>
-                        <p className="text-slate-500 font-medium max-w-sm text-sm md:text-base">
+                        <p className="text-slate-500 font-medium max-w-sm text-sm md:text-base font-body">
                             The most popular protein choices fueling athletes this week.
                         </p>
                     </div>

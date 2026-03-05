@@ -93,7 +93,7 @@ const App: React.FC = () => {
           </Routes>
         </main>
 
-
+        <Footer />
       </div>
     </HashRouter>
   );

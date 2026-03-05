@@ -57,7 +57,7 @@ const CartDrawer: React.FC<CartDrawerProps> = ({
           }`}
       >
         <div className="flex items-center justify-between p-6 border-b">
-          <h2 className="text-xl font-heading font-normal text-slate-900">Your Cart</h2>
+          <h2 className="text-xl font-subheading font-bold text-slate-900 uppercase">Your Cart</h2>
           <button onClick={onClose} className="p-2 text-slate-400 hover:text-slate-900">
             <X size={24} />
           </button>
@@ -69,8 +69,8 @@ const CartDrawer: React.FC<CartDrawerProps> = ({
               <div className="mb-4 rounded-full bg-slate-100 p-6 text-slate-300">
                 <ShoppingBag size={48} />
               </div>
-              <h3 className="text-lg font-medium text-slate-900">Your cart is empty</h3>
-              <p className="mt-2 text-slate-500">Looks like you haven't added any supplements yet.</p>
+              <h3 className="text-lg font-bold text-slate-900 font-subheading">Your cart is empty</h3>
+              <p className="mt-2 text-slate-500 font-body">Looks like you haven't added any supplements yet.</p>
               <Button variant="secondary" className="mt-6" onClick={onClose}>
                 Start Shopping
               </Button>
@@ -84,8 +84,8 @@ const CartDrawer: React.FC<CartDrawerProps> = ({
                   </div>
                   <div className="flex flex-1 flex-col justify-between">
                     <div>
-                      <h3 className="text-base font-bold text-slate-900 line-clamp-1">{item.name}</h3>
-                      <p className="text-sm text-slate-500">{item.category}</p>
+                      <h3 className="text-base font-bold text-slate-900 line-clamp-1 font-subheading">{item.name}</h3>
+                      <p className="text-sm text-slate-500 font-body">{item.category}</p>
                     </div>
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-3 rounded-full bg-slate-100 px-3 py-1">

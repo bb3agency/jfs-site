@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;800;900&family=Poppins:wght@300;400;500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;800;900&family=Poppins:wght@300;400;500;600;700&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="/fonts.css">
   <script>
@@ -17,7 +17,7 @@
       theme: {
         extend: {
           fontFamily: {
-            heading: ['Anton', 'sans-serif'],
+            heading: ['Bebas Neue', 'sans-serif'],
             subheading: ['Poppins', 'sans-serif'],
             body: ['Inter', 'sans-serif'],
             sans: ['Inter', 'sans-serif'], // Default
@@ -52,6 +52,25 @@
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       background-color: #f8fafc;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    .font-heading {
+      letter-spacing: 0.04em;
+      line-height: 1.1;
+      text-transform: uppercase;
+    }
+
+    .font-subheading {
+      letter-spacing: 0.01em;
+      font-weight: 600;
     }
 
     .scrollbar-hide::-webkit-scrollbar {

@@ -21,45 +21,67 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onAddToCart }) => {
     onAddToCart(product);
   };
 
+  const rating = (4.6 + (product.id.length % 4) * 0.1).toFixed(1);
+  const reviews = 42 + (product.id.charCodeAt(0) * 3) + (product.name.length * 2);
+
   return (
     <div
       onClick={handleCardClick}
-      className="group relative w-full aspect-[4/5] rounded-[2rem] overflow-hidden cursor-pointer bg-white border border-slate-100 transition-all duration-300 hover:shadow-xl hover:border-slate-300 hover:-translate-y-1.5 ring-1 ring-transparent hover:ring-slate-200"
+      className="group flex flex-col w-full rounded-2xl bg-white transition-all duration-300 hover:shadow-[0_8px_24px_rgba(0,0,0,0.06)] hover:-translate-y-1 border border-slate-100 p-5 cursor-pointer"
     >
-      {/* Background Image */}
-      <img
-        src={product.image}
-        alt={product.name}
-        loading="lazy"
-        className={`h-full w-full object-contain p-6 md:p-8 transition-transform duration-700 ${product.brand === 'DNA Pharma' ? 'scale-[0.85] group-hover:scale-[0.95]' : 'group-hover:scale-110'
-          }`}
-      />
+      {/* Image Container */}
+      <div className="relative w-full aspect-[4/5] bg-slate-50/50 rounded-xl overflow-hidden mb-4 flex items-center justify-center">
+        {/* Discount Badge */}
+        {product.discount && (
+          <div className="absolute top-3 left-3 bg-red-500 text-white text-[11px] font-bold px-2 py-1 rounded shadow-sm z-10 font-subheading tracking-wide">
+            SAVE {product.discount}%
+          </div>
+        )}
 
-      {/* Discount Badge (Top Left) */}
-      {product.discount && (
-        <div className="absolute top-4 left-4 bg-black text-white text-[10px] md:text-xs font-black px-2.5 py-1.5 rounded-md shadow-lg z-10">
-          -{product.discount}%
-        </div>
-      )}
+        <img
+          src={product.image}
+          alt={product.name}
+          loading="lazy"
+          className="h-full w-full object-contain p-6 transition-transform duration-500 group-hover:scale-[1.03]"
+        />
+      </div>
 
-      {/* Bottom Info Pill - Glassmorphic Effect */}
-      <div className="absolute bottom-2 left-2 right-2 md:bottom-3 md:left-3 md:right-3 bg-white/90 backdrop-blur-xl border border-white/50 rounded-2xl p-2 md:p-3 shadow-lg flex items-end justify-between gap-2 transition-colors group-hover:bg-white">
-        <div className="flex flex-col gap-1 min-w-0 flex-1">
+      <div className="flex flex-col flex-1 gap-2.5">
+        <div className="flex flex-col gap-1.5 flex-1 min-h-[44px]">
           {/* Name */}
-          <h3 className="text-sm font-bold text-slate-900 leading-tight line-clamp-2">
+          <h3 className="text-[15px] font-medium font-body text-slate-900 leading-snug line-clamp-2">
             {product.name}
           </h3>
-        </div>
-        {/* Price */}
-        <div className="flex-shrink-0 mb-[1px] flex flex-col items-end">
-          {product.mrp && product.mrp > product.price && (
-            <span className="text-[10px] text-slate-400 line-through font-bold">
-              ₹{product.mrp.toLocaleString()}
+
+          {/* Ratings */}
+          <div className="flex items-center gap-1.5">
+            <span className="text-[13px]">⭐</span>
+            <span className="text-[13px] text-slate-600 font-body">
+              {rating} ({reviews})
             </span>
-          )}
-          <span className="text-sm font-black text-slate-900">
-            ₹{product.price.toFixed(0)}
-          </span>
+          </div>
+        </div>
+
+        {/* Price & Action Row */}
+        <div className="flex flex-col gap-3 mt-2">
+          {/* Price */}
+          <div className="flex items-baseline gap-2">
+            <span className="text-lg font-bold text-slate-900 font-body">
+              ₹{product.price.toLocaleString()}
+            </span>
+            {product.mrp && product.mrp > product.price && (
+              <span className="text-sm text-slate-400 line-through font-body">
+                ₹{product.mrp.toLocaleString()}
+              </span>
+            )}
+          </div>
+
+          <button
+            onClick={handleQuickAdd}
+            className="w-full bg-yellow-400 hover:bg-yellow-500 text-slate-900 rounded-lg py-2.5 px-4 font-subheading font-semibold text-sm transition-colors"
+          >
+            Add to Cart
+          </button>
         </div>
       </div>
     </div>

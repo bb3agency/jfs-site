@@ -107,7 +107,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ onAddToCart, cartItems,
   }, { scope: containerRef });
 
   return (
-    <div ref={containerRef} className="min-h-screen bg-white pt-28 md:pt-32 pb-20">
+    <div ref={containerRef} className="min-h-screen bg-slate-50 pt-24 md:pt-32 pb-20">
       <div className="container mx-auto px-4 md:px-6">
         <button
           onClick={() => navigate(-1)}
@@ -171,14 +171,14 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ onAddToCart, cartItems,
           {/* Product Info */}
           <div className="detail-content flex-1 flex flex-col justify-start md:justify-center">
             {/* Brand */}
-            <span className="text-slate-400 font-bold uppercase tracking-tight text-[10px] md:text-xs mb-1">
+            <span className="text-slate-400 font-bold uppercase tracking-tight text-[10px] md:text-xs mb-1 font-body">
               {product.brand}
             </span>
             {/* Category */}
-            <span className="text-yellow-500 font-bold uppercase tracking-tight text-xs md:text-sm mb-1 md:mb-2">
+            <span className="text-yellow-500 font-bold uppercase tracking-tight text-xs md:text-sm mb-1 md:mb-2 font-body">
               {product.category}
             </span>
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-heading font-normal text-slate-900 tracking-tight mb-2 md:mb-3 leading-tight">
+            <h1 className="text-[40px] md:text-[64px] font-heading font-normal text-slate-900 tracking-tight mb-2 md:mb-3 leading-none uppercase">
               {product.name}
             </h1>
             {product.weight && (
@@ -197,27 +197,27 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ onAddToCart, cartItems,
                   </span>
                 )}
               </div>
-              <div className="px-3 py-1 rounded-full bg-green-100 text-green-700 text-xs font-bold flex items-center gap-1">
+              <div className="px-3 py-1 rounded-full bg-green-100 text-green-700 text-xs font-bold font-body flex items-center gap-1">
                 <Check size={12} /> In Stock
               </div>
             </div>
 
-            <p className="text-slate-500 text-lg leading-relaxed mb-8">
+            <p className="text-slate-500 text-base md:text-lg leading-relaxed mb-8 font-body">
               {product.description}
             </p>
 
             {/* Flavour Selector */}
             {product.flavours && product.flavours.length > 0 && (
               <div className="mb-8">
-                <span className="text-slate-400 font-bold uppercase tracking-tight text-xs block mb-3">Available Flavours</span>
-                <div className="flex flex-wrap gap-3">
+                <span className="text-slate-400 font-bold font-body uppercase tracking-tight text-xs block mb-3">Available Flavours</span>
+                <div className="flex flex-wrap gap-2 md:gap-3">
                   {product.flavours.map((flav) => (
                     <button
                       key={flav.name}
                       onClick={() => {
                         setSelectedFlavour(flav.name === selectedFlavour ? null : flav.name);
                       }}
-                      className={`px-5 py-2.5 rounded-full text-sm font-bold border-2 transition-all duration-200 ${selectedFlavour === flav.name
+                      className={`px-5 py-2.5 rounded-xl text-sm font-subheading font-bold border-2 transition-all duration-200 ${selectedFlavour === flav.name
                         ? 'bg-slate-900 text-white border-slate-900 shadow-lg'
                         : 'bg-white text-slate-600 border-slate-200 hover:border-slate-400'
                         }`}
@@ -232,18 +232,18 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ onAddToCart, cartItems,
             {/* Actions */}
             <div className="flex flex-col sm:flex-row gap-4 mb-6 md:mb-10 border-t border-b border-slate-100 py-6 md:py-8">
               {/* Quantity Control */}
-              <div className="flex items-center gap-4 p-2 bg-slate-100 rounded-full w-max">
+              <div className="flex items-center gap-4 p-2 bg-slate-100 rounded-xl w-max">
                 <button
                   onClick={handleDecrement}
                   disabled={quantity === 0}
-                  className="w-10 h-10 rounded-full bg-white text-slate-900 flex items-center justify-center shadow-sm disabled:opacity-50 hover:bg-slate-50 transition-colors"
+                  className="w-10 h-10 rounded-xl bg-white text-slate-900 flex items-center justify-center shadow-sm disabled:opacity-50 hover:bg-slate-50 transition-colors"
                 >
                   <Minus size={16} />
                 </button>
-                <span className="w-8 text-center font-bold text-lg">{quantity}</span>
+                <span className="w-8 text-center font-bold font-subheading text-lg">{quantity}</span>
                 <button
                   onClick={handleIncrement}
-                  className="w-10 h-10 rounded-full bg-slate-900 text-white flex items-center justify-center shadow-md hover:bg-slate-800 transition-colors"
+                  className="w-10 h-10 rounded-xl bg-slate-900 text-white flex items-center justify-center shadow-md hover:bg-slate-800 transition-colors"
                 >
                   <Plus size={16} />
                 </button>
@@ -253,14 +253,14 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ onAddToCart, cartItems,
               {quantity === 0 && (
                 <button
                   onClick={handleBuyClick}
-                  className="flex-1 bg-yellow-400 text-slate-900 font-bold px-8 py-4 rounded-full uppercase tracking-wider hover:bg-yellow-300 transition-all shadow-lg shadow-yellow-400/20 active:scale-95"
+                  className="flex-1 bg-yellow-400 text-slate-900 font-subheading font-bold px-8 py-4 rounded-xl uppercase tracking-wider hover:bg-yellow-300 transition-all shadow-lg shadow-yellow-400/20 active:scale-95 border-none"
                 >
                   Add to Cart
                 </button>
               )}
               {quantity > 0 && (
                 <button
-                  className="flex-1 bg-green-500 text-white font-bold px-8 py-4 rounded-full uppercase tracking-wider cursor-default"
+                  className="flex-1 bg-green-500 text-white font-subheading font-bold px-8 py-4 rounded-xl uppercase tracking-wider cursor-default border-none"
                 >
                   Added to Cart
                 </button>

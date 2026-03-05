@@ -31,29 +31,29 @@ const FAQ = () => {
     return (
         <div className="bg-slate-50 min-h-screen">
             {/* Hero Section */}
-            <section className="pt-32 pb-20 md:pt-40 md:pb-32 bg-slate-900 border-b border-white/10 relative overflow-hidden">
+            <section className="pt-24 pb-16 md:pt-32 md:pb-20 bg-slate-900 border-b border-white/10 relative overflow-hidden">
                 <div className="absolute inset-0 top-0 left-0 right-0 h-full w-full bg-[radial-gradient(circle_at_top_right,rgba(250,204,21,0.1)_0%,rgba(15,23,42,1)_50%)]"></div>
 
                 <div className="container mx-auto px-4 md:px-6 relative z-10 text-center">
                     <div className="inline-flex items-center justify-center p-3 md:p-4 bg-slate-800/50 rounded-2xl md:rounded-3xl border border-slate-700 backdrop-blur-md mb-6 md:mb-8 text-yellow-400">
                         <MessageCircle size={32} strokeWidth={2} className="md:w-10 md:h-10" />
                     </div>
-                    <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-normal tracking-tight mb-4 md:mb-6 uppercase text-white max-w-4xl mx-auto leading-tight">
+                    <h1 className="text-[40px] md:text-[64px] font-heading font-normal tracking-tight mb-4 md:mb-6 uppercase text-white max-w-4xl mx-auto leading-none">
                         Frequently Asked <span className="text-yellow-400">Questions</span>
                     </h1>
-                    <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto font-medium">
+                    <p className="text-base md:text-lg text-slate-400 max-w-2xl mx-auto font-medium font-body">
                         Everything you need to know about our products, shipping, and authenticity guarantees.
                     </p>
                 </div>
             </section>
 
             {/* Content Section */}
-            <section className="py-16 md:py-24 relative z-20 -mt-10">
+            <section className="py-16 md:py-20 relative z-20">
                 <div className="container mx-auto px-4 md:px-6 max-w-4xl">
-                    <div className="bg-white rounded-[2rem] md:rounded-[3rem] shadow-xl border border-slate-100 p-6 md:p-12">
+                    <div className="bg-white rounded-2xl shadow-xl border border-slate-100 p-6 md:p-12">
                         {faqs.map((group, groupIdx) => (
                             <div key={groupIdx} className="mb-12 last:mb-0">
-                                <h2 className="text-2xl md:text-3xl font-heading font-normal text-slate-900 uppercase tracking-tight mb-6 md:mb-8">
+                                <h2 className="text-[24px] md:text-[32px] font-subheading font-bold text-slate-900 uppercase tracking-tight mb-6 md:mb-8">
                                     {group.category}
                                 </h2>
 
@@ -68,9 +68,9 @@ const FAQ = () => {
                                             >
                                                 <button
                                                     onClick={() => toggleFaq(idx)}
-                                                    className="w-full text-left px-6 py-5 md:px-8 md:py-6 flex items-center justify-between gap-4 font-bold text-slate-900 hover:text-yellow-600 transition-colors"
+                                                    className="w-full text-left px-6 py-5 md:px-8 md:py-6 flex items-center justify-between gap-4 font-subheading font-bold text-slate-900 hover:text-yellow-600 transition-colors"
                                                 >
-                                                    <span className="text-base md:text-lg pr-4">{faq.q}</span>
+                                                    <span className="text-sm md:text-base pr-4">{faq.q}</span>
                                                     <div className={`p-1.5 rounded-full transition-colors flex-shrink-0 ${isOpen ? 'bg-slate-900 text-yellow-400' : 'bg-slate-100 text-slate-400'}`}>
                                                         {isOpen ? <ChevronUp size={20} className="md:w-6 md:h-6" /> : <ChevronDown size={20} className="md:w-6 md:h-6" />}
                                                     </div>
@@ -79,7 +79,7 @@ const FAQ = () => {
                                                 <div
                                                     className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}
                                                 >
-                                                    <div className="px-6 pb-6 md:px-8 md:pb-8 pt-0 text-slate-500 font-medium text-sm md:text-base leading-relaxed">
+                                                    <div className="px-6 pb-6 md:px-8 md:pb-8 pt-0 text-slate-500 font-medium text-sm md:text-base leading-relaxed font-body">
                                                         {faq.a}
                                                     </div>
                                                 </div>

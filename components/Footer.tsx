@@ -12,9 +12,9 @@ const Footer: React.FC = () => {
     };
 
     return (
-        <footer className="w-full px-4 md:px-6 pb-4 md:pb-6 mt-12 md:mt-20 relative overflow-hidden">
+        <footer className="w-full px-4 md:px-6 pb-4 md:pb-6 mt-16 md:mt-20 relative overflow-hidden">
             {/* Main Rounded Card */}
-            <div className="bg-slate-900 rounded-[2.5rem] p-8 md:p-16 relative overflow-hidden shadow-2xl border border-slate-800/50">
+            <div className="bg-slate-900 rounded-2xl p-8 md:p-16 relative overflow-hidden shadow-2xl border border-slate-800/50">
 
                 {/* Background Watermark */}
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full pointer-events-none select-none flex items-center justify-center opacity-[0.03]">
@@ -28,7 +28,7 @@ const Footer: React.FC = () => {
 
                     {/* Column 1: GENERAL */}
                     <div className="flex flex-col">
-                        <h4 className="font-heading font-normal text-xs text-slate-500 uppercase tracking-tight mb-6 md:mb-8">
+                        <h4 className="font-subheading font-bold text-xs text-slate-500 uppercase tracking-tight mb-6 md:mb-8 text-left">
                             General
                         </h4>
                         <ul className="space-y-3 md:space-y-4">
@@ -39,7 +39,7 @@ const Footer: React.FC = () => {
 
                     {/* Column 2: PRODUCTS */}
                     <div className="flex flex-col">
-                        <h4 className="font-heading font-normal text-xs text-slate-500 uppercase tracking-tight mb-6 md:mb-8">
+                        <h4 className="font-subheading font-bold text-xs text-slate-500 uppercase tracking-tight mb-6 md:mb-8 text-left">
                             Products
                         </h4>
                         <ul className="space-y-3 md:space-y-4">
@@ -51,7 +51,7 @@ const Footer: React.FC = () => {
 
                     {/* Column 3: CUSTOMER SERVICE */}
                     <div className="flex flex-col">
-                        <h4 className="font-heading font-normal text-xs text-slate-500 uppercase tracking-tight mb-6 md:mb-8">
+                        <h4 className="font-subheading font-bold text-xs text-slate-500 uppercase tracking-tight mb-6 md:mb-8">
                             Customer Service
                         </h4>
                         <ul className="space-y-3 md:space-y-4">
@@ -61,7 +61,7 @@ const Footer: React.FC = () => {
 
                     {/* Column 4: SOCIAL MEDIA & NEWSLETTER (Combined conceptually as 'Connect') */}
                     <div className="flex flex-col">
-                        <h4 className="font-heading font-normal text-xs text-slate-500 uppercase tracking-tight mb-6 md:mb-8">
+                        <h4 className="font-subheading font-bold text-xs text-slate-500 uppercase tracking-tight mb-6 md:mb-8">
                             Social Media
                         </h4>
                         <ul className="space-y-3 md:space-y-4 mb-4">

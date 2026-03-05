@@ -43,7 +43,7 @@ const Transformations = () => {
                 </div>
 
                 {/* CTA Section */}
-                <div className="mt-24 md:mt-32 bg-slate-900 rounded-[3rem] p-6 sm:p-10 md:p-20 text-center shadow-2xl relative overflow-hidden hover:shadow-yellow-400/10 transition-shadow duration-500 group">
+                <div className="mt-24 md:mt-32 bg-slate-900 rounded-2xl p-6 sm:p-10 md:p-20 text-center shadow-2xl relative overflow-hidden hover:shadow-yellow-400/10 transition-shadow duration-500 group">
                     {/* Abstract glow */}
                     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-yellow-400/20 rounded-full blur-[100px] pointer-events-none group-hover:bg-yellow-400/30 transition-colors duration-1000"></div>
 

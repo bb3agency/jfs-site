@@ -18,9 +18,8 @@ const AboutContact = () => {
         const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
         window.open(url, '_blank');
     };
-
     return (
-        <div className="bg-slate-50 min-h-screen pt-28 pb-16">
+        <div className="bg-slate-50 min-h-screen pt-24 pb-16 md:pt-32 md:pb-20">
             <div className="container mx-auto px-4 md:px-6">
 
                 {/* SECTION 1: ABOUT */}
@@ -28,8 +27,8 @@ const AboutContact = () => {
                     <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
                         {/* Text Content */}
                         <div className="lg:w-1/2">
-                            <span className="text-yellow-500 font-bold tracking-tight uppercase text-sm mb-4 block">Our Story</span>
-                            <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-normal text-slate-900 uppercase mb-6 tracking-tight leading-[1.1]">
+                            <span className="text-yellow-500 font-bold tracking-tight uppercase text-sm mb-4 block font-body">Our Story</span>
+                            <h1 className="text-[40px] md:text-[64px] font-heading font-normal text-slate-900 uppercase mb-6 tracking-tight leading-none">
                                 Fueling Your <br /><span className="text-slate-400">Ambition.</span>
                             </h1>
                             <div className="w-20 h-1.5 bg-yellow-400 rounded-full mb-8"></div>
@@ -48,23 +47,23 @@ const AboutContact = () => {
 
                             <div className="mt-12 grid grid-cols-3 gap-6 text-center border-t border-slate-200 pt-10">
                                 <div>
-                                    <h3 className="text-3xl md:text-4xl font-heading font-normal text-slate-900">100%</h3>
-                                    <p className="text-xs md:text-sm font-bold uppercase tracking-wider text-slate-500 mt-2">Authentic</p>
+                                    <h3 className="text-[32px] md:text-[40px] font-heading font-normal text-slate-900 leading-none">100%</h3>
+                                    <p className="text-xs md:text-sm font-bold uppercase tracking-wider text-slate-500 mt-2 font-body">Authentic</p>
                                 </div>
                                 <div>
-                                    <h3 className="text-3xl md:text-4xl font-heading font-normal text-slate-900">5K+</h3>
-                                    <p className="text-xs md:text-sm font-bold uppercase tracking-wider text-slate-500 mt-2">Happy Clients</p>
+                                    <h3 className="text-[32px] md:text-[40px] font-heading font-normal text-slate-900 leading-none">5K+</h3>
+                                    <p className="text-xs md:text-sm font-bold uppercase tracking-wider text-slate-500 mt-2 font-body">Happy Clients</p>
                                 </div>
                                 <div>
-                                    <h3 className="text-3xl md:text-4xl font-heading font-normal text-slate-900"><span className="font-sans">24/7</span></h3>
-                                    <p className="text-xs md:text-sm font-bold uppercase tracking-wider text-slate-500 mt-2">Expert Support</p>
+                                    <h3 className="text-[32px] md:text-[40px] font-heading font-normal text-slate-900 leading-none"><span className="font-sans">24/7</span></h3>
+                                    <p className="text-xs md:text-sm font-bold uppercase tracking-wider text-slate-500 mt-2 font-body">Expert Support</p>
                                 </div>
                             </div>
                         </div>
 
                         {/* Image Content */}
                         <div className="lg:w-[45%] xl:w-5/12 relative w-full max-w-md lg:max-w-none mx-auto mt-10 lg:mt-0">
-                            <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl aspect-[4/5] object-cover border-8 border-white group">
+                            <div className="relative rounded-2xl overflow-hidden shadow-2xl aspect-[4/5] object-cover border-8 border-white group">
                                 <img
                                     src={contactPageImage}
                                     alt="JFS Fitness Athlete"
@@ -72,8 +71,8 @@ const AboutContact = () => {
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/40 to-transparent"></div>
                                 <div className="absolute bottom-8 left-8 text-white">
-                                    <p className="font-heading font-normal text-3xl uppercase tracking-tight mb-1">Push Limits</p>
-                                    <p className="font-medium text-slate-300">Join the JFS Movement</p>
+                                    <p className="font-heading font-normal text-[24px] md:text-[32px] uppercase tracking-tight leading-none mb-1">Push Limits</p>
+                                    <p className="font-medium text-slate-300 font-body">Join the JFS Movement</p>
                                 </div>
                             </div>
                             {/* Decorative Elements */}
@@ -85,7 +84,7 @@ const AboutContact = () => {
 
                 {/* SECTION 2: CONTACT */}
                 <section id="contact" className="mt-12 lg:mt-24 mb-16 relative">
-                    <div className="bg-slate-900 rounded-[3rem] p-8 md:p-16 lg:p-20 shadow-2xl relative overflow-hidden">
+                    <div className="bg-slate-900 rounded-2xl p-8 md:p-16 lg:p-20 shadow-2xl relative overflow-hidden">
                         {/* Background Decorations */}
                         <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-yellow-400 rounded-full blur-[120px] opacity-20 -translate-y-1/2 translate-x-1/3"></div>
                         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#25D366] rounded-full blur-[120px] opacity-10 translate-y-1/2 -translate-x-1/3"></div>
@@ -95,17 +94,17 @@ const AboutContact = () => {
                             <div className="lg:col-span-7">
                                 <div className="flex items-center gap-3 mb-6">
                                     <div className="w-10 h-0.5 bg-yellow-400"></div>
-                                    <span className="text-yellow-400 font-bold tracking-widest uppercase text-sm">Get In Touch</span>
+                                    <span className="text-yellow-400 font-bold tracking-widest uppercase text-sm font-body">Get In Touch</span>
                                 </div>
-                                <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-normal text-white uppercase tracking-tight mb-8 leading-[1.1]">
+                                <h2 className="text-[32px] md:text-[48px] font-heading font-normal text-white uppercase tracking-tight mb-8 leading-none">
                                     Let's Start Your <br /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-100">Transformation.</span>
                                 </h2>
-                                <p className="text-lg text-slate-400 font-medium mb-12 leading-relaxed max-w-lg">
+                                <p className="text-lg text-slate-400 font-medium mb-12 leading-relaxed max-w-lg font-body">
                                     Skip the long forms and delayed emails. Connect with our dedicated support team directly on WhatsApp for real-time coaching advice and product recommendations.
                                 </p>
 
                                 <div>
-                                    <p className="font-bold text-slate-500 text-sm uppercase tracking-wider mb-5">Connect With Us</p>
+                                    <p className="font-bold text-slate-500 text-sm uppercase tracking-wider mb-5 font-body">Connect With Us</p>
                                     <div className="flex gap-4">
                                         <a href="https://www.instagram.com/jfs.protein.store/" target="_blank" rel="noopener noreferrer" className="bg-slate-800/50 border border-slate-700 hover:border-yellow-400 hover:bg-slate-800 hover:text-yellow-400 p-4 rounded-2xl text-white transition-all duration-300 group shadow-lg">
                                             <Instagram size={28} className="group-hover:scale-110 transition-transform" />
@@ -119,7 +118,7 @@ const AboutContact = () => {
 
                             {/* CTA Card */}
                             <div className="flex justify-center lg:justify-end lg:col-span-5 w-full mt-8 lg:mt-0 xl:pr-12">
-                                <div className="bg-white/5 backdrop-blur-2xl border border-white/10 p-8 md:p-12 rounded-[2.5rem] w-full max-w-[380px] text-center transform hover:-translate-y-2 transition-transform duration-500 shadow-[0_20px_50px_rgba(0,0,0,0.5)] relative overflow-hidden group">
+                                <div className="bg-white/5 backdrop-blur-2xl border border-white/10 p-8 md:p-12 rounded-2xl w-full max-w-[380px] text-center transform hover:-translate-y-2 transition-transform duration-500 shadow-[0_20px_50px_rgba(0,0,0,0.5)] relative overflow-hidden group">
                                     {/* Hover gradient effect inside card */}
                                     <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
@@ -127,13 +126,13 @@ const AboutContact = () => {
                                         <div className="bg-white p-5 rounded-[2rem] shadow-[0_0_40px_rgba(37,211,102,0.3)] mb-8 group-hover:shadow-[0_0_60px_rgba(37,211,102,0.5)] transition-shadow duration-500">
                                             <img src={whatsappLogo} alt="WhatsApp" loading="lazy" className="w-16 h-16 drop-shadow-md group-hover:scale-110 transition-transform duration-500" />
                                         </div>
-                                        <h3 className="font-heading font-normal text-2xl md:text-3xl text-white uppercase tracking-tight mb-8">
+                                        <h3 className="font-heading font-normal text-[24px] md:text-[32px] text-white uppercase tracking-tight leading-none mb-8">
                                             Direct Support
                                         </h3>
                                         <Button
                                             onClick={() => window.open(`https://wa.me/${WHATSAPP_NUMBER}`, '_blank')}
                                             size="lg"
-                                            className="w-full bg-[#25D366] text-white hover:bg-[#20bd5a] font-bold text-lg py-4 rounded-xl shadow-[0_10px_30px_rgba(37,211,102,0.2)] group-hover:shadow-[0_15px_40px_rgba(37,211,102,0.4)] transition-all duration-300 transform group-hover:scale-[1.02]"
+                                            className="w-full bg-[#25D366] text-white hover:bg-[#20bd5a] font-subheading font-bold text-lg py-4 rounded-xl shadow-[0_10px_30px_rgba(37,211,102,0.2)] group-hover:shadow-[0_15px_40px_rgba(37,211,102,0.4)] transition-all duration-300 transform group-hover:scale-[1.02] border-none"
                                         >
                                             Chat on WhatsApp
                                         </Button>
