@@ -43,18 +43,18 @@ const Home: React.FC<HomeProps> = ({ onAddToCart }) => {
                     <img
                         src={mobileHeroImage}
                         alt="Hero"
-                        fetchPriority="high"
+                        loading="eager"
+                        fetchpriority="high"
                         className="w-full h-auto object-contain block"
                     />
 
                     {/* Absolute positioning to place text in the middle empty space of the image */}
                     {/* The image is tall. The top ~15% has text. The bottom ~50% has the person. */}
-                    {/* Position in the minimalist center gap */}
                     <div className="absolute top-[19%] left-0 w-full px-4 flex flex-col items-center text-center z-10">
-                        <h1 className="text-[38px] md:text-[40px] font-heading font-normal text-white leading-[1.1] tracking-tight mb-3 uppercase drop-shadow-2xl">
+                        <h1 className="text-[32px] md:text-[40px] font-heading font-normal text-white leading-[1.1] tracking-tight mb-3 uppercase drop-shadow-2xl">
                             FUEL YOUR <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-200">AMBITION</span>
                         </h1>
-                        <p className="text-white text-sm md:text-base max-w-[280px] leading-snug mx-auto drop-shadow-md font-medium">
+                        <p className="text-white text-xs md:text-base max-w-[280px] leading-snug mx-auto drop-shadow-md font-medium">
                             Authentic supplements sourced directly from brands. No middlemen, no fake products.
                         </p>
                     </div>
@@ -65,7 +65,8 @@ const Home: React.FC<HomeProps> = ({ onAddToCart }) => {
                     <img
                         src={heroBackgroundImage}
                         alt="Hero Background"
-                        fetchPriority="high"
+                        loading="eager"
+                        fetchpriority="high"
                         className="w-full h-full object-contain object-right"
                     />
                 </div>
@@ -97,9 +98,9 @@ const Home: React.FC<HomeProps> = ({ onAddToCart }) => {
 
 
             {/* 2. Categories (Circular Style) */}
-            <section className="categories-section py-16 md:py-20 bg-white">
-                <div className="container mx-auto px-4 md:px-6">
-                    <h2 className="text-[24px] md:text-[36px] font-subheading text-slate-900 text-center mb-8 md:mb-12 uppercase tracking-tight">Shop By Category</h2>
+            <section className="categories-section py-12 md:py-[80px] bg-white">
+                <div className="max-w-[1200px] mx-auto px-6">
+                    <h2 className="text-[24px] md:text-[36px] font-subheading font-bold text-slate-900 text-left mb-[32px] uppercase tracking-tight">Shop By Category</h2>
                     <div className="flex flex-wrap justify-center gap-3 md:gap-12">
                         {CATEGORIES_LIST.map((cat, idx) => (
                             <div key={idx} className="flex flex-col items-center gap-2 md:gap-4 group cursor-pointer w-[28%] md:w-auto" onClick={() => navigate(`/products?category=${encodeURIComponent(cat.name)}`)}>
@@ -127,24 +128,23 @@ const Home: React.FC<HomeProps> = ({ onAddToCart }) => {
             </section>
 
             {/* 3. Best Sellers Section (SaaS Grid Background) */}
-            <section className="bestsellers-section py-16 md:py-20 bg-slate-100 relative">
+            <section className="bestsellers-section py-12 md:py-[80px] bg-slate-100 relative">
                 {/* SaaS background grid */}
                 <div className="absolute inset-0 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] [background-size:24px_24px] opacity-60 pointer-events-none"></div>
-                <div className="container mx-auto px-4 md:px-6 relative z-10">
-                    <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 md:mb-12 gap-4">
+                <div className="max-w-[1200px] mx-auto px-6 relative z-10">
+                    <div className="flex flex-row items-center justify-between mb-[32px] gap-4 w-full">
                         <div>
-                            <h2 className="text-[24px] md:text-[36px] font-subheading text-slate-900 uppercase tracking-tight mb-2">Best Sellers</h2>
+                            <h2 className="text-[24px] md:text-[36px] font-subheading font-bold text-slate-900 uppercase tracking-tight mb-2">Best Sellers</h2>
                             <p className="text-base text-slate-500 font-body">Top selling performance essentials.</p>
                         </div>
-                        <Button
+                        <div
                             onClick={() => navigate('/products')}
-                            variant="outline"
-                            className="hidden md:flex items-center gap-2 border-slate-900 text-slate-900 hover:bg-slate-900 hover:text-white font-subheading font-bold uppercase tracking-wider text-xs py-2 px-6 rounded-xl transition-all"
+                            className="bg-transparent border border-[#0F172A] text-[#0F172A] px-[18px] py-[8px] rounded-[8px] text-[14px] font-semibold hover:bg-[#0F172A] hover:text-white transition-all duration-200 cursor-pointer flex items-center justify-center gap-2 group hidden md:flex whitespace-nowrap"
                         >
-                            View All <ArrowUpRight size={16} />
-                        </Button>
+                            View All <ArrowUpRight size={16} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                        </div>
                     </div>
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+                    <div className="grid grid-cols-2 md:grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-3 md:gap-[28px] w-full">
                         {bestSellers.map(product => (
                             <ProductCard key={product.id} product={product} onAddToCart={onAddToCart} />
                         ))}
@@ -154,17 +154,25 @@ const Home: React.FC<HomeProps> = ({ onAddToCart }) => {
 
 
             {/* Real Results / Transformations Preview */}
-            <section className="py-16 md:py-20 bg-slate-100 relative z-30 overflow-hidden">
-                <div className="container mx-auto px-4 md:px-6 relative z-10">
-                    <div className="text-center mb-10 md:mb-16">
-                        <span className="text-yellow-500 font-bold tracking-tight uppercase text-xs md:text-sm mb-2 md:mb-4 block font-body">Proven Success</span>
-                        <h2 className="text-[32px] md:text-[48px] font-heading font-normal text-slate-900 mb-4 md:mb-6 uppercase tracking-tight leading-none">
-                            Real <span className="text-slate-400">Results</span>
-                        </h2>
-                        <p className="text-slate-500 max-w-2xl mx-auto text-sm md:text-lg leading-relaxed font-medium">
-                            Discipline and the right fuel create masterpieces. See what our clients have achieved under the expert training of Prabha Joy.
-                        </p>
-                        <div className="w-16 md:w-24 h-1.5 bg-yellow-400 mx-auto rounded-full mt-4 md:mt-6"></div>
+            <section className="py-12 md:py-[80px] bg-slate-100 relative z-30 overflow-hidden">
+                <div className="max-w-[1200px] mx-auto px-6 relative z-10">
+                    <div className="flex flex-row items-center justify-between mb-[32px] gap-4 w-full">
+                        <div className="text-left w-full md:w-auto">
+                            <span className="text-yellow-500 font-bold tracking-tight uppercase text-xs md:text-sm mb-2 block font-body">Proven Success</span>
+                            <h2 className="text-[32px] md:text-[48px] font-heading font-normal text-slate-900 mb-4 uppercase tracking-tight leading-none">
+                                Real <span className="text-slate-400">Results</span>
+                            </h2>
+                            <p className="text-slate-500 max-w-2xl text-sm md:text-lg leading-relaxed font-medium">
+                                Discipline and the right fuel create masterpieces. See what our clients have achieved under the expert training of Prabha Joy.
+                            </p>
+                        </div>
+
+                        <div
+                            onClick={() => navigate('/transformations')}
+                            className="bg-transparent border border-[#0F172A] text-[#0F172A] px-[18px] py-[8px] rounded-[8px] text-[14px] font-semibold hover:bg-[#0F172A] hover:text-white transition-all duration-200 cursor-pointer items-center justify-center gap-2 group hidden md:flex whitespace-nowrap mt-auto"
+                        >
+                            View All <ArrowUpRight size={16} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                        </div>
                     </div>
 
                     <div className="columns-2 md:columns-4 gap-3 md:gap-6 space-y-3 md:space-y-6 overflow-hidden px-2 md:px-0">
@@ -174,8 +182,8 @@ const Home: React.FC<HomeProps> = ({ onAddToCart }) => {
                                     <img
                                         src={item.image}
                                         alt="Client Transformation"
-                                        className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700 block"
                                         loading="lazy"
+                                        className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700 block"
                                     />
                                     <div className="absolute inset-0 bg-slate-900/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
                                 </div>
@@ -183,25 +191,32 @@ const Home: React.FC<HomeProps> = ({ onAddToCart }) => {
                         ))}
                     </div>
 
-                    <div className="text-center mt-12 md:mt-16">
-                        <Button
+                    <div className="flex flex-row items-center justify-between mb-[32px] gap-4 w-full mt-12 md:mt-16">
+                        <div></div>
+                        <div
                             onClick={() => navigate('/transformations')}
-                            size="lg"
-                            className="bg-slate-900 text-white font-subheading font-semibold px-8 md:px-10 text-sm md:text-base hover:bg-slate-800 w-full md:w-auto rounded-xl"
-                            icon={<ArrowUpRight size={18} className="md:w-5 md:h-5" />}
+                            className="bg-transparent border border-[#0F172A] text-[#0F172A] px-[18px] py-[8px] rounded-[8px] text-[14px] font-semibold hover:bg-[#0F172A] hover:text-white transition-all duration-200 cursor-pointer flex items-center justify-center gap-2 group whitespace-nowrap"
                         >
-                            See All Transformations
-                        </Button>
+                            View All <ArrowUpRight size={16} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                        </div>
                     </div>
                 </div>
             </section> {/* Brands Carousel (Moved to below Best Sellers) */}
-            <section id="brands-section" className="brands-section py-16 md:py-20 bg-white border-t border-slate-100">
-                <div className="container mx-auto px-4 md:px-6">
-                    <div className="text-center mb-12 md:mb-16">
-                        <h3 className="text-[24px] md:text-[36px] font-subheading text-slate-900 uppercase tracking-tight mb-4">
-                            Secure Our Top<span className="font-sans">-</span>Tier Brands
-                        </h3>
-                        <div className="h-1 w-16 bg-yellow-400 mx-auto rounded-full"></div>
+            <section id="brands-section" className="brands-section py-12 md:py-[80px] bg-white border-t border-slate-100">
+                <div className="max-w-[1200px] mx-auto px-6">
+                    <div className="flex flex-row items-center justify-between mb-[32px] gap-4 w-full">
+                        <div className="text-left">
+                            <h3 className="text-[24px] md:text-[36px] font-subheading font-bold text-slate-900 uppercase tracking-tight mb-2">
+                                Secure Our Top<span className="font-sans">-</span>Tier Brands
+                            </h3>
+                            <p className="text-base text-slate-500 font-body">Only the highest quality imported nutrition.</p>
+                        </div>
+                        <div
+                            onClick={() => document.getElementById('brands-section')?.scrollIntoView({ behavior: 'smooth' })}
+                            className="bg-transparent border border-[#0F172A] text-[#0F172A] px-[18px] py-[8px] rounded-[8px] text-[14px] font-semibold hover:bg-[#0F172A] hover:text-white transition-all duration-200 cursor-pointer flex items-center justify-center gap-2 group hidden md:flex whitespace-nowrap mt-auto"
+                        >
+                            View All <ArrowUpRight size={16} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                        </div>
                     </div>
 
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-y-8 gap-x-8 lg:gap-x-12 items-center justify-items-center max-w-5xl mx-auto px-4">
@@ -222,38 +237,34 @@ const Home: React.FC<HomeProps> = ({ onAddToCart }) => {
             </section>
 
             {/* 5. New Arrivals Section */}
-            <section className="new-arrivals-section py-16 md:py-20 bg-white">
-                <div className="container mx-auto px-4 md:px-6">
-                    <div className="flex justify-between items-end mb-8 md:mb-12">
+            <section className="new-arrivals-section py-12 md:py-[80px] bg-white">
+                <div className="max-w-[1200px] mx-auto px-6">
+                    <div className="flex flex-row items-center justify-between mb-[32px] gap-4 w-full">
                         <div>
                             <span className="text-yellow-500 font-bold uppercase tracking-tight text-[10px] md:text-xs">Just Dropped</span>
-                            <h2 className="text-[24px] md:text-[36px] font-subheading text-slate-900 tracking-tight mt-0.5 md:mt-1 uppercase">New Arrivals</h2>
+                            <h2 className="text-[24px] md:text-[36px] font-subheading font-bold text-slate-900 tracking-tight mt-0.5 md:mt-1 uppercase">New Arrivals</h2>
+                        </div>
+
+                        <div
+                            onClick={() => navigate('/products')}
+                            className="bg-transparent border border-[#0F172A] text-[#0F172A] px-[18px] py-[8px] rounded-[8px] text-[14px] font-semibold hover:bg-[#0F172A] hover:text-white transition-all duration-200 cursor-pointer flex items-center justify-center gap-2 group hidden md:flex whitespace-nowrap mt-auto"
+                        >
+                            View All <ArrowUpRight size={16} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                         </div>
                     </div>
 
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+                    <div className="grid grid-cols-2 md:grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-3 md:gap-[28px] w-full">
                         {newArrivals.map(product => (
                             <ProductCard key={product.id} product={product} onAddToCart={onAddToCart} />
                         ))}
-                    </div>
-
-                    <div className="text-center mt-12 md:mt-16">
-                        <Button
-                            onClick={() => navigate('/products')}
-                            size="lg"
-                            className="bg-slate-900 text-white font-subheading font-semibold px-8 md:px-10 text-sm md:text-base hover:bg-slate-800 w-full md:w-auto rounded-xl"
-                            icon={<ChevronRight size={18} className="md:w-5 md:h-5" />}
-                        >
-                            View All New Arrivals
-                        </Button>
                     </div>
                 </div>
             </section>
 
             {/* 6. Promotional Split Banners (Unchanged) */}
-            <section className="py-16 md:py-20 bg-white">
-                <div className="container mx-auto px-4 md:px-6">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+            <section className="py-12 md:py-[80px] bg-white">
+                <div className="max-w-[1200px] mx-auto px-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-[28px]">
                         {/* Banner 1 */}
                         <div className="relative h-64 md:h-96 rounded-2xl overflow-hidden group cursor-pointer" style={{ background: 'linear-gradient(135deg, #1e3a8a 0%, #0f172a 60%, #020617 100%)' }}>
                             {/* Strong spotlight on figure */}
@@ -322,31 +333,37 @@ const Home: React.FC<HomeProps> = ({ onAddToCart }) => {
             </section>
 
             {/* 7. Trending in Whey */}
-            <section className="trending-section py-16 md:py-20 bg-slate-100 relative overflow-hidden">
+            <section className="trending-section py-[80px] bg-slate-100 relative overflow-hidden">
                 {/* SaaS background grid */}
                 <div className="absolute inset-0 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] [background-size:24px_24px] opacity-60 pointer-events-none"></div>
 
                 {/* Floating soft glows */}
                 <div className="absolute top-0 right-0 w-96 h-96 bg-yellow-400/5 rounded-full blur-[100px] pointer-events-none"></div>
 
-                <div className="container mx-auto px-4 md:px-6 relative z-10">
-                    <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 md:mb-16 gap-4">
+                <div className="max-w-[1200px] mx-auto px-6 relative z-10">
+                    <div className="flex flex-row items-center justify-between mb-[32px] gap-4 w-full">
                         <div className="relative">
                             <div className="flex items-center gap-2 text-yellow-600 font-bold uppercase tracking-tight text-xs mb-3 font-subheading">
                                 <TrendingUp size={16} />
                                 <span>Hot Right Now</span>
                             </div>
-                            <h2 className="text-[32px] md:text-[48px] font-heading font-normal text-slate-900 tracking-tight leading-none uppercase">
+                            <h2 className="text-[24px] md:text-[36px] font-subheading font-bold text-slate-900 tracking-tight leading-none uppercase mb-2">
                                 Trending in Whey
                             </h2>
-                            <div className="absolute -left-6 top-1 h-[80%] w-1 bg-yellow-400 hidden md:block rounded-full"></div>
+                            <p className="text-slate-500 font-medium max-w-sm text-sm md:text-base font-body">
+                                The most popular protein choices fueling athletes this week.
+                            </p>
                         </div>
-                        <p className="text-slate-500 font-medium max-w-sm text-sm md:text-base font-body">
-                            The most popular protein choices fueling athletes this week.
-                        </p>
+
+                        <div
+                            onClick={() => navigate('/products?category=Whey+Protein')}
+                            className="bg-transparent border border-[#0F172A] text-[#0F172A] px-[18px] py-[8px] rounded-[8px] text-[14px] font-semibold hover:bg-[#0F172A] hover:text-white transition-all duration-200 cursor-pointer flex items-center justify-center gap-2 group hidden md:flex whitespace-nowrap mt-auto"
+                        >
+                            View All <ArrowUpRight size={16} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                        </div>
                     </div>
 
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+                    <div className="grid grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-[28px] w-full">
                         {wheyProducts.length > 0 ? (
                             wheyProducts.map(product => (
                                 <div key={product.id} className="transform hover:-translate-y-2 transition-transform duration-300">
@@ -366,9 +383,9 @@ const Home: React.FC<HomeProps> = ({ onAddToCart }) => {
 
 
             {/* Features Section */}
-            <section className="py-8 md:py-12 bg-white border-t border-slate-100">
-                <div className="container mx-auto px-4 md:px-6">
-                    <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4 md:gap-6">
+            <section className="py-12 md:py-[80px] bg-white border-t border-slate-100">
+                <div className="max-w-[1200px] mx-auto px-6">
+                    <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-[28px]">
                         {/* Box 1 */}
                         <div className="bg-white border border-slate-100 rounded-2xl p-6 md:p-8 flex flex-col gap-4 hover:-translate-y-1 hover:shadow-xl hover:border-slate-200 transition-all duration-300 group">
                             <div className="bg-slate-50 border border-slate-100 p-3 rounded-xl inline-flex w-fit group-hover:bg-yellow-50 group-hover:border-yellow-200 transition-colors">

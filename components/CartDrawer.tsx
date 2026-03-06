@@ -80,7 +80,7 @@ const CartDrawer: React.FC<CartDrawerProps> = ({
               {cartItems.map((item) => (
                 <div key={item.id} className="flex gap-4">
                   <div className="h-20 w-20 md:h-24 md:w-24 flex-shrink-0 overflow-hidden rounded-lg bg-slate-100">
-                    <img loading="lazy" src={item.image} alt={item.name} className="h-full w-full object-contain p-2" />
+                    <img src={item.image} alt={item.name} loading="lazy" className="h-full w-full object-contain p-2" />
                   </div>
                   <div className="flex flex-1 flex-col justify-between">
                     <div>
@@ -104,7 +104,7 @@ const CartDrawer: React.FC<CartDrawerProps> = ({
                         </button>
                       </div>
                       <div className="flex items-center gap-4">
-                        <span className="font-bold text-slate-900">₹{(item.price * item.quantity).toFixed(2)}</span>
+                        <span className="font-semibold font-inter text-slate-900">₹{(item.price * item.quantity).toLocaleString()}</span>
                         <button
                           onClick={() => onRemoveItem(item.id)}
                           className="text-red-400 hover:text-red-600"
@@ -124,7 +124,7 @@ const CartDrawer: React.FC<CartDrawerProps> = ({
           <div className="border-t bg-slate-50 p-6">
             <div className="mb-4 flex items-center justify-between">
               <span className="text-base font-medium text-slate-500">Subtotal</span>
-              <span className="text-2xl font-bold text-slate-900">₹{total.toFixed(2)}</span>
+              <span className="text-2xl font-semibold font-inter text-slate-900">₹{total.toLocaleString()}</span>
             </div>
             <p className="mb-6 text-xs text-slate-400 text-center">Your order will be sent via WhatsApp for confirmation.</p>
             <Button className="w-full" size="lg" icon={<ArrowRight size={20} />} onClick={handleCheckout}>

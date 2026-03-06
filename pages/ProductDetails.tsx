@@ -188,11 +188,11 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ onAddToCart, cartItems,
 
             <div className="flex items-center gap-3 md:gap-4 mb-4 md:mb-6">
               <div className="flex items-baseline gap-2">
-                <span className="text-2xl md:text-3xl font-black text-slate-900">
+                <span className="text-2xl md:text-3xl font-semibold font-inter text-slate-900">
                   ₹{product.price.toLocaleString()}
                 </span>
                 {product.mrp && product.mrp > product.price && (
-                  <span className="text-sm md:text-lg text-slate-400 line-through font-medium">
+                  <span className="text-sm md:text-lg text-slate-400 line-through font-medium font-inter">
                     ₹{product.mrp.toLocaleString()}
                   </span>
                 )}

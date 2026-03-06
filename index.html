@@ -19,8 +19,9 @@
           fontFamily: {
             heading: ['Anton', 'sans-serif'],
             subheading: ['Poppins', 'sans-serif'],
-            body: ['Inter', 'sans-serif'],
-            sans: ['Inter', 'sans-serif'], // Default
+            body: ['Poppins', 'sans-serif'],
+            sans: ['Poppins', 'sans-serif'],
+            inter: ['Inter', 'sans-serif'],
           },
           colors: {
             yellow: {
@@ -48,12 +49,13 @@
   </script>
   <style>
     body {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Poppins', sans-serif;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       background-color: #f8fafc;
       font-size: 16px;
-      line-height: 1.6;
+      line-height: 1.5;
+      font-weight: 400;
     }
 
     h1,
@@ -63,9 +65,11 @@
     h5,
     h6,
     .font-heading {
+      font-family: 'Anton', sans-serif;
       letter-spacing: 0.04em;
       line-height: 1.1;
       text-transform: uppercase;
+      font-weight: 700;
     }
 
     .font-subheading {

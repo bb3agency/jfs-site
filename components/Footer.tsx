@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
     };
 
     return (
-        <footer className="w-full px-4 md:px-6 pb-4 md:pb-6 mt-16 md:mt-20 relative overflow-hidden">
+        <footer className="w-full px-4 md:px-6 pb-28 md:pb-6 mt-16 md:mt-20 relative overflow-hidden">
             {/* Main Rounded Card */}
             <div className="bg-slate-900 rounded-2xl p-8 md:p-16 relative overflow-hidden shadow-2xl border border-slate-800/50">
 

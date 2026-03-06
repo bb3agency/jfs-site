@@ -67,7 +67,8 @@ const AboutContact = () => {
                                 <img
                                     src={contactPageImage}
                                     alt="JFS Fitness Athlete"
-                                    fetchPriority="high"
+                                    loading="eager"
+                                    fetchpriority="high"
                                     className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/40 to-transparent"></div>

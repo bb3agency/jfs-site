@@ -48,11 +48,11 @@ const Navbar: React.FC<NavbarProps> = ({ cartCount, onCartClick }) => {
       >
         <div className="flex flex-col h-full p-8">
           <div className="flex justify-between items-center mb-12">
-            <Link to="/" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center gap-3 select-none group transition-opacity hover:opacity-90 max-w-[200px]">
-              <img src={logo} alt="Joy Fitness Logo" className="h-[42px] w-auto transition-transform duration-300 group-hover:scale-105" />
-              <div className="flex flex-col uppercase leading-none">
-                <span className="font-heading text-[26px] font-bold text-slate-900 tracking-wider">Joy</span>
-                <span className="font-subheading text-[15px] font-semibold text-yellow-500 tracking-tight">Fitness</span>
+            <Link to="/" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center gap-2 md:gap-3 select-none group transition-opacity hover:opacity-90">
+              <img src={logo} alt="Joy Fitness Logo" loading="eager" fetchpriority="high" className="h-8 md:h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105" />
+              <div className="flex flex-col justify-center uppercase leading-none mt-0.5">
+                <span className="font-heading text-[24px] md:text-[26px] font-bold text-slate-900 tracking-wider">Joy</span>
+                <span className="font-subheading text-[13px] md:text-[15px] font-semibold text-yellow-500 tracking-tight">Fitness</span>
               </div>
             </Link>
             <button onClick={() => setIsMobileMenuOpen(false)} className="p-2 -mr-2 text-slate-900 hover:bg-slate-50 rounded-full">
@@ -154,16 +154,16 @@ const Navbar: React.FC<NavbarProps> = ({ cartCount, onCartClick }) => {
           </div>
 
           {/* Logo */}
-          <Link to="/" className="relative z-10 flex items-center gap-3 group select-none transition-opacity hover:opacity-90 max-w-[200px]">
-            <img src={logo} alt="Joy Fitness Logo" className="h-[42px] w-auto transition-transform duration-300 group-hover:scale-105 drop-shadow-sm" />
-            <div className="flex flex-col uppercase leading-none">
-              <span className="font-heading text-[26px] font-bold text-white tracking-wider">Joy</span>
-              <span className="font-subheading text-[15px] font-semibold text-yellow-500 tracking-tight">Fitness</span>
+          <Link to="/" className="relative z-10 flex items-center gap-2 md:gap-3 group select-none transition-opacity hover:opacity-90">
+            <img src={logo} alt="Joy Fitness Logo" loading="eager" fetchpriority="high" className="h-8 md:h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105 drop-shadow-sm" />
+            <div className="flex flex-col justify-center uppercase leading-none mt-0.5">
+              <span className="font-heading text-[24px] md:text-[26px] font-bold text-white tracking-wider drop-shadow-sm">Joy</span>
+              <span className="font-subheading text-[13px] md:text-[15px] font-semibold text-yellow-500 tracking-tight drop-shadow-sm">Fitness</span>
             </div>
           </Link>
 
           {/* Desktop Navigation Links */}
-          <div className="relative z-10 hidden md:flex items-center gap-12">
+          <div className="relative z-10 hidden md:flex items-center justify-center gap-8 lg:gap-14 flex-1">
             {navLinks.map((link) => {
               const isActive = location.pathname === link.path;
               return (
@@ -171,7 +171,7 @@ const Navbar: React.FC<NavbarProps> = ({ cartCount, onCartClick }) => {
                   key={link.name}
                   to={link.path}
                   className={`
-                                relative text-sm tracking-tight uppercase font-bold transition-all duration-300 select-none
+                                relative text-[15px] tracking-wide uppercase font-bold transition-all duration-300 select-none font-subheading
                                 ${isActive
                       ? 'text-yellow-400'
                       : 'text-white hover:text-yellow-400'
@@ -184,8 +184,8 @@ const Navbar: React.FC<NavbarProps> = ({ cartCount, onCartClick }) => {
             })}
           </div>
 
-          {/* Actions (Hidden on mobile as they are in bottom nav) */}
-          <div className="relative z-10 hidden md:flex items-center gap-2 md:gap-4">
+          {/* Actions */}
+          <div className="relative z-10 hidden md:flex items-center ml-4">
             <button
               onClick={onCartClick}
               className="relative group p-3 rounded-full hover:bg-white/10 transition-all border border-transparent hover:border-white/10 active:scale-95"

@@ -38,7 +38,7 @@ const Coaching = () => {
                             <span className="text-xs md:text-sm font-bold text-slate-800 tracking-[0.2em] uppercase">JFS Elite Performance</span>
                         </div>
 
-                        <h1 className="text-[40px] md:text-[64px] font-heading font-normal tracking-tight mb-6 text-slate-950 leading-none uppercase">
+                        <h1 className="text-[36px] md:text-[64px] font-heading font-normal tracking-tight mb-6 text-slate-950 leading-none uppercase">
                             BUILD YOUR <br />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-yellow-600">LEGACY.</span>
                         </h1>
