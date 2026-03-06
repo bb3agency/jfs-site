@@ -9,7 +9,7 @@ import { Product, Category } from '../types';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import mobileHeroImage from '../assets/jfs-canva-hero-image.jpg';
+import mobileHeroImage from '../assets/jfs-canva-hero-image.webp';
 import heroBackgroundImage from '../assets/jfs-hero-image-with-background.JPEG';
 import promoBannerImage from '../assets/promo-banner-bodybuilder.png';
 import lightningRing from '../assets/lightning-ring.png';
@@ -35,49 +35,59 @@ const Home: React.FC<HomeProps> = ({ onAddToCart }) => {
     return (
         <div ref={containerRef} className="flex flex-col w-full overflow-hidden">
 
-            {/* 1. Hero Section (Mobile Optimized) */}
-            <section className="relative min-h-screen md:min-h-screen bg-slate-950 flex flex-col justify-end md:justify-center items-center overflow-hidden">
-                {/* Desktop Hero Image */}
-                <div className="absolute inset-0 hidden md:block">
-                    <img
-                        src={heroBackgroundImage}
-                        alt="Hero Background"
-                        fetchPriority="high"
-                        className="w-full h-full object-cover"
-                    />
-                </div>
-                {/* Mobile Hero Image */}
-                <div className="absolute inset-0 md:hidden bg-slate-950">
+            {/* 1. Hero Section */}
+            <section className="relative bg-black flex flex-col md:flex-row md:items-center overflow-hidden h-auto md:min-h-screen">
+
+                {/* --- MOBILE LAYOUT (Overlay) --- */}
+                <div className="md:hidden relative w-full bg-black flex flex-col">
                     <img
                         src={mobileHeroImage}
                         alt="Hero"
                         fetchPriority="high"
-                        className="w-full h-full object-contain object-top"
+                        className="w-full h-auto object-contain block"
                     />
-                    {/* Gradient Overlay for buttons visibility - Stronger at bottom */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent opacity-90"></div>
+
+                    {/* Absolute positioning to place text in the middle empty space of the image */}
+                    {/* The image is tall. The top ~15% has text. The bottom ~50% has the person. */}
+                    {/* Position in the minimalist center gap */}
+                    <div className="absolute top-[19%] left-0 w-full px-4 flex flex-col items-center text-center z-10">
+                        <h1 className="text-[38px] md:text-[40px] font-heading font-normal text-white leading-[1.1] tracking-tight mb-3 uppercase drop-shadow-2xl">
+                            FUEL YOUR <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-200">AMBITION</span>
+                        </h1>
+                        <p className="text-white text-sm md:text-base max-w-[280px] leading-snug mx-auto drop-shadow-md font-medium">
+                            Authentic supplements sourced directly from brands. No middlemen, no fake products.
+                        </p>
+                    </div>
                 </div>
 
+                {/* --- DESKTOP LAYOUT (Overlay/Split) --- */}
+                <div className="hidden md:flex absolute inset-0 bg-black">
+                    <img
+                        src={heroBackgroundImage}
+                        alt="Hero Background"
+                        fetchPriority="high"
+                        className="w-full h-full object-contain object-right"
+                    />
+                </div>
 
-
-                <div className="container mx-auto px-4 md:px-6 relative z-10 flex flex-col md:flex-row items-center gap-12 pt-20 pb-16 md:pt-32 md:pb-20 h-full justify-end md:justify-center">
-                    <div className="hero-content flex-1 text-center md:text-left w-full px-4 md:px-0">
-                        <div className="inline-block px-4 py-1.5 rounded-full border border-yellow-500/30 bg-yellow-500/10 text-yellow-400 font-subheading font-normal text-[10px] md:text-xs uppercase tracking-tight mb-4 md:mb-6 backdrop-blur-sm">
+                <div className="hidden md:flex container mx-auto px-6 relative z-10 items-center gap-12 pt-32 pb-20 h-full w-full">
+                    <div className="hero-content flex-1 text-left w-full">
+                        <div className="inline-block px-4 py-1.5 rounded-full border border-yellow-500/30 bg-yellow-500/10 text-yellow-400 font-subheading font-normal text-xs uppercase tracking-tight mb-6 backdrop-blur-sm">
                             100% Authentic Supplements
                         </div>
-                        <h1 className="text-[40px] md:text-[64px] font-heading font-normal text-white leading-none tracking-tight mb-4 md:mb-6 uppercase">
+                        <h1 className="text-[64px] font-heading font-normal text-white leading-none tracking-tight mb-6 uppercase">
                             FUEL YOUR <br />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-200">AMBITION.</span>
                         </h1>
-                        <p className="text-white text-base md:text-xl max-w-xl leading-relaxed mb-6 md:mb-8 mx-auto md:mx-0">
+                        <p className="text-white text-xl max-w-xl leading-relaxed mb-8">
                             Authentic supplements sourced directly from brands. No middlemen, no fake products. Just pure performance.
                         </p>
 
-                        <div className="flex flex-col md:flex-row gap-4 justify-center md:justify-start w-full md:w-auto mt-2">
-                            <Button onClick={() => navigate('/products')} className="bg-yellow-400 !text-slate-950 hover:bg-yellow-300 border-none px-8 py-4 text-sm md:text-base font-subheading font-semibold uppercase tracking-wider w-full md:w-auto rounded-xl shadow-lg ring-2 ring-yellow-400/50 ring-offset-2 ring-offset-slate-950 transform transition-all hover:ring-yellow-400 active:scale-95">
+                        <div className="flex flex-row gap-4 justify-start w-auto mt-2">
+                            <Button onClick={() => navigate('/products')} className="bg-yellow-400 !text-slate-950 hover:bg-yellow-300 border-none px-8 py-4 text-base font-subheading font-semibold uppercase tracking-wider w-auto rounded-xl shadow-lg ring-2 ring-yellow-400/50 ring-offset-2 ring-offset-slate-950 transform transition-all hover:ring-yellow-400 active:scale-95">
                                 Shop Now
                             </Button>
-                            <Button onClick={() => navigate('/coaching')} variant="outline" className="text-white border-white/20 bg-white/5 hover:bg-white/10 px-8 py-4 text-sm md:text-base font-subheading font-semibold uppercase tracking-wider w-full md:w-auto rounded-xl backdrop-blur-md transition-colors">
+                            <Button onClick={() => navigate('/coaching')} variant="outline" className="text-white border-white/20 bg-white/5 hover:bg-white/10 px-8 py-4 text-base font-subheading font-semibold uppercase tracking-wider w-auto rounded-xl backdrop-blur-md transition-colors">
                                 COACHING
                             </Button>
                         </div>
