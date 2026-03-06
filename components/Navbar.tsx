@@ -48,13 +48,13 @@ const Navbar: React.FC<NavbarProps> = ({ cartCount, onCartClick }) => {
       >
         <div className="flex flex-col h-full p-8">
           <div className="flex justify-between items-center mb-12">
-            <div className="flex items-center gap-2 select-none">
-              <img src={logo} alt="JFS Fitness" className="h-12 w-auto" />
-              <div className="flex flex-col uppercase font-heading text-slate-900 leading-none">
-                <span className="text-2xl tracking-tighter">Joy</span>
-                <span className="text-xl tracking-tight text-yellow-500">Fitness</span>
+            <Link to="/" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center gap-3 select-none group transition-opacity hover:opacity-90 max-w-[200px]">
+              <img src={logo} alt="Joy Fitness Logo" className="h-[42px] w-auto transition-transform duration-300 group-hover:scale-105" />
+              <div className="flex flex-col uppercase leading-none">
+                <span className="font-heading text-[26px] font-bold text-slate-900 tracking-wider">Joy</span>
+                <span className="font-subheading text-[15px] font-semibold text-yellow-500 tracking-tight">Fitness</span>
               </div>
-            </div>
+            </Link>
             <button onClick={() => setIsMobileMenuOpen(false)} className="p-2 -mr-2 text-slate-900 hover:bg-slate-50 rounded-full">
               <X size={32} />
             </button>
@@ -154,11 +154,11 @@ const Navbar: React.FC<NavbarProps> = ({ cartCount, onCartClick }) => {
           </div>
 
           {/* Logo */}
-          <Link to="/" className="relative z-10 flex items-center gap-2 group select-none">
-            <img src={logo} alt="JFS Fitness" className="h-8 md:h-12 w-auto group-hover:scale-105 transition-transform duration-300 drop-shadow-sm" />
-            <div className="flex flex-col uppercase font-heading text-white leading-none">
-              <span className="text-xl md:text-2xl tracking-tighter">Joy</span>
-              <span className="text-sm md:text-lg tracking-tight text-yellow-400">Fitness</span>
+          <Link to="/" className="relative z-10 flex items-center gap-3 group select-none transition-opacity hover:opacity-90 max-w-[200px]">
+            <img src={logo} alt="Joy Fitness Logo" className="h-[42px] w-auto transition-transform duration-300 group-hover:scale-105 drop-shadow-sm" />
+            <div className="flex flex-col uppercase leading-none">
+              <span className="font-heading text-[26px] font-bold text-white tracking-wider">Joy</span>
+              <span className="font-subheading text-[15px] font-semibold text-yellow-500 tracking-tight">Fitness</span>
             </div>
           </Link>
 

@@ -58,7 +58,7 @@ export const PRODUCTS: Product[] = [
   {
     id: 'bcaa-2',
     name: 'HM EAA+ BCAA',
-    brand: 'Healthmania',
+    brand: 'Hungry Muscles',
     category: Category.BCAA_EAA,
     price: 1600,
     mrp: 2400,
@@ -174,7 +174,7 @@ export const PRODUCTS: Product[] = [
   {
     id: 'mass-2',
     name: 'HM Pro Bulk 3kg',
-    brand: 'Healthmania',
+    brand: 'Hungry Muscles',
     category: Category.MASS_GAINER,
     price: 2800,
     mrp: 4100,
@@ -192,7 +192,7 @@ export const PRODUCTS: Product[] = [
   {
     id: 'mass-3',
     name: 'HM Pro Bulk 5kg',
-    brand: 'Healthmania',
+    brand: 'Hungry Muscles',
     category: Category.MASS_GAINER,
     price: 5000,
     mrp: 7400,
@@ -264,7 +264,7 @@ export const PRODUCTS: Product[] = [
   {
     id: 'pre-2',
     name: 'HM Pro Pump (Caffeine-Free)',
-    brand: 'Healthmania',
+    brand: 'Hungry Muscles',
     category: Category.PRE_WORKOUT,
     price: 1700,
     mrp: 3200,
@@ -375,7 +375,7 @@ export const PRODUCTS: Product[] = [
   {
     id: 'iso-2',
     name: 'HM Iso Zero 2kg',
-    brand: 'Healthmania',
+    brand: 'Hungry Muscles',
     category: Category.WHEY_ISOLATE,
     price: 6500,
     mrp: 11000,
@@ -448,7 +448,7 @@ export const PRODUCTS: Product[] = [
   {
     id: 'whey-2',
     name: 'HM Whey Protein',
-    brand: 'Healthmania',
+    brand: 'Hungry Muscles',
     category: Category.WHEY_PROTEIN,
     price: 4900,
     mrp: 8000,
@@ -624,7 +624,7 @@ export const TRANSFORMATIONS: Transformation[] = [
     id: "ct1",
     name: "Transformation 1",
     duration: "12 Weeks",
-    image: imgTrans("WhatsApp Image 2026-02-26 at 9.33.19 PM (1) 1-1.jpeg"),
+    image: imgTrans("t1.jpeg"),
     aspectRatio: "1-1",
     testimonial: "Incredible results in just 12 weeks. The diet plan was key.",
     result: "Major Fat Loss & Toning"
@@ -633,7 +633,7 @@ export const TRANSFORMATIONS: Transformation[] = [
     id: "ct2",
     name: "Transformation 2",
     duration: "16 Weeks",
-    image: imgTrans("WhatsApp Image 2026-02-26 at 9.33.19 PM 1-1.jpeg"),
+    image: imgTrans("t2.jpeg"),
     aspectRatio: "1-1",
     testimonial: "Consistent effort and the right guidance made all the difference.",
     result: "Complete Body Recomposition"
@@ -642,7 +642,7 @@ export const TRANSFORMATIONS: Transformation[] = [
     id: "ct5",
     name: "Transformation 5",
     duration: "16 Weeks",
-    image: imgTrans("WhatsApp Image 2026-02-26 at 9.33.20 PM 1-1.jpeg"),
+    image: imgTrans("t5.jpeg"),
     aspectRatio: "1-1",
     testimonial: "Diet and training synergy delivered incredible results.",
     result: "Shredded Physique"
@@ -651,7 +651,7 @@ export const TRANSFORMATIONS: Transformation[] = [
     id: "ct4",
     name: "Transformation 4",
     duration: "20 Weeks",
-    image: imgTrans("WhatsApp Image 2026-02-26 at 9.33.20 PM (2) 1-1.jpeg"),
+    image: imgTrans("t4.jpeg"),
     aspectRatio: "1-1",
     testimonial: "From overweight to fit. Prabha Joy's coaching is world class.",
     result: "20kg Weight Loss"
@@ -660,7 +660,7 @@ export const TRANSFORMATIONS: Transformation[] = [
     id: "ct3",
     name: "Transformation 3",
     duration: "12 Weeks",
-    image: imgTrans("WhatsApp Image 2026-02-26 at 9.33.20 PM (1) 4-3.jpeg"),
+    image: imgTrans("t3.jpeg"),
     aspectRatio: "4-3",
     testimonial: "The training program pushed me beyond my limits.",
     result: "Lean Muscle Gain"
@@ -669,7 +669,7 @@ export const TRANSFORMATIONS: Transformation[] = [
     id: "ct6",
     name: "Transformation 6",
     duration: "24 Weeks",
-    image: imgTrans("WhatsApp Image 2026-02-26 at 9.33.21 PM 4-3.jpeg"),
+    image: imgTrans("t6.jpeg"),
     aspectRatio: "4-3",
     testimonial: "Six months of dedication paid off big time.",
     result: "Complete Transformation"
@@ -678,7 +678,7 @@ export const TRANSFORMATIONS: Transformation[] = [
     id: "ct7",
     name: "Transformation 7",
     duration: "12 Weeks",
-    image: imgTrans("WhatsApp Image 2026-02-26 at 9.33.22 PM (1) 4-3.jpeg"),
+    image: imgTrans("t7.jpeg"),
     aspectRatio: "4-3",
     testimonial: "Quick results with the right supplement stack.",
     result: "Rapid Fat Loss"
@@ -687,7 +687,7 @@ export const TRANSFORMATIONS: Transformation[] = [
     id: "ct8",
     name: "Transformation 8",
     duration: "16 Weeks",
-    image: imgTrans("WhatsApp Image 2026-02-26 at 9.33.22 PM (2) 1-1.jpeg"),
+    image: imgTrans("t8.jpeg"),
     aspectRatio: "1-1",
     testimonial: "The personalized approach made all the difference.",
     result: "Muscle Definition"
@@ -696,7 +696,7 @@ export const TRANSFORMATIONS: Transformation[] = [
     id: "ct9",
     name: "Transformation 9",
     duration: "20 Weeks",
-    image: imgTrans("WhatsApp Image 2026-02-26 at 9.33.22 PM 4-3.jpeg"),
+    image: imgTrans("t9.jpeg"),
     aspectRatio: "4-3",
     testimonial: "Best investment I ever made in myself.",
     result: "Total Body Overhaul"
@@ -705,7 +705,7 @@ export const TRANSFORMATIONS: Transformation[] = [
     id: "ct10",
     name: "Transformation 10",
     duration: "12 Weeks",
-    image: imgTrans("WhatsApp Image 2026-02-26 at 9.33.23 PM (1) 1-1.jpeg"),
+    image: imgTrans("t10.jpeg"),
     aspectRatio: "1-1",
     testimonial: "Visible abs in just 12 weeks. Unbelievable progress.",
     result: "Six Pack Achieved"
@@ -714,7 +714,7 @@ export const TRANSFORMATIONS: Transformation[] = [
     id: "ct11",
     name: "Transformation 11",
     duration: "16 Weeks",
-    image: imgTrans("WhatsApp Image 2026-02-26 at 9.33.23 PM (2) 4-3.jpeg"),
+    image: imgTrans("t11.jpeg"),
     aspectRatio: "4-3",
     testimonial: "Strength gains and fat loss simultaneously.",
     result: "Body Recomposition"
@@ -723,7 +723,7 @@ export const TRANSFORMATIONS: Transformation[] = [
     id: "ct12",
     name: "Transformation 12",
     duration: "24 Weeks",
-    image: imgTrans("WhatsApp Image 2026-02-26 at 9.33.23 PM 1-1.jpeg"),
+    image: imgTrans("t12.jpeg"),
     aspectRatio: "1-1",
     testimonial: "A complete lifestyle change guided by JFS.",
     result: "Lifestyle Transformation"
@@ -732,7 +732,7 @@ export const TRANSFORMATIONS: Transformation[] = [
     id: "ct13",
     name: "Transformation 13",
     duration: "12 Weeks",
-    image: imgTrans("WhatsApp Image 2026-02-26 at 9.33.24 PM (1) 4-3.jpeg"),
+    image: imgTrans("t13.jpeg"),
     aspectRatio: "4-3",
     testimonial: "Incredible coaching and nutritional guidance.",
     result: "Lean & Mean"
@@ -741,7 +741,7 @@ export const TRANSFORMATIONS: Transformation[] = [
     id: "ct14",
     name: "Transformation 14",
     duration: "16 Weeks",
-    image: imgTrans("WhatsApp Image 2026-02-26 at 9.33.24 PM (2) 1-1.jpeg"),
+    image: imgTrans("t14.jpeg"),
     aspectRatio: "1-1",
     testimonial: "From beginner to beast mode in 16 weeks.",
     result: "Massive Gains"
@@ -750,7 +750,7 @@ export const TRANSFORMATIONS: Transformation[] = [
     id: "ct15",
     name: "Transformation 15",
     duration: "20 Weeks",
-    image: imgTrans("WhatsApp Image 2026-02-26 at 9.33.24 PM 1-1.jpeg"),
+    image: imgTrans("t15.jpeg"),
     aspectRatio: "1-1",
     testimonial: "Prabha Joy's expertise is unmatched. Life-changing results.",
     result: "Peak Physique"

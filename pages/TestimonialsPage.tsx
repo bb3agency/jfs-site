@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { Quote, Star } from 'lucide-react';
+import { Quote } from 'lucide-react';
 import { TESTIMONIALS } from '../data';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
@@ -48,11 +48,7 @@ const TestimonialsPage: React.FC = () => {
               className={`testimonial-item break-inside-avoid p-8 rounded-2xl transition-all duration-300 hover:shadow-xl hover:-translate-y-1 ${idx % 3 === 0 ? 'bg-slate-900 text-white' : 'bg-white border border-slate-100 shadow-sm'
                 }`}
             >
-              <div className="flex gap-1 mb-6">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} size={16} className="fill-yellow-500 text-yellow-500" />
-                ))}
-              </div>
+
 
               <Quote className={`mb-6 opacity-20 ${idx % 3 === 0 ? 'text-white' : 'text-slate-900'}`} size={40} />
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { CheckCircle2, ArrowRight, Salad, Dumbbell, MessageCircle, Target, ChevronRight, Star } from 'lucide-react';
+import { CheckCircle2, ArrowRight, Salad, Dumbbell, MessageCircle, Target, ChevronRight } from 'lucide-react';
 import { COACHING_PACKAGES, WHATSAPP_NUMBER } from '../data';
 import Button from '../components/Button';
 
@@ -101,10 +101,8 @@ const Coaching = () => {
                                     <span className="text-xs font-bold text-slate-500 tracking-widest uppercase">Custom Built</span>
                                 </div>
                                 <div className="bg-white p-4 border border-slate-200 shadow-sm flex flex-col justify-center">
-                                    <div className="flex gap-1 mb-2">
-                                        {[1, 2, 3, 4, 5].map(i => <Star key={i} size={16} className="fill-yellow-500 text-yellow-500" />)}
-                                    </div>
-                                    <span className="text-xs font-bold text-slate-500 tracking-widest uppercase">Client Rating</span>
+                                    <h4 className="text-[24px] md:text-[32px] text-yellow-600 font-heading font-normal leading-none mb-1">100+</h4>
+                                    <span className="text-xs font-bold text-slate-500 tracking-widest uppercase">Success Stories</span>
                                 </div>
                             </div>
 

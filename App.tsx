@@ -24,6 +24,7 @@ const ScrollToTop = () => {
 const App: React.FC = () => {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
+  const [toastMessage, setToastMessage] = useState<string | null>(null);
 
   // Cart logic
   const addToCart = (product: Product) => {
@@ -36,7 +37,10 @@ const App: React.FC = () => {
       }
       return [...prev, { ...product, quantity: 1 }];
     });
-    // setIsCartOpen(true); // Removed to prevent auto-opening the drawer
+    setToastMessage(`Added ${product.name} to cart`);
+    setTimeout(() => {
+      setToastMessage(null);
+    }, 2000);
   };
 
   const updateQuantity = (id: string, delta: number) => {
@@ -94,6 +98,19 @@ const App: React.FC = () => {
         </main>
 
         <Footer />
+
+        {/* Toast Notification */}
+        <div
+          className={`fixed bottom-24 right-4 md:bottom-8 md:right-8 z-[100] transform transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${toastMessage ? 'translate-y-0 opacity-100 scale-100' : 'translate-y-8 opacity-0 scale-95 pointer-events-none'
+            }`}
+        >
+          <div className="bg-slate-900 text-white px-5 py-3 rounded-xl shadow-2xl flex items-center gap-3 border border-white/10">
+            <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-yellow-400">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="text-slate-900"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </div>
+            <p className="font-subheading text-sm font-medium pr-2 max-w-[200px] md:max-w-[300px] truncate">{toastMessage}</p>
+          </div>
+        </div>
       </div>
     </HashRouter>
   );
