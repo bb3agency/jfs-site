@@ -3,9 +3,15 @@ import { Quote } from 'lucide-react';
 import { TESTIMONIALS } from '../data';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
+import { useSEO } from '../useSEO';
 
 const TestimonialsPage: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
+
+  useSEO({
+    title: 'Customer Reviews & Testimonials',
+    description: 'Read real reviews from Joy Fitness customers. Trusted by athletes and fitness enthusiasts for authentic supplements and expert coaching.'
+  });
 
   useGSAP(() => {
     gsap.fromTo('.page-title',
@@ -30,9 +36,9 @@ const TestimonialsPage: React.FC = () => {
   }, { scope: containerRef });
 
   return (
-    <div ref={containerRef} className="min-h-screen bg-slate-50 pt-24 pb-16 md:pt-32 md:pb-20">
+    <div ref={containerRef} className="min-h-screen bg-slate-50 pt-24 pb-10 md:pt-32 md:pb-20">
       <div className="container mx-auto px-6">
-        <div className="max-w-4xl mx-auto text-center mb-16 md:mb-20">
+        <div className="max-w-4xl mx-auto text-center mb-10 md:mb-20">
           <h1 className="page-title text-[40px] md:text-[64px] font-heading font-normal text-slate-900 mb-6 tracking-tight uppercase leading-none">
             Real Impact.
           </h1>
@@ -41,11 +47,11 @@ const TestimonialsPage: React.FC = () => {
           </p>
         </div>
 
-        <div className="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8">
+        <div className="columns-1 md:columns-2 lg:columns-3 gap-4 md:gap-8 space-y-4 md:space-y-8">
           {TESTIMONIALS.map((testimonial, idx) => (
             <div
               key={testimonial.id}
-              className={`testimonial-item break-inside-avoid p-8 rounded-2xl transition-all duration-300 hover:shadow-xl hover:-translate-y-1 ${idx % 3 === 0 ? 'bg-slate-900 text-white' : 'bg-white border border-slate-100 shadow-sm'
+              className={`testimonial-item break-inside-avoid p-6 md:p-8 rounded-2xl transition-all duration-300 hover:shadow-xl hover:-translate-y-1 ${idx % 3 === 0 ? 'bg-slate-900 text-white' : 'bg-white border border-slate-100 shadow-sm'
                 }`}
             >
 
@@ -76,7 +82,7 @@ const TestimonialsPage: React.FC = () => {
           ))}
 
           {/* CTA Card */}
-          <div className="testimonial-item break-inside-avoid bg-yellow-400 p-8 rounded-2xl flex flex-col justify-center items-center text-center shadow-xl shadow-yellow-400/20">
+          <div className="testimonial-item break-inside-avoid bg-yellow-400 p-6 md:p-8 rounded-2xl flex flex-col justify-center items-center text-center shadow-xl shadow-yellow-400/20">
             <h3 className="text-[32px] md:text-[40px] font-heading font-normal text-slate-900 uppercase tracking-tight mb-2 leading-none">Your Story?</h3>
             <p className="text-slate-900/80 mb-6 font-medium text-sm md:text-base font-body">Join the JFS community and start your transformation today.</p>
             <button className="px-6 py-4 bg-slate-900 text-white rounded-xl font-subheading font-bold hover:bg-slate-800 transition-colors w-full shadow-lg text-sm uppercase tracking-wide border-none">

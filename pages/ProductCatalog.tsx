@@ -3,6 +3,7 @@ import { useSearchParams } from 'react-router-dom';
 import ProductCard from '../components/ProductCard';
 import { PRODUCTS } from '../data';
 import { Product, Category } from '../types';
+import { useSEO } from '../useSEO';
 import { Search, SlidersHorizontal, Filter } from 'lucide-react';
 
 interface ProductCatalogProps {
@@ -12,6 +13,11 @@ interface ProductCatalogProps {
 const ProductCatalog: React.FC<ProductCatalogProps> = ({ onAddToCart }) => {
   const [searchParams] = useSearchParams();
   const initialCategory = searchParams.get('category') || 'All';
+
+  useSEO({
+    title: 'Products – Whey Protein, Isolate, Mass Gainer, Pre-Workout & More',
+    description: 'Browse our complete range of authentic fitness supplements. Filter by category – Whey Protein, Isolate, Mass Gainer, Pre-Workout, BCAAs, Fat Burners and more. All products 100% genuine.'
+  });
 
   const [selectedCategory, setSelectedCategory] = useState<string>(initialCategory);
   const [searchTerm, setSearchTerm] = useState<string>('');
@@ -36,13 +42,13 @@ const ProductCatalog: React.FC<ProductCatalogProps> = ({ onAddToCart }) => {
   });
 
   return (
-    <div ref={containerRef} className="min-h-screen bg-slate-50 pt-24 pb-16 md:pt-32 md:pb-20 px-4 md:px-6">
+    <div ref={containerRef} className="min-h-screen bg-slate-50 pt-24 pb-10 md:pt-32 md:pb-20 px-4 md:px-6">
       <div className="container mx-auto max-w-7xl">
 
         {/* Header Section */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-10">
           <div className="catalog-header">
-            <h1 className="text-[40px] md:text-[64px] font-heading font-normal text-slate-900 tracking-tight mb-4 uppercase leading-none">
+            <h1 className="text-[36px] md:text-[64px] font-heading font-normal text-slate-900 tracking-tight mb-4 uppercase leading-none">
               The Collection
             </h1>
             <p className="text-base md:text-lg text-slate-500 font-medium max-w-xl leading-relaxed font-body">
@@ -60,7 +66,7 @@ const ProductCatalog: React.FC<ProductCatalogProps> = ({ onAddToCart }) => {
               placeholder="Search products..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-14 pr-6 py-3.5 rounded-xl bg-white border border-slate-200 text-slate-900 font-subheading font-bold shadow-sm focus:outline-none focus:ring-2 focus:ring-slate-900 focus:border-transparent transition-all placeholder:text-slate-400 placeholder:font-normal placeholder:font-body"
+              className="w-full pl-12 md:pl-14 pr-4 md:pr-6 py-3 md:py-3.5 rounded-xl bg-white border border-slate-200 text-slate-900 font-subheading font-bold shadow-sm focus:outline-none focus:ring-2 focus:ring-slate-900 focus:border-transparent transition-all placeholder:text-slate-400 placeholder:font-normal placeholder:font-body text-sm md:text-base"
             />
           </div>
         </div>
@@ -90,7 +96,7 @@ const ProductCatalog: React.FC<ProductCatalogProps> = ({ onAddToCart }) => {
         </div>
 
         {/* Product Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-6">
           {filteredProducts.length > 0 ? (
             filteredProducts.map((product) => (
               <div key={product.id} className="product-item">

@@ -1,11 +1,17 @@
 import React, { useState } from 'react';
-import { MapPin, Instagram, Youtube } from 'lucide-react';
+import { MapPin, Instagram, Youtube, Phone } from 'lucide-react';
 import { WHATSAPP_NUMBER } from '../data';
 import Button from '../components/Button';
 import whatsappLogo from '../assets/whatsapp_logo.png';
+import { useSEO } from '../useSEO';
 import contactPageImage from '../assets/contact_page_image.jpeg';
 
 const AboutContact = () => {
+    useSEO({
+        title: 'About & Contact – Joy Fitness Solutions',
+        description: 'Learn about Joy Fitness and connect with us on WhatsApp. Premium authentic supplements, personal coaching, and expert fitness guidance. Call +91 99898 54232.'
+    });
+
     const [formData, setFormData] = useState({
         name: '',
         phone: '',
@@ -19,23 +25,23 @@ const AboutContact = () => {
         window.open(url, '_blank');
     };
     return (
-        <div className="bg-slate-50 min-h-screen pt-24 pb-16 md:pt-32 md:pb-20">
+        <div className="bg-slate-50 min-h-screen pt-24 pb-10 md:pt-32 md:pb-20">
             <div className="container mx-auto px-4 md:px-6">
 
                 {/* SECTION 1: ABOUT */}
-                <section className="mb-24 lg:mb-32 mt-8 md:mt-16">
+                <section className="mb-16 lg:mb-32 mt-4 md:mt-16">
                     <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
                         {/* Text Content */}
                         <div className="lg:w-1/2">
                             <span className="text-yellow-500 font-bold tracking-tight uppercase text-sm mb-4 block font-body">Our Story</span>
                             <h1 className="text-[40px] md:text-[64px] font-heading font-normal text-slate-900 uppercase mb-6 tracking-tight leading-none">
-                                Fueling Your <br /><span className="text-slate-400">Ambition.</span>
+                                Fueling Your <br /><span className="text-slate-400">Fitness Journey.</span>
                             </h1>
                             <div className="w-20 h-1.5 bg-yellow-400 rounded-full mb-8"></div>
 
                             <div className="space-y-6 text-slate-600 font-medium leading-relaxed text-lg">
                                 <p>
-                                    At <span className="font-bold text-slate-900">JFS Fitness</span>, we believe that greatness isn't given—it's earned. Founded with a single mission: to provide athletes and fitness enthusiasts with the highest quality supplements that deliver real, tangible results.
+                                    At <span className="font-bold text-slate-900">Joy Fitness</span>, we believe that greatness isn't given—it's earned. Founded with a single mission: to provide athletes and fitness enthusiasts with the highest quality supplements that deliver real, tangible results.
                                 </p>
                                 <p>
                                     We don't just sell products; we fuel transformations. Whether you're a professional bodybuilder, a competitive athlete, or someone just starting their fitness journey, our premium range of whey proteins, mass gainers, and essentials are formulated to help you break barriers.
@@ -43,21 +49,6 @@ const AboutContact = () => {
                                 <p>
                                     Backed by science and trusted by elite trainers, JFS Fitness stands for purity, potency, and performance. No shortcuts. No compromises. Just pure gains.
                                 </p>
-                            </div>
-
-                            <div className="mt-12 grid grid-cols-3 gap-6 text-center border-t border-slate-200 pt-10">
-                                <div>
-                                    <h3 className="text-[32px] md:text-[40px] font-heading font-normal text-slate-900 leading-none">100%</h3>
-                                    <p className="text-xs md:text-sm font-bold uppercase tracking-wider text-slate-500 mt-2 font-body">Authentic</p>
-                                </div>
-                                <div>
-                                    <h3 className="text-[32px] md:text-[40px] font-heading font-normal text-slate-900 leading-none">5K+</h3>
-                                    <p className="text-xs md:text-sm font-bold uppercase tracking-wider text-slate-500 mt-2 font-body">Happy Clients</p>
-                                </div>
-                                <div>
-                                    <h3 className="text-[32px] md:text-[40px] font-heading font-normal text-slate-900 leading-none"><span className="font-sans">24/7</span></h3>
-                                    <p className="text-xs md:text-sm font-bold uppercase tracking-wider text-slate-500 mt-2 font-body">Expert Support</p>
-                                </div>
                             </div>
                         </div>
 
@@ -74,7 +65,7 @@ const AboutContact = () => {
                                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/40 to-transparent"></div>
                                 <div className="absolute bottom-8 left-8 text-white">
                                     <p className="font-heading font-normal text-[24px] md:text-[32px] uppercase tracking-tight leading-none mb-1">Push Limits</p>
-                                    <p className="font-medium text-slate-300 font-body">Join the JFS Movement</p>
+                                    <p className="font-medium text-slate-300 font-body">Join the Joy Fitness Community</p>
                                 </div>
                             </div>
                             {/* Decorative Elements */}
@@ -85,8 +76,8 @@ const AboutContact = () => {
                 </section>
 
                 {/* SECTION 2: CONTACT */}
-                <section id="contact" className="mt-12 lg:mt-24 mb-16 relative">
-                    <div className="bg-slate-900 rounded-2xl p-8 md:p-16 lg:p-20 shadow-2xl relative overflow-hidden">
+                <section id="contact" className="mt-10 lg:mt-24 mb-10 md:mb-16 relative">
+                    <div className="bg-slate-900 rounded-2xl p-6 md:p-16 lg:p-20 shadow-2xl relative overflow-hidden">
                         {/* Background Decorations */}
                         <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-yellow-400 rounded-full blur-[120px] opacity-20 -translate-y-1/2 translate-x-1/3"></div>
                         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#25D366] rounded-full blur-[120px] opacity-10 translate-y-1/2 -translate-x-1/3"></div>
@@ -96,23 +87,36 @@ const AboutContact = () => {
                             <div className="lg:col-span-7">
                                 <div className="flex items-center gap-3 mb-6">
                                     <div className="w-10 h-0.5 bg-yellow-400"></div>
-                                    <span className="text-yellow-400 font-bold tracking-widest uppercase text-sm font-body">Get In Touch</span>
+                                    <span className="text-yellow-400 font-bold tracking-widest uppercase text-[16px] font-body">Get In Touch</span>
                                 </div>
                                 <h2 className="text-[32px] md:text-[48px] font-heading font-normal text-white uppercase tracking-tight mb-8 leading-none">
                                     Let's Start Your <br /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-100">Transformation.</span>
                                 </h2>
-                                <p className="text-lg text-slate-400 font-medium mb-12 leading-relaxed max-w-lg font-body">
-                                    Skip the long forms and delayed emails. Connect with our dedicated support team directly on WhatsApp for real-time coaching advice and product recommendations.
-                                </p>
+
+                                <div className="text-[16px] text-white/90 font-medium leading-[1.7] max-w-[560px] font-body mb-12 flex flex-col gap-[20px]">
+                                    <p>
+                                        No need for long forms or waiting for email replies.
+                                    </p>
+                                    <p>
+                                        Connect with us directly on WhatsApp for quick support, product recommendations, and expert advice to help you move closer to your fitness goals and personal training.
+                                    </p>
+                                    <p className="text-yellow-400 font-bold">
+                                        ⚡ Quick response • Trusted guidance • Real results
+                                    </p>
+                                </div>
 
                                 <div>
                                     <p className="font-bold text-slate-500 text-sm uppercase tracking-wider mb-5 font-body">Connect With Us</p>
-                                    <div className="flex gap-4">
+                                    <div className="flex flex-wrap gap-4 items-center">
                                         <a href="https://www.instagram.com/jfs.protein.store/" target="_blank" rel="noopener noreferrer" className="bg-slate-800/50 border border-slate-700 hover:border-yellow-400 hover:bg-slate-800 hover:text-yellow-400 p-4 rounded-2xl text-white transition-all duration-300 group shadow-lg">
                                             <Instagram size={28} className="group-hover:scale-110 transition-transform" />
                                         </a>
                                         <a href="https://www.youtube.com/@Masterjoy09" target="_blank" rel="noopener noreferrer" className="bg-slate-800/50 border border-slate-700 hover:border-yellow-400 hover:bg-slate-800 hover:text-yellow-400 p-4 rounded-2xl text-white transition-all duration-300 group shadow-lg">
                                             <Youtube size={28} className="group-hover:scale-110 transition-transform" />
+                                        </a>
+                                        <a href="tel:+919989854232" className="flex items-center gap-3 bg-slate-800/50 border border-slate-700 hover:border-yellow-400 hover:bg-slate-800 hover:text-yellow-400 p-4 px-6 rounded-2xl text-white transition-all duration-300 group shadow-lg">
+                                            <Phone size={24} className="group-hover:scale-110 transition-transform text-yellow-400" />
+                                            <span className="font-heading font-normal text-[20px] tracking-tight whitespace-nowrap">+91 99898 54232</span>
                                         </a>
                                     </div>
                                 </div>
@@ -120,7 +124,7 @@ const AboutContact = () => {
 
                             {/* CTA Card */}
                             <div className="flex justify-center lg:justify-end lg:col-span-5 w-full mt-8 lg:mt-0 xl:pr-12">
-                                <div className="bg-white/5 backdrop-blur-2xl border border-white/10 p-8 md:p-12 rounded-2xl w-full max-w-[380px] text-center transform hover:-translate-y-2 transition-transform duration-500 shadow-[0_20px_50px_rgba(0,0,0,0.5)] relative overflow-hidden group">
+                                <div className="bg-white/5 backdrop-blur-2xl border border-white/10 p-6 md:p-12 rounded-2xl w-full max-w-[380px] text-center transform hover:-translate-y-2 transition-transform duration-500 shadow-[0_20px_50px_rgba(0,0,0,0.5)] relative overflow-hidden group">
                                     {/* Hover gradient effect inside card */}
                                     <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 

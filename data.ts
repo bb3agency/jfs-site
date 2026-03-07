@@ -760,28 +760,28 @@ export const TRANSFORMATIONS: Transformation[] = [
 export const COACHING_PACKAGES: CoachingPackage[] = [
   {
     id: "c1",
-    title: "1-on-1 Personal Training",
-    duration: "Customized Duration",
+    title: "1-ON-1 PERSONAL TRAINING",
+    duration: "Personal Coaching",
     features: [
-      "In-Person Custom Training",
-      "Macro-Calculated Diet Plan",
-      "Scientific Split Routine",
-      "Supplement Guidance",
-      "Form Correction & Spotting",
-      "Weekly Progress Tracking"
+      "Personal in-person training sessions",
+      "Diet plan based on your body and goals",
+      "Structured workout routine",
+      "Supplement guidance",
+      "Form correction during workouts",
+      "Weekly progress tracking"
     ]
   },
   {
     id: "c2",
-    title: "Online Coaching",
+    title: "ONLINE COACHING",
     duration: "Remote Training",
     features: [
-      "Periodized Workout Program",
-      "Advanced Diet Protocols",
-      "Supplement Stacks",
-      "24/7 WhatsApp Support",
-      "Video Form Analysis",
-      "Bi-weekly Video Call Consultations"
+      "Structured workout program",
+      "Advanced diet plan",
+      "Recommended supplement stack",
+      "24/7 WhatsApp support",
+      "Video form check and feedback",
+      "video consultation"
     ]
   }
 ];

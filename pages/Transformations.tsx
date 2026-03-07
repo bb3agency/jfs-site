@@ -2,8 +2,14 @@ import React from 'react';
 import { TRANSFORMATIONS, WHATSAPP_NUMBER } from '../data';
 import Button from '../components/Button';
 import { Play } from 'lucide-react';
+import { useSEO } from '../useSEO';
 
 const Transformations = () => {
+    useSEO({
+        title: 'Real Results – Client Transformations & Before/After',
+        description: 'See real body transformations achieved by Joy Fitness clients. Before and after results from personalized coaching and training programs by Prabha Joy.'
+    });
+
     const handleStartJourney = () => {
         const message = "Hi JFS, I am inspired by the transformations and want to start my own journey.";
         const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
@@ -11,10 +17,10 @@ const Transformations = () => {
     };
 
     return (
-        <div className="bg-slate-50 min-h-screen pt-12 md:pt-32 pb-32 md:pb-24">
+        <div className="bg-slate-50 min-h-screen pt-24 md:pt-32 pb-10 md:pb-24">
             <div className="container mx-auto px-4 md:px-6">
                 {/* Header content */}
-                <div className="text-center mb-10 md:mb-24 mt-4 md:mt-8">
+                <div className="text-center mb-8 md:mb-24 mt-4 md:mt-8">
                     <span className="text-yellow-500 font-bold tracking-tight uppercase text-sm mb-4 block">Proven Success</span>
                     <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-normal text-slate-900 mb-6 uppercase tracking-tight leading-none break-words">
                         Client <br className="sm:hidden" /><span className="text-slate-400">Transformations</span>
@@ -43,18 +49,23 @@ const Transformations = () => {
                 </div>
 
                 {/* CTA Section */}
-                <div className="mt-24 md:mt-32 bg-slate-900 rounded-2xl p-6 sm:p-10 md:p-20 text-center shadow-2xl relative overflow-hidden hover:shadow-yellow-400/10 transition-shadow duration-500 group">
+                <div className="mt-16 md:mt-32 bg-slate-900 rounded-2xl p-6 sm:p-10 md:p-20 text-center shadow-2xl relative overflow-hidden hover:shadow-yellow-400/10 transition-shadow duration-500 group">
                     {/* Abstract glow */}
                     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-yellow-400/20 rounded-full blur-[100px] pointer-events-none group-hover:bg-yellow-400/30 transition-colors duration-1000"></div>
 
                     <div className="relative z-10">
                         <span className="text-yellow-400 font-bold tracking-tight uppercase text-sm mb-6 block">Your Turn Next</span>
                         <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-normal text-white mb-6 uppercase tracking-tight max-w-4xl mx-auto">
-                            Ready to be the next <span className="text-slate-400">Success Story?</span>
+                            Ready to Start your <span className="text-slate-400"><br />own Transformation?</span>
                         </h2>
-                        <p className="text-slate-400 font-medium mb-12 max-w-2xl mx-auto text-lg md:text-xl leading-relaxed">
-                            Join the JFS Fitness coaching program today and let our experts guide you to your dream physique with science-based diet and training.
-                        </p>
+                        <div className="text-slate-400 font-medium mb-12 max-w-2xl mx-auto text-lg md:text-xl leading-relaxed flex flex-col gap-4">
+                            <p>
+                                Join the Joy Fitness coaching program and train under the guidance of Prabha Joy.
+                            </p>
+                            <p>
+                                Get personalized workout plans, diet guidance, and real support to help you achieve your fitness goals.
+                            </p>
+                        </div>
                         <div className="flex justify-center flex-col sm:flex-row gap-4">
                             <Button
                                 onClick={handleStartJourney}

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ChevronDown, ChevronUp, MessageCircle } from 'lucide-react';
+import { useSEO } from '../useSEO';
 
 const faqs = [
     {
@@ -23,6 +24,11 @@ const faqs = [
 
 const FAQ = () => {
     const [openIndex, setOpenIndex] = useState<string | null>("0-0");
+
+    useSEO({
+        title: 'FAQ – Frequently Asked Questions',
+        description: 'Find answers to common questions about Joy Fitness supplements, shipping, returns, authenticity guarantees, and coaching programs. Get help via WhatsApp.'
+    });
 
     const toggleFaq = (idx: string) => {
         setOpenIndex(openIndex === idx ? null : idx);

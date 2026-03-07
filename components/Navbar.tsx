@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { ShoppingBag, Menu, X, Home as HomeIcon, LayoutGrid, Quote, LogOut, User, Trophy, Mail } from 'lucide-react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import logo from '../assets/jfs-logo-no-text.svg';
+import headerTextLogo from '../assets/jfs-header-logo.png';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 
@@ -49,11 +50,8 @@ const Navbar: React.FC<NavbarProps> = ({ cartCount, onCartClick }) => {
         <div className="flex flex-col h-full p-8">
           <div className="flex justify-between items-center mb-12">
             <Link to="/" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center gap-2 md:gap-3 select-none group transition-opacity hover:opacity-90">
-              <img src={logo} alt="Joy Fitness Logo" loading="eager" fetchpriority="high" className="h-8 md:h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105" />
-              <div className="flex flex-col justify-center uppercase leading-none mt-0.5">
-                <span className="font-heading text-[24px] md:text-[26px] font-bold text-slate-900 tracking-wider">Joy</span>
-                <span className="font-subheading text-[13px] md:text-[15px] font-semibold text-yellow-500 tracking-tight">Fitness</span>
-              </div>
+              <img src={logo} alt="Joy Fitness Icon" loading="eager" fetchpriority="high" className="h-8 md:h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105" />
+              <img src={headerTextLogo} alt="Joy Fitness Logo" loading="eager" fetchpriority="high" className="h-6 md:h-8 w-auto object-contain drop-shadow-sm transition-transform duration-300 group-hover:scale-105 translate-y-1" />
             </Link>
             <button onClick={() => setIsMobileMenuOpen(false)} className="p-2 -mr-2 text-slate-900 hover:bg-slate-50 rounded-full">
               <X size={32} />
@@ -154,12 +152,15 @@ const Navbar: React.FC<NavbarProps> = ({ cartCount, onCartClick }) => {
           </div>
 
           {/* Logo */}
-          <Link to="/" className="relative z-10 flex items-center gap-2 md:gap-3 group select-none transition-opacity hover:opacity-90">
-            <img src={logo} alt="Joy Fitness Logo" loading="eager" fetchpriority="high" className="h-8 md:h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105 drop-shadow-sm" />
-            <div className="flex flex-col justify-center uppercase leading-none mt-0.5">
-              <span className="font-heading text-[24px] md:text-[26px] font-bold text-white tracking-wider drop-shadow-sm">Joy</span>
-              <span className="font-subheading text-[13px] md:text-[15px] font-semibold text-yellow-500 tracking-tight drop-shadow-sm">Fitness</span>
+          <Link to="/" className="relative z-10 flex items-center group select-none transition-opacity hover:opacity-90">
+            <div
+              className={`transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] overflow-hidden flex items-center justify-start 
+                ${isScrolled ? 'w-0 opacity-0 mr-0' : 'w-8 md:w-10 opacity-100 mr-2 md:mr-3'}
+              `}
+            >
+              <img src={logo} alt="Joy Fitness Icon" loading="eager" fetchpriority="high" className="h-8 md:h-10 min-w-[32px] md:min-w-[40px] drop-shadow-sm transition-transform duration-300 group-hover:scale-105" />
             </div>
+            <img src={headerTextLogo} alt="Joy Fitness Logo" loading="eager" fetchpriority="high" className="h-7 md:h-9 w-auto object-contain drop-shadow-sm transition-transform duration-300 group-hover:scale-105" />
           </Link>
 
           {/* Desktop Navigation Links */}
@@ -171,7 +172,7 @@ const Navbar: React.FC<NavbarProps> = ({ cartCount, onCartClick }) => {
                   key={link.name}
                   to={link.path}
                   className={`
-                                relative text-[15px] tracking-wide uppercase font-bold transition-all duration-300 select-none font-subheading
+                                relative text-[15px] tracking-wide uppercase font-medium transition-all duration-300 select-none font-subheading
                                 ${isActive
                       ? 'text-yellow-400'
                       : 'text-white hover:text-yellow-400'

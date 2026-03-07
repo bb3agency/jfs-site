@@ -1,0 +1,9 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://jfs-test.netlify.app/sitemap.xml
+
+# Crawl-delay (optional, for polite bots)
+Crawl-delay: 1

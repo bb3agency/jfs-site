@@ -16,15 +16,10 @@ const Footer: React.FC = () => {
             {/* Main Rounded Card */}
             <div className="bg-slate-900 rounded-2xl p-8 md:p-16 relative overflow-hidden shadow-2xl border border-slate-800/50">
 
-                {/* Background Watermark */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full pointer-events-none select-none flex items-center justify-center opacity-[0.03]">
-                    <span className="text-[15vw] md:text-[11vw] font-heading font-normal text-white leading-none tracking-tight whitespace-nowrap">
-                        JFS FITNESS
-                    </span>
-                </div>
+
 
                 {/* Content Grid */}
-                <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-12 lg:gap-8 mb-16 md:mb-24">
+                <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12 lg:gap-8 mb-16 md:mb-24">
 
                     {/* Column 1: GENERAL */}
                     <div className="flex flex-col">
@@ -37,17 +32,7 @@ const Footer: React.FC = () => {
                         </ul>
                     </div>
 
-                    {/* Column 2: PRODUCTS */}
-                    <div className="flex flex-col">
-                        <h4 className="font-subheading font-bold text-xs text-slate-500 uppercase tracking-tight mb-6 md:mb-8 text-left">
-                            Products
-                        </h4>
-                        <ul className="space-y-3 md:space-y-4">
-                            <li><Link to="/products" className="font-body text-slate-300 hover:text-yellow-400 transition-colors text-sm md:text-base font-medium block">All Products</Link></li>
-                            <li><Link to="/products?category=Whey%20Protein" className="font-body text-slate-300 hover:text-yellow-400 transition-colors text-sm md:text-base font-medium block">Whey Protein</Link></li>
-                            <li><Link to="/products?category=Pre-Workout" className="font-body text-slate-300 hover:text-yellow-400 transition-colors text-sm md:text-base font-medium block">Pre-Workout</Link></li>
-                        </ul>
-                    </div>
+
 
                     {/* Column 3: CUSTOMER SERVICE */}
                     <div className="flex flex-col">
@@ -56,6 +41,9 @@ const Footer: React.FC = () => {
                         </h4>
                         <ul className="space-y-3 md:space-y-4">
                             <li><Link to="/faq" className="font-body text-slate-300 hover:text-yellow-400 transition-colors text-sm md:text-base font-medium block">FAQ</Link></li>
+                            <li><Link to="/shipping-policy" className="font-body text-slate-300 hover:text-yellow-400 transition-colors text-sm md:text-base font-medium block">Shipping Policy</Link></li>
+                            <li><Link to="/returns" className="font-body text-slate-300 hover:text-yellow-400 transition-colors text-sm md:text-base font-medium block">Returns</Link></li>
+                            <li><Link to="/about-contact" className="font-body text-slate-300 hover:text-yellow-400 transition-colors text-sm md:text-base font-medium block">Contact</Link></li>
                         </ul>
                     </div>
 

@@ -3,11 +3,17 @@ import { Link } from 'react-router-dom';
 import { CheckCircle2, ArrowRight, Salad, Dumbbell, MessageCircle, Target, ChevronRight } from 'lucide-react';
 import { COACHING_PACKAGES, WHATSAPP_NUMBER } from '../data';
 import Button from '../components/Button';
+import { useSEO } from '../useSEO';
 
 // Import the methodology background image
 import methodologyBg from '../assets/methodology-bg.png';
 
 const Coaching = () => {
+    useSEO({
+        title: 'Coaching – Personal Training & Online Fitness Programs',
+        description: 'Join Joy Fitness coaching by Prabha Joy. Customized diet plans, structured training programs, 24/7 WhatsApp support. 1-on-1 in-person training or online coaching available.'
+    });
+
     const handleEnroll = (pkgName: string) => {
         const message = `I am interested in enrolling for the coaching package: ${pkgName}`;
         const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
@@ -17,105 +23,9 @@ const Coaching = () => {
     return (
         <div className="bg-white min-h-screen font-sans">
 
-
-            {/* Intense Athletic Hero Section */}
-            <section className="pt-24 pb-16 md:pt-32 md:pb-20 bg-white relative overflow-hidden">
-                {/* Dynamic Background Elements */}
-                <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-[0.03] invert"></div>
-                <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-yellow-400/20 rounded-full blur-[120px] pointer-events-none translate-x-1/3 -translate-y-1/3"></div>
-                <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-slate-200/50 rounded-full blur-[100px] pointer-events-none -translate-x-1/2 translate-y-1/2"></div>
-
-                {/* Diagonal Slashes for Edge */}
-                <div className="absolute top-0 right-1/4 w-[2px] h-[200%] bg-yellow-400/40 transform rotate-[35deg] translate-y-[-50%] pointer-events-none hidden lg:block"></div>
-                <div className="absolute top-0 right-1/3 w-[1px] h-[200%] bg-slate-200 transform rotate-[35deg] translate-y-[-50%] pointer-events-none hidden lg:block"></div>
-
-                <div className="container mx-auto px-4 md:px-6 relative z-10 text-center lg:text-left flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
-
-                    {/* Hero Text Content */}
-                    <div className="lg:w-1/2 max-w-2xl mx-auto lg:mx-0">
-                        <div className="inline-flex items-center gap-3 px-4 py-2 bg-slate-50 border border-slate-200 rounded-none mb-8">
-                            <span className="flex h-2 w-2 bg-yellow-500 shadow-[0_0_10px_rgba(234,179,8,0.5)]"></span>
-                            <span className="text-xs md:text-sm font-bold text-slate-800 tracking-[0.2em] uppercase">JFS Elite Performance</span>
-                        </div>
-
-                        <h1 className="text-[36px] md:text-[64px] font-heading font-normal tracking-tight mb-6 text-slate-950 leading-none uppercase">
-                            BUILD YOUR <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-yellow-600">LEGACY.</span>
-                        </h1>
-
-                        <p className="text-xl text-slate-600 mb-10 max-w-xl mx-auto lg:mx-0 font-medium leading-relaxed border-l-4 border-yellow-500 pl-6">
-                            Stop guessing. Start growing. Get a personalized, uncompromising training protocol engineered specifically for your genetics and goals.
-                        </p>
-
-                        <div className="flex flex-col sm:flex-row items-center gap-6">
-                            <Button
-                                onClick={() => document.getElementById('packages')?.scrollIntoView({ behavior: 'smooth' })}
-                                className="bg-yellow-400 text-slate-950 hover:bg-yellow-500 w-full sm:w-auto font-subheading font-bold uppercase tracking-wider text-sm py-3 px-8 rounded-none transform transition-transform hover:scale-105 shadow-[6px_6px_0_rgba(15,23,42,1)] hover:shadow-[8px_8px_0_rgba(15,23,42,1)] active:shadow-none active:translate-x-1 active:translate-y-1 relative group overflow-hidden border-2 border-slate-950"
-                            >
-                                <span className="relative z-10 flex items-center justify-center gap-2">
-                                    View Protocols <ArrowRight size={18} className="group-hover:translate-x-2 transition-transform" />
-                                </span>
-                            </Button>
-
-                            <a
-                                href={`https://wa.me/${WHATSAPP_NUMBER}`}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="w-full sm:w-auto flex items-center justify-center gap-3 text-slate-900 hover:text-yellow-600 font-subheading font-bold tracking-wide transition-colors py-4 px-6 group"
-                            >
-                                <MessageCircle size={22} className="group-hover:scale-110 transition-transform" />
-                                Consult Head Coach
-                            </a>
-                        </div>
-                    </div>
-
-                    {/* Hero Visual Metrics / Graphic Focus */}
-                    <div className="lg:w-1/2 w-full relative h-[400px] lg:h-[600px] flex items-center justify-center">
-                        <div className="relative w-full max-w-md aspect-square bg-slate-50 border border-slate-200 p-8 flex flex-col justify-between group overflow-hidden shadow-2xl">
-                            {/* Inner glitch/tech effect corners */}
-                            <div className="absolute top-0 left-0 w-8 h-8 border-t-4 border-l-4 border-slate-950"></div>
-                            <div className="absolute top-0 right-0 w-8 h-8 border-t-4 border-r-4 border-slate-950"></div>
-                            <div className="absolute bottom-0 left-0 w-8 h-8 border-b-4 border-l-4 border-slate-950"></div>
-                            <div className="absolute bottom-0 right-0 w-8 h-8 border-b-4 border-r-4 border-slate-950"></div>
-
-                            <div className="text-left relative z-10 flex flex-col h-full">
-                                <div>
-                                    <h3 className="text-slate-950 font-heading font-normal text-[32px] md:text-[40px] leading-none mb-2 tracking-tight">PROVEN</h3>
-                                    <div className="w-16 h-1 bg-yellow-500 mb-6"></div>
-                                </div>
-
-                                <p className="text-slate-600 text-lg leading-relaxed mb-8 relative z-10">
-                                    Real athletes transformed through rigorous, uncompromising, and <span className="text-slate-950 font-bold">science-backed methodologies</span>. No shortcuts. Just results.
-                                </p>
-
-                                <div className="mt-auto mb-4 flex justify-center w-full">
-                                    <Link to="/transformations" className="bg-slate-950 text-white hover:bg-yellow-500 hover:text-slate-950 transition-colors text-[10px] md:text-sm font-subheading font-bold tracking-widest py-3 px-6 shadow-[3px_3px_0_rgba(203,213,225,1)] hover:shadow-[5px_5px_0_rgba(203,213,225,1)] active:translate-x-1 active:translate-y-1 active:shadow-none flex items-center justify-center gap-2 border border-slate-950 w-auto uppercase">
-                                        View Real Results <ChevronRight size={14} />
-                                    </Link>
-                                </div>
-                            </div>
-
-                            <div className="grid grid-cols-2 gap-4 mt-8 relative z-10">
-                                <div className="bg-white p-4 border border-slate-200 shadow-sm">
-                                    <h4 className="text-[24px] md:text-[32px] text-yellow-600 font-heading font-normal leading-none mb-1">100%</h4>
-                                    <span className="text-xs font-bold text-slate-500 tracking-widest uppercase">Custom Built</span>
-                                </div>
-                                <div className="bg-white p-4 border border-slate-200 shadow-sm flex flex-col justify-center">
-                                    <h4 className="text-[24px] md:text-[32px] text-yellow-600 font-heading font-normal leading-none mb-1">100+</h4>
-                                    <span className="text-xs font-bold text-slate-500 tracking-widest uppercase">Success Stories</span>
-                                </div>
-                            </div>
-
-                            {/* Hover scanning line effect */}
-                            <div className="absolute top-0 left-0 w-full h-1 bg-yellow-400 shadow-[0_0_15px_rgba(250,204,21,0.5)] transform -translate-y-full group-hover:translate-y-[400px] transition-transform duration-[2000ms] ease-in-out"></div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
             {/* Intense Methodology Section - Dark Theme with Background Asset */}
             <section
-                className="py-16 md:py-20 border-t border-slate-800 relative z-10 bg-slate-950"
+                className="pt-28 pb-12 md:pt-36 md:pb-20 border-t border-slate-800 relative z-10 bg-slate-950 min-h-[70vh] flex items-center"
                 style={{
                     backgroundImage: `linear-gradient(rgba(15, 23, 42, 0.4), rgba(15, 23, 42, 0.4)), url(${methodologyBg})`,
                     backgroundSize: 'cover',
@@ -127,19 +37,24 @@ const Coaching = () => {
                 <div className="container mx-auto px-4 md:px-6 relative z-10">
                     <div className="flex flex-col md:flex-row gap-4 items-end justify-between mb-16 max-w-6xl mx-auto border-b border-slate-700/50 pb-8">
                         <div>
-                            <span className="text-yellow-500 font-bold tracking-widest uppercase text-sm mb-2 block font-body">The Protocol</span>
-                            <h2 className="text-[32px] md:text-[48px] font-heading font-normal text-white tracking-tight uppercase leading-none">NO EXCUSES <br /><span className="text-slate-400">METHODOLOGY</span></h2>
+                            <span className="text-yellow-500 font-bold tracking-widest uppercase text-sm mb-2 block font-body">The Plan</span>
+                            <h2 className="text-[32px] md:text-[48px] font-heading font-normal text-white tracking-tight leading-none uppercase">NO EXCUSES <br /><span className="text-slate-400">METHOD</span></h2>
                         </div>
-                        <p className="text-lg text-slate-300 font-medium max-w-md text-left md:text-right shadow-sm">
-                            Everything you need to succeed, engineered into one seamless, unrelenting program.
-                        </p>
+                        <div className="text-left md:text-right max-w-md">
+                            <p className="text-lg text-slate-300 font-medium shadow-sm mb-1">
+                                Everything you need to improve your body in one complete program.
+                            </p>
+                            <p className="text-lg text-slate-400">
+                                Simple plan. Proper guidance. Real results.
+                            </p>
+                        </div>
                     </div>
 
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
                         {[
-                            { step: "01", title: "Customized Diet", desc: "Macros calculated specifically for your metabolic rate and goals. No cookie-cutter meal plans. Complete nutritional precision.", icon: <Salad className="text-slate-950" size={32} /> },
-                            { step: "02", title: "Training Program", desc: "Scientific split routines focusing on progressive overload and exact biomechanics. Designed to tear down and rebuild.", icon: <Dumbbell className="text-slate-950" size={32} /> },
-                            { step: "03", title: <><span className="font-sans font-black tracking-tighter">24/7</span> Support</>, desc: "Direct WhatsApp access to your coach for form checks, queries, and hard truths when you need motivation.", icon: <MessageCircle className="text-slate-950" size={32} /> },
+                            { step: "01", title: "Customized Diet", desc: "Your diet is planned based on your body, metabolism, and goals. No random or copied meal plans. Everything is calculated for you.", icon: <Salad className="text-slate-950" size={32} /> },
+                            { step: "02", title: "Training Program", desc: "A structured workout plan designed to help you build muscle and strength step by step. Focus on correct form, progressive overload, and steady progress.", icon: <Dumbbell className="text-slate-950" size={32} /> },
+                            { step: "03", title: <><span className="font-sans font-black tracking-tighter">24/7</span> Support</>, desc: "Direct WhatsApp support from your coach. Ask questions, get form checks, and stay motivated whenever you need help.", icon: <MessageCircle className="text-slate-950" size={32} /> },
                         ].map((feature, i) => (
                             <div key={i} className="bg-white p-8 md:p-10 border border-slate-200 shadow-sm relative group transition-all duration-300 hover:border-slate-400 hover:shadow-xl hover:-translate-y-2">
                                 {/* Large background step number */}
@@ -158,6 +73,7 @@ const Coaching = () => {
                                         {feature.desc}
                                     </p>
                                 </div>
+
                                 {/* Hover line indicator */}
                                 <div className="absolute bottom-0 left-0 h-1 w-0 bg-slate-950 transition-all duration-500 group-hover:w-full"></div>
                             </div>
@@ -167,7 +83,7 @@ const Coaching = () => {
             </section>
 
             {/* Elite Training Packages */}
-            <section id="packages" className="py-16 md:py-20 bg-white relative border-t border-slate-200">
+            <section id="packages" className="py-12 md:py-20 bg-white relative border-t border-slate-200">
                 {/* Background lighting */}
                 <div className="absolute inset-0 bg-gradient-to-b from-slate-50 to-white pointer-events-none"></div>
 
@@ -175,10 +91,10 @@ const Coaching = () => {
                     <div className="text-center mb-16 max-w-3xl mx-auto">
                         <span className="text-yellow-600 font-bold tracking-widest uppercase text-sm mb-4 block font-body">Select Your Path</span>
                         <h2 className="text-[32px] md:text-[48px] font-heading font-normal text-slate-950 tracking-tight uppercase mb-6 leading-none">
-                            TRAINING <span className="text-slate-400">PROTOCOLS</span>
+                            TRAINING <span className="text-slate-400">PROGRAMS</span>
                         </h2>
                         <div className="w-24 h-1 bg-slate-950 mx-auto mb-6"></div>
-                        <p className="text-lg text-slate-600 font-medium">Select the level of intensity and guidance required to demolish your goals.</p>
+                        <p className="text-lg text-slate-600 font-medium">Choose the type of coaching that suits your goals and lifestyle.</p>
                     </div>
 
                     <div className="flex flex-col lg:flex-row justify-center items-stretch gap-8 max-w-6xl mx-auto pt-8">

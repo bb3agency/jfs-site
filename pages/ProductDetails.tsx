@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { ArrowLeft, Plus, Minus, Check, Truck, ShieldCheck } from 'lucide-react';
 import { PRODUCTS } from '../data';
 import { Product, CartItem } from '../types';
+import { useSEO } from '../useSEO';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 
@@ -21,6 +22,11 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ onAddToCart, cartItems,
   const [selectedFlavour, setSelectedFlavour] = useState<string | null>(null);
   const [touchStart, setTouchStart] = useState<number | null>(null);
   const [touchEnd, setTouchEnd] = useState<number | null>(null);
+
+  useSEO({
+    title: product ? `${product.name} – Buy Online at Best Price` : 'Product Details',
+    description: product ? `Buy ${product.name} online at Joy Fitness for ₹${product.price}. 100% authentic, fast delivery. ${product.description?.slice(0, 120) || ''}` : 'View product details at Joy Fitness.'
+  });
 
   if (!product) {
     return <div className="p-10 text-center">Product not found</div>;
@@ -107,7 +113,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ onAddToCart, cartItems,
   }, { scope: containerRef });
 
   return (
-    <div ref={containerRef} className="min-h-screen bg-slate-50 pt-24 md:pt-32 pb-20">
+    <div ref={containerRef} className="min-h-screen bg-slate-50 pt-24 md:pt-32 pb-10 md:pb-20">
       <div className="container mx-auto px-4 md:px-6">
         <button
           onClick={() => navigate(-1)}
@@ -117,7 +123,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ onAddToCart, cartItems,
           Back
         </button>
 
-        <div className="flex flex-col md:flex-row gap-8 md:gap-12 lg:gap-20">
+        <div className="flex flex-col md:flex-row gap-6 md:gap-12 lg:gap-20">
           {/* Product Image Section */}
           <div className="detail-img flex-1 w-full max-w-xl mx-auto md:max-w-none">
             {/* Main Image */}
@@ -178,7 +184,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ onAddToCart, cartItems,
             <span className="text-yellow-500 font-bold uppercase tracking-tight text-xs md:text-sm mb-1 md:mb-2 font-body">
               {product.category}
             </span>
-            <h1 className="text-[40px] md:text-[64px] font-heading font-normal text-slate-900 tracking-tight mb-2 md:mb-3 leading-none uppercase">
+            <h1 className="text-[32px] md:text-[64px] font-heading font-normal text-slate-900 tracking-tight mb-2 md:mb-3 leading-none uppercase">
               {product.name}
             </h1>
             {product.weight && (
@@ -217,7 +223,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ onAddToCart, cartItems,
                       onClick={() => {
                         setSelectedFlavour(flav.name === selectedFlavour ? null : flav.name);
                       }}
-                      className={`px-5 py-2.5 rounded-xl text-sm font-subheading font-bold border-2 transition-all duration-200 ${selectedFlavour === flav.name
+                      className={`px-4 py-2 md:px-5 md:py-2.5 rounded-xl text-xs md:text-sm font-subheading font-bold border-2 transition-all duration-200 ${selectedFlavour === flav.name
                         ? 'bg-slate-900 text-white border-slate-900 shadow-lg'
                         : 'bg-white text-slate-600 border-slate-200 hover:border-slate-400'
                         }`}

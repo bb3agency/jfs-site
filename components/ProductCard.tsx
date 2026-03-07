@@ -24,54 +24,42 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onAddToCart }) => {
   return (
     <div
       onClick={handleCardClick}
-      className="group flex flex-col w-full h-full rounded-[18px] bg-white transition-all duration-300 hover:shadow-lg hover:-translate-y-1 p-3 md:p-4 cursor-pointer border border-transparent hover:border-slate-100"
+      className="group relative w-full aspect-[4/5] rounded-[2rem] overflow-hidden cursor-pointer bg-white border border-slate-100 transition-all duration-300 hover:shadow-xl hover:border-slate-300 hover:-translate-y-1.5 ring-1 ring-transparent hover:ring-slate-200"
     >
-      {/* Premium Image Container */}
-      <div className="relative w-full aspect-[4/5] bg-[#f8f9fb] rounded-[14px] overflow-hidden mb-4 md:mb-5 flex items-center justify-center p-4 md:p-6 transition-colors duration-300 group-hover:bg-[#f1f3f7]">
+      {/* Background Image */}
+      <img
+        src={product.image}
+        alt={product.name}
+        loading="lazy"
+        className={`absolute inset-0 h-full w-full object-contain p-4 pb-20 md:p-8 md:pb-24 transition-transform duration-700 mix-blend-multiply ${product.brand === 'DNA Pharma' ? 'scale-[0.85] group-hover:scale-[0.95]' : 'group-hover:scale-110'
+          }`}
+      />
 
-        {/* Navy Discount Badge */}
-        {product.discount && (
-          <div className="absolute top-2 left-2 md:top-3 md:left-3 bg-[#0F172A] text-white text-[12px] font-semibold px-[10px] py-[4px] rounded-[6px] z-10 font-subheading tracking-wide shadow-sm">
-            -{product.discount}%
-          </div>
-        )}
+      {/* Discount Badge (Top Left) */}
+      {product.discount && (
+        <div className="absolute top-4 left-4 bg-black text-white text-[10px] md:text-xs font-black px-2.5 py-1.5 rounded-md shadow-lg z-10 font-inter">
+          -{product.discount}%
+        </div>
+      )}
 
-        <img
-          src={product.image}
-          srcSet={`${product.image} 300w, ${product.image} 600w`}
-          sizes="(max-width: 768px) 50vw, (max-width: 1200px) 25vw, 300px"
-          alt={product.name}
-          loading="lazy"
-          className="h-full w-full object-contain drop-shadow-md transition-transform duration-500 group-hover:scale-105"
-        />
-
-        {/* Floating Cart Button */}
-        <button
-          onClick={handleQuickAdd}
-          className="absolute bottom-2 left-2 md:bottom-3 md:left-3 w-10 h-10 md:w-9 md:h-9 bg-white text-slate-900 rounded-full flex items-center justify-center shadow-md border border-slate-100 transition-all duration-300 hover:scale-110 hover:bg-slate-900 hover:text-white"
-          aria-label="Add to cart"
-        >
-          <Plus size={18} className="md:w-5 md:h-5" />
-        </button>
-      </div>
-
-      {/* Content Section */}
-      <div className="flex flex-col flex-1 items-center text-center px-1">
-        {/* Title */}
-        <h3 className="text-[13px] md:text-[15px] font-medium font-body text-slate-900 leading-snug line-clamp-2 min-h-[38px] md:min-h-[44px] mb-2">
-          {product.name}
-        </h3>
-
-        {/* Price Row */}
-        <div className="mt-auto flex items-baseline justify-center gap-2">
-          <span className="text-base md:text-lg font-semibold text-slate-900 font-inter">
-            ₹{product.price.toLocaleString()}
-          </span>
+      {/* Bottom Info Pill - Glassmorphic Effect */}
+      <div className="absolute bottom-2 left-2 right-2 md:bottom-3 md:left-3 md:right-3 bg-white/95 backdrop-blur-xl border border-white/50 rounded-xl md:rounded-2xl p-2.5 sm:p-3 shadow-lg flex flex-row items-end justify-between gap-1.5 sm:gap-2 transition-colors group-hover:bg-white overflow-hidden">
+        <div className="flex flex-col min-w-0 w-full">
+          {/* Name - No line clamp so it wraps fully */}
+          <h3 className="text-[11px] sm:text-[12px] md:text-sm font-bold text-slate-900 leading-[1.15] md:leading-tight font-subheading whitespace-normal break-words">
+            {product.name}
+          </h3>
+        </div>
+        {/* Price Layout: Vertical Stack */}
+        <div className="flex-shrink-0 flex flex-col items-end justify-end font-inter">
           {product.mrp && product.mrp > product.price && (
-            <span className="text-[11px] md:text-sm text-slate-400 line-through font-inter font-medium">
+            <span className="text-[9px] sm:text-[10px] text-slate-400 line-through font-bold mb-0.5">
               ₹{product.mrp.toLocaleString()}
             </span>
           )}
+          <span className="text-[12px] sm:text-[13px] md:text-sm font-black text-slate-900 leading-none">
+            ₹{product.price.toFixed(0)}
+          </span>
         </div>
       </div>
     </div>
