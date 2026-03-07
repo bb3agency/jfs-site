@@ -1,4 +1,5 @@
 import React from 'react';
+// Refreshed to resolve import issues
 import { Truck } from 'lucide-react';
 import { useSEO } from '../useSEO';
 

@@ -2,7 +2,7 @@ import React from 'react';
 import { RefreshCcw } from 'lucide-react';
 import { useSEO } from '../useSEO';
 
-const Returns: React.FC = () => {
+const ReturnsPage: React.FC = () => {
     useSEO({
         title: 'Returns & Refunds Policy',
         description: 'Joy Fitness returns and refunds policy. We sell 100% authentic supplements with a strict no return policy to ensure product safety and hygiene.'
@@ -75,4 +75,4 @@ const Returns: React.FC = () => {
     );
 };
 
-export default Returns;
+export default ReturnsPage;

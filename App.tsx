@@ -11,7 +11,7 @@ import Coaching from './pages/Coaching';
 import AboutContact from './pages/AboutContact';
 import FAQ from './pages/FAQ';
 import ShippingPolicy from './pages/ShippingPolicy';
-import Returns from './pages/Returns';
+import ReturnsPage from './pages/ReturnsPage';
 import { CartItem, Product } from './types';
 import Footer from './components/Footer';
 
@@ -97,7 +97,7 @@ const App: React.FC = () => {
             <Route path="/about-contact" element={<AboutContact />} />
             <Route path="/faq" element={<FAQ />} />
             <Route path="/shipping-policy" element={<ShippingPolicy />} />
-            <Route path="/returns" element={<Returns />} />
+            <Route path="/returns" element={<ReturnsPage />} />
           </Routes>
         </main>
 
